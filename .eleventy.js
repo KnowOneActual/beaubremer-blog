@@ -1,9 +1,12 @@
 module.exports = function(eleventyConfig) {
-  // This tells Eleventy to copy the assets folder
+  // This tells Eleventy to copy the img folder
   eleventyConfig.addPassthroughCopy("img");
 
-  // This new line ensures the '.well-known' folder is also copied
+  // This copies your .well-known folder
   eleventyConfig.addPassthroughCopy(".well-known");
+
+  // This new line copies your robots.txt file
+  eleventyConfig.addPassthroughCopy("robots.txt");
 
   // This creates a collection of all your blog posts
   eleventyConfig.addCollection("posts", function(collectionApi) {
