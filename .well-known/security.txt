@@ -1,0 +1,8 @@
+# This is my security.txt file.
+# Please report any security vulnerabilities to the email below.
+Contact: mailto:support@beaubremer.com
+Policy: https://blog.beaubremer.com/security-policy/
+
+
+# I am currently seeking new job opportunities.
+Hiring: Please see my main portfolio at https://beaubremer.com
