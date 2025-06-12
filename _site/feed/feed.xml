@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Beau Bremer&#39;s Blog</title>
+  <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
+  <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
+  <link href="https://blog.beaubremer.com/"/>
+  <updated>2025-06-11T00:00:00Z</updated>
+  <id>https://blog.beaubremer.com/</id>
+  <author>
+    <name>Beau Bremer</name>
+    <email>support@beaubremer.com</email>
+  </author>
+  <entry>
+    <title>Welcome to the Blog</title>
+    <link href="https://blog.beaubremer.com/posts/my-first-post/"/>
+    <updated>2025-06-11T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/my-first-post/</id>
+    <content xml:lang="en" type="html">&lt;h2&gt;It&#39;s Alive!&lt;/h2&gt;
+&lt;p&gt;Welcome! This is a sample post to make sure everything is working correctly.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Dive into QLab</title>
+    <link href="https://blog.beaubremer.com/posts/dive_Qlab/"/>
+    <updated>2025-06-11T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/dive_Qlab/</id>
+    <content xml:lang="en" type="html">&lt;h2&gt;&lt;/h2&gt;
+&lt;p&gt;Hey everyone! Ever wondered how those amazing live shows, plays, or even presentations manage to flawlessly switch between music, video, and lights? A lot of times, the magic behind the scenes is thanks to a fantastic piece of software called QLab.&lt;/p&gt;
+&lt;p&gt;QLab is a powerful tool for show control, used by professionals and hobbyists alike to create incredibly precise and complex cue lists. But don&#39;t let &amp;quot;powerful&amp;quot; scare you off – it&#39;s also incredibly intuitive once you get the hang of it, and it can really elevate your projects.&lt;/p&gt;
+&lt;p&gt;Today, we&#39;re going to take a super quick look at QLab and then dive into one of its most common uses: adding music cues. Get ready to make your audio playback smooth as silk!
+Getting Started with QLab&lt;/p&gt;
+&lt;p&gt;First things first, if you don&#39;t have QLab, you can download it for free from the Figure 53 website. The free version, called QLab Free, offers a ton of features, especially for audio playback, which is perfect for getting started.&lt;/p&gt;
+&lt;p&gt;Once you open QLab, you&#39;ll see a clean workspace. This is where you&#39;ll build your &amp;quot;cue list,&amp;quot; which is essentially a chronological list of everything you want to happen during your show.
+Quick Tutorial: Adding Music Cues in QLab&lt;/p&gt;
+&lt;p&gt;Let&#39;s get straight to it and add some music!&lt;/p&gt;
+&lt;p&gt;Open Your Workspace: When you open QLab, you&#39;ll usually be presented with a new, blank workspace. This is your canvas.&lt;/p&gt;
+&lt;p&gt;Drag and Drop Your Audio: The easiest way to get music into QLab is to simply drag an audio file (like an MP3, WAV, or AIFF) directly from your computer&#39;s folders into the QLab window.
+Pro Tip: QLab prefers uncompressed audio files (like WAV or AIFF) for the best quality and performance, but MP3s work just fine for many applications, especially for getting started.&lt;/p&gt;
+&lt;p&gt;Meet Your First Cue: Once you drag in an audio file, QLab automatically creates an &amp;quot;Audio Cue&amp;quot; for it. You&#39;ll see it appear in your cue list. Each cue has a &amp;quot;Q Number&amp;quot; (its position in the list) and a &amp;quot;Q Name&amp;quot; (usually the file name by default).&lt;/p&gt;
+&lt;p&gt;The Inspector – Your Control Panel: Below your cue list, you&#39;ll see the &amp;quot;Inspector.&amp;quot; This is where all the magic happens! When you select a cue, the Inspector shows you all the properties and settings for that specific cue.
+For an audio cue, you&#39;ll see tabs like &amp;quot;Levels&amp;quot; (for volume), &amp;quot;Time &amp;amp; Loops&amp;quot; (for start/end times and looping), and &amp;quot;Audio&amp;quot; (for routing to different outputs).&lt;/p&gt;
+&lt;p&gt;Setting Playback:
+Volume: Go to the &amp;quot;Levels&amp;quot; tab in the Inspector. You can adjust the overall volume of your music cue here. You&#39;ll see a fader you can drag up and down.
+Start and End Times: In the &amp;quot;Time &amp;amp; Loops&amp;quot; tab, you can set exactly when your audio starts and ends within the file. This is super handy if you only want to play a specific section of a song. Just drag the start and end markers on the waveform, or type in specific times.&lt;/p&gt;
+&lt;p&gt;Playing Your Cue:
+&amp;quot;Go&amp;quot; Button: The big &amp;quot;Go&amp;quot; button at the bottom of the QLab window is your best friend. Click it (or press the Spacebar, which is the default hotkey) to trigger the selected cue.
+Stop Button: Need to stop a cue? Click the &amp;quot;Stop&amp;quot; button next to &amp;quot;Go.&amp;quot;&lt;/p&gt;
+&lt;p&gt;What&#39;s Next?&lt;/p&gt;
+&lt;p&gt;This is just the tip of the iceberg with QLab, but understanding how to add and control basic audio cues is a huge first step. From here, you can explore:&lt;/p&gt;
+&lt;p&gt;Fades: Make your music fade in and out smoothly.
+Cue Triggers: How to automatically trigger cues, or link them to other cues.
+Hotkeys: Assigning keyboard shortcuts for quick playback.
+Groups: Organizing multiple cues together.&lt;/p&gt;
+&lt;p&gt;QLab might seem a little intimidating at first glance, but once you start playing around with it, you&#39;ll discover how powerful and fun it is. It truly opens up a world of possibilities for controlling your live events with precision and creativity.&lt;/p&gt;
+&lt;p&gt;Happy cueing!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Why I Chose Eleventy for My Blog (And How I Secured It)</title>
+    <link href="https://blog.beaubremer.com/posts/Eleventy_for_My_Blog/"/>
+    <updated>2025-06-11T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Eleventy_for_My_Blog/</id>
+    <content xml:lang="en" type="html">&lt;h2&gt;&lt;/h2&gt;
+&lt;p&gt;After getting my main portfolio site into a stable, secure state, I decided it was time to add a blog. My core requirements were simple but non-negotiable: it had to be modern, straightforward to maintain, and—most importantly—built in a way that couldn&#39;t possibly break my main portfolio site during development.&lt;/p&gt;
+&lt;p&gt;This led me down the path of creating a completely separate, standalone blog site. Here’s a look at the &amp;quot;why&amp;quot; behind the tools I chose and the security precautions we took along the way.
+Why Eleventy? The &amp;quot;Keep It Simple&amp;quot; Philosophy&lt;/p&gt;
+&lt;p&gt;In today&#39;s landscape of complex JavaScript frameworks, I was looking for something simpler. After some research, I landed on Eleventy (11ty), a modern Static Site Generator (SSG).&lt;/p&gt;
+&lt;p&gt;It was the perfect choice for a few key reasons:&lt;/p&gt;
+&lt;p&gt;Simplicity and Flexibility: Eleventy doesn&#39;t lock you into a heavy framework like React or Vue. It&#39;s incredibly flexible and un-opinionated, letting you work with simple templates and data. This felt perfect for a straightforward, content-focused blog.
+JavaScript-Based: The entire configuration is done in plain JavaScript (.eleventy.js), which felt comfortable and accessible. There was no need to learn a new programming language just to build a blog.
+Peak Performance &amp;amp; Security: By default, Eleventy generates pre-built, static HTML files. This means there&#39;s no database to hack and no complex server-side code running on every page view. The result is a site that is incredibly fast and secure right out of the box.&lt;/p&gt;
+&lt;p&gt;A Security-First Approach&lt;/p&gt;
+&lt;p&gt;A static site is secure by default, but I wanted to go further and ensure it was hardened against modern web vulnerabilities. The main tool for this was a netlify.toml file placed at the root of the project, which allowed me to define custom HTTP security headers.&lt;/p&gt;
+&lt;p&gt;Here are the key security layers we implemented:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Content Security Policy (CSP): The Digital Bouncer&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The most important header we added was a strong Content Security Policy. Think of a CSP as a bouncer for your website—it maintains a strict guest list of all the resources (scripts, styles, fonts, etc.) that are allowed to load on the page. Anything not on the list gets blocked.&lt;/p&gt;
+&lt;p&gt;My policy explicitly whitelists trusted sources for each type of content:&lt;/p&gt;
+&lt;p&gt;script-src: Only allows scripts from my own domain and the trusted Tailwind CSS CDN.
+style-src: Only allows stylesheets from my domain and Google Fonts.
+font-src: Only allows fonts to be downloaded from Google&#39;s font servers (fonts.gstatic.com).
+object-src &#39;none&#39;: Completely blocks older, insecure plugins like Flash from ever running.&lt;/p&gt;
+&lt;p&gt;The &#39;unsafe-inline&#39; Caveat: The one necessary compromise was allowing &#39;unsafe-inline&#39; for styles. This was required for the Tailwind CSS CDN script to work, as it dynamically injects styles into the page. However, the risk is heavily mitigated because the overall source of any scripts is still locked down by the rest of the policy.&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Other Essential Headers&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Beyond the CSP, we added several other headers for a layered defense:&lt;/p&gt;
+&lt;p&gt;Strict-Transport-Security (HSTS): Ensures that browsers only ever communicate with my site over a secure HTTPS connection.
+X-Frame-Options: Set to DENY, this completely prevents my site from being embedded in an &lt;iframe&gt; on another website, which is the primary defense against &amp;quot;clickjacking&amp;quot; attacks.
+Permissions-Policy: This is a modern header that lets me lock down browser features that my blog has no reason to use, like the microphone, camera, USB devices, and payment APIs.&lt;/iframe&gt;&lt;/p&gt;
+&lt;p&gt;The Result&lt;/p&gt;
+&lt;p&gt;The outcome is exactly what I was hoping for: a fast, modern blog with an A+ security rating that is completely decoupled from my main portfolio. The workflow is simple—I write a post in a Markdown file, push it to GitHub, and Netlify handles the rest. It’s a setup I can trust while I focus on writing content and my job search.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>The Case of the Persistent Contact Form: A Debugging Odyssey</title>
+    <link href="https://blog.beaubremer.com/posts/2025-06-11-contact-form/"/>
+    <updated>2025-06-11T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/2025-06-11-contact-form/</id>
+    <content xml:lang="en" type="html">&lt;h1&gt;The Case of the Persistent Contact Form: A Debugging Odyssey&lt;/h1&gt;
+&lt;p&gt;Hey tech enthusiasts and fellow web wranglers!&lt;/p&gt;
+&lt;p&gt;Have you ever stared at a seemingly simple feature – like a contact form – and wondered why it&#39;s putting up such a fight? Well, I recently went on an epic debugging adventure with my own website&#39;s contact form, and let me tell you, it was a journey filled with unexpected twists, a few head-scratching moments, and ultimately, a satisfying victory.&lt;/p&gt;
+&lt;p&gt;If you&#39;re currently wrestling with a stubborn form, a missing CAPTCHA, or email notifications that just won&#39;t trigger, you might find some solace (and hopefully some solutions!) in my tale.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Initial Setup (Seemed Simple Enough!)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;My goal was straightforward: a clean, effective contact form on my personal site, protected by a CAPTCHA to ward off those pesky bots, and set up to send me an email whenever someone reached out. I opted for Netlify to host my static site, Cloudflare Turnstile for a user-friendly CAPTCHA, and Resend for reliable email delivery.&lt;/p&gt;
+&lt;p&gt;The initial setup involved:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Crafting the HTML form.&lt;/li&gt;
+&lt;li&gt;Writing a Netlify serverless function in JavaScript to handle the form submission, CAPTCHA verification, and email sending via Resend.&lt;/li&gt;
+&lt;li&gt;Adding a sprinkle of client-side JavaScript for form validation and submission handling.&lt;/li&gt;
+&lt;li&gt;Configuring environment variables in Netlify for API keys and secrets.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sounds reasonable, right? That&#39;s what I thought too...&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The First Signs of Trouble (and the Rabbit Hole)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Initially, the site looked great (thanks to Tailwind CSS and a cool Three.js background animation – another story for another time!). But the contact form? Radio silence. No CAPTCHA widget, and definitely no emails landing in my inbox.&lt;/p&gt;
+&lt;p&gt;This is where the debugging adventure truly began. What followed was a deep dive into:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Browser Developer Tools (My Best Friend!)&lt;/strong&gt;: Console logs became my daily bread, and network requests my guiding stars. We meticulously checked for JavaScript errors, failed API calls, and Content Security Policy violations.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Netlify Deployment Logs&lt;/strong&gt;: Scrutinizing every stage of the build and deployment process became crucial to ensure our serverless function was being included correctly.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cloudflare Turnstile Dashboard&lt;/strong&gt;: Double-checking site keys, secret keys, and even experimenting with different settings.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Resend Logs&lt;/strong&gt;: Monitoring email sending attempts to see if the requests were even reaching the service and what the responses were.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HTTP Headers (The Silent Guardians)&lt;/strong&gt;: We spent a surprising amount of time wrestling with the &lt;code&gt;netlify.toml&lt;/code&gt; file and its security headers, learning firsthand how a misconfigured policy can block essential resources.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Environment Variables (The Keepers of Secrets)&lt;/strong&gt;: Ensuring API keys were correctly stored and accessed by our Netlify function.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Branching and Deployment Contexts&lt;/strong&gt;: Briefly suspected we might be working on the wrong version of the site!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Key Learnings and Aha! Moments&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Throughout this process, several key learnings emerged:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Order Matters&lt;/strong&gt;: In our &lt;code&gt;index.html&lt;/code&gt;, the order in which scripts were loaded (especially Three.js and our main &lt;code&gt;script.js&lt;/code&gt;) had a significant impact on whether the page rendered correctly.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Security is Paramount (and Tricky!)&lt;/strong&gt;: Content Security Policy is a powerful tool, but it requires careful configuration to avoid unintentionally blocking legitimate resources like third-party CAPTCHA scripts and analytics.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Serverless Functions Can Be Elusive&lt;/strong&gt;: Debugging server-side code running in a cloud environment requires a different mindset than local development. Netlify&#39;s function logs and the ability to download deployed functions became invaluable.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Deployment Consistency is Key&lt;/strong&gt;: We encountered situations where local code wasn&#39;t making its way to the deployed site as expected, highlighting the importance of proper Git practices.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Every Error Message is a Breadcrumb&lt;/strong&gt;: Even cryptic error messages in the browser console or network logs provide valuable clues if you know where to look and how to interpret them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The Sweet Taste of Success (Finally!)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;After what felt like countless iterations, meticulous log analysis, and a few moments of pure frustration, we finally cracked the code! The issues ranged from a missing Three.js script tag, overly restrictive security policies, and even ensuring the correct version of our Netlify function was being deployed.&lt;/p&gt;
+&lt;p&gt;The moment the CAPTCHA widget appeared, the form started submitting correctly, and those email notifications began landing in my inbox was incredibly rewarding.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tips for Your Own Debugging Adventures&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you&#39;re facing similar challenges with your contact form or website features, here are a few takeaways from my experience:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Be Patient and Systematic&lt;/strong&gt;: Debugging often involves trial and error, but a systematic approach of checking logs, isolating variables, and making small, incremental changes is crucial.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Leverage Your Browser&#39;s Developer Tools&lt;/strong&gt;: Become comfortable with the Console, Network, and Security tabs. They provide a wealth of information.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Read the Documentation (Carefully!)&lt;/strong&gt;: The documentation for services like Netlify, Cloudflare Turnstile, and Resend is your best friend. Pay close attention to configuration instructions and common troubleshooting steps.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Don&#39;t Be Afraid to Ask for Help&lt;/strong&gt;: Online communities and forums can be incredibly valuable resources when you&#39;re stuck. Clearly explaining your problem and what you&#39;ve tried so far will help others assist you.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Celebrate the Small Victories&lt;/strong&gt;: Debugging can be mentally taxing. Acknowledge and celebrate each step forward, no matter how small.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The Journey Continues...&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;While this particular debugging odyssey has reached its conclusion, the world of web development is constantly evolving. There will always be new challenges to overcome and new things to learn. And that, in itself, is part of the adventure.&lt;/p&gt;
+</content>
+  </entry>
+</feed>
