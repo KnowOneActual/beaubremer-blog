@@ -141,11 +141,27 @@ Practice makes perfect: The more you use these commands, the more natural they&#
 </content>
   </entry>
   <entry>
+    <title>Are You Playing Chess, or Just Repeating Lines?</title>
+    <link href="https://blog.beaubremer.com/posts/Are%20You%20Playing%20Chess/"/>
+    <updated>2025-06-12T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Are%20You%20Playing%20Chess/</id>
+    <content xml:lang="en" type="html">&lt;h1&gt;Are You Playing Chess, or Just Repeating Lines? The Trap of the Tired Trope&lt;/h1&gt;
+&lt;p&gt;Ever been in a conversation and heard someone lean back, maybe with a knowing smile, and drop the line: &amp;quot;Oh, well, I&#39;m playing chess while you&#39;re playing checkers&amp;quot;?  It&#39;s a phrase that&#39;s almost universally used to imply a higher level of strategic thinking, a way of signaling, &amp;quot;I&#39;m smarter than you,&amp;quot; or &amp;quot;I&#39;m better at this game.&amp;quot;  It gets slapped onto business decisions, personal squabbles—you name it.  For some, it can feel like a condescending jab, trying to put you in your place.&lt;/p&gt;
+&lt;p&gt;We&#39;ve all encountered this, right? Maybe it&#39;s a mid-level manager trying to impress in a PowerPoint presentation , or someone on social media arguing a point they barely understand. The sheer audacity of it can be grating , especially when they genuinely believe they&#39;re operating on some higher intellectual plane just by stringing together a sentence that hints at strategy.&lt;/p&gt;
+&lt;p&gt;But here&#39;s the kicker, and what&#39;s truly fascinating about this phenomenon: these &amp;quot;masterminds&amp;quot; often didn&#39;t even come up with the line themselves!  They&#39;re just echoing something they heard elsewhere, thinking it makes them sound profound.  It&#39;s like seeing yourself as Denzel Washington in Training Day saying, &amp;quot;This sh*t is chess, it ain&#39;t checkers!&amp;quot;  Or perhaps envisioning yourself as Kobe Bryant schooling rookies with, &amp;quot;These young guys are playing checkers. I&#39;m out there playing chess.&amp;quot;  Newsflash, as the original piece puts it: you&#39;re probably not Denzel or Kobe.&lt;/p&gt;
+&lt;p&gt;This phrase has been around for ages.  Samuel L. Jackson used it in a movie back in &#39;94.  It&#39;s become so common among entrepreneurs and business gurus that someone even wrote a whole book called Chess Not Checkers: Elevate Your Leadership Game.  When you hear it, it makes you wonder if that book came with a little plastic crown so they could declare themselves king of the office.&lt;/p&gt;
+&lt;p&gt;The whole act of trotting out this tired, old phrase to declare how much smarter you are is, frankly, a bit of an &amp;quot;idiocy festival.&amp;quot;  It&#39;s not just that claiming to be a strategic genius might be a stretch; it&#39;s that you&#39;re using a borrowed, unoriginal line to make that claim.  You&#39;re trying to signal your unique, high-wattage brainpower by simply repeating a cliché.  It&#39;s like trying to prove you&#39;re a fashion icon by wearing the same cheap suit everyone else bought off the rack.&lt;/p&gt;
+&lt;p&gt;If you were truly that smart, wouldn&#39;t your own way of showing it naturally emerge?  Wouldn&#39;t your brilliant strategy simply speak for itself?  There&#39;s no need to lean on a movie quote or a popular business book to prove your point.  When you try so hard to look smart by parroting phrases, you often end up looking like, well, a parrot with a thesaurus.&lt;/p&gt;
+&lt;p&gt;Ultimately, true leadership and genuine strategic thinking come from original thought and demonstrated ability, not from recycled catchphrases. Let&#39;s aim to truly play our own game, whatever that may be, and let our unique contributions do the talking.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Why I Learned to Stop Worrying and Love Git Branches</title>
     <link href="https://blog.beaubremer.com/posts/2025-06-12-a-guide-to-git-branches/"/>
     <updated>2025-06-12T00:00:00Z</updated>
     <id>https://blog.beaubremer.com/posts/2025-06-12-a-guide-to-git-branches/</id>
-    <content xml:lang="en" type="html">&lt;h2&gt;Have you ever been deep in concentration, adding a new feature to your website, and you suddenly realize... you&#39;ve broken everything? The page won&#39;t load, styles are a mess, and panic sets in. I&#39;ve certainly been there. For a long time, I did all my work directly on my main branch—the one that my live site was built from. Every change was a high-stakes gamble.&lt;/h2&gt;
+    <content xml:lang="en" type="html">&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;Have you ever been deep in concentration, adding a new feature to your website, and you suddenly realize... you&#39;ve broken everything? The page won&#39;t load, styles are a mess, and panic sets in. I&#39;ve certainly been there. For a long time, I did all my work directly on my main branch—the one that my live site was built from. Every change was a high-stakes gamble.&lt;/p&gt;
 &lt;p&gt;Then, I embraced a professional workflow that completely changed the game: &lt;strong&gt;Git branching&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Think of your &lt;code&gt;main&lt;/code&gt; branch as the &amp;quot;golden copy&amp;quot; of your project. It&#39;s the version that is live, working, and stable. A branch is like making a safe, parallel copy of your project where you can experiment freely. If your new idea works, you merge it into the main copy. If it&#39;s a disaster, you simply delete the branch, and the golden copy remains untouched.&lt;/p&gt;
 &lt;p&gt;It brings peace of mind to the development process, and here’s why you should be using it.&lt;/p&gt;
@@ -171,21 +187,21 @@ Practice makes perfect: The more you use these commands, the more natural they&#
 &lt;p&gt;&lt;strong&gt;Step 1: Start Clean&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Before starting anything new, I made sure my local project was in sync with the live version on GitHub.&lt;/p&gt;
 &lt;p&gt;bash&lt;/p&gt;
-&lt;h1&gt;Switch to the main branch&lt;/h1&gt;
-&lt;p&gt;git checkout main&lt;/p&gt;
-&lt;h1&gt;Pull the latest changes from GitHub&lt;/h1&gt;
-&lt;p&gt;git pull origin main&lt;/p&gt;
+&lt;p&gt;#Switch to the main branch
+git checkout main&lt;/p&gt;
+&lt;p&gt;#Pull the latest changes from GitHub
+git pull origin main&lt;/p&gt;
 &lt;p&gt;Step 2: Create the New Branch&lt;/p&gt;
 &lt;p&gt;I created a new branch from main and immediately switched to it. I gave it a descriptive name.
 Bash&lt;/p&gt;
-&lt;h1&gt;The -b flag creates a new branch and checks it out in one step&lt;/h1&gt;
-&lt;p&gt;git checkout -b feature/contextual-header-link&lt;/p&gt;
+&lt;p&gt;#The -b flag creates a new branch and checks it out in one step
+git checkout -b feature/contextual-header-link&lt;/p&gt;
 &lt;p&gt;Step 3: Do the Work&lt;/p&gt;
 &lt;p&gt;On my new branch, I safely edited my layout file (_includes/layouts/base.njk), adding the logic to change the link based on the page URL. I made a few commits along the way to save my progress.
 Bash&lt;/p&gt;
-&lt;h1&gt;After making some edits...&lt;/h1&gt;
-&lt;p&gt;git add .
-git commit -m &amp;quot;feat: Make header link contextual&amp;quot;&lt;/p&gt;
+&lt;p&gt;#After making some edits...&lt;/p&gt;
+&lt;p&gt;git add .&lt;/p&gt;
+&lt;p&gt;git commit -m &amp;quot;feat: Make header link contextual&amp;quot;&lt;/p&gt;
 &lt;p&gt;Step 4: Propose the Changes (The Pull Request)&lt;/p&gt;
 &lt;p&gt;Once I was happy with how it worked locally, I pushed my new branch to GitHub.
 Bash&lt;/p&gt;
