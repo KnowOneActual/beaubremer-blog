@@ -5,7 +5,9 @@ date: 2025-06-12
 layout: "layout.njk"
 ---
 
-## Have you ever been deep in concentration, adding a new feature to your website, and you suddenly realize... you've broken everything? The page won't load, styles are a mess, and panic sets in. I've certainly been there. For a long time, I did all my work directly on my main branch—the one that my live site was built from. Every change was a high-stakes gamble.
+#
+
+Have you ever been deep in concentration, adding a new feature to your website, and you suddenly realize... you've broken everything? The page won't load, styles are a mess, and panic sets in. I've certainly been there. For a long time, I did all my work directly on my main branch—the one that my live site was built from. Every change was a high-stakes gamble.
 
 Then, I embraced a professional workflow that completely changed the game: **Git branching**.
 
