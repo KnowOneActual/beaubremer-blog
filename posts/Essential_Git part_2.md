@@ -1,7 +1,7 @@
 ---
 title: "Essential Git: Revert part 2"
 description: "Git Revert: How to Undo Changes Safely (and Get Unstuck!)"
-date: 2025-06-11
+date: 2025-06-12
 layout: "layout.njk"
 ---
 

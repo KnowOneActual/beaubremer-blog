@@ -11,93 +11,9 @@
     <email>support@beaubremer.com</email>
   </author>
   <entry>
-    <title>Essential Git Part 1</title>
-    <link href="https://blog.beaubremer.com/posts/Essential_Git%20part_1/"/>
-    <updated>2025-06-12T00:00:00Z</updated>
-    <id>https://blog.beaubremer.com/posts/Essential_Git%20part_1/</id>
-    <content xml:lang="en" type="html">&lt;p&gt;Your Essential Git Toolkit: A Friendly Guide&lt;/p&gt;
-&lt;p&gt;Git can seem a bit intimidating at first, but it&#39;s just a system to help you keep track of changes in your code (or any files, for that matter) and collaborate smoothly. Think of it as a super-powered save button with a memory of every single change you&#39;ve ever made.&lt;/p&gt;
-&lt;p&gt;Let&#39;s dive into the commands you&#39;ll use most often:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;git status&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;This one is like your personal project assistant.&lt;/p&gt;
-&lt;p&gt;Why you use it: Before you do anything else, you&#39;ll want to know what&#39;s going on. Git status tells you which files you&#39;ve changed, which ones are new, and whether anything is ready to be saved. It&#39;s your quick check-in to see the current state of your working directory compared to your last saved version.
-How you use it: Just type git status in your terminal when you&#39;re in your project folder. It&#39;ll give you a clear rundown.&lt;/p&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;git add . (or git add &lt;code&gt;filename&lt;/code&gt;)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;This is where you tell Git, &amp;quot;Hey, I want to save these changes!&amp;quot;&lt;/p&gt;
-&lt;p&gt;Why you use it: When you make changes to your files, Git doesn&#39;t automatically track them for your next save. You need to explicitly tell Git which changes you want to include in your next &amp;quot;snapshot&amp;quot; (called a commit). Using git add . is a common shortcut to add all modified and new files in your current directory and its subdirectories to the &amp;quot;staging area.&amp;quot; If you only want to add a specific file, you&#39;d use git add &lt;filename&gt;.
-How you use it: After you&#39;ve made some changes, run git add . to stage everything, or git add my-new-feature.js if you&#39;re just adding one file. You&#39;ll often run git status right after this to confirm what you&#39;ve staged.&lt;/filename&gt;&lt;/p&gt;
-&lt;ol start=&quot;3&quot;&gt;
-&lt;li&gt;git commit -m &amp;quot;Your descriptive message here&amp;quot;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;This is your actual &amp;quot;save&amp;quot; button.&lt;/p&gt;
-&lt;p&gt;Why you use it: A commit is a snapshot of your project at a specific point in time. It&#39;s like taking a picture of your entire project&#39;s state. The -m flag lets you add a short, descriptive message about what changes you made in that commit. Good commit messages are essential – they help you (and others) understand the history of your project.
-How you use it: Once you&#39;ve staged your changes with git add, you&#39;ll type something like git commit -m &amp;quot;Added user login functionality and fixed button styling.&amp;quot; Make sure your message is clear and concise!&lt;/p&gt;
-&lt;ol start=&quot;4&quot;&gt;
-&lt;li&gt;git push origin main&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Time to share your work with the world (or your team)!&lt;/p&gt;
-&lt;p&gt;Why you use it: After you&#39;ve committed your changes locally, they&#39;re only on your computer. To share them with others or to back them up on a remote server (like GitHub, GitLab, or Bitbucket), you use git push. origin typically refers to the default remote repository where your project lives online, and main is the name of the branch you&#39;re pushing to (it used to be called master, but main is the new standard).
-How you use it: After you&#39;ve committed, just run git push origin main. If you&#39;re working on a different branch, you&#39;d replace main with your branch name.&lt;/p&gt;
-&lt;p&gt;A Few Extra Tips!&lt;/p&gt;
-&lt;p&gt;Branches are your friends: While we focused on main branch, Git is fantastic because you can create &amp;quot;branches&amp;quot; for new features or bug fixes. This lets you work on something new without messing up the main, stable version of your project. Once your work is ready, you can merge it back into the main branch.
-Don&#39;t be afraid to experiment: Git is designed to be undo-friendly. If you make a mistake, there&#39;s usually a way to fix it. That&#39;s why it&#39;s so great!
-Practice makes perfect: The more you use these commands, the more natural they&#39;ll feel. Try creating a small test project and just playing around with making changes, adding, committing, and pushing.&lt;/p&gt;
-&lt;p&gt;I hope this helps you feel more comfortable jumping into the world of Git! It&#39;s an incredibly valuable tool for anyone working with code. Happy coding!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Welcome to the Blog</title>
-    <link href="https://blog.beaubremer.com/posts/my-first-post/"/>
-    <updated>2025-06-11T00:00:00Z</updated>
-    <id>https://blog.beaubremer.com/posts/my-first-post/</id>
-    <content xml:lang="en" type="html">&lt;h2&gt;It&#39;s Alive!&lt;/h2&gt;
-&lt;p&gt;Welcome! This is a sample post to make sure everything is working correctly.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Dive into QLab</title>
-    <link href="https://blog.beaubremer.com/posts/dive_Qlab/"/>
-    <updated>2025-06-11T00:00:00Z</updated>
-    <id>https://blog.beaubremer.com/posts/dive_Qlab/</id>
-    <content xml:lang="en" type="html">&lt;h2&gt;&lt;/h2&gt;
-&lt;p&gt;Hey everyone! Ever wondered how those amazing live shows, plays, or even presentations manage to flawlessly switch between music, video, and lights? A lot of times, the magic behind the scenes is thanks to a fantastic piece of software called QLab.&lt;/p&gt;
-&lt;p&gt;QLab is a powerful tool for show control, used by professionals and hobbyists alike to create incredibly precise and complex cue lists. But don&#39;t let &amp;quot;powerful&amp;quot; scare you off – it&#39;s also incredibly intuitive once you get the hang of it, and it can really elevate your projects.&lt;/p&gt;
-&lt;p&gt;Today, we&#39;re going to take a super quick look at QLab and then dive into one of its most common uses: adding music cues. Get ready to make your audio playback smooth as silk!
-Getting Started with QLab&lt;/p&gt;
-&lt;p&gt;First things first, if you don&#39;t have QLab, you can download it for free from the Figure 53 website. The free version, called QLab Free, offers a ton of features, especially for audio playback, which is perfect for getting started.&lt;/p&gt;
-&lt;p&gt;Once you open QLab, you&#39;ll see a clean workspace. This is where you&#39;ll build your &amp;quot;cue list,&amp;quot; which is essentially a chronological list of everything you want to happen during your show.
-Quick Tutorial: Adding Music Cues in QLab&lt;/p&gt;
-&lt;p&gt;Let&#39;s get straight to it and add some music!&lt;/p&gt;
-&lt;p&gt;Open Your Workspace: When you open QLab, you&#39;ll usually be presented with a new, blank workspace. This is your canvas.&lt;/p&gt;
-&lt;p&gt;Drag and Drop Your Audio: The easiest way to get music into QLab is to simply drag an audio file (like an MP3, WAV, or AIFF) directly from your computer&#39;s folders into the QLab window.
-Pro Tip: QLab prefers uncompressed audio files (like WAV or AIFF) for the best quality and performance, but MP3s work just fine for many applications, especially for getting started.&lt;/p&gt;
-&lt;p&gt;Meet Your First Cue: Once you drag in an audio file, QLab automatically creates an &amp;quot;Audio Cue&amp;quot; for it. You&#39;ll see it appear in your cue list. Each cue has a &amp;quot;Q Number&amp;quot; (its position in the list) and a &amp;quot;Q Name&amp;quot; (usually the file name by default).&lt;/p&gt;
-&lt;p&gt;The Inspector – Your Control Panel: Below your cue list, you&#39;ll see the &amp;quot;Inspector.&amp;quot; This is where all the magic happens! When you select a cue, the Inspector shows you all the properties and settings for that specific cue.
-For an audio cue, you&#39;ll see tabs like &amp;quot;Levels&amp;quot; (for volume), &amp;quot;Time &amp;amp; Loops&amp;quot; (for start/end times and looping), and &amp;quot;Audio&amp;quot; (for routing to different outputs).&lt;/p&gt;
-&lt;p&gt;Setting Playback:
-Volume: Go to the &amp;quot;Levels&amp;quot; tab in the Inspector. You can adjust the overall volume of your music cue here. You&#39;ll see a fader you can drag up and down.
-Start and End Times: In the &amp;quot;Time &amp;amp; Loops&amp;quot; tab, you can set exactly when your audio starts and ends within the file. This is super handy if you only want to play a specific section of a song. Just drag the start and end markers on the waveform, or type in specific times.&lt;/p&gt;
-&lt;p&gt;Playing Your Cue:
-&amp;quot;Go&amp;quot; Button: The big &amp;quot;Go&amp;quot; button at the bottom of the QLab window is your best friend. Click it (or press the Spacebar, which is the default hotkey) to trigger the selected cue.
-Stop Button: Need to stop a cue? Click the &amp;quot;Stop&amp;quot; button next to &amp;quot;Go.&amp;quot;&lt;/p&gt;
-&lt;p&gt;What&#39;s Next?&lt;/p&gt;
-&lt;p&gt;This is just the tip of the iceberg with QLab, but understanding how to add and control basic audio cues is a huge first step. From here, you can explore:&lt;/p&gt;
-&lt;p&gt;Fades: Make your music fade in and out smoothly.
-Cue Triggers: How to automatically trigger cues, or link them to other cues.
-Hotkeys: Assigning keyboard shortcuts for quick playback.
-Groups: Organizing multiple cues together.&lt;/p&gt;
-&lt;p&gt;QLab might seem a little intimidating at first glance, but once you start playing around with it, you&#39;ll discover how powerful and fun it is. It truly opens up a world of possibilities for controlling your live events with precision and creativity.&lt;/p&gt;
-&lt;p&gt;Happy cueing!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Essential Git: Revert part 2</title>
     <link href="https://blog.beaubremer.com/posts/Essential_Git%20part_2/"/>
-    <updated>2025-06-11T00:00:00Z</updated>
+    <updated>2025-06-12T00:00:00Z</updated>
     <id>https://blog.beaubremer.com/posts/Essential_Git%20part_2/</id>
     <content xml:lang="en" type="html">&lt;h1&gt;&lt;/h1&gt;
 &lt;p&gt;Working with Git is fantastic for managing your code, but sometimes, you push changes you later realize aren&#39;t quite right. Maybe a feature introduced a bug, or a configuration change is causing problems. When this happens, git revert comes to the rescue!&lt;/p&gt;
@@ -183,6 +99,147 @@ Reset locally:&lt;/p&gt;
 &lt;p&gt;Bash command&lt;/p&gt;
 &lt;p&gt;Git push --force&lt;/p&gt;
 &lt;p&gt;Git revert is a powerful and safe way to manage your project&#39;s history. Understanding how to use it, especially for handling conflicts, will save you a lot of headaches in your development journey!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Essential Git Part 1</title>
+    <link href="https://blog.beaubremer.com/posts/Essential_Git%20part_1/"/>
+    <updated>2025-06-12T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Essential_Git%20part_1/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Your Essential Git Toolkit: A Friendly Guide&lt;/p&gt;
+&lt;p&gt;Git can seem a bit intimidating at first, but it&#39;s just a system to help you keep track of changes in your code (or any files, for that matter) and collaborate smoothly. Think of it as a super-powered save button with a memory of every single change you&#39;ve ever made.&lt;/p&gt;
+&lt;p&gt;Let&#39;s dive into the commands you&#39;ll use most often:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;git status&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This one is like your personal project assistant.&lt;/p&gt;
+&lt;p&gt;Why you use it: Before you do anything else, you&#39;ll want to know what&#39;s going on. Git status tells you which files you&#39;ve changed, which ones are new, and whether anything is ready to be saved. It&#39;s your quick check-in to see the current state of your working directory compared to your last saved version.
+How you use it: Just type git status in your terminal when you&#39;re in your project folder. It&#39;ll give you a clear rundown.&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;git add . (or git add &lt;code&gt;filename&lt;/code&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This is where you tell Git, &amp;quot;Hey, I want to save these changes!&amp;quot;&lt;/p&gt;
+&lt;p&gt;Why you use it: When you make changes to your files, Git doesn&#39;t automatically track them for your next save. You need to explicitly tell Git which changes you want to include in your next &amp;quot;snapshot&amp;quot; (called a commit). Using git add . is a common shortcut to add all modified and new files in your current directory and its subdirectories to the &amp;quot;staging area.&amp;quot; If you only want to add a specific file, you&#39;d use git add &lt;filename&gt;.
+How you use it: After you&#39;ve made some changes, run git add . to stage everything, or git add my-new-feature.js if you&#39;re just adding one file. You&#39;ll often run git status right after this to confirm what you&#39;ve staged.&lt;/filename&gt;&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;git commit -m &amp;quot;Your descriptive message here&amp;quot;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This is your actual &amp;quot;save&amp;quot; button.&lt;/p&gt;
+&lt;p&gt;Why you use it: A commit is a snapshot of your project at a specific point in time. It&#39;s like taking a picture of your entire project&#39;s state. The -m flag lets you add a short, descriptive message about what changes you made in that commit. Good commit messages are essential – they help you (and others) understand the history of your project.
+How you use it: Once you&#39;ve staged your changes with git add, you&#39;ll type something like git commit -m &amp;quot;Added user login functionality and fixed button styling.&amp;quot; Make sure your message is clear and concise!&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;git push origin main&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Time to share your work with the world (or your team)!&lt;/p&gt;
+&lt;p&gt;Why you use it: After you&#39;ve committed your changes locally, they&#39;re only on your computer. To share them with others or to back them up on a remote server (like GitHub, GitLab, or Bitbucket), you use git push. origin typically refers to the default remote repository where your project lives online, and main is the name of the branch you&#39;re pushing to (it used to be called master, but main is the new standard).
+How you use it: After you&#39;ve committed, just run git push origin main. If you&#39;re working on a different branch, you&#39;d replace main with your branch name.&lt;/p&gt;
+&lt;p&gt;A Few Extra Tips!&lt;/p&gt;
+&lt;p&gt;Branches are your friends: While we focused on main branch, Git is fantastic because you can create &amp;quot;branches&amp;quot; for new features or bug fixes. This lets you work on something new without messing up the main, stable version of your project. Once your work is ready, you can merge it back into the main branch.
+Don&#39;t be afraid to experiment: Git is designed to be undo-friendly. If you make a mistake, there&#39;s usually a way to fix it. That&#39;s why it&#39;s so great!
+Practice makes perfect: The more you use these commands, the more natural they&#39;ll feel. Try creating a small test project and just playing around with making changes, adding, committing, and pushing.&lt;/p&gt;
+&lt;p&gt;I hope this helps you feel more comfortable jumping into the world of Git! It&#39;s an incredibly valuable tool for anyone working with code. Happy coding!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Why I Learned to Stop Worrying and Love Git Branches</title>
+    <link href="https://blog.beaubremer.com/posts/2025-06-12-a-guide-to-git-branches/"/>
+    <updated>2025-06-12T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/2025-06-12-a-guide-to-git-branches/</id>
+    <content xml:lang="en" type="html">&lt;h2&gt;Have you ever been deep in concentration, adding a new feature to your website, and you suddenly realize... you&#39;ve broken everything? The page won&#39;t load, styles are a mess, and panic sets in. I&#39;ve certainly been there. For a long time, I did all my work directly on my main branch—the one that my live site was built from. Every change was a high-stakes gamble.&lt;/h2&gt;
+&lt;p&gt;Then, I embraced a professional workflow that completely changed the game: &lt;strong&gt;Git branching&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Think of your &lt;code&gt;main&lt;/code&gt; branch as the &amp;quot;golden copy&amp;quot; of your project. It&#39;s the version that is live, working, and stable. A branch is like making a safe, parallel copy of your project where you can experiment freely. If your new idea works, you merge it into the main copy. If it&#39;s a disaster, you simply delete the branch, and the golden copy remains untouched.&lt;/p&gt;
+&lt;p&gt;It brings peace of mind to the development process, and here’s why you should be using it.&lt;/p&gt;
+&lt;h3&gt;Why Bother with Branches?&lt;/h3&gt;
+&lt;p&gt;It might seem like a few extra steps, but the benefits are huge:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Safety:&lt;/strong&gt; Your &lt;code&gt;main&lt;/code&gt; branch is always protected. You can be confident that it&#39;s in a deployable, working state at all times. No more &amp;quot;I broke the live site!&amp;quot; panic.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Freedom to Experiment:&lt;/strong&gt; Want to try a completely new layout or a wild idea? Create a branch! You can make a mess, try things out, and break whatever you want. If it doesn&#39;t work out, there&#39;s no harm done. Just delete the branch.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Organization:&lt;/strong&gt; You can create a specific branch for every new feature or bug fix. This keeps your work isolated and easy to track. For example, &lt;code&gt;feature/new-contact-form&lt;/code&gt; or &lt;code&gt;fix/mobile-menu-bug&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Collaboration &amp;amp; Review:&lt;/strong&gt; If you work on a team, branches are essential. But even for solo developers, they allow you to use Pull Requests on GitHub to review your own work before merging it, which is a great way to catch mistakes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;My Simple 5-Step Branching Workflow&lt;/h3&gt;
+&lt;p&gt;Recently, I wanted to improve the navigation on my blog. On my homepage, I wanted the header link to point back to my main portfolio, but on individual posts, I wanted it to point back to the blog&#39;s homepage. This was a perfect use case for a feature branch.&lt;/p&gt;
+&lt;p&gt;Here’s the exact workflow I followed:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1: Start Clean&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Before starting anything new, I made sure my local project was in sync with the live version on GitHub.&lt;/p&gt;
+&lt;p&gt;bash&lt;/p&gt;
+&lt;h1&gt;Switch to the main branch&lt;/h1&gt;
+&lt;p&gt;git checkout main&lt;/p&gt;
+&lt;h1&gt;Pull the latest changes from GitHub&lt;/h1&gt;
+&lt;p&gt;git pull origin main&lt;/p&gt;
+&lt;p&gt;Step 2: Create the New Branch&lt;/p&gt;
+&lt;p&gt;I created a new branch from main and immediately switched to it. I gave it a descriptive name.
+Bash&lt;/p&gt;
+&lt;h1&gt;The -b flag creates a new branch and checks it out in one step&lt;/h1&gt;
+&lt;p&gt;git checkout -b feature/contextual-header-link&lt;/p&gt;
+&lt;p&gt;Step 3: Do the Work&lt;/p&gt;
+&lt;p&gt;On my new branch, I safely edited my layout file (_includes/layouts/base.njk), adding the logic to change the link based on the page URL. I made a few commits along the way to save my progress.
+Bash&lt;/p&gt;
+&lt;h1&gt;After making some edits...&lt;/h1&gt;
+&lt;p&gt;git add .
+git commit -m &amp;quot;feat: Make header link contextual&amp;quot;&lt;/p&gt;
+&lt;p&gt;Step 4: Propose the Changes (The Pull Request)&lt;/p&gt;
+&lt;p&gt;Once I was happy with how it worked locally, I pushed my new branch to GitHub.
+Bash&lt;/p&gt;
+&lt;p&gt;git push -u origin feature/contextual-header-link&lt;/p&gt;
+&lt;p&gt;Then, on the GitHub website, I opened a Pull Request (PR). A PR is a formal way of saying, &amp;quot;Hey main branch, I have these new changes on my feature/contextual-header-link branch. Please review them and pull them in.&amp;quot;&lt;/p&gt;
+&lt;p&gt;Step 5: Merge and Clean Up&lt;/p&gt;
+&lt;p&gt;On the Pull Request page, I could see all my changes one last time. Everything looked good, so I clicked the &amp;quot;Merge pull request&amp;quot; button. This took my work and safely merged it into the main branch, which automatically triggered a new deployment on Netlify.&lt;/p&gt;
+&lt;p&gt;After merging, I deleted the feature branch to keep my repository tidy.&lt;/p&gt;
+&lt;p&gt;This workflow might seem like a lot at first, but it quickly becomes second nature. It brings a level of safety and organization to a project that is absolutely essential for professional development. Give it a try on your next feature!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Welcome to the Blog</title>
+    <link href="https://blog.beaubremer.com/posts/my-first-post/"/>
+    <updated>2025-06-11T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/my-first-post/</id>
+    <content xml:lang="en" type="html">&lt;h2&gt;It&#39;s Alive!&lt;/h2&gt;
+&lt;p&gt;Welcome! This is a sample post to make sure everything is working correctly.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Dive into QLab</title>
+    <link href="https://blog.beaubremer.com/posts/dive_Qlab/"/>
+    <updated>2025-06-11T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/dive_Qlab/</id>
+    <content xml:lang="en" type="html">&lt;h2&gt;&lt;/h2&gt;
+&lt;p&gt;Hey everyone! Ever wondered how those amazing live shows, plays, or even presentations manage to flawlessly switch between music, video, and lights? A lot of times, the magic behind the scenes is thanks to a fantastic piece of software called QLab.&lt;/p&gt;
+&lt;p&gt;QLab is a powerful tool for show control, used by professionals and hobbyists alike to create incredibly precise and complex cue lists. But don&#39;t let &amp;quot;powerful&amp;quot; scare you off – it&#39;s also incredibly intuitive once you get the hang of it, and it can really elevate your projects.&lt;/p&gt;
+&lt;p&gt;Today, we&#39;re going to take a super quick look at QLab and then dive into one of its most common uses: adding music cues. Get ready to make your audio playback smooth as silk!
+Getting Started with QLab&lt;/p&gt;
+&lt;p&gt;First things first, if you don&#39;t have QLab, you can download it for free from the Figure 53 website. The free version, called QLab Free, offers a ton of features, especially for audio playback, which is perfect for getting started.&lt;/p&gt;
+&lt;p&gt;Once you open QLab, you&#39;ll see a clean workspace. This is where you&#39;ll build your &amp;quot;cue list,&amp;quot; which is essentially a chronological list of everything you want to happen during your show.
+Quick Tutorial: Adding Music Cues in QLab&lt;/p&gt;
+&lt;p&gt;Let&#39;s get straight to it and add some music!&lt;/p&gt;
+&lt;p&gt;Open Your Workspace: When you open QLab, you&#39;ll usually be presented with a new, blank workspace. This is your canvas.&lt;/p&gt;
+&lt;p&gt;Drag and Drop Your Audio: The easiest way to get music into QLab is to simply drag an audio file (like an MP3, WAV, or AIFF) directly from your computer&#39;s folders into the QLab window.
+Pro Tip: QLab prefers uncompressed audio files (like WAV or AIFF) for the best quality and performance, but MP3s work just fine for many applications, especially for getting started.&lt;/p&gt;
+&lt;p&gt;Meet Your First Cue: Once you drag in an audio file, QLab automatically creates an &amp;quot;Audio Cue&amp;quot; for it. You&#39;ll see it appear in your cue list. Each cue has a &amp;quot;Q Number&amp;quot; (its position in the list) and a &amp;quot;Q Name&amp;quot; (usually the file name by default).&lt;/p&gt;
+&lt;p&gt;The Inspector – Your Control Panel: Below your cue list, you&#39;ll see the &amp;quot;Inspector.&amp;quot; This is where all the magic happens! When you select a cue, the Inspector shows you all the properties and settings for that specific cue.
+For an audio cue, you&#39;ll see tabs like &amp;quot;Levels&amp;quot; (for volume), &amp;quot;Time &amp;amp; Loops&amp;quot; (for start/end times and looping), and &amp;quot;Audio&amp;quot; (for routing to different outputs).&lt;/p&gt;
+&lt;p&gt;Setting Playback:
+Volume: Go to the &amp;quot;Levels&amp;quot; tab in the Inspector. You can adjust the overall volume of your music cue here. You&#39;ll see a fader you can drag up and down.
+Start and End Times: In the &amp;quot;Time &amp;amp; Loops&amp;quot; tab, you can set exactly when your audio starts and ends within the file. This is super handy if you only want to play a specific section of a song. Just drag the start and end markers on the waveform, or type in specific times.&lt;/p&gt;
+&lt;p&gt;Playing Your Cue:
+&amp;quot;Go&amp;quot; Button: The big &amp;quot;Go&amp;quot; button at the bottom of the QLab window is your best friend. Click it (or press the Spacebar, which is the default hotkey) to trigger the selected cue.
+Stop Button: Need to stop a cue? Click the &amp;quot;Stop&amp;quot; button next to &amp;quot;Go.&amp;quot;&lt;/p&gt;
+&lt;p&gt;What&#39;s Next?&lt;/p&gt;
+&lt;p&gt;This is just the tip of the iceberg with QLab, but understanding how to add and control basic audio cues is a huge first step. From here, you can explore:&lt;/p&gt;
+&lt;p&gt;Fades: Make your music fade in and out smoothly.
+Cue Triggers: How to automatically trigger cues, or link them to other cues.
+Hotkeys: Assigning keyboard shortcuts for quick playback.
+Groups: Organizing multiple cues together.&lt;/p&gt;
+&lt;p&gt;QLab might seem a little intimidating at first glance, but once you start playing around with it, you&#39;ll discover how powerful and fun it is. It truly opens up a world of possibilities for controlling your live events with precision and creativity.&lt;/p&gt;
+&lt;p&gt;Happy cueing!&lt;/p&gt;
 </content>
   </entry>
   <entry>
