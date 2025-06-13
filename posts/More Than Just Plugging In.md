@@ -5,7 +5,7 @@ date: 2025-06-13
 layout: "layout.njk"
 ---
 
-# More Than Just Plugging In: What a Live Production Team Really Does Before the Doors Open
+## More Than Just Plugging In: What a Live Production Team Really Does Before the Doors Open
 
 When you attend a fantastic gala or a smooth corporate event, everything just seems to flow. The lighting perfectly sets the mood, the sound is crystal clear whether it's a keynote speaker or a band, and the visuals on screen are sharp and engaging. It all looks effortless, almost like magic. But here's a little secret: that "magic" isn't accidental. It's the meticulous result of a dedicated live production team working tirelessly behind the scenes, long before the first guest even steps through the door.
 
@@ -13,7 +13,7 @@ Most people only see the polished final product. They don't see the weeks, somet
 
 ---
 
-# The Blueprint: Pre-Production Planning
+### The Blueprint: Pre-Production Planning
 
 Before a single piece of equipment is even loaded onto a truck, the groundwork is laid. This is the strategic phase where visions turn into detailed plans.
 
@@ -25,7 +25,7 @@ Before a single piece of equipment is even loaded onto a truck, the groundwork i
 
 ---
 
-# The Build: Load-in & Setup
+### The Build: Load-in & Setup
 
 Once the planning is locked, it's time for the physical transformation of the space.
 
@@ -36,7 +36,7 @@ Once the planning is locked, it's time for the physical transformation of the sp
 
 ---
 
-# The Polish: Programming & Testing
+### The Polish: Programming & Testing
 
 This is where the artistry and the technical precision truly merge, often for hours on end, refining every detail before the doors open.
 
@@ -57,7 +57,7 @@ This is where the artistry and the technical precision truly merge, often for ho
 
 ---
 
-# Ready for Showtime!
+### Ready for Showtime!
 
 All this intricate work – the detailed planning, the physical build, and the meticulous polishing – often spanning days or even weeks, leads up to that singular moment: when the doors open and the first guests arrive. The goal of a live production team is simple yet profound: to transform a client's vision into a reality and create an unforgettable, seamless experience for every single attendee.
 
