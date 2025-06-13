@@ -1331,6 +1331,10 @@ video {
   position: static;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;

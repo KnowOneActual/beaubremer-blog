@@ -5,8 +5,6 @@ date: 2025-06-12
 layout: "layout.njk"
 ---
 
-#
-
 Your Essential Git Toolkit: A Friendly Guide
 
 Git can seem a bit intimidating at first, but it's just a system to help you keep track of changes in your code (or any files, for that matter) and collaborate smoothly. Think of it as a super-powered save button with a memory of every single change you've ever made.
