@@ -39,10 +39,10 @@ Before starting anything new, I made sure my local project was in sync with the 
 
 bash
 
-# Switch to the main branch
+#Switch to the main branch
 git checkout main
 
-# Pull the latest changes from GitHub
+#Pull the latest changes from GitHub
 git pull origin main
 
 
@@ -51,7 +51,7 @@ Step 2: Create the New Branch
 I created a new branch from main and immediately switched to it. I gave it a descriptive name.
 Bash
 
-# The -b flag creates a new branch and checks it out in one step
+#The -b flag creates a new branch and checks it out in one step
 git checkout -b feature/contextual-header-link
 
 Step 3: Do the Work
@@ -59,8 +59,10 @@ Step 3: Do the Work
 On my new branch, I safely edited my layout file (_includes/layouts/base.njk), adding the logic to change the link based on the page URL. I made a few commits along the way to save my progress.
 Bash
 
-# After making some edits...
+#After making some edits...
+
 git add .
+
 git commit -m "feat: Make header link contextual"
 
 Step 4: Propose the Changes (The Pull Request)
