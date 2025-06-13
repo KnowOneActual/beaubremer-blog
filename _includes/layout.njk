@@ -22,8 +22,14 @@
         <a href="/" class="text-2xl font-bold text-white hover:text-fuchsia-400 transition-colors">Beau Bremer | Blog</a>
       </div>
       <nav>
-        <a href="https://beaubremer.com" class="text-gray-300 hover:text-white transition-colors">← Back to Main Site</a>
-      </nav>
+  {% if page.url == "/" %}
+    {# If the current page is the homepage, link to the main portfolio #}
+    <a href="https://beaubremer.com" class="text-gray-300 hover:text-white transition-colors">← Back to BeauBremer.com</a>
+  {% else %}
+    {# On any other page (like a blog post), link back to the blog's homepage #}
+    <a href="/" class="text-gray-300 hover:text-white transition-colors">← Back to Blog Home</a>
+  {% endif %}
+</nav>
     </div>
   </header>
 

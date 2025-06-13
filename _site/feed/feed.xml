@@ -101,8 +101,7 @@ Groups: Organizing multiple cues together.&lt;/p&gt;
     <id>https://blog.beaubremer.com/posts/Essential_Git%20part_2/</id>
     <content xml:lang="en" type="html">&lt;h1&gt;&lt;/h1&gt;
 &lt;p&gt;Working with Git is fantastic for managing your code, but sometimes, you push changes you later realize aren&#39;t quite right. Maybe a feature introduced a bug, or a configuration change is causing problems. When this happens, git revert comes to the rescue!&lt;/p&gt;
-&lt;p&gt;It&#39;s a super important tool, especially when you&#39;ve already shared your work (like pushing to a remote repository or deploying to a service like Vercel).
-What is git revert?&lt;/p&gt;
+&lt;p&gt;It&#39;s a super important tool, especially when you&#39;ve already shared your work (like pushing to a remote repository or deploying to a service like Vercel). What is git revert?&lt;/p&gt;
 &lt;p&gt;Simply put, git revert creates new commits that undo the changes from previous commits. It&#39;s like writing an &amp;quot;undo&amp;quot; commit.&lt;/p&gt;
 &lt;p&gt;The key difference from other Git commands like git reset is that git revert does not rewrite your project&#39;s history. Instead, it adds new history that cancels out the old. This makes it a much safer option when:&lt;/p&gt;
 &lt;p&gt;You&#39;ve already pushed your commits to a shared remote repository.
@@ -114,19 +113,17 @@ You need to maintain a clear, linear history of changes.&lt;/p&gt;
 You want to undo specific commits in your history: You can pick and choose which commits to undo, even if they&#39;re not the very last ones.
 You need to collaborate: Since it doesn&#39;t rewrite history, git revert is polite to your teammates&#39; repositories.&lt;/p&gt;
 &lt;p&gt;Step-by-Step Tutorial: Reverting a Commit&lt;/p&gt;
-&lt;p&gt;Let&#39;s walk through how to use git revert to undo a specific commit.
-Step 1: Identify the Commit to Revert&lt;/p&gt;
+&lt;p&gt;Let&#39;s walk through how to use git revert to undo a specific commit. Step 1: Identify the Commit to Revert&lt;/p&gt;
 &lt;p&gt;First, you need to find the commit hash (the unique ID) of the commit you want to undo. This should be the commit that introduced the changes you want to reverse.&lt;/p&gt;
 &lt;p&gt;Open your terminal or Git Bash in your project&#39;s root directory and run:&lt;/p&gt;
-&lt;p&gt;Bash command:
-git log&lt;/p&gt;
+&lt;p&gt;Bash command&lt;/p&gt;
+&lt;p&gt;git log&lt;/p&gt;
 &lt;p&gt;This command shows you your project&#39;s commit history, with the most recent commits at the top. Scroll down until you find the commit you want to undo. The commit hash is the long string of characters next to commit (e.g., 71a224ee41eec4599329bb65c893de855d441f62).&lt;/p&gt;
-&lt;p&gt;Once you&#39;ve found it, copy its full hash.
-Step 2: Perform the Revert&lt;/p&gt;
+&lt;p&gt;Once you&#39;ve found it, copy its full hash. Step 2: Perform the Revert&lt;/p&gt;
 &lt;p&gt;Now, use the git revert command with the commit hash you copied.&lt;/p&gt;
-&lt;p&gt;Bash command:
-git revert &amp;lt;COMMIT_HASH_TO_REVERT&amp;gt;&lt;/p&gt;
-&lt;p&gt;Replace &amp;lt;COMMIT_HASH_TO_REVERT&amp;gt; with the actual hash.&lt;/p&gt;
+&lt;p&gt;Bash command&lt;/p&gt;
+&lt;p&gt;git revert&lt;/p&gt;
+&lt;p&gt;Replace with the actual hash.&lt;/p&gt;
 &lt;p&gt;What happens next?&lt;/p&gt;
 &lt;p&gt;Git will attempt to reverse the changes introduced by that commit.
 If the revert is straightforward (no conflicts), Git will automatically prepare a new commit for you.&lt;/p&gt;
@@ -137,49 +134,30 @@ You can add your own notes to explain why you&#39;re reverting.&lt;/p&gt;
 &lt;p&gt;To save and exit the commit message:&lt;/p&gt;
 &lt;p&gt;If it&#39;s Vim: Press the Esc key, then type :wq and press Enter.
 If it&#39;s Nano, press Ctrl+X, then Y to confirm saving, and then press Enter.&lt;/p&gt;
-&lt;p&gt;Once you save and exit, Git will create the new &amp;quot;revert&amp;quot; commit.
-Step 4: Push Your Reverted Changes&lt;/p&gt;
+&lt;p&gt;Once you save and exit, Git will create the new &amp;quot;revert&amp;quot; commit. Step 4: Push Your Reverted Changes&lt;/p&gt;
 &lt;p&gt;Finally, push your new revert commit to your remote repository (e.g., GitHub, GitLab, or Vercel).&lt;/p&gt;
-&lt;p&gt;Bash command:
-git push&lt;/p&gt;
-&lt;p&gt;This will update your remote branch, and if you&#39;re using Vercel, it will trigger a new deployment with the reverted code.
-Troubleshooting Common git revert Issues&lt;/p&gt;
-&lt;p&gt;Sometimes, git revert isn&#39;t a smooth ride. Here are the most common bumps you might hit and how to fix them:
-Issue 1: Merge Conflicts (CONFLICT (content): Merge conflict in &lt;file&gt;)&lt;/file&gt;&lt;/p&gt;
+&lt;p&gt;Bash command&lt;/p&gt;
+&lt;p&gt;git push&lt;/p&gt;
+&lt;p&gt;This will update your remote branch, and if you&#39;re using Vercel, it will trigger a new deployment with the reverted code. Troubleshooting Common git revert Issues&lt;/p&gt;
+&lt;p&gt;Sometimes, git revert isn&#39;t a smooth ride. Here are the most common bumps you might hit and how to fix them: Issue 1: Merge Conflicts (CONFLICT (content): Merge conflict in )&lt;/p&gt;
 &lt;p&gt;This is what we faced! It means Git found changes in the commit you&#39;re reverting that overlap with other changes made since that commit. Git doesn&#39;t know which version to keep, so it asks you to decide.&lt;/p&gt;
 &lt;p&gt;How to fix it:&lt;/p&gt;
 &lt;p&gt;Identify the Conflict: Git will tell you which files have conflicts (e.g., script.js). Open these files in your code editor.&lt;/p&gt;
 &lt;p&gt;Look for Conflict Markers: Inside the conflicted file, you&#39;ll see special markers like this:
 HTML&lt;/p&gt;
-&lt;h1&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
-// Code from your current branch (your latest work)&lt;/h1&gt;
+&lt;p&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD // Code from your current branch (your latest work)&lt;/p&gt;
 &lt;p&gt;// Code from the commit you are trying to revert (the older version)&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;lt;COMMIT_HASH_OF_REVERTED_CHANGES&amp;gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;Manually Resolve:&lt;/p&gt;
 &lt;p&gt;Delete the Git conflict markers (&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;, =======, &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;).
 Edit the code within that section. Since you&#39;re trying to undo, you&#39;ll typically want to delete the code that was introduced by the commit you&#39;re reverting (the part between ======= and &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;) and keep the HEAD version, or combine them as needed to achieve the desired state of the file without the problematic changes.
 Save the file.&lt;/p&gt;
 &lt;p&gt;Stage the Resolved File: After fixing the file and saving it, you must tell Git that you&#39;ve resolved the conflict:&lt;/p&gt;
-&lt;p&gt;Bash command:
-git add &amp;lt;FILE_NAME_WITH_CONFLICT&amp;gt;&lt;/p&gt;
-&lt;h1&gt;Example: git add script.js&lt;/h1&gt;
+&lt;p&gt;Bash command&lt;/p&gt;
+&lt;p&gt;git add
+Example: git add script.js&lt;/p&gt;
 &lt;p&gt;Complete the Revert Commit: Now that the conflict is staged, you can finalize the revert:&lt;/p&gt;
-&lt;p&gt;Bash command:
-git commit&lt;/p&gt;
+&lt;p&gt;Bash command&lt;/p&gt;
+&lt;p&gt;git commit&lt;/p&gt;
 &lt;p&gt;This will open the commit message editor. Save and exit as in Step 3 of the main tutorial.&lt;/p&gt;
 &lt;p&gt;Issue 2: &amp;quot;Nothing to commit&amp;quot; or &amp;quot;empty revert&amp;quot;&lt;/p&gt;
 &lt;p&gt;This message appears if the commit you&#39;re trying to revert doesn&#39;t actually introduce any new changes, or if those changes have already been undone by a subsequent commit. Git determines there&#39;s nothing to revert.&lt;/p&gt;
@@ -188,8 +166,8 @@ git commit&lt;/p&gt;
 If the changes truly vanished or were undone, you might not need to do anything.&lt;/p&gt;
 &lt;p&gt;Issue 3: Reverting a Range of Commits&lt;/p&gt;
 &lt;p&gt;If you want to undo several commits in a sequence, you can specify a range:&lt;/p&gt;
-&lt;p&gt;Bash command:
-git revert &amp;lt;FIRST_COMMIT_HASH_IN_RANGE&amp;gt;..&amp;lt;LAST_COMMIT_HASH_IN_RANGE&amp;gt;&lt;/p&gt;
+&lt;p&gt;Bash command&lt;/p&gt;
+&lt;p&gt;git revert ..&lt;/p&gt;
 &lt;p&gt;This will revert each commit one by one. You might be prompted for a commit message for each revert, or you might hit merge conflicts for each.
 You can add --no-edit to use the default message for each revert without opening the editor: git revert --no-edit &lt;FIRST&gt;..&lt;LAST&gt;
 Or --no-commit to stage all reverts as one single new commit, which is often cleaner: git revert --no-commit &lt;FIRST&gt;..&lt;LAST&gt; followed by a single git commit.&lt;/LAST&gt;&lt;/FIRST&gt;&lt;/LAST&gt;&lt;/FIRST&gt;&lt;/p&gt;
@@ -199,11 +177,11 @@ Or --no-commit to stage all reverts as one single new commit, which is often cle
 &lt;p&gt;How to do it (use with extreme caution):&lt;/p&gt;
 &lt;p&gt;Find the desired commit hash: Use git log to find the commit hash of the exact state you want your branch to be in.
 Reset locally:&lt;/p&gt;
-&lt;p&gt;Bash command:
-git reset --hard &amp;lt;YOUR_DESIRED_COMMIT_HASH&amp;gt;&lt;/p&gt;
+&lt;p&gt;Bash command&lt;/p&gt;
+&lt;p&gt;git reset --hard&lt;/p&gt;
 &lt;p&gt;Force Push:&lt;/p&gt;
-&lt;p&gt;Bash command:
-Git push --force&lt;/p&gt;
+&lt;p&gt;Bash command&lt;/p&gt;
+&lt;p&gt;Git push --force&lt;/p&gt;
 &lt;p&gt;Git revert is a powerful and safe way to manage your project&#39;s history. Understanding how to use it, especially for handling conflicts, will save you a lot of headaches in your development journey!&lt;/p&gt;
 </content>
   </entry>
