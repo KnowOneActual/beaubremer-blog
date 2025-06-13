@@ -1,6 +1,6 @@
 ---
 title: "Your Awesome Post Title"
-description: "A short, engaging summary of what this post is about."
+description: 'A short, engaging summary of what this post is about.'
 date: 2025-06-11
 layout: "layout.njk"
 ---
