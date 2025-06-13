@@ -5,7 +5,7 @@ date: 2025-06-11
 layout: "layout.njk"
 ---
 
-# Welcome! I'm New Here (And I Have No Idea What I'm Doing)
+## Welcome! I'm New Here (And I Have No Idea What I'm Doing)
 
 Well, I did it. I finally have a new online home. Welcome!
 
