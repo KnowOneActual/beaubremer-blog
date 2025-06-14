@@ -1,6 +1,6 @@
 # This is my security.txt file.
 # Please report any security vulnerabilities to the email below.
-Contact: mailto:support@beaubremer.com
+Contact: mailto:support&#64;beaubremer&#46;com
 Policy: https://blog.beaubremer.com/security-policy/
 
 
