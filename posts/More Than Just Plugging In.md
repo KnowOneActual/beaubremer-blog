@@ -3,11 +3,6 @@ title: "More Than Just Plugging In"
 description: "What a Live Production Team Really Does Before the Doors Open."
 date: 2025-06-13
 layout: "layout.njk"
-tags:
-  - posts
-  - general
-  - live-production
-
 ---
 
 ## More Than Just Plugging In: What a Live Production Team Really Does Before the Doors Open

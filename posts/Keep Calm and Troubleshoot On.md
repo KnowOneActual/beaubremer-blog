@@ -3,12 +3,6 @@ title: "Keep Calm and Troubleshoot On"
 description: 'A Guide to Not Panicking When the Servers Are on Fire'
 date: 2025-06-13
 layout: "layout.njk"
-tags:
-  - posts
-  - general
-  - my-thoughts
-  - troubleshooting
-
 ---
 
 ### Keep Calm and Troubleshoot On: A Guide to Not Panicking When the Servers Are on Fire

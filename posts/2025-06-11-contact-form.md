@@ -3,12 +3,6 @@ title: "The Case of the Persistent Contact Form: A Debugging Odyssey"
 description: "A developer's journey through debugging a contact form with Netlify Functions, Cloudflare Turnstile, and Content Security Policies."
 date: 2025-06-11
 layout: "layout.njk"
-tags:
-  - posts
-  - netlify
-  - debugging
-  - CSP
-
 ---
 
 # The Case of the Persistent Contact Form: A Debugging Odyssey
