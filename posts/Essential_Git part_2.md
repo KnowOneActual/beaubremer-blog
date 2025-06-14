@@ -5,8 +5,7 @@ date: 2025-06-12
 layout: "layout.njk"
 ---
 
-
-# Working with Git is fantastic for managing your code, but sometimes, you push changes you later realize aren't quite right. 
+# Working with Git is fantastic for managing your code, but sometimes, you push changes you later realize aren't quite right.
 
 Maybe a feature introduced a bug, or a configuration change is causing problems. When this happens, git revert comes to the rescue!
 
@@ -36,8 +35,6 @@ First, you need to find the commit hash (the unique ID) of the commit you want t
 
 Open your terminal or Git Bash in your project's root directory and run:
 
-Bash command
-
 'git log'
 
 This command shows you your project's commit history, with the most recent commits at the top. Scroll down until you find the commit you want to undo. The commit hash is the long string of characters next to commit (e.g., 71a224ee41eec4599329bb65c893de855d441f62).
@@ -45,8 +42,6 @@ This command shows you your project's commit history, with the most recent commi
 Once you've found it, copy its full hash. Step 2: Perform the Revert
 
 Now, use the git revert command with the commit hash you copied.
-
-Bash command
 
 'git revert'
 
@@ -73,8 +68,6 @@ Once you save and exit, Git will create the new "revert" commit. Step 4: Push Yo
 
 Finally, push your new revert commit to your remote repository (e.g., GitHub, GitLab, or Vercel).
 
-Bash command
-
 'git push'
 
 This will update your remote branch, and if you're using Vercel, it will trigger a new deployment with the reverted code. Troubleshooting Common git revert Issues
@@ -90,6 +83,7 @@ Identify the Conflict: Git will tell you which files have conflicts (e.g., scrip
 Look for Conflict Markers: Inside the conflicted file, you'll see special markers like this:
 HTML
 
+```html
 <<<<<<< HEAD // Code from your current branch (your latest work)
 
 // Code from the commit you are trying to revert (the older version)
@@ -143,7 +137,7 @@ Sometimes, you don't just want to undo specific commits, but instead completely 
 
 WARNING: git reset --hard rewrites history. If you've pushed these commits, using git reset --hard followed by git push --force will cause problems for collaborators who have the older history. Only use this if you are absolutely sure you are the sole contributor or can coordinate with your team.
 
- **How to do it (use with extreme caution): **
+**How to do it (use with extreme caution): **
 
 Find the desired commit hash: Use git log to find the commit hash of the exact state you want your branch to be in.
 Reset locally:
@@ -159,3 +153,4 @@ Bash command
 'Git push --force'
 
 Git revert is a powerful and safe way to manage your project's history. Understanding how to use it, especially for handling conflicts, will save you a lot of headaches in your development journey!
+```
