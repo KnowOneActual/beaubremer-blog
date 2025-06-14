@@ -3,6 +3,11 @@ title: "Are You Playing Chess, or Just Repeating Lines?"
 description: "Discover why those who claim to be 'playing chess, not checkers' might be missing the real brilliance of strategy."
 date: 2025-06-12
 layout: "layout.njk"
+tags:
+  - posts
+  - quotes
+  - general
+
 ---
 
 # Are You Playing Chess, or Just Repeating Lines? The Trap of the Tired Trope

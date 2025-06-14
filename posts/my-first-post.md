@@ -3,6 +3,10 @@ title: "Welcome to the Blog"
 description: "This is the first post on my new blog, built with Eleventy and Tailwind CSS."
 date: 2025-06-11
 layout: "layout.njk"
+tags:
+  - posts
+  - general
+  - my-thoughts
 ---
 
 ## Welcome! I'm New Here (And I Have No Idea What I'm Doing)
