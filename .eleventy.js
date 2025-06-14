@@ -4,6 +4,8 @@ module.exports = function(eleventyConfig) {
   // Add the RSS plugin
   eleventyConfig.addPlugin(pluginRss);
 
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
   // Your other passthrough copies
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy(".well-known");
