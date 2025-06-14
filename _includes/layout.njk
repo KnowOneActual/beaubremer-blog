@@ -36,6 +36,18 @@
   <main class="max-w-3xl mx-auto py-12 px-6 flex-grow w-full">
     <div class="prose prose-invert prose-lg max-w-none">
       {{ content | safe }}
+
+      {% if tags %}
+  <div class="mt-4 pt-4 border-t border-gray-700">
+    <span class="text-gray-400">Tagged in:</span>
+    {% for tag in tags %}
+      {% if tag != "posts" %} {# This line hides the generic "posts" tag #}
+        <a href="/tags/{{ tag | slugify }}/" class="inline-block bg-gray-800 text-fuchsia-300 rounded-full px-3 py-1 text-sm font-semibold ml-2 hover:bg-gray-700">#{{ tag }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+
     </div>
   </main>
 
