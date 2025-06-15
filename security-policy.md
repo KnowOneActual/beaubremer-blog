@@ -1,7 +1,7 @@
 ---
 title: "Security Policy"
 description: "Our policy for the responsible disclosure of security vulnerabilities."
-layout: "layout.njk"
+layout: "base.njk"
 permalink: /security-policy/index.html
 eleventyExcludeFromCollections: true
 ---

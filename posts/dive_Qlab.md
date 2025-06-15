@@ -1,8 +1,12 @@
 ---
 title: "Dive into QLab"
 description: "Your New Best Friend for Show Control!"
-date: 2025-06-11
-layout: "layout.njk"
+date: 2025-06-14
+layout: "post.njk"
+tags:
+  - posts
+  - live-production
+  - qlab
 ---
 
 ##
