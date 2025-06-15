@@ -1,7 +1,7 @@
 ---
 title: "More Than Just Plugging In"
 description: "What a Live Production Team Really Does Before the Doors Open."
-date: 2025-06-14
+date: 2025-06-13
 layout: "post.njk"
 tags:
   - posts

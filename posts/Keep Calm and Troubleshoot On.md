@@ -1,7 +1,7 @@
 ---
 title: "Keep Calm and Troubleshoot On"
 description: 'A Guide to Not Panicking When the Servers Are on Fire'
-date: 2025-06-14
+date: 2025-06-13
 layout: "post.njk"
 tags:
   - posts

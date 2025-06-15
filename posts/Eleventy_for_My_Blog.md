@@ -1,7 +1,7 @@
 ---
 title: "Why I Chose Eleventy for My Blog (And How I Secured It)"
 description: " Eleventy awesome framework for My Blog)"
-date: 2025-06-14
+date: 2025-06-11
 layout: "post.njk"
 tags:
   - posts
