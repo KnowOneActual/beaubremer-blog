@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Beau Bremer&#39;s Blog</title>
+  <title>Beau Bremer&#39;s | Blog</title>
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-06-13T00:00:00Z</updated>
+  <updated>2025-06-14T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
-    <email>support@beaubremer.com</email>
+    <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
   <entry>
     <title>The Unknown Art of Freestyle Mic Checking</title>
     <link href="https://blog.beaubremer.com/posts/the%20Unknown%20Art%20of%20Freestyle%20Mic%20Checking/"/>
-    <updated>2025-06-13T00:00:00Z</updated>
+    <updated>2025-06-14T00:00:00Z</updated>
     <id>https://blog.beaubremer.com/posts/the%20Unknown%20Art%20of%20Freestyle%20Mic%20Checking/</id>
     <content xml:lang="en" type="html">&lt;h2&gt;The Unknown Art of Freestyle Mic Checking&lt;/h2&gt;
 &lt;p&gt;You&#39;ve heard it a million times at events: &amp;quot;Check, one, two... check, one, two...&amp;quot; It&#39;s the universal signal that sound is being tested, a little sonic ritual before the show kicks off. But for those of us behind the mixer, that simple phrase is often just the opening act for an elaborate, unscripted performance known as the &amp;quot;freestyle mic check.&amp;quot; And let me tell you, it&#39;s an unknown art form.&lt;/p&gt;
@@ -40,9 +40,57 @@
 </content>
   </entry>
   <entry>
+    <title>Welcome to the Blog</title>
+    <link href="https://blog.beaubremer.com/posts/my-first-post/"/>
+    <updated>2025-06-14T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/my-first-post/</id>
+    <content xml:lang="en" type="html">&lt;h2&gt;Welcome! I&#39;m New Here (And I Have No Idea What I&#39;m Doing)&lt;/h2&gt;
+&lt;p&gt;Well, I did it. I finally have a new online home. Welcome!&lt;/p&gt;
+&lt;p&gt;Right now, this space is a bit like me on a Monday morning: a work in progress, slightly confused, but full of potential. I&#39;m busy behind the scenes, untangling the technical knots and figuring out how all this stuff works. (If you hear faint screaming, it&#39;s just me trying to center an image.)&lt;/p&gt;
+&lt;p&gt;I&#39;ll be adding all my previously posted articles here soon, they will show up eventually. More importantly, I&#39;ve got some new ideas I&#39;m excited to share with you once I&#39;m sure I won&#39;t accidentally delete the entire internet.&lt;/p&gt;
+&lt;p&gt;So, have a look around, don&#39;t mind the occasional digital pothole, and thanks for being here at the very beginning. Let&#39;s get this show on the road!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Dive into QLab</title>
+    <link href="https://blog.beaubremer.com/posts/dive_Qlab/"/>
+    <updated>2025-06-14T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/dive_Qlab/</id>
+    <content xml:lang="en" type="html">&lt;h2&gt;&lt;/h2&gt;
+&lt;p&gt;Hey everyone! Ever wondered how those amazing live shows, plays, or even presentations manage to flawlessly switch between music, video, and lights? A lot of times, the magic behind the scenes is thanks to a fantastic piece of software called QLab.&lt;/p&gt;
+&lt;p&gt;QLab is a powerful tool for show control, used by professionals and hobbyists alike to create incredibly precise and complex cue lists. But don&#39;t let &amp;quot;powerful&amp;quot; scare you off – it&#39;s also incredibly intuitive once you get the hang of it, and it can really elevate your projects.&lt;/p&gt;
+&lt;p&gt;Today, we&#39;re going to take a super quick look at QLab and then dive into one of its most common uses: adding music cues. Get ready to make your audio playback smooth as silk!
+Getting Started with QLab&lt;/p&gt;
+&lt;p&gt;First things first, if you don&#39;t have QLab, you can download it for free from the Figure 53 website. The free version, called QLab Free, offers a ton of features, especially for audio playback, which is perfect for getting started.&lt;/p&gt;
+&lt;p&gt;Once you open QLab, you&#39;ll see a clean workspace. This is where you&#39;ll build your &amp;quot;cue list,&amp;quot; which is essentially a chronological list of everything you want to happen during your show.
+Quick Tutorial: Adding Music Cues in QLab&lt;/p&gt;
+&lt;p&gt;Let&#39;s get straight to it and add some music!&lt;/p&gt;
+&lt;p&gt;Open Your Workspace: When you open QLab, you&#39;ll usually be presented with a new, blank workspace. This is your canvas.&lt;/p&gt;
+&lt;p&gt;Drag and Drop Your Audio: The easiest way to get music into QLab is to simply drag an audio file (like an MP3, WAV, or AIFF) directly from your computer&#39;s folders into the QLab window.
+Pro Tip: QLab prefers uncompressed audio files (like WAV or AIFF) for the best quality and performance, but MP3s work just fine for many applications, especially for getting started.&lt;/p&gt;
+&lt;p&gt;Meet Your First Cue: Once you drag in an audio file, QLab automatically creates an &amp;quot;Audio Cue&amp;quot; for it. You&#39;ll see it appear in your cue list. Each cue has a &amp;quot;Q Number&amp;quot; (its position in the list) and a &amp;quot;Q Name&amp;quot; (usually the file name by default).&lt;/p&gt;
+&lt;p&gt;The Inspector – Your Control Panel: Below your cue list, you&#39;ll see the &amp;quot;Inspector.&amp;quot; This is where all the magic happens! When you select a cue, the Inspector shows you all the properties and settings for that specific cue.
+For an audio cue, you&#39;ll see tabs like &amp;quot;Levels&amp;quot; (for volume), &amp;quot;Time &amp;amp; Loops&amp;quot; (for start/end times and looping), and &amp;quot;Audio&amp;quot; (for routing to different outputs).&lt;/p&gt;
+&lt;p&gt;Setting Playback:
+Volume: Go to the &amp;quot;Levels&amp;quot; tab in the Inspector. You can adjust the overall volume of your music cue here. You&#39;ll see a fader you can drag up and down.
+Start and End Times: In the &amp;quot;Time &amp;amp; Loops&amp;quot; tab, you can set exactly when your audio starts and ends within the file. This is super handy if you only want to play a specific section of a song. Just drag the start and end markers on the waveform, or type in specific times.&lt;/p&gt;
+&lt;p&gt;Playing Your Cue:
+&amp;quot;Go&amp;quot; Button: The big &amp;quot;Go&amp;quot; button at the bottom of the QLab window is your best friend. Click it (or press the Spacebar, which is the default hotkey) to trigger the selected cue.
+Stop Button: Need to stop a cue? Click the &amp;quot;Stop&amp;quot; button next to &amp;quot;Go.&amp;quot;&lt;/p&gt;
+&lt;p&gt;What&#39;s Next?&lt;/p&gt;
+&lt;p&gt;This is just the tip of the iceberg with QLab, but understanding how to add and control basic audio cues is a huge first step. From here, you can explore:&lt;/p&gt;
+&lt;p&gt;Fades: Make your music fade in and out smoothly.
+Cue Triggers: How to automatically trigger cues, or link them to other cues.
+Hotkeys: Assigning keyboard shortcuts for quick playback.
+Groups: Organizing multiple cues together.&lt;/p&gt;
+&lt;p&gt;QLab might seem a little intimidating at first glance, but once you start playing around with it, you&#39;ll discover how powerful and fun it is. It truly opens up a world of possibilities for controlling your live events with precision and creativity.&lt;/p&gt;
+&lt;p&gt;Happy cueing!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>More Than Just Plugging In</title>
     <link href="https://blog.beaubremer.com/posts/More%20Than%20Just%20Plugging%20In/"/>
-    <updated>2025-06-13T00:00:00Z</updated>
+    <updated>2025-06-14T00:00:00Z</updated>
     <id>https://blog.beaubremer.com/posts/More%20Than%20Just%20Plugging%20In/</id>
     <content xml:lang="en" type="html">&lt;h2&gt;More Than Just Plugging In: What a Live Production Team Really Does Before the Doors Open&lt;/h2&gt;
 &lt;p&gt;When you attend a fantastic gala or a smooth corporate event, everything just seems to flow. The lighting perfectly sets the mood, the sound is crystal clear whether it&#39;s a keynote speaker or a band, and the visuals on screen are sharp and engaging. It all looks effortless, almost like magic. But here&#39;s a little secret: that &amp;quot;magic&amp;quot; isn&#39;t accidental. It&#39;s the meticulous result of a dedicated live production team working tirelessly behind the scenes, long before the first guest even steps through the door.&lt;/p&gt;
@@ -100,7 +148,7 @@ This is perhaps the most underestimated phase, and yet, it&#39;s absolutely cruc
   <entry>
     <title>Keep Calm and Troubleshoot On</title>
     <link href="https://blog.beaubremer.com/posts/Keep%20Calm%20and%20Troubleshoot%20On/"/>
-    <updated>2025-06-13T00:00:00Z</updated>
+    <updated>2025-06-14T00:00:00Z</updated>
     <id>https://blog.beaubremer.com/posts/Keep%20Calm%20and%20Troubleshoot%20On/</id>
     <content xml:lang="en" type="html">&lt;h3&gt;Keep Calm and Troubleshoot On: A Guide to Not Panicking When the Servers Are on Fire&lt;/h3&gt;
 &lt;p&gt;It’s 3:17 A.M., and an alert just shattered your peaceful sleep. A critical system is down, and you can already feel the panic starting to bubble up. In these moments, it’s easy to think that the solution lies in typing faster or knowing more obscure commands. But what if the most powerful tool you have is simply a calm, focused mind?&lt;/p&gt;
@@ -137,73 +185,9 @@ This is perhaps the most underestimated phase, and yet, it&#39;s absolutely cruc
 </content>
   </entry>
   <entry>
-    <title>Are You Playing Chess, or Just Repeating Lines?</title>
-    <link href="https://blog.beaubremer.com/posts/Are%20You%20Playing%20Chess/"/>
-    <updated>2025-06-12T00:00:00Z</updated>
-    <id>https://blog.beaubremer.com/posts/Are%20You%20Playing%20Chess/</id>
-    <content xml:lang="en" type="html">&lt;h1&gt;Are You Playing Chess, or Just Repeating Lines? The Trap of the Tired Trope&lt;/h1&gt;
-&lt;p&gt;Ever been in a conversation and heard someone lean back, maybe with a knowing smile, and drop the line: &amp;quot;Oh, well, I&#39;m playing chess while you&#39;re playing checkers&amp;quot;? It&#39;s a phrase that&#39;s almost universally used to imply a higher level of strategic thinking, a way of signaling, &amp;quot;I&#39;m smarter than you,&amp;quot; or &amp;quot;I&#39;m better at this game.&amp;quot; It gets slapped onto business decisions, personal squabbles—you name it. For some, it can feel like a condescending jab, trying to put you in your place.&lt;/p&gt;
-&lt;p&gt;We&#39;ve all encountered this, right? Maybe it&#39;s a mid-level manager trying to impress in a PowerPoint presentation, or someone on social media arguing a point they barely understand. The sheer audacity of it can be grating, especially when they genuinely believe they&#39;re operating on some higher intellectual plane just by stringing together a sentence that hints at strategy.&lt;/p&gt;
-&lt;p&gt;But here&#39;s the kicker, and what&#39;s truly fascinating about this phenomenon: these &amp;quot;masterminds&amp;quot; often didn&#39;t even come up with the line themselves! They&#39;re just echoing something they heard elsewhere, thinking it makes them sound profound. It&#39;s like seeing yourself as Denzel Washington in Training Day saying, &amp;quot;This sh*t is chess, it ain&#39;t checkers!&amp;quot; Or perhaps envisioning yourself as Kobe Bryant schooling rookies with, &amp;quot;These young guys are playing checkers. I&#39;m out there playing chess&amp;quot;. Newsflash, you&#39;re probably not Denzel or Kobe.&lt;/p&gt;
-&lt;p&gt;This phrase has been around for ages. Samuel L. Jackson used it in a movie back in &#39;94. It&#39;s become so common among entrepreneurs and business gurus that someone even wrote a whole book called Chess Not Checkers: Elevate Your Leadership Game. When you hear it, it makes you wonder if that book came with a little plastic crown so they could declare themselves king of the office.&lt;/p&gt;
-&lt;p&gt;Interestingly, even checkers, often seen as the simpler game, has an incredible depth. The possible positions in checkers amount to 500 billion billion (5×1020). And when it comes to mastery, consider Marion Tinsley, widely regarded as the greatest checkers player ever. He lost only seven games in his entire career, spanning 45 years. He was a math professor who had an incredible memory and analytical skills, able to see many moves into the future. He even beat a computer program in 1992, and later analysis showed he had played the only possible winning strategy from 64 moves out. If anyone was &amp;quot;playing chess,&amp;quot; it was someone like him, mastering a game with astronomical possibilities.&lt;/p&gt;
-&lt;p&gt;The whole act of trotting out this tired, old phrase to declare how much smarter you are is, frankly, a bit of an &amp;quot;idiocy festival&amp;quot;. It&#39;s not just that claiming to be a strategic genius might be a stretch; it&#39;s that you&#39;re using a borrowed, unoriginal line to make that claim. You&#39;re trying to signal your unique, high-wattage brainpower by simply repeating a cliché. It&#39;s like trying to prove you&#39;re a fashion icon by wearing the same cheap suit everyone else bought off the rack.&lt;/p&gt;
-&lt;p&gt;If you were truly that smart, wouldn&#39;t your own way of showing it naturally emerge? Wouldn&#39;t your brilliant strategy simply speak for itself? There&#39;s no need to lean on a movie quote or a popular business book to prove your point. When you try so hard to look smart by parroting phrases, you often end up looking like, well, a parrot with a thesaurus.&lt;/p&gt;
-&lt;p&gt;Ultimately, true leadership and genuine strategic thinking come from original thought and demonstrated ability, not from recycled catchphrases. Let&#39;s aim to truly play our own game, whatever that may be, and let our unique contributions do the talking.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Welcome to the Blog</title>
-    <link href="https://blog.beaubremer.com/posts/my-first-post/"/>
-    <updated>2025-06-11T00:00:00Z</updated>
-    <id>https://blog.beaubremer.com/posts/my-first-post/</id>
-    <content xml:lang="en" type="html">&lt;h2&gt;Welcome! I&#39;m New Here (And I Have No Idea What I&#39;m Doing)&lt;/h2&gt;
-&lt;p&gt;Well, I did it. I finally have a new online home. Welcome!&lt;/p&gt;
-&lt;p&gt;Right now, this space is a bit like me on a Monday morning: a work in progress, slightly confused, but full of potential. I&#39;m busy behind the scenes, untangling the technical knots and figuring out how all this stuff works. (If you hear faint screaming, it&#39;s just me trying to center an image.)&lt;/p&gt;
-&lt;p&gt;I&#39;ll be adding all my previously posted articles here soon, they will show up eventually. More importantly, I&#39;ve got some new ideas I&#39;m excited to share with you once I&#39;m sure I won&#39;t accidentally delete the entire internet.&lt;/p&gt;
-&lt;p&gt;So, have a look around, don&#39;t mind the occasional digital pothole, and thanks for being here at the very beginning. Let&#39;s get this show on the road!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Dive into QLab</title>
-    <link href="https://blog.beaubremer.com/posts/dive_Qlab/"/>
-    <updated>2025-06-11T00:00:00Z</updated>
-    <id>https://blog.beaubremer.com/posts/dive_Qlab/</id>
-    <content xml:lang="en" type="html">&lt;h2&gt;&lt;/h2&gt;
-&lt;p&gt;Hey everyone! Ever wondered how those amazing live shows, plays, or even presentations manage to flawlessly switch between music, video, and lights? A lot of times, the magic behind the scenes is thanks to a fantastic piece of software called QLab.&lt;/p&gt;
-&lt;p&gt;QLab is a powerful tool for show control, used by professionals and hobbyists alike to create incredibly precise and complex cue lists. But don&#39;t let &amp;quot;powerful&amp;quot; scare you off – it&#39;s also incredibly intuitive once you get the hang of it, and it can really elevate your projects.&lt;/p&gt;
-&lt;p&gt;Today, we&#39;re going to take a super quick look at QLab and then dive into one of its most common uses: adding music cues. Get ready to make your audio playback smooth as silk!
-Getting Started with QLab&lt;/p&gt;
-&lt;p&gt;First things first, if you don&#39;t have QLab, you can download it for free from the Figure 53 website. The free version, called QLab Free, offers a ton of features, especially for audio playback, which is perfect for getting started.&lt;/p&gt;
-&lt;p&gt;Once you open QLab, you&#39;ll see a clean workspace. This is where you&#39;ll build your &amp;quot;cue list,&amp;quot; which is essentially a chronological list of everything you want to happen during your show.
-Quick Tutorial: Adding Music Cues in QLab&lt;/p&gt;
-&lt;p&gt;Let&#39;s get straight to it and add some music!&lt;/p&gt;
-&lt;p&gt;Open Your Workspace: When you open QLab, you&#39;ll usually be presented with a new, blank workspace. This is your canvas.&lt;/p&gt;
-&lt;p&gt;Drag and Drop Your Audio: The easiest way to get music into QLab is to simply drag an audio file (like an MP3, WAV, or AIFF) directly from your computer&#39;s folders into the QLab window.
-Pro Tip: QLab prefers uncompressed audio files (like WAV or AIFF) for the best quality and performance, but MP3s work just fine for many applications, especially for getting started.&lt;/p&gt;
-&lt;p&gt;Meet Your First Cue: Once you drag in an audio file, QLab automatically creates an &amp;quot;Audio Cue&amp;quot; for it. You&#39;ll see it appear in your cue list. Each cue has a &amp;quot;Q Number&amp;quot; (its position in the list) and a &amp;quot;Q Name&amp;quot; (usually the file name by default).&lt;/p&gt;
-&lt;p&gt;The Inspector – Your Control Panel: Below your cue list, you&#39;ll see the &amp;quot;Inspector.&amp;quot; This is where all the magic happens! When you select a cue, the Inspector shows you all the properties and settings for that specific cue.
-For an audio cue, you&#39;ll see tabs like &amp;quot;Levels&amp;quot; (for volume), &amp;quot;Time &amp;amp; Loops&amp;quot; (for start/end times and looping), and &amp;quot;Audio&amp;quot; (for routing to different outputs).&lt;/p&gt;
-&lt;p&gt;Setting Playback:
-Volume: Go to the &amp;quot;Levels&amp;quot; tab in the Inspector. You can adjust the overall volume of your music cue here. You&#39;ll see a fader you can drag up and down.
-Start and End Times: In the &amp;quot;Time &amp;amp; Loops&amp;quot; tab, you can set exactly when your audio starts and ends within the file. This is super handy if you only want to play a specific section of a song. Just drag the start and end markers on the waveform, or type in specific times.&lt;/p&gt;
-&lt;p&gt;Playing Your Cue:
-&amp;quot;Go&amp;quot; Button: The big &amp;quot;Go&amp;quot; button at the bottom of the QLab window is your best friend. Click it (or press the Spacebar, which is the default hotkey) to trigger the selected cue.
-Stop Button: Need to stop a cue? Click the &amp;quot;Stop&amp;quot; button next to &amp;quot;Go.&amp;quot;&lt;/p&gt;
-&lt;p&gt;What&#39;s Next?&lt;/p&gt;
-&lt;p&gt;This is just the tip of the iceberg with QLab, but understanding how to add and control basic audio cues is a huge first step. From here, you can explore:&lt;/p&gt;
-&lt;p&gt;Fades: Make your music fade in and out smoothly.
-Cue Triggers: How to automatically trigger cues, or link them to other cues.
-Hotkeys: Assigning keyboard shortcuts for quick playback.
-Groups: Organizing multiple cues together.&lt;/p&gt;
-&lt;p&gt;QLab might seem a little intimidating at first glance, but once you start playing around with it, you&#39;ll discover how powerful and fun it is. It truly opens up a world of possibilities for controlling your live events with precision and creativity.&lt;/p&gt;
-&lt;p&gt;Happy cueing!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Why I Chose Eleventy for My Blog (And How I Secured It)</title>
     <link href="https://blog.beaubremer.com/posts/Eleventy_for_My_Blog/"/>
-    <updated>2025-06-11T00:00:00Z</updated>
+    <updated>2025-06-14T00:00:00Z</updated>
     <id>https://blog.beaubremer.com/posts/Eleventy_for_My_Blog/</id>
     <content xml:lang="en" type="html">&lt;h2&gt;&lt;/h2&gt;
 &lt;p&gt;After getting my main portfolio site into a stable, secure state, I decided it was time to add a blog. My core requirements were simple but non-negotiable: it had to be modern, straightforward to maintain, and—most importantly—built in a way that couldn&#39;t possibly break my main portfolio site during development.&lt;/p&gt;
@@ -239,9 +223,25 @@ Permissions-Policy: This is a modern header that lets me lock down browser featu
 </content>
   </entry>
   <entry>
+    <title>Are You Playing Chess, or Just Repeating Lines?</title>
+    <link href="https://blog.beaubremer.com/posts/Are%20You%20Playing%20Chess/"/>
+    <updated>2025-06-14T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Are%20You%20Playing%20Chess/</id>
+    <content xml:lang="en" type="html">&lt;h1&gt;Are You Playing Chess, or Just Repeating Lines? The Trap of the Tired Trope&lt;/h1&gt;
+&lt;p&gt;Ever been in a conversation and heard someone lean back, maybe with a knowing smile, and drop the line: &amp;quot;Oh, well, I&#39;m playing chess while you&#39;re playing checkers&amp;quot;? It&#39;s a phrase that&#39;s almost universally used to imply a higher level of strategic thinking, a way of signaling, &amp;quot;I&#39;m smarter than you,&amp;quot; or &amp;quot;I&#39;m better at this game.&amp;quot; It gets slapped onto business decisions, personal squabbles—you name it. For some, it can feel like a condescending jab, trying to put you in your place.&lt;/p&gt;
+&lt;p&gt;We&#39;ve all encountered this, right? Maybe it&#39;s a mid-level manager trying to impress in a PowerPoint presentation, or someone on social media arguing a point they barely understand. The sheer audacity of it can be grating, especially when they genuinely believe they&#39;re operating on some higher intellectual plane just by stringing together a sentence that hints at strategy.&lt;/p&gt;
+&lt;p&gt;But here&#39;s the kicker, and what&#39;s truly fascinating about this phenomenon: these &amp;quot;masterminds&amp;quot; often didn&#39;t even come up with the line themselves! They&#39;re just echoing something they heard elsewhere, thinking it makes them sound profound. It&#39;s like seeing yourself as Denzel Washington in Training Day saying, &amp;quot;This sh*t is chess, it ain&#39;t checkers!&amp;quot; Or perhaps envisioning yourself as Kobe Bryant schooling rookies with, &amp;quot;These young guys are playing checkers. I&#39;m out there playing chess&amp;quot;. Newsflash, you&#39;re probably not Denzel or Kobe.&lt;/p&gt;
+&lt;p&gt;This phrase has been around for ages. Samuel L. Jackson used it in a movie back in &#39;94. It&#39;s become so common among entrepreneurs and business gurus that someone even wrote a whole book called Chess Not Checkers: Elevate Your Leadership Game. When you hear it, it makes you wonder if that book came with a little plastic crown so they could declare themselves king of the office.&lt;/p&gt;
+&lt;p&gt;Interestingly, even checkers, often seen as the simpler game, has an incredible depth. The possible positions in checkers amount to 500 billion billion (5×1020). And when it comes to mastery, consider Marion Tinsley, widely regarded as the greatest checkers player ever. He lost only seven games in his entire career, spanning 45 years. He was a math professor who had an incredible memory and analytical skills, able to see many moves into the future. He even beat a computer program in 1992, and later analysis showed he had played the only possible winning strategy from 64 moves out. If anyone was &amp;quot;playing chess,&amp;quot; it was someone like him, mastering a game with astronomical possibilities.&lt;/p&gt;
+&lt;p&gt;The whole act of trotting out this tired, old phrase to declare how much smarter you are is, frankly, a bit of an &amp;quot;idiocy festival&amp;quot;. It&#39;s not just that claiming to be a strategic genius might be a stretch; it&#39;s that you&#39;re using a borrowed, unoriginal line to make that claim. You&#39;re trying to signal your unique, high-wattage brainpower by simply repeating a cliché. It&#39;s like trying to prove you&#39;re a fashion icon by wearing the same cheap suit everyone else bought off the rack.&lt;/p&gt;
+&lt;p&gt;If you were truly that smart, wouldn&#39;t your own way of showing it naturally emerge? Wouldn&#39;t your brilliant strategy simply speak for itself? There&#39;s no need to lean on a movie quote or a popular business book to prove your point. When you try so hard to look smart by parroting phrases, you often end up looking like, well, a parrot with a thesaurus.&lt;/p&gt;
+&lt;p&gt;Ultimately, true leadership and genuine strategic thinking come from original thought and demonstrated ability, not from recycled catchphrases. Let&#39;s aim to truly play our own game, whatever that may be, and let our unique contributions do the talking.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>The Case of the Persistent Contact Form: A Debugging Odyssey</title>
     <link href="https://blog.beaubremer.com/posts/2025-06-11-contact-form/"/>
-    <updated>2025-06-11T00:00:00Z</updated>
+    <updated>2025-06-14T00:00:00Z</updated>
     <id>https://blog.beaubremer.com/posts/2025-06-11-contact-form/</id>
     <content xml:lang="en" type="html">&lt;h1&gt;The Case of the Persistent Contact Form: A Debugging Odyssey&lt;/h1&gt;
 &lt;p&gt;Hey tech enthusiasts and fellow web wranglers!&lt;/p&gt;

@@ -1,9 +1,9 @@
 ---
 title: "Blog"
 description: "A collection of articles and thoughts."
-layout: "layout.njk"
+layout: "base.njk"
 ---
-# {{ title }}
+<h1 class="text-5xl font-extrabold text-fuchsia-400 mb-8">{{ title }}</h1>
 
 <div class="space-y-8">
   {%- for post in collections.posts | reverse -%}
@@ -13,7 +13,6 @@ layout: "layout.njk"
         <a href="{{ post.url }}" class="text-fuchsia-400 hover:underline">{{ post.data.title }}</a>
       </h2>
       <p class="mt-4 text-gray-300">{{ post.data.description }}</p>
-      <a href="{{ post.url }}" class="inline-block mt-4 text-white font-bold hover:text-fuchsia-400">Read more →</a>
     </div>
   {%- endfor -%}
 </div>
