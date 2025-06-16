@@ -4,12 +4,12 @@ description: "Ever wonder about the check, one, two you hear before an event? Th
 date: 2025-06-14
 layout: "post.njk"
 tags:
-  - posts
-  - my-thoughts
-  - live-production
+- posts
+- my-thoughts
+- live-production
 ---
 
-## The Unknown Art of Freestyle Mic Checking
+### The Unknown Art of Freestyle Mic Checking
 
 You've heard it a million times at events: "Check, one, two... check, one, two..." It's the universal signal that sound is being tested, a little sonic ritual before the show kicks off. But for those of us behind the mixer, that simple phrase is often just the opening act for an elaborate, unscripted performance known as the "freestyle mic check." And let me tell you, it's an unknown art form.
 
