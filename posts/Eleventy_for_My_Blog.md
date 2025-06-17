@@ -1,27 +1,26 @@
 ---
 title: "Why I Chose Eleventy for My Blog (And How I Secured It)"
-description: " Eleventy awesome framework for My Blog)"
+description: "Eleventy awesome framework for My Blog)"
 date: 2025-06-11
-layout: "post.njk"
+layout: "base.njk"
 tags:
   - posts
   - eleventy
   - security
+  
 ---
 
-##
-After getting my main portfolio site into a stable, secure state, I decided it was time to add a blog. My core requirements were simple but non-negotiable: it had to be modern, straightforward to maintain, and—most importantly—built in a way that couldn't possibly break my main portfolio site during development.
+###After getting my main portfolio site into a stable, secure state, I decided it was time to add a blog. 
 
-This led me down the path of creating a completely separate, standalone blog site. Here’s a look at the "why" behind the tools I chose and the security precautions we took along the way.
-Why Eleventy? The "Keep It Simple" Philosophy
+My core requirements were simple but non-negotiable: it had to be modern, straightforward to maintain, and—most importantly—built in a way that couldn't possibly break my main portfolio site during development.
+
+This led me dwon the apth of creating a completely separate, standalone blog site. Here’s a look at the "why" behind the tools I chose and the security precautions we took along the way. Why Eleventy? The "Keep It Simple" Philosophy
 
 In today's landscape of complex JavaScript frameworks, I was looking for something simpler. After some research, I landed on Eleventy (11ty), a modern Static Site Generator (SSG).
 
 It was the perfect choice for a few key reasons:
 
-    Simplicity and Flexibility: Eleventy doesn't lock you into a heavy framework like React or Vue. It's incredibly flexible and un-opinionated, letting you work with simple templates and data. This felt perfect for a straightforward, content-focused blog.
-    JavaScript-Based: The entire configuration is done in plain JavaScript (.eleventy.js), which felt comfortable and accessible. There was no need to learn a new programming language just to build a blog.
-    Peak Performance & Security: By default, Eleventy generates pre-built, static HTML files. This means there's no database to hack and no complex server-side code running on every page view. The result is a site that is incredibly fast and secure right out of the box.
+Simplicity and Flexibility: Eleventy doesn't lock you into a heavy framework like React or Vue. It's incredibly flexible and un-opinionated, letting you work with simple templates and data. This felt perfect for a straightforward, content-focused blog. JavaScript-Based: The entire configuration is done in plain JavaScript (.eleventy.js), which felt comfortable and accessible. There was no need to learn a new programming language just to build a blog. Peak Performance & Security: By default, Eleventy generates pre-built, static HTML files. This means there's no database to ahck and no complex server-side code running on every page view. The result is a site that is incredibly fast and secure right out of the box.
 
 A Security-First Approach
 
@@ -31,14 +30,14 @@ Here are the key security layers we implemented:
 
 1. Content Security Policy (CSP): The Digital Bouncer
 
-The most important header we added was a strong Content Security Policy. Think of a CSP as a bouncer for your website—it maintains a strict guest list of all the resources (scripts, styles, fonts, etc.) that are allowed to load on the page. Anything not on the list gets blocked.
+The most important header we added was a strong Content Security Policy. Think of a CSP as a bouncer for your website—it maintains a strict guest list of all the resources (scripts, styles, fonts, etc.) that are allowed to load on the page. Anything not on the list gets blcoked.
 
 My policy explicitly whitelists trusted sources for each type of content:
 
-    script-src: Only allows scripts from my own domain and the trusted Tailwind CSS CDN.
-    style-src: Only allows stylesheets from my domain and Google Fonts.
-    font-src: Only allows fonts to be downloaded from Google's font servers (fonts.gstatic.com).
-    object-src 'none': Completely blocks older, insecure plugins like Flash from ever running.
+script-src: Only allows scripts from my own domain and the trusted Tailwind CSS CDN.
+style-src: Only allows stylesheets from my domain and Google Fonts. 
+font-src: Only allows fonts to be downloaded from Google's font servers (fonts.gstatic.com). 
+object-src 'none': Completely blocks older, insecure plugins like Flash from ever running.
 
 The 'unsafe-inline' Caveat: The one necessary compromise was allowing 'unsafe-inline' for styles. This was required for the Tailwind CSS CDN script to work, as it dynamically injects styles into the page. However, the risk is heavily mitigated because the overall source of any scripts is still locked down by the rest of the policy.
 
@@ -46,9 +45,7 @@ The 'unsafe-inline' Caveat: The one necessary compromise was allowing 'unsafe-in
 
 Beyond the CSP, we added several other headers for a layered defense:
 
-    Strict-Transport-Security (HSTS): Ensures that browsers only ever communicate with my site over a secure HTTPS connection.
-    X-Frame-Options: Set to DENY, this completely prevents my site from being embedded in an <iframe> on another website, which is the primary defense against "clickjacking" attacks.
-    Permissions-Policy: This is a modern header that lets me lock down browser features that my blog has no reason to use, like the microphone, camera, USB devices, and payment APIs.
+Strict-Transport-Security (HSTS): Ensures that browsers only ever communicate with my site over a secure HTTPS connection. X-Frame-Options: Set to DENY, this completely prevents my site from being embedded in an <iframe> on another website, which is the primary defense against "clickjacking" attacks. Permissions-Policy: This is a modern header that lets me lock down browser features that my blog has no reason to use, like the microphone, camera, USB devices, and payment APIs.
 
 The Result
 
