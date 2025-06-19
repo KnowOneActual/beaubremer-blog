@@ -2,7 +2,7 @@
 title: "The  Unknown  Art Of  Freestyle  Mic  Checking"
 description: 'TEver wonder about the "check, one, two" you hear before an event? This post dives into the surprisingly creative world of freestyle mic checking.'
 date: 2025-06-14
-layout: "base.njk"
+layout: "post.njk"
 tags:
   - posts
   - my-thoughts

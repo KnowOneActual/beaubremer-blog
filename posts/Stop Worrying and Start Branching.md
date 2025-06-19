@@ -2,7 +2,7 @@
 title: "Stop Worrying and Start Branching: A Guide to Safer Development"
 description: "Learn how to use Git branches to test new features without the fear of breaking your live website. A practical, step-by-step guide."
 date: 2025-06-14
-layout: "base.njk"
+layout: "post.njk"
 tags:
 - git
 - development
