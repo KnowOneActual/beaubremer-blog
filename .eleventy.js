@@ -26,6 +26,13 @@ module.exports = function(eleventyConfig) {
     return [...tagSet].sort((a, b) => a.localeCompare(b));
   });
 
+  const { DateTime } = require("luxon");
+
+// Inside module.exports = function(eleventyConfig) { ... }
+eleventyConfig.addFilter("readableDate", dateObj => {
+  return DateTime.fromJSDate(dateObj).toFormat("LLLL dd, yyyy");
+});
+
   return {
     markdownTemplateEngine: "njk",
     dir: {
