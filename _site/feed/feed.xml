@@ -278,34 +278,48 @@ This is perhaps the most underestimated phase, and yet, it&#39;s absolutely cruc
     <link href="https://blog.beaubremer.com/posts/dive_Qlab/"/>
     <updated>2025-06-12T00:00:00Z</updated>
     <id>https://blog.beaubremer.com/posts/dive_Qlab/</id>
-    <content xml:lang="en" type="html">&lt;h2&gt;&lt;/h2&gt;
-&lt;p&gt;Hey everyone! Ever wondered how those amazing live shows, plays, or even presentations manage to flawlessly switch between music, video, and lights? A lot of times, the magic behind the scenes is thanks to a fantastic piece of software called QLab.&lt;/p&gt;
-&lt;p&gt;QLab is a powerful tool for show control, used by professionals and hobbyists alike to create incredibly precise and complex cue lists. But don&#39;t let &amp;quot;powerful&amp;quot; scare you off – it&#39;s also incredibly intuitive once you get the hang of it, and it can really elevate your projects.&lt;/p&gt;
-&lt;p&gt;Today, we&#39;re going to take a super quick look at QLab and then dive into one of its most common uses: adding music cues. Get ready to make your audio playback smooth as silk!
-Getting Started with QLab&lt;/p&gt;
-&lt;p&gt;First things first, if you don&#39;t have QLab, you can download it for free from the Figure 53 website. The free version, called QLab Free, offers a ton of features, especially for audio playback, which is perfect for getting started.&lt;/p&gt;
-&lt;p&gt;Once you open QLab, you&#39;ll see a clean workspace. This is where you&#39;ll build your &amp;quot;cue list,&amp;quot; which is essentially a chronological list of everything you want to happen during your show.
-Quick Tutorial: Adding Music Cues in QLab&lt;/p&gt;
+    <content xml:lang="en" type="html">&lt;h2&gt;Dive into QLab: Your New Best Friend for Show Control!&lt;/h2&gt;
+&lt;p&gt;Hey everyone! Ever wondered how those amazing live shows, plays, or even presentations manage to switch between music, video, and lights flawlessly? Often, the seamless magic behind the scenes is all thanks to a fantastic piece of software called QLab.&lt;/p&gt;
+&lt;p&gt;QLab is a powerful tool for show control, used by professionals and hobbyists alike to create incredibly precise and complex cue lists. But don&#39;t let &amp;quot;powerful&amp;quot; scare you off – especially since you can download a feature-rich free version! It&#39;s also incredibly intuitive once you get the hang of it, and it can elevate your projects.&lt;/p&gt;
+&lt;p&gt;Today, we&#39;re going to take a super quick look at QLab and then dive into one of its most common uses: adding music cues. Get ready to make your audio playback smooth as silk!&lt;/p&gt;
+&lt;h3&gt;Getting Started with QLab&lt;/h3&gt;
+&lt;p&gt;First things first, if you don&#39;t have QLab, you can download it for free from the Figure 53 website. The free version, called QLab Free, offers a wide range of features, particularly for audio playback, making it ideal for getting started.&lt;/p&gt;
+&lt;p&gt;Once you open QLab, you&#39;ll see a clean workspace. This is where you&#39;ll build your &amp;quot;cue list,&amp;quot; which is essentially a chronological list of everything you want to happen during your show.&lt;/p&gt;
+&lt;h3&gt;Quick Tutorial: Adding Music Cues in QLab&lt;/h3&gt;
 &lt;p&gt;Let&#39;s get straight to it and add some music!&lt;/p&gt;
-&lt;p&gt;Open Your Workspace: When you open QLab, you&#39;ll usually be presented with a new, blank workspace. This is your canvas.&lt;/p&gt;
-&lt;p&gt;Drag and Drop Your Audio: The easiest way to get music into QLab is to simply drag an audio file (like an MP3, WAV, or AIFF) directly from your computer&#39;s folders into the QLab window.
-Pro Tip: QLab prefers uncompressed audio files (like WAV or AIFF) for the best quality and performance, but MP3s work just fine for many applications, especially for getting started.&lt;/p&gt;
-&lt;p&gt;Meet Your First Cue: Once you drag in an audio file, QLab automatically creates an &amp;quot;Audio Cue&amp;quot; for it. You&#39;ll see it appear in your cue list. Each cue has a &amp;quot;Q Number&amp;quot; (its position in the list) and a &amp;quot;Q Name&amp;quot; (usually the file name by default).&lt;/p&gt;
-&lt;p&gt;The Inspector – Your Control Panel: Below your cue list, you&#39;ll see the &amp;quot;Inspector.&amp;quot; This is where all the magic happens! When you select a cue, the Inspector shows you all the properties and settings for that specific cue.
-For an audio cue, you&#39;ll see tabs like &amp;quot;Levels&amp;quot; (for volume), &amp;quot;Time &amp;amp; Loops&amp;quot; (for start/end times and looping), and &amp;quot;Audio&amp;quot; (for routing to different outputs).&lt;/p&gt;
-&lt;p&gt;Setting Playback:
-Volume: Go to the &amp;quot;Levels&amp;quot; tab in the Inspector. You can adjust the overall volume of your music cue here. You&#39;ll see a fader you can drag up and down.
-Start and End Times: In the &amp;quot;Time &amp;amp; Loops&amp;quot; tab, you can set exactly when your audio starts and ends within the file. This is super handy if you only want to play a specific section of a song. Just drag the start and end markers on the waveform, or type in specific times.&lt;/p&gt;
-&lt;p&gt;Playing Your Cue:
-&amp;quot;Go&amp;quot; Button: The big &amp;quot;Go&amp;quot; button at the bottom of the QLab window is your best friend. Click it (or press the Spacebar, which is the default hotkey) to trigger the selected cue.
-Stop Button: Need to stop a cue? Click the &amp;quot;Stop&amp;quot; button next to &amp;quot;Go.&amp;quot;&lt;/p&gt;
-&lt;p&gt;What&#39;s Next?&lt;/p&gt;
+&lt;h4&gt;1. Open Your Workspace&lt;/h4&gt;
+&lt;p&gt;When you open QLab, you&#39;ll usually be presented with a new, blank workspace. This is your canvas.&lt;/p&gt;
+&lt;h4&gt;2. Drag and Drop Your Audio&lt;/h4&gt;
+&lt;p&gt;The easiest way to get music into QLab is to drag an audio file (like an MP3, WAV, or AIFF) directly from your computer&#39;s folders into the QLab window.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Pro Tip:&lt;/strong&gt; Use uncompressed audio files with Qlab (like WAV or AIFF) for the best quality and performance, but MP3s work just fine for many applications, especially for getting started.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;3. Meet Your First Cue&lt;/h4&gt;
+&lt;p&gt;Once you drag in an audio file, QLab automatically creates an &amp;quot;Audio Cue&amp;quot; for it. You&#39;ll see it appear in your cue list. Each cue has a &amp;quot;Q Number&amp;quot; (its position in the list) and a &amp;quot;Q Name&amp;quot; (usually the file name by default).&lt;/p&gt;
+&lt;h4&gt;4. The Inspector – Your Control Panel&lt;/h4&gt;
+&lt;p&gt;Below your cue list, you&#39;ll see the &amp;quot;Inspector&amp;quot; panel. This is your control hub, where all the magic happens! When you select a cue, the Inspector dynamically updates to show you all the properties and settings for that specific cue.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For an audio cue, you&#39;ll see tabs like &amp;quot;Levels&amp;quot; (for volume), &amp;quot;Time &amp;amp; Loops&amp;quot; (for start/end times and looping), and &amp;quot;Audio&amp;quot; (for routing to different outputs).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;5. Setting Playback&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Volume:&lt;/strong&gt; Go to the &amp;quot;Levels&amp;quot; tab in the Inspector. You can adjust the overall volume of your music cue here using the fader. (And yes, you can create smooth fades in and out later, but for now, just set a static level!)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Start and End Times:&lt;/strong&gt; In the &amp;quot;Time &amp;amp; Loops&amp;quot; tab, you can set exactly when your audio starts and ends within the file. This is super handy if you only want to play a specific section of a song. Just drag the start and end markers on the waveform, or type in specific times.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;6. Playing Your Cue&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;quot;Go&amp;quot; Button:&lt;/strong&gt; The big &amp;quot;Go&amp;quot; button at the bottom of the QLab window is your best friend. Click it (or press the Spacebar, which is the default hotkey) to trigger the selected cue.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stop Button:&lt;/strong&gt; Need to stop a cue? Click the &amp;quot;Stop&amp;quot; button next to &amp;quot;Go.&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;What&#39;s Next?&lt;/h3&gt;
 &lt;p&gt;This is just the tip of the iceberg with QLab, but understanding how to add and control basic audio cues is a huge first step. From here, you can explore:&lt;/p&gt;
-&lt;p&gt;Fades: Make your music fade in and out smoothly.
-Cue Triggers: How to automatically trigger cues, or link them to other cues.
-Hotkeys: Assigning keyboard shortcuts for quick playback.
-Groups: Organizing multiple cues together.&lt;/p&gt;
-&lt;p&gt;QLab might seem a little intimidating at first glance, but once you start playing around with it, you&#39;ll discover how powerful and fun it is. It truly opens up a world of possibilities for controlling your live events with precision and creativity.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Fades:&lt;/strong&gt; Make your music fade in and out smoothly.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cue Triggers:&lt;/strong&gt; How to automatically trigger cues, or link them to other cues.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hotkeys:&lt;/strong&gt; Assigning keyboard shortcuts for quick playback.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Groups:&lt;/strong&gt; Organizing multiple cues together.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;While QLab might seem a little intimidating at first glance, I promise you, once you start playing around with it, you&#39;ll quickly discover how powerful and genuinely &lt;em&gt;fun&lt;/em&gt; it is. It truly opens up a world of possibilities for controlling your live events with precision and creativity.&lt;/p&gt;
 &lt;p&gt;Happy cueing!&lt;/p&gt;
 </content>
   </entry>
