@@ -458,6 +458,40 @@ If you&#39;re working on a different branch, you&#39;d replace &lt;code&gt;main&
 </content>
   </entry>
   <entry>
+    <title>Why I Learned to Stop Worrying and Love Git Branches</title>
+    <link href="https://blog.beaubremer.com/posts/2025-06-12-a-guide-to-git-branches/"/>
+    <updated>2025-06-12T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/2025-06-12-a-guide-to-git-branches/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Have you ever been deep in concentration, adding a new feature to your website, and you suddenly realize... you&#39;ve broken everything? The page won&#39;t load, styles are a mess, and panic sets in. I&#39;ve certainly been there. For a long time, I did all my work directly on my &lt;code&gt;main&lt;/code&gt; branch—the one that my live site was built from. Every change was a high-stakes gamble.&lt;/p&gt;
+&lt;p&gt;Then, I embraced a professional workflow that completely changed the game: &lt;strong&gt;Git branching&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Think of your &lt;code&gt;main&lt;/code&gt; branch as the &amp;quot;golden copy&amp;quot; of your project. It&#39;s the version that is live, working, and stable. A branch is like making a safe, parallel copy of your project where you can experiment freely. If your new idea works, you merge it into the main copy. If it&#39;s a disaster, you simply delete the branch, and the golden copy remains untouched.&lt;/p&gt;
+&lt;p&gt;It brings peace of mind to the development process, and here’s why you should be using it.&lt;/p&gt;
+&lt;h3&gt;Why Bother with Branches?&lt;/h3&gt;
+&lt;p&gt;It might seem like a few extra steps, but the benefits are huge:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Safety:&lt;/strong&gt; Your &lt;code&gt;main&lt;/code&gt; branch is always protected. You can be confident that it&#39;s in a deployable, working state at all times. No more &amp;quot;I broke the live site!&amp;quot; panic.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Freedom to Experiment:&lt;/strong&gt; Want to try a completely new layout or a wild idea? Create a branch! You can make a mess, try things out, and break whatever you want. If it doesn&#39;t work out, there&#39;s no harm done. Just delete the branch.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Organization:&lt;/strong&gt; You can create a specific branch for every new feature or bug fix. This keeps your work isolated and easy to track. For example, &lt;code&gt;feature/new-contact-form&lt;/code&gt; or &lt;code&gt;fix/mobile-menu-bug&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Collaboration &amp;amp; Review:&lt;/strong&gt; If you work on a team, branches are essential. But even for solo developers, they allow you to use Pull Requests on GitHub to review your own work before merging it, which is a great way to catch mistakes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;My Simple 5-Step Branching Workflow&lt;/h3&gt;
+&lt;p&gt;Recently, I wanted to improve the navigation on my blog. On my homepage, I wanted the header link to point back to my main portfolio, but on individual posts, I wanted it to point back to the blog&#39;s homepage. This was a perfect use case for a feature branch.&lt;/p&gt;
+&lt;p&gt;Here’s the exact workflow I followed:&lt;/p&gt;
+&lt;h4&gt;Step 1: Start Clean&lt;/h4&gt;
+&lt;p&gt;Before starting anything new, I made sure my local project was in sync with the live version on GitHub.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Switch to the main branch
+git checkout main&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  <entry>
     <title>Welcome to the Blog</title>
     <link href="https://blog.beaubremer.com/posts/my-first-post/"/>
     <updated>2025-06-11T00:00:00Z</updated>
