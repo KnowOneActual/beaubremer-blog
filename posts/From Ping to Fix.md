@@ -24,7 +24,7 @@ The `ping` command is the simplest way to check if a remote device is online and
 
 **How to use it:**
 
-```bash  
+
 # Pinging a well-known Google server  
 ping 8.8.8.8
 
