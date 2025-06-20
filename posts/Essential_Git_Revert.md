@@ -1,5 +1,5 @@
 ---
-title: "Essential Git: Safely Undoing Changes with git revert"
+title: "Essential Git: Part 2: Safely Undoing Changes with git revert"
 description: "Learn how to use `git revert` to safely undo unwanted changes in your Git history, even after pushing to a remote repository, and how to resolve common conflicts."
 date: 2025-06-12
 layout: "post.njk"
