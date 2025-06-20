@@ -4,12 +4,134 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-06-14T00:00:00Z</updated>
+  <updated>2025-06-20T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>The Definitive Guide to a Stable Sonos and Eero Network</title>
+    <link href="https://blog.beaubremer.com/posts/Eero_Sonos/"/>
+    <updated>2025-06-20T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Eero_Sonos/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;If you&#39;ve invested in a Sonos sound system and an Eero mesh Wi-Fi network, you were probably expecting a seamless, high-end experience. Instead, you might be pulling your hair out dealing with intermittent audio dropouts, speakers that randomly disappear from the app, or music that refuses to play in grouped rooms.&lt;/p&gt;
+&lt;p&gt;You&#39;re not alone, and the good news is your gear isn&#39;t faulty. While Sonos and Eero are officially compatible, they don&#39;t always play nicely without some specific configuration. The problem isn&#39;t a fundamental flaw, but a conflict between two sophisticated mesh systems that can be solved.&lt;/p&gt;
+&lt;p&gt;This guide will walk you through the solutions, from foundational fixes that address 90% of issues to advanced tweaks for complex setups. Let&#39;s get your system running reliably.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Start Here: The 4 Non-Negotiable Rules for Stability&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Before you do anything else, you need to establish a solid network foundation. These four steps address the most common and disruptive sources of conflict.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Eliminate Double NAT (The #1 Culprit):&lt;/strong&gt; Most issues where the Sonos app can&#39;t find your system are caused by &amp;quot;Double NAT.&amp;quot; This happens when your ISP&#39;s modem/router and your Eero system are both trying to manage your network.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Fix:&lt;/strong&gt; Log into your ISP&#39;s modem/router and enable &lt;strong&gt;&amp;quot;Bridge Mode.&amp;quot;&lt;/strong&gt; This turns off its routing functions and lets your Eero act as the single, true router for your home. This creates a &amp;quot;flat&amp;quot; network where all your devices can see each other properly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Reserve IP Addresses:&lt;/strong&gt; Your router assigns temporary (&amp;quot;dynamic&amp;quot;) IP addresses to your devices. If these change, your Sonos app can lose track of a speaker.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Fix:&lt;/strong&gt; In the Eero app, go to each of your Sonos devices and set a &lt;strong&gt;&amp;quot;DHCP Reservation&amp;quot;&lt;/strong&gt; or &lt;strong&gt;&amp;quot;Reserve IP.&amp;quot;&lt;/strong&gt; This makes its IP address permanent, eliminating a common cause of disappearing speakers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Disable Eero Labs:&lt;/strong&gt; The experimental features in &amp;quot;Eero Labs&amp;quot; can be unstable and are a known source of conflicts with Sonos.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Fix:&lt;/strong&gt; In the Eero app, navigate to &lt;code&gt;Discover &amp;gt; Eero Labs&lt;/code&gt; and &lt;strong&gt;turn off everything&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Obey the &amp;quot;Golden Rule&amp;quot; of Wiring:&lt;/strong&gt; If you connect more than one Sonos product to your network with an Ethernet cable, they &lt;strong&gt;must&lt;/strong&gt; all connect back to the &lt;em&gt;same&lt;/em&gt; Eero node or the &lt;em&gt;same&lt;/em&gt; network switch.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt; Never wire Sonos products into different satellite Eero nodes. This can create a &amp;quot;broadcast storm&amp;quot; that crashes your entire network.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;&lt;strong&gt;The Great Debate: Eero Wi-Fi (WM:1) vs. SonosNet (WM:0)&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;After setting the foundation, you face a core choice: should your Sonos speakers connect directly to your Eero Wi-Fi, or should they use Sonos&#39;s own mesh network, SonosNet? You can see which mode your system is in by checking the &amp;quot;About My System&amp;quot; section of the Sonos app. &lt;code&gt;WM:1&lt;/code&gt; is Wi-Fi, &lt;code&gt;WM:0&lt;/code&gt; is SonosNet.&lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;Case for Eero Wi-Fi (WM:1 - The Modern Approach)&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;This is the default, all-wireless setup, where every Sonos speaker connects to your Eero network, just like a laptop or phone.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Why use it?&lt;/strong&gt; Modern Eero systems (especially Wi-Fi 6/6E) are incredibly fast and efficient, potentially offering better performance than the older SonosNet protocol. This is also the &lt;em&gt;only&lt;/em&gt; way to connect modern speakers like the Roam, Move, and the Era series.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Best for:&lt;/strong&gt; Users with new Eero and Sonos hardware in homes with low Wi-Fi congestion.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;Case for SonosNet (WM:0 - The Classic Fix)&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;This setup is created by connecting &lt;strong&gt;one&lt;/strong&gt; Sonos product (a speaker or a Sonos Boost) to your gateway Eero with an Ethernet cable. This device then creates a separate, private 2.4GHz wireless network exclusively for your other Sonos speakers.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Why use it?&lt;/strong&gt; SonosNet isolates your sensitive audio traffic from all the other Wi-Fi noise in your house. It&#39;s the most proven and effective fix for dropouts and issues with grouped speakers, especially in busy network environments.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Best for:&lt;/strong&gt; Users with older hardware, high Wi-Fi interference, or anyone experiencing stubborn dropouts and stereo pair failures.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Feature&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;SonosNet (Wired Setup - WM:0)&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Eero Wi-Fi (Wireless Setup - WM:1)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;strong&gt;How it Works&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;One Sonos product is wired to the network, creating a dedicated, private mesh for other Sonos speakers.&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;All Sonos speakers connect to the Eero mesh network as individual clients.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;strong&gt;Primary Advantage&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Isolates audio traffic from general network congestion, dramatically improving stability in most cases.&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Leverages the superior speed and features of the modern Eero mesh.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;strong&gt;Primary Disadvantage&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Slower, legacy protocol. It can cause network loops if wired incorrectly.&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Performance is susceptible to general Wi-Fi interference and router settings.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;strong&gt;Key Consideration&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Incompatible with Sonos Move, Roam, and Era speakers, forcing a &amp;quot;mixed mode.&amp;quot;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Requires a robust and healthy Eero network to work reliably.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Recommendation:&lt;/strong&gt; Start with the modern Eero Wi-Fi (WM:1) setup. If you experience any instability, switching to SonosNet (WM:0) is the most reliable next step.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;A Quick Troubleshooting Guide&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;If you&#39;ve followed the rules above and still have issues, here’s how to tackle specific symptoms.&lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;Symptom: Intermittent Audio Dropouts or Disappearing Speakers&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Cause:&lt;/strong&gt; Usually Wi-Fi interference, IP conflicts, or incorrect wiring.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Solution:&lt;/strong&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Double-check the &amp;quot;Golden Rule&amp;quot; of wiring.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Make sure you&#39;ve reserved IP addresses for all Sonos devices.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Switch your setup.&lt;/strong&gt; If you&#39;re on Wi-Fi (WM:1), switch to SonosNet (WM:0) by wiring one speaker to your main Eero. If you&#39;re already on an unstable SonosNet, try going fully wireless.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;As a test,&lt;/strong&gt; temporarily disable &amp;quot;Client Steering&amp;quot; in your Eero&#39;s advanced settings. This can sometimes help older 2.4GHz-only Sonos devices.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;Symptom: Sonos App Cannot Find the System&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Cause:&lt;/strong&gt; Almost always Double NAT.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Solution:&lt;/strong&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Put your ISP modem/router in Bridge Mode.&lt;/strong&gt; This is the definitive fix.&lt;/li&gt;
+&lt;li&gt;Make sure your phone is on your main Eero Wi-Fi, not a guest network.&lt;/li&gt;
+&lt;li&gt;On iOS, check that the Sonos app has &amp;quot;Local Network&amp;quot; permission and that &amp;quot;Private Wi-Fi Address&amp;quot; is disabled for your Eero network.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;Symptom: Grouped Rooms or Stereo Pairs Fail&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Cause:&lt;/strong&gt; Speakers in a group need to talk to each other directly. On a mesh network, Eero might place them on different Wi-Fi bands or nodes, breaking this link.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Solution:&lt;/strong&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Switch to SonosNet (WM:0).&lt;/strong&gt; This is the most reliable fix for this specific problem. It consolidates all your speakers onto a single, dedicated network layer, ensuring they can communicate seamlessly for perfect synchronization.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;strong&gt;Final Thoughts&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Getting Eero and Sonos to work in perfect harmony is less about luck and more about deliberate, informed configuration. By establishing a clean network foundation and making a conscious choice between a pure Wi-Fi or SonosNet setup, you can build a system that&#39;s powerful, stable, and delivers the premium experience you paid for.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;em&gt;I&#39;ve retained your original citations, as they add tremendous authority and value to the post. This revised structure should be much more effective as a blog post.&lt;/em&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The  Unknown  Art Of  Freestyle  Mic  Checking</title>
     <link href="https://blog.beaubremer.com/posts/the%20Unknown%20Art%20of%20Freestyle%20Mic%20Checking/"/>
