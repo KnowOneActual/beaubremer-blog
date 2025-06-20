@@ -64,111 +64,139 @@
     
     <hr class="border-gray-700 my-8">
 
-    <p>We've all been there. An application suddenly can't reach its server, your connection feels sluggish, or the internet cuts out. Before you spend hours searching forums or calling for help, you can often find the root of the problem yourself with just a few tools and a clear strategy.</p>
+    <p>We've all been there. An application suddenly can't reach its server, your connection feels sluggish, or the internet just cuts out.</p>
+<p>Before you spend hours searching forums or calling for help, you can often find the root of the problem yourself with just a few tools and a clear strategy.</p>
 <p>This guide will walk you through a practical approach to network troubleshooting. You'll learn about three essential commands, a five-step framework for thinking through any problem, and how a conceptual model can make your guesswork much smarter.</p>
 <h3>Your Core Troubleshooting Toolkit</h3>
 <p>Think of these three commands as your first line of defense. They are simple, powerful, and give you a quick snapshot of the network's health.</p>
-<h3>1. <code>ping</code>: Is Anyone Home?</h3>
-<p>The <code>ping</code> command is the simplest way to check if a remote device is online and reachable. It sends a small packet of data and waits for a reply.</p>
+<h4>1. <code>ping</code>: Is Anyone Home?</h4>
+<p>The <strong>ping</strong> command is the simplest way to check if a remote device is online and reachable. It sends a small packet of data and waits for a reply.</p>
 <p><strong>How to use it:</strong></p>
-<h3>Pinging a well-known Google server</h3>
-<p>ping 8.8.8.8</p>
+<pre><code class="language-bash"># Pinging a well-known Google server 
+ping 8.8.8.8
+
+</code></pre>
+<p><strong>What to look for:</strong></p>
 <ul>
-<li><strong>If you get replies:</strong> Great! It means there's a live connection between you and the server.</li>
-<li><strong>If it times out:</strong> There's a problem somewhere between you and the destination. It could be your local network, the server itself, or something in between.</li>
+<li><strong>Successful Replies:</strong> If you see lines that include bytes from... time=..., it means there's a live connection between you and the server.</li>
+<li><strong>Request Timed Out:</strong> If you get &quot;Request Timed Out&quot; or &quot;Destination Host Unreachable,&quot; there's a problem somewhere between your device and the destination.</li>
 </ul>
-<h3><strong>2. traceroute: What's the Path?</strong></h3>
-<p>If ping fails, traceroute (or tracert on Windows) is your next step. It shows you the specific path, or &quot;hops,&quot; your data takes to get to a destination. This is perfect for spotting exactly where the connection breaks.<br>
-<strong>How to use it:</strong></p>
-<p>Bash</p>
-<h3>Tracing the route to Google's server</h3>
-<p>traceroute 8.8.8.8</p>
-<p>You'll see a list of all the routers your connection passes through. If it stops or shows high latency times at a certain hop, you've found a major clue.</p>
-<h3><strong>3. Port Checking: Is the Service Available?</strong></h3>
-<p>Sometimes the server is online (ping works), but the specific service you need (like a database or a web server) isn't responding. You need to check if the port for that service is open. The command for this varies depending on the system.</p>
-<ul>
-<li><strong>On Windows (using PowerShell):</strong></li>
-</ul>
+<p><strong>Example of a successful ping:</strong></p>
+<p>Plaintext</p>
+<p>PING 8.8.8.8 (8.8.8.8): 56 data bytes
+64 bytes from 8.8.8.8: icmp_seq=0 ttl=116 time=13.523 ms
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=116 time=14.128 ms</p>
+<h4>2. traceroute: What's the Path?</h4>
+<p>If ping fails, traceroute (or tracert on Windows) is your next step. It shows you the specific path, or <strong>hops</strong>, your data takes to get to a destination. This is perfect for spotting exactly where the connection breaks.</p>
+<p><strong>How to use it:</strong></p>
+<pre><code class="language-Bash">
+# Tracing the route to Google's server 
+traceroute 8.8.8.8 
+</code></pre>
+<p>You'll see a list of routers your connection passes through. If it stops, shows * * *, or has very high latency times at a certain hop, you've found a major clue about where the failure is occurring.</p>
+<h4>3. Port Checking: Is the Service Available?</h4>
+<p>Sometimes the server is online (ping works), but the specific service you need (like a database or a web server) isn't responding. You need to check if the <strong>port</strong> for that service is open.</p>
+<p><strong>On Windows (using PowerShell):</strong></p>
 <p>PowerShell</p>
-<h3>Checks if Google's web server is responding on the standard HTTPS port (443)</h3>
+<h4>Checks if Google's web server is responding on the standard HTTPS port (443)</h4>
 <p>Test-NetConnection google.com -Port 443</p>
-<ul>
-<li><strong>On macOS or Linux:</strong></li>
-</ul>
-<p>Bash</p>
-<h3>The -z flag tells nc to scan without sending data, v is for verbose</h3>
-<p>nc -zv google.com 443</p>
-<p>A &quot;success&quot; or &quot;open&quot; message indicates that the service is active and listening. A failure could indicate that a firewall is blocking the connection or the service is down.</p>
-<h3><strong>A Framework for Sanity: The 5-Step &quot;Fixit&quot; Process</strong></h3>
-<p>Commands give you data, but a framework gives you a plan. The Fixit Framework is a systematic approach to diagnosing and solving problems without getting overwhelmed.</p>
+<p><strong>On macOS or Linux:</strong></p>
+<pre><code class="language-Bash">
+# The -z flag tells nc to scan without sending data, v is for verbose 
+nc -zv google.com 443 
+</code></pre>
+<p>A &quot;success&quot; or &quot;open&quot; message means the service is listening. A failure could point to a firewall blocking the connection or the service being down.</p>
+<h3>A Framework for Sanity: The 5-Step &quot;Fixit&quot; Process</h3>
+<p>Commands give you data, but a framework gives you a plan. The Fixit Framework is a systematic way to diagnose and solve a problem without getting overwhelmed.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Step</th>
-<th style="text-align:left">Action</th>
-<th style="text-align:left">Goal</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left"><strong>Find the Problem</strong></td>
-<td style="text-align:left">Clearly define what's actually failing. &quot;Users can't log in&quot; is better than &quot;the network is down.&quot;</td>
-</tr>
-<tr>
-<td style="text-align:left">2</td>
-<td style="text-align:left"><strong>Inspect the Symptoms</strong></td>
-<td style="text-align:left">Look for patterns. Does it only happen at 9 AM? Is it only affecting one person or everyone?</td>
-</tr>
-<tr>
-<td style="text-align:left">3</td>
-<td style="text-align:left"><strong>Exclude Possibilities</strong></td>
-<td style="text-align:left">Rule out what's working. If you can ping the server, you can probably exclude a full network outage.</td>
-</tr>
-<tr>
-<td style="text-align:left">4</td>
-<td style="text-align:left"><strong>Implement a Hypothesis</strong></td>
-<td style="text-align:left">Form a theory and test it. &quot;I think the firewall is blocking the port.&quot; Now, run a port check to prove or disprove it.</td>
-</tr>
-<tr>
-<td style="text-align:left">5</td>
-<td style="text-align:left"><strong>Track the Fix</strong></td>
-<td style="text-align:left">Once you find the solution, write down what you did. This saves you (and your team) from solving the same problem twice.</td>
-</tr>
-</tbody>
+  <tr>
+   <td><strong>Step</strong>
+   </td>
+   <td><strong>Action</strong>
+   </td>
+   <td><strong>Goal</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>1
+   </td>
+   <td>Find the Problem
+   </td>
+   <td>Clearly define what's actually failing. "Users can't log in" is better than "the network is down."
+   </td>
+  </tr>
+  <tr>
+   <td>2
+   </td>
+   <td>Inspect the Symptoms
+   </td>
+   <td>Look for patterns. Does it only happen at 9 AM? Is it only affecting one person or everyone?
+   </td>
+  </tr>
+  <tr>
+   <td>3
+   </td>
+   <td>Exclude Possibilities
+   </td>
+   <td>Rule out what's working. If you can ping the server, you can probably exclude a full network outage.
+   </td>
+  </tr>
+  <tr>
+   <td>4
+   </td>
+   <td>Implement a Hypothesis
+   </td>
+   <td>Form a theory and test it. "I think the firewall is blocking the port." Now, run a port check.
+   </td>
+  </tr>
+  <tr>
+   <td>5
+   </td>
+   <td>Track the Fix
+   </td>
+   <td>Once you find the solution, write it down. This saves you (and your team) from solving it again.
+   </td>
+  </tr>
 </table>
 <p>The key thing to remember is that this is a loop, not a straight line. If one hypothesis fails, you just form and test a new one until you find the root cause.</p>
-<h3><strong>Thinking in Layers: The OSI Model Strategy</strong></h3>
-<p>To make your troubleshooting hypotheses even smarter, you can use a map of how networks function: the <strong>OSI model</strong>. It organizes networking into seven layers, from the physical wires to the software you use.<br>
-Here are three common ways to use it:</p>
+<h3>Thinking in Layers: The OSI Model Strategy</h3>
+<p>To make your troubleshooting hypotheses even smarter, you can use a map of how networks function: the OSI model. It organizes networking into seven layers, from the physical wires to the software you use. Here are three common ways to use it:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Approach</th>
-<th style="text-align:left">Starting Layer</th>
-<th style="text-align:left">Best For...</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>Top-Down</strong></td>
-<td style="text-align:left">7 (Application)</td>
-<td style="text-align:left">When a single program is failing (e.g., your email client). You start by checking the app's settings.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Bottom-Up</strong></td>
-<td style="text-align:left">1 (Physical)</td>
-<td style="text-align:left">When everything is down. You start by checking if the cables are plugged in and the lights on the router are on.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Hybrid</strong></td>
-<td style="text-align:left">3 (Network/IP)</td>
-<td style="text-align:left">A great middle-ground. Start with ping. If it works, the problem is likely in a higher layer (4-7). If it fails, the problem is in a lower layer (1-2).</td>
-</tr>
-</tbody>
+  <tr>
+   <td><strong>Approach</strong>
+   </td>
+   <td><strong>Starting Layer</strong>
+   </td>
+   <td><strong>Best For...</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Top-Down
+   </td>
+   <td>7 (Application)
+   </td>
+   <td>When a single program is failing (e.g., your email client). Start by checking the app's settings.
+   </td>
+  </tr>
+  <tr>
+   <td>Bottom-Up
+   </td>
+   <td>1 (Physical)
+   </td>
+   <td>When everything is down. Start by checking if the cables are plugged in.
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Hybrid</strong>
+   </td>
+   <td><strong>3 (Network/IP)</strong>
+   </td>
+   <td>A great middle-ground. Start with ping. If it works, look at layers 4-7. If it fails, look at 1-2.
+   </td>
+  </tr>
 </table>
 <p>Network specialists often start from the bottom, while developers might start from the top. The hybrid approach, pivoting from Layer 3, is a powerful strategy for almost everyone else.</p>
-<h3><strong>Tying It All Together</strong></h3>
+<h3>Tying It All Together</h3>
 <p>Troubleshooting doesn't have to be a mystery. By combining the <em>what</em> (your core commands), the <em>how</em> (the Fixit framework), and the <em>where</em> (the OSI model), you have a complete system for tackling almost any network issue that comes your way. You're now equipped to diagnose problems methodically and know exactly when it's the right time to call for backup.</p>
 
 </article>
