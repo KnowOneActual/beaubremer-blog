@@ -89,6 +89,3 @@ If you've followed the rules above and still have issues, here’s how to tackle
 ### **Final Thoughts**
 
 Getting Eero and Sonos to work in perfect harmony is less about luck and more about deliberate, informed configuration. By establishing a clean network foundation and making a conscious choice between a pure Wi-Fi or SonosNet setup, you can build a system that's powerful, stable, and delivers the premium experience you paid for.
-
----
-*I've retained your original citations, as they add tremendous authority and value to the post. This revised structure should be much more effective as a blog post.*
