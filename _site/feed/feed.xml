@@ -17,12 +17,12 @@
     <id>https://blog.beaubremer.com/posts/From%20Ping%20to%20Fix/</id>
     <content xml:lang="en" type="html">&lt;p&gt;We&#39;ve all been there. An application suddenly can&#39;t reach its server, your connection feels sluggish, or the internet cuts out. Before you spend hours searching forums or calling for help, you can often find the root of the problem yourself with just a few tools and a clear strategy.&lt;/p&gt;
 &lt;p&gt;This guide will walk you through a practical approach to network troubleshooting. You&#39;ll learn about three essential commands, a five-step framework for thinking through any problem, and how a conceptual model can make your guesswork much smarter.&lt;/p&gt;
-&lt;h2&gt;Your Core Troubleshooting Toolkit&lt;/h2&gt;
+&lt;h3&gt;Your Core Troubleshooting Toolkit&lt;/h3&gt;
 &lt;p&gt;Think of these three commands as your first line of defense. They are simple, powerful, and give you a quick snapshot of the network&#39;s health.&lt;/p&gt;
 &lt;h3&gt;1. &lt;code&gt;ping&lt;/code&gt;: Is Anyone Home?&lt;/h3&gt;
 &lt;p&gt;The &lt;code&gt;ping&lt;/code&gt; command is the simplest way to check if a remote device is online and reachable. It sends a small packet of data and waits for a reply.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
-&lt;h1&gt;Pinging a well-known Google server&lt;/h1&gt;
+&lt;h3&gt;Pinging a well-known Google server&lt;/h3&gt;
 &lt;p&gt;ping 8.8.8.8&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;If you get replies:&lt;/strong&gt; Great! It means there&#39;s a live connection between you and the server.&lt;/li&gt;
@@ -32,7 +32,7 @@
 &lt;p&gt;If ping fails, traceroute (or tracert on Windows) is your next step. It shows you the specific path, or &amp;quot;hops,&amp;quot; your data takes to get to a destination. This is perfect for spotting exactly where the connection breaks.&lt;br /&gt;
 &lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Bash&lt;/p&gt;
-&lt;h1&gt;Tracing the route to Google&#39;s server&lt;/h1&gt;
+&lt;h3&gt;Tracing the route to Google&#39;s server&lt;/h3&gt;
 &lt;p&gt;traceroute 8.8.8.8&lt;/p&gt;
 &lt;p&gt;You&#39;ll see a list of all the routers your connection passes through. If it stops or shows high latency times at a certain hop, you&#39;ve found a major clue.&lt;/p&gt;
 &lt;h3&gt;&lt;strong&gt;3. Port Checking: Is the Service Available?&lt;/strong&gt;&lt;/h3&gt;
@@ -41,16 +41,16 @@
 &lt;li&gt;&lt;strong&gt;On Windows (using PowerShell):&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;PowerShell&lt;/p&gt;
-&lt;h1&gt;Checks if Google&#39;s web server is responding on the standard HTTPS port (443)&lt;/h1&gt;
+&lt;h3&gt;Checks if Google&#39;s web server is responding on the standard HTTPS port (443)&lt;/h3&gt;
 &lt;p&gt;Test-NetConnection google.com -Port 443&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;On macOS or Linux:&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Bash&lt;/p&gt;
-&lt;h1&gt;The -z flag tells nc to scan without sending data, v is for verbose&lt;/h1&gt;
+&lt;h3&gt;The -z flag tells nc to scan without sending data, v is for verbose&lt;/h3&gt;
 &lt;p&gt;nc -zv google.com 443&lt;/p&gt;
 &lt;p&gt;A &amp;quot;success&amp;quot; or &amp;quot;open&amp;quot; message indicates that the service is active and listening. A failure could indicate that a firewall is blocking the connection or the service is down.&lt;/p&gt;
-&lt;h2&gt;&lt;strong&gt;A Framework for Sanity: The 5-Step &amp;quot;Fixit&amp;quot; Process&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3&gt;&lt;strong&gt;A Framework for Sanity: The 5-Step &amp;quot;Fixit&amp;quot; Process&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;Commands give you data, but a framework gives you a plan. The Fixit Framework is a systematic approach to diagnosing and solving problems without getting overwhelmed.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -89,7 +89,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;The key thing to remember is that this is a loop, not a straight line. If one hypothesis fails, you just form and test a new one until you find the root cause.&lt;/p&gt;
-&lt;h2&gt;&lt;strong&gt;Thinking in Layers: The OSI Model Strategy&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3&gt;&lt;strong&gt;Thinking in Layers: The OSI Model Strategy&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;To make your troubleshooting hypotheses even smarter, you can use a map of how networks function: the &lt;strong&gt;OSI model&lt;/strong&gt;. It organizes networking into seven layers, from the physical wires to the software you use.&lt;br /&gt;
 Here are three common ways to use it:&lt;/p&gt;
 &lt;table&gt;
@@ -119,7 +119,7 @@ Here are three common ways to use it:&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Network specialists often start from the bottom, while developers might start from the top. The hybrid approach, pivoting from Layer 3, is a powerful strategy for almost everyone else.&lt;/p&gt;
-&lt;h2&gt;&lt;strong&gt;Tying It All Together&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3&gt;&lt;strong&gt;Tying It All Together&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;Troubleshooting doesn&#39;t have to be a mystery. By combining the &lt;em&gt;what&lt;/em&gt; (your core commands), the &lt;em&gt;how&lt;/em&gt; (the Fixit framework), and the &lt;em&gt;where&lt;/em&gt; (the OSI model), you have a complete system for tackling almost any network issue that comes your way. You&#39;re now equipped to diagnose problems methodically and know exactly when it&#39;s the right time to call for backup.&lt;/p&gt;
 </content>
   </entry>

@@ -66,12 +66,12 @@
 
     <p>We've all been there. An application suddenly can't reach its server, your connection feels sluggish, or the internet cuts out. Before you spend hours searching forums or calling for help, you can often find the root of the problem yourself with just a few tools and a clear strategy.</p>
 <p>This guide will walk you through a practical approach to network troubleshooting. You'll learn about three essential commands, a five-step framework for thinking through any problem, and how a conceptual model can make your guesswork much smarter.</p>
-<h2>Your Core Troubleshooting Toolkit</h2>
+<h3>Your Core Troubleshooting Toolkit</h3>
 <p>Think of these three commands as your first line of defense. They are simple, powerful, and give you a quick snapshot of the network's health.</p>
 <h3>1. <code>ping</code>: Is Anyone Home?</h3>
 <p>The <code>ping</code> command is the simplest way to check if a remote device is online and reachable. It sends a small packet of data and waits for a reply.</p>
 <p><strong>How to use it:</strong></p>
-<h1>Pinging a well-known Google server</h1>
+<h3>Pinging a well-known Google server</h3>
 <p>ping 8.8.8.8</p>
 <ul>
 <li><strong>If you get replies:</strong> Great! It means there's a live connection between you and the server.</li>
@@ -81,7 +81,7 @@
 <p>If ping fails, traceroute (or tracert on Windows) is your next step. It shows you the specific path, or &quot;hops,&quot; your data takes to get to a destination. This is perfect for spotting exactly where the connection breaks.<br>
 <strong>How to use it:</strong></p>
 <p>Bash</p>
-<h1>Tracing the route to Google's server</h1>
+<h3>Tracing the route to Google's server</h3>
 <p>traceroute 8.8.8.8</p>
 <p>You'll see a list of all the routers your connection passes through. If it stops or shows high latency times at a certain hop, you've found a major clue.</p>
 <h3><strong>3. Port Checking: Is the Service Available?</strong></h3>
@@ -90,16 +90,16 @@
 <li><strong>On Windows (using PowerShell):</strong></li>
 </ul>
 <p>PowerShell</p>
-<h1>Checks if Google's web server is responding on the standard HTTPS port (443)</h1>
+<h3>Checks if Google's web server is responding on the standard HTTPS port (443)</h3>
 <p>Test-NetConnection google.com -Port 443</p>
 <ul>
 <li><strong>On macOS or Linux:</strong></li>
 </ul>
 <p>Bash</p>
-<h1>The -z flag tells nc to scan without sending data, v is for verbose</h1>
+<h3>The -z flag tells nc to scan without sending data, v is for verbose</h3>
 <p>nc -zv google.com 443</p>
 <p>A &quot;success&quot; or &quot;open&quot; message indicates that the service is active and listening. A failure could indicate that a firewall is blocking the connection or the service is down.</p>
-<h2><strong>A Framework for Sanity: The 5-Step &quot;Fixit&quot; Process</strong></h2>
+<h3><strong>A Framework for Sanity: The 5-Step &quot;Fixit&quot; Process</strong></h3>
 <p>Commands give you data, but a framework gives you a plan. The Fixit Framework is a systematic approach to diagnosing and solving problems without getting overwhelmed.</p>
 <table>
 <thead>
@@ -138,7 +138,7 @@
 </tbody>
 </table>
 <p>The key thing to remember is that this is a loop, not a straight line. If one hypothesis fails, you just form and test a new one until you find the root cause.</p>
-<h2><strong>Thinking in Layers: The OSI Model Strategy</strong></h2>
+<h3><strong>Thinking in Layers: The OSI Model Strategy</strong></h3>
 <p>To make your troubleshooting hypotheses even smarter, you can use a map of how networks function: the <strong>OSI model</strong>. It organizes networking into seven layers, from the physical wires to the software you use.<br>
 Here are three common ways to use it:</p>
 <table>
@@ -168,7 +168,7 @@ Here are three common ways to use it:</p>
 </tbody>
 </table>
 <p>Network specialists often start from the bottom, while developers might start from the top. The hybrid approach, pivoting from Layer 3, is a powerful strategy for almost everyone else.</p>
-<h2><strong>Tying It All Together</strong></h2>
+<h3><strong>Tying It All Together</strong></h3>
 <p>Troubleshooting doesn't have to be a mystery. By combining the <em>what</em> (your core commands), the <em>how</em> (the Fixit framework), and the <em>where</em> (the OSI model), you have a complete system for tackling almost any network issue that comes your way. You're now equipped to diagnose problems methodically and know exactly when it's the right time to call for backup.</p>
 
 </article>

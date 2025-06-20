@@ -14,7 +14,7 @@ We've all been there. An application suddenly can't reach its server, your conne
 
 This guide will walk you through a practical approach to network troubleshooting. You'll learn about three essential commands, a five-step framework for thinking through any problem, and how a conceptual model can make your guesswork much smarter.
 
-## Your Core Troubleshooting Toolkit
+### Your Core Troubleshooting Toolkit
 
 Think of these three commands as your first line of defense. They are simple, powerful, and give you a quick snapshot of the network's health.
 
@@ -25,7 +25,7 @@ The `ping` command is the simplest way to check if a remote device is online and
 **How to use it:**
 
 
-# Pinging a well-known Google server  
+### Pinging a well-known Google server  
 ping 8.8.8.8
 
 * **If you get replies:** Great! It means there's a live connection between you and the server.  
@@ -38,7 +38,7 @@ If ping fails, traceroute (or tracert on Windows) is your next step. It shows yo
 
 Bash
 
-# Tracing the route to Google's server  
+### Tracing the route to Google's server  
 traceroute 8.8.8.8
 
 You'll see a list of all the routers your connection passes through. If it stops or shows high latency times at a certain hop, you've found a major clue.
@@ -51,19 +51,19 @@ Sometimes the server is online (ping works), but the specific service you need (
 
 PowerShell
 
-# Checks if Google's web server is responding on the standard HTTPS port (443)  
+### Checks if Google's web server is responding on the standard HTTPS port (443)  
 Test-NetConnection google.com -Port 443
 
 * **On macOS or Linux:**
 
 Bash
 
-# The -z flag tells nc to scan without sending data, v is for verbose  
+### The -z flag tells nc to scan without sending data, v is for verbose  
 nc -zv google.com 443
 
 A "success" or "open" message indicates that the service is active and listening. A failure could indicate that a firewall is blocking the connection or the service is down.
 
-## **A Framework for Sanity: The 5-Step "Fixit" Process**
+### **A Framework for Sanity: The 5-Step "Fixit" Process**
 
 Commands give you data, but a framework gives you a plan. The Fixit Framework is a systematic approach to diagnosing and solving problems without getting overwhelmed.
 
@@ -77,7 +77,7 @@ Commands give you data, but a framework gives you a plan. The Fixit Framework is
 
 The key thing to remember is that this is a loop, not a straight line. If one hypothesis fails, you just form and test a new one until you find the root cause.
 
-## **Thinking in Layers: The OSI Model Strategy**
+### **Thinking in Layers: The OSI Model Strategy**
 
 To make your troubleshooting hypotheses even smarter, you can use a map of how networks function: the **OSI model**. It organizes networking into seven layers, from the physical wires to the software you use.  
 Here are three common ways to use it:
@@ -90,6 +90,6 @@ Here are three common ways to use it:
 
 Network specialists often start from the bottom, while developers might start from the top. The hybrid approach, pivoting from Layer 3, is a powerful strategy for almost everyone else.
 
-## **Tying It All Together**
+### **Tying It All Together**
 
 Troubleshooting doesn't have to be a mystery. By combining the *what* (your core commands), the *how* (the Fixit framework), and the *where* (the OSI model), you have a complete system for tackling almost any network issue that comes your way. You're now equipped to diagnose problems methodically and know exactly when it's the right time to call for backup.
