@@ -1,5 +1,5 @@
 ---
-title: "Essential Git Part 1"
+title: "Essential Git: Part 1"
 description: "New to Git? This friendly guide introduces the essential commands you'll use daily to track changes, save your work, and collaborate on code projects."
 date: 2025-06-12
 layout: "post.njk"
