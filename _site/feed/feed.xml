@@ -246,6 +246,58 @@ This is perhaps the most underestimated phase, and yet, it&#39;s absolutely cruc
 </content>
   </entry>
   <entry>
+    <title>Essential Git Part 1</title>
+    <link href="https://blog.beaubremer.com/posts/Essential_Git%20part_1/"/>
+    <updated>2025-06-12T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Essential_Git%20part_1/</id>
+    <content xml:lang="en" type="html">&lt;h2&gt;Your Essential Git Toolkit: A Friendly Guide&lt;/h2&gt;
+&lt;p&gt;Git can seem a bit intimidating at first, but it&#39;s just a system to help you keep track of changes in your code (or any files, for that matter) and collaborate smoothly. Think of it as a super-powered save button with a memory of every single change you&#39;ve ever made.&lt;/p&gt;
+&lt;p&gt;Let&#39;s dive into the commands you&#39;ll use most often:&lt;/p&gt;
+&lt;h3&gt;1. &lt;code&gt;git status&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Why you use it:&lt;/strong&gt; Before you do anything else, you&#39;ll want to know what&#39;s going on. &lt;code&gt;git status&lt;/code&gt; tells you which files you&#39;ve changed, which ones are new, and whether anything is ready to be saved. It&#39;s your quick check-in to see the current state of your working directory compared to your last saved version.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;How you use it:&lt;/strong&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Check the current status of your Git repository
+git status
+&lt;/code&gt;&lt;/pre&gt;
+This command will give you a clear rundown of your changes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &lt;code&gt;git add .&lt;/code&gt; (or &lt;code&gt;git add &amp;lt;filename&amp;gt;&lt;/code&gt;)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Why you use it:&lt;/strong&gt; When you make changes to your files, Git doesn&#39;t automatically track them for your next save. You need to explicitly tell Git which changes you want to include in your next &amp;quot;snapshot&amp;quot; (called a commit). Using &lt;code&gt;git add .&lt;/code&gt; is a common shortcut to add all modified and new files in your current directory and its subdirectories to the &amp;quot;staging area.&amp;quot; If you only want to add a specific file, you&#39;d use &lt;code&gt;git add &amp;lt;filename&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;How you use it:&lt;/strong&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# To stage all modified and new files in the current directory and subdirectories
+git add .
+
+# To stage only a specific file
+git add my-new-feature.js
+&lt;/code&gt;&lt;/pre&gt;
+You&#39;ll often run &lt;code&gt;git status&lt;/code&gt; right after this to confirm what you&#39;ve staged.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. &lt;code&gt;git commit -m &amp;quot;Your descriptive message here&amp;quot;&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Why you use it:&lt;/strong&gt; A commit is a snapshot of your project at a specific point in time. It&#39;s like taking a picture of your entire project&#39;s state. The &lt;code&gt;-m&lt;/code&gt; flag lets you add a short, descriptive message about what changes you made in that commit. Good commit messages are essential – they help you (and others) understand the history of your project.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;How you use it:&lt;/strong&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Create a new commit with a descriptive message
+git commit -m &amp;quot;Add user login functionality and fix button styling&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+Make sure your message is clear and concise!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;4. &lt;code&gt;git push origin main&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Why you use it:&lt;/strong&gt; After you&#39;ve committed your changes locally, they&#39;re only on your computer. To share them with others or to back them up on a remote server (like GitHub, GitLab, or Bitbucket), you use &lt;code&gt;git push&lt;/code&gt;. &lt;code&gt;origin&lt;/code&gt; typically refers to the default remote repository where your project lives online, and &lt;code&gt;main&lt;/code&gt; is the name of the branch you&#39;re pushing to (it used to be called &lt;code&gt;master&lt;/code&gt;, but &lt;code&gt;main&lt;/code&gt; is the new standard).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;How you use it:&lt;/strong&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Push your committed changes from your local &#39;main&#39; branch to the &#39;origin&#39; remote
+git push origin main
+&lt;/code&gt;&lt;/pre&gt;
+If you&#39;re working on a different branch, you&#39;d replace &lt;code&gt;main&lt;/code&gt; with your branch name.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;A Few Extra Tips!&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Branches are your friends:&lt;/strong&gt; While we focused on the &lt;code&gt;main&lt;/code&gt; branch today, Git is fantastic because you can create &amp;quot;branches&amp;quot; for new features or bug fixes. This lets you work on something new without messing up the main, stable version of your project. Once your work is ready, you can merge it back into the &lt;code&gt;main&lt;/code&gt; branch.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Don&#39;t be afraid to experiment:&lt;/strong&gt; Git is designed to be undo-friendly. If you make a mistake, there&#39;s usually a way to fix it. That&#39;s why it&#39;s so great!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Practice makes perfect:&lt;/strong&gt; The more you use these commands, the more natural they&#39;ll feel. Try creating a small test project and just playing around with making changes, adding, committing, and pushing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I hope this helps you feel more comfortable jumping into the world of Git! It&#39;s an incredibly valuable tool for anyone working with code. Happy coding!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Welcome to the Blog</title>
     <link href="https://blog.beaubremer.com/posts/my-first-post/"/>
     <updated>2025-06-11T00:00:00Z</updated>

@@ -1,79 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Essential Git Part 1 | Beau Bremer</title>
-  <meta name="description" content="Your Essential Git Toolkit: A Friendly Guide" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
-  <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
-  <link rel="shortcut icon" href="/img/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
-  <link rel="manifest" href="/img/site.webmanifest" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Essential Git Part 1 | Beau Bremer&#39;s | Blog</title>
+    <meta name="description" content="New to Git? This friendly guide introduces the essential commands you&#39;ll use daily to track changes, save your work, and collaborate on code projects." />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
+    
+    <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/img/favicon/site.webmanifest" />
 </head>
 <body class="bg-gray-950 text-white scroll-smooth flex flex-col min-h-screen">
 
-  <header class="py-6 px-6 max-w-3xl mx-auto w-full">
-    <div class="flex justify-between items-center">
-      <div>
-        <a href="/" class="text-2xl font-bold text-white hover:text-fuchsia-400 transition-colors">Beau Bremer | Blog</a>
-      </div>
-      <nav>
-  
-    
-    <a href="/" class="text-gray-300 hover:text-white transition-colors">← Back to Blog Home</a>
-  
-</nav>
-    </div>
-  </header>
+    <header class="py-6 px-6 max-w-3xl mx-auto w-full">
+        <div class="flex justify-between items-center">
+            <div>
+                <a href="/" class="text-2xl font-bold text-white hover:text-fuchsia-400 transition-colors">Beau Bremer&#39;s | Blog</a>
+            </div>
+            <nav>
+              
+                <a href="/" class="text-gray-300 hover:text-white transition-colors">← Back to Blog Home</a>
+              
+            </nav>
+        </div>
+    </header>
 
-  <main class="max-w-3xl mx-auto py-12 px-6 flex-grow w-full">
-    <div class="prose prose-invert prose-lg max-w-none">
-      <p>Your Essential Git Toolkit: A Friendly Guide</p>
+    <main class="max-w-3xl mx-auto py-12 px-6 flex-grow w-full">
+        <div class="prose prose-invert lg:prose-xl max-w-none">
+            <article>
+    <header>
+        <h1 class="text-5xl font-extrabold text-fuchsia-400 mb-4">Essential Git Part 1</h1>
+        
+            <p class="text-gray-400">
+                <time datetime="2025-06-12T00:00:00.000Z">June 11, 2025</time>
+            </p>
+        
+        
+        
+        
+    </header>
+    
+    <hr class="border-gray-700 my-8">
+
+    <h2>Your Essential Git Toolkit: A Friendly Guide</h2>
 <p>Git can seem a bit intimidating at first, but it's just a system to help you keep track of changes in your code (or any files, for that matter) and collaborate smoothly. Think of it as a super-powered save button with a memory of every single change you've ever made.</p>
 <p>Let's dive into the commands you'll use most often:</p>
-<ol>
-<li>git status</li>
-</ol>
-<p>This one is like your personal project assistant.</p>
-<p>Why you use it: Before you do anything else, you'll want to know what's going on. Git status tells you which files you've changed, which ones are new, and whether anything is ready to be saved. It's your quick check-in to see the current state of your working directory compared to your last saved version.
-How you use it: Just type git status in your terminal when you're in your project folder. It'll give you a clear rundown.</p>
-<ol start="2">
-<li>git add . (or git add <code>filename</code>)</li>
-</ol>
-<p>This is where you tell Git, &quot;Hey, I want to save these changes!&quot;</p>
-<p>Why you use it: When you make changes to your files, Git doesn't automatically track them for your next save. You need to explicitly tell Git which changes you want to include in your next &quot;snapshot&quot; (called a commit). Using git add . is a common shortcut to add all modified and new files in your current directory and its subdirectories to the &quot;staging area.&quot; If you only want to add a specific file, you'd use git add <filename>.
-How you use it: After you've made some changes, run git add . to stage everything, or git add my-new-feature.js if you're just adding one file. You'll often run git status right after this to confirm what you've staged.</p>
-<ol start="3">
-<li>git commit -m &quot;Your descriptive message here&quot;</li>
-</ol>
-<p>This is your actual &quot;save&quot; button.</p>
-<p>Why you use it: A commit is a snapshot of your project at a specific point in time. It's like taking a picture of your entire project's state. The -m flag lets you add a short, descriptive message about what changes you made in that commit. Good commit messages are essential – they help you (and others) understand the history of your project.
-How you use it: Once you've staged your changes with git add, you'll type something like git commit -m &quot;Added user login functionality and fixed button styling.&quot; Make sure your message is clear and concise!</p>
-<ol start="4">
-<li>git push origin main</li>
-</ol>
-<p>Time to share your work with the world (or your team)!</p>
-<p>Why you use it: After you've committed your changes locally, they're only on your computer. To share them with others or to back them up on a remote server (like GitHub, GitLab, or Bitbucket), you use git push. origin typically refers to the default remote repository where your project lives online, and main is the name of the branch you're pushing to (it used to be called master, but main is the new standard).
-How you use it: After you've committed, just run git push origin main. If you're working on a different branch, you'd replace main with your branch name.</p>
-<p>A Few Extra Tips!</p>
-<p>Branches are your friends: While we focused on main branch, Git is fantastic because you can create &quot;branches&quot; for new features or bug fixes. This lets you work on something new without messing up the main, stable version of your project. Once your work is ready, you can merge it back into the main branch.
-Don't be afraid to experiment: Git is designed to be undo-friendly. If you make a mistake, there's usually a way to fix it. That's why it's so great!
-Practice makes perfect: The more you use these commands, the more natural they'll feel. Try creating a small test project and just playing around with making changes, adding, committing, and pushing.</p>
+<h3>1. <code>git status</code></h3>
+<ul>
+<li><strong>Why you use it:</strong> Before you do anything else, you'll want to know what's going on. <code>git status</code> tells you which files you've changed, which ones are new, and whether anything is ready to be saved. It's your quick check-in to see the current state of your working directory compared to your last saved version.</li>
+<li><strong>How you use it:</strong><pre><code class="language-bash"># Check the current status of your Git repository
+git status
+</code></pre>
+This command will give you a clear rundown of your changes.</li>
+</ul>
+<h3>2. <code>git add .</code> (or <code>git add &lt;filename&gt;</code>)</h3>
+<ul>
+<li><strong>Why you use it:</strong> When you make changes to your files, Git doesn't automatically track them for your next save. You need to explicitly tell Git which changes you want to include in your next &quot;snapshot&quot; (called a commit). Using <code>git add .</code> is a common shortcut to add all modified and new files in your current directory and its subdirectories to the &quot;staging area.&quot; If you only want to add a specific file, you'd use <code>git add &lt;filename&gt;</code>.</li>
+<li><strong>How you use it:</strong><pre><code class="language-bash"># To stage all modified and new files in the current directory and subdirectories
+git add .
+
+# To stage only a specific file
+git add my-new-feature.js
+</code></pre>
+You'll often run <code>git status</code> right after this to confirm what you've staged.</li>
+</ul>
+<h3>3. <code>git commit -m &quot;Your descriptive message here&quot;</code></h3>
+<ul>
+<li><strong>Why you use it:</strong> A commit is a snapshot of your project at a specific point in time. It's like taking a picture of your entire project's state. The <code>-m</code> flag lets you add a short, descriptive message about what changes you made in that commit. Good commit messages are essential – they help you (and others) understand the history of your project.</li>
+<li><strong>How you use it:</strong><pre><code class="language-bash"># Create a new commit with a descriptive message
+git commit -m &quot;Add user login functionality and fix button styling&quot;
+</code></pre>
+Make sure your message is clear and concise!</li>
+</ul>
+<h3>4. <code>git push origin main</code></h3>
+<ul>
+<li><strong>Why you use it:</strong> After you've committed your changes locally, they're only on your computer. To share them with others or to back them up on a remote server (like GitHub, GitLab, or Bitbucket), you use <code>git push</code>. <code>origin</code> typically refers to the default remote repository where your project lives online, and <code>main</code> is the name of the branch you're pushing to (it used to be called <code>master</code>, but <code>main</code> is the new standard).</li>
+<li><strong>How you use it:</strong><pre><code class="language-bash"># Push your committed changes from your local 'main' branch to the 'origin' remote
+git push origin main
+</code></pre>
+If you're working on a different branch, you'd replace <code>main</code> with your branch name.</li>
+</ul>
+<h3>A Few Extra Tips!</h3>
+<ul>
+<li><strong>Branches are your friends:</strong> While we focused on the <code>main</code> branch today, Git is fantastic because you can create &quot;branches&quot; for new features or bug fixes. This lets you work on something new without messing up the main, stable version of your project. Once your work is ready, you can merge it back into the <code>main</code> branch.</li>
+<li><strong>Don't be afraid to experiment:</strong> Git is designed to be undo-friendly. If you make a mistake, there's usually a way to fix it. That's why it's so great!</li>
+<li><strong>Practice makes perfect:</strong> The more you use these commands, the more natural they'll feel. Try creating a small test project and just playing around with making changes, adding, committing, and pushing.</li>
+</ul>
 <p>I hope this helps you feel more comfortable jumping into the world of Git! It's an incredibly valuable tool for anyone working with code. Happy coding!</p>
 
+</article>
+        </div>
+    </main>
 
-      
-
-    </div>
-  </main>
-
-  <footer class="text-center py-6 bg-gray-900 text-gray-500">
-    © 2025 Beau Bremer. All rights reserved. 
-  </footer>
+    <footer class="text-center py-6 bg-gray-900 text-gray-500">
+        © 2025 Beau Bremer. All rights reserved. Have A Great Day and/ Night!
+    </footer>
 
 </body>
 </html>
