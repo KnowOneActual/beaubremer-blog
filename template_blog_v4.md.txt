@@ -1,0 +1,30 @@
+---
+title: "Your Awesome Post Title"
+description: "A short, engaging summary of what this post is about."
+date: 2025-06-11
+layout: "post.njk"
+tags:
+  - posts
+  - general
+
+---
+
+
+## Your First Heading
+
+Start writing your article here using Markdown.
+
+You can use **bold text**, *italic text*, and `code snippets`.
+
+- Create
+- bulleted
+- lists
+
+{% youtube "dQw4w9WgXcQ" %} add embeded youtube video in post
+
+{% image "./img/my-cool-photo.jpg", "A descriptive alt text for my cool photo." %} add images to post put file in img/site_content
+
+Rename file .md
+
+And so on...
+

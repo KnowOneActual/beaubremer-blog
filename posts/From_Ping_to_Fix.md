@@ -1,7 +1,7 @@
 ---
 title: "From Ping to Fix: A Practical Guide to Basic Network Troubleshooting"
 description: "Learn how to diagnose and solve common network problems yourself using essential commands, a simple framework, and the OSI model."
-date: "2025-06-20"
+date: "2025-06-19"
 layout: "post.njk"
 tags:
   - networking

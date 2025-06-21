@@ -1,7 +1,7 @@
 ---
 title: "The Definitive Guide to a Stable Sonos and Eero Network"
 description: "Tired of Sonos speakers disappearing or audio dropping out on your Eero network? This comprehensive guide explains why it happens and provides clear, prioritized steps to fix it for good."
-date: 2025-06-20
+date: 2025-06-19
 layout: "post.njk"
 tags:
  - smarthome
