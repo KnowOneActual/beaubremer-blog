@@ -11,28 +11,6 @@
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
   <entry>
-    <title>TEST WILL DELETE SOON</title>
-    <link href="https://blog.beaubremer.com/posts/test_video_and%20_mage/"/>
-    <updated>2025-06-20T00:00:00Z</updated>
-    <id>https://blog.beaubremer.com/posts/test_video_and%20_mage/</id>
-    <content xml:lang="en" type="html">&lt;h2&gt;Your First Heading&lt;/h2&gt;
-&lt;p&gt;Start writing your article here using Markdown.&lt;/p&gt;
-&lt;p&gt;You can use &lt;strong&gt;bold text&lt;/strong&gt;, &lt;em&gt;italic text&lt;/em&gt;, and &lt;code&gt;code snippets&lt;/code&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Create&lt;/li&gt;
-&lt;li&gt;bulleted&lt;/li&gt;
-&lt;li&gt;lists&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div style=&quot;position: relative; padding-bottom: 56.25%; height: 0;&quot;&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/qRdzw2Osl8o&quot; style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt; add embeded youtube video in post
-&lt;picture&gt;
-        &lt;source type=&quot;image/webp&quot; srcset=&quot;https://blog.beaubremer.com/img/9fd2ee2aa0b641ac9ac77d660217c688-fotor-ai-art-effects-20250612160154-540w.webp 540w&quot; sizes=&quot;100vw&quot; /&gt;
-  &lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://blog.beaubremer.com/img/9fd2ee2aa0b641ac9ac77d660217c688-fotor-ai-art-effects-20250612160154-540w.jpeg 540w&quot; sizes=&quot;100vw&quot; /&gt;
-      &lt;img src=&quot;https://blog.beaubremer.com/img/9fd2ee2aa0b641ac9ac77d660217c688-fotor-ai-art-effects-20250612160154-540w.jpeg&quot; alt=&quot;A descriptive alt text for my cool photo.&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
-    &lt;/picture&gt; add images to post
-&lt;p&gt;And so on...&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>The Good, The Bad, and The Markdown</title>
     <link href="https://blog.beaubremer.com/posts/Good_The_Bad_and_Markdown/"/>
     <updated>2025-06-20T00:00:00Z</updated>
