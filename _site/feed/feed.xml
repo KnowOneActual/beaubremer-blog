@@ -4,12 +4,81 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-06-20T00:00:00Z</updated>
+  <updated>2025-06-21T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>Oh No, Vim! Your Emergency Kit for Getting Unstuck</title>
+    <link href="https://blog.beaubremer.com/posts/Oh_No_Vim/"/>
+    <updated>2025-06-21T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Oh_No_Vim/</id>
+    <content xml:lang="en" type="html">&lt;h3&gt;You’ve been there. You&#39;re in your terminal, you proudly type &lt;code&gt;git commit&lt;/code&gt;,&lt;/h3&gt;
+&lt;p&gt;hit Enter, and… what is this?&lt;/p&gt;
+&lt;p&gt;The screen changes, and your cursor is blinking,
+but typing text does nothing, and every key you press just beeps or moves
+things around in weird ways.&lt;/p&gt;
+&lt;p&gt;Congratulations, you&#39;ve accidentally stumbled into Vim, the powerful but
+notoriously tricky text editor.&lt;/p&gt;
+&lt;p&gt;Don&#39;t panic! You don&#39;t need to learn Vim today. You just need to know how
+to get out. Here is your emergency kit.&lt;/p&gt;
+&lt;h3&gt;The Emergency Kit: How to Exit Vim&lt;/h3&gt;
+&lt;p&gt;Follow these steps exactly. Vim has two main modes: &lt;strong&gt;Command mode&lt;/strong&gt; (where
+you enter commands) and &lt;strong&gt;Insert mode&lt;/strong&gt; (where you type). You start in
+Command mode.&lt;/p&gt;
+&lt;h4&gt;1. Enter &amp;quot;Insert Mode&amp;quot; to Type&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;What to do:&lt;/strong&gt; Press the &lt;code&gt;i&lt;/code&gt; key once.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;What it does:&lt;/strong&gt; This puts you into &lt;strong&gt;I&lt;/strong&gt;nsert mode. You should see
+&lt;code&gt;-- INSERT --&lt;/code&gt; at the bottom of the screen. Now you can type or edit your
+commit message like you&#39;d expect.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;2. Make Your Edits&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;What to do:&lt;/strong&gt; Type your commit message. If you don&#39;t need to change
+anything, you can skip this.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;3. Exit &amp;quot;Insert Mode&amp;quot;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;What to do:&lt;/strong&gt; Press the &lt;code&gt;Esc&lt;/code&gt; key.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;What it does:&lt;/strong&gt; This takes you back to &lt;strong&gt;Command mode&lt;/strong&gt;. The &lt;code&gt;-- INSERT --&lt;/code&gt;
+text at the bottom will disappear. This is where you can tell Vim what to
+do next.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;4. Save and Quit (The Most Common Exit)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;What to do:&lt;/strong&gt; Type &lt;code&gt;:wq&lt;/code&gt; and press &lt;code&gt;Enter&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;What it does:&lt;/strong&gt; This is actually two commands: &lt;code&gt;:w&lt;/code&gt; (write, i.e., save the
+file) and &lt;code&gt;:q&lt;/code&gt; (quit). You&#39;ve successfully saved your commit message and
+exited Vim.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Emergency Hatch: Quit Without Saving&lt;/h3&gt;
+&lt;p&gt;What if you made a mess and just want to start over?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;What to do:&lt;/strong&gt; After pressing &lt;code&gt;Esc&lt;/code&gt; to get to Command mode, type &lt;code&gt;:q!&lt;/code&gt;
+and press &lt;code&gt;Enter&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;What it does:&lt;/strong&gt; The &lt;code&gt;:q!&lt;/code&gt; command means &lt;strong&gt;q&lt;/strong&gt;uit without saving (the &lt;code&gt;!&lt;/code&gt;
+forces the action). Git will abort the commit, and you can run
+&lt;code&gt;git commit&lt;/code&gt; again.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;What Now? Your Two Paths Forward&lt;/h3&gt;
+&lt;p&gt;Now that you&#39;ve survived, you have two choices for the next time this happens.&lt;/p&gt;
+&lt;h4&gt;Path 1: Tame the Beast&lt;/h4&gt;
+&lt;p&gt;You don&#39;t have to become a Vim master, but knowing one more command can be
+handy.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In Command Mode (press &lt;code&gt;Esc&lt;/code&gt;), type &lt;code&gt;u&lt;/code&gt; to &lt;strong&gt;u&lt;/strong&gt;ndo your last change.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Path 2: Avoid the Beast Entirely&lt;/h4&gt;
+&lt;p&gt;If you&#39;d rather use an editor you already know, you can tell Git to use
+something else. For example, to set VS Code as your default editor, run
+this command in your terminal:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;git config --global core.editor &amp;quot;code --wait&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
   <entry>
     <title>The Good, The Bad, and The Markdown</title>
     <link href="https://blog.beaubremer.com/posts/Good_The_Bad_and_Markdown/"/>
