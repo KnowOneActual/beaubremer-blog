@@ -16,7 +16,7 @@
     <updated>2025-06-22T00:00:00Z</updated>
     <id>https://blog.beaubremer.com/posts/Simple_IP_Planner/</id>
     <content xml:lang="en" type="html">&lt;p&gt;Anyone who has set up a network for a show knows the routine. You start with a list—maybe on a notepad, maybe in a spreadsheet—of all the gear that needs an IP address. The audio console, the lighting desk, the stage rack, the video switcher, the RF scanner, the system processor... the list goes on. It’s not just about avoiding conflicts; it&#39;s about creating a logical, easy-to-troubleshoot system.&lt;/p&gt;
-&lt;p&gt;While there are plenty of powerful subnet calculators online, I&#39;ve always found they&#39;re either too complex for a quick on-site check or too generic. They&#39;ll give you the network range and broadcast address, but they won&#39;t help you map that QLX-D Rack to .101 and the DiGiCo SD12 to .50.&lt;/p&gt;
+&lt;p&gt;While there are plenty of powerful subnet calculators online, I&#39;ve always found they&#39;re either too complex for a quick on-site check or too generic. They&#39;ll give you the network range and broadcast address, but they won&#39;t help you map that ULX-D Rack to .101 and the DiGiCo SD12 to .50.&lt;/p&gt;
 &lt;p&gt;That gap is what led to my latest little project: the &lt;strong&gt;AV IP Subnet Calculator&lt;/strong&gt;. It was a quick build, but it solves a particular problem: it’s a simple utility for live event technicians to plan out IP addresses for their gear quickly.&lt;/p&gt;
 &lt;h4&gt;More Than a Calculator, It&#39;s a Planner&lt;/h4&gt;
 &lt;p&gt;The goal wasn&#39;t just to crunch the numbers on a CIDR range. The goal was to create a usable plan. The tool has two main parts:&lt;/p&gt;

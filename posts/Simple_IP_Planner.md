@@ -13,7 +13,7 @@ tags:
 
 Anyone who has set up a network for a show knows the routine. You start with a list—maybe on a notepad, maybe in a spreadsheet—of all the gear that needs an IP address. The audio console, the lighting desk, the stage rack, the video switcher, the RF scanner, the system processor... the list goes on. It’s not just about avoiding conflicts; it's about creating a logical, easy-to-troubleshoot system.
 
-While there are plenty of powerful subnet calculators online, I've always found they're either too complex for a quick on-site check or too generic. They'll give you the network range and broadcast address, but they won't help you map that QLX-D Rack to .101 and the DiGiCo SD12 to .50.
+While there are plenty of powerful subnet calculators online, I've always found they're either too complex for a quick on-site check or too generic. They'll give you the network range and broadcast address, but they won't help you map that ULX-D Rack to .101 and the DiGiCo SD12 to .50.
 
 That gap is what led to my latest little project: the **AV IP Subnet Calculator**. It was a quick build, but it solves a particular problem: it’s a simple utility for live event technicians to plan out IP addresses for their gear quickly.
 
