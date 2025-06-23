@@ -17,12 +17,12 @@
     <id>https://blog.beaubremer.com/posts/Simple_IP_Planner/</id>
     <content xml:lang="en" type="html">&lt;p&gt;Anyone who has set up a network for a show knows the routine. You start with a list—maybe on a notepad, maybe in a spreadsheet—of all the gear that needs an IP address. The audio console, the lighting desk, the stage rack, the video switcher, the RF scanner, the system processor... the list goes on. It’s not just about avoiding conflicts; it&#39;s about creating a logical, easy-to-troubleshoot system.&lt;/p&gt;
 &lt;p&gt;While there are plenty of powerful subnet calculators online, I&#39;ve always found they&#39;re either too complex for a quick on-site check or too generic. They&#39;ll give you the network range and broadcast address, but they won&#39;t help you map that ULX-D Rack to .101 and the DiGiCo SD12 to .50.&lt;/p&gt;
-&lt;p&gt;That gap is what led to my latest little project: the &lt;strong&gt;AV IP Subnet Calculator&lt;/strong&gt;. It was a quick build, but it solves a particular problem: it’s a simple utility for live event technicians to plan out IP addresses for their gear quickly.&lt;/p&gt;
+&lt;p&gt;That gap is what led to my latest little project: the &lt;strong&gt;AV IP Subnet Calculator&lt;/strong&gt;. It was a quick build, but it solves a specific problem: it’s a simple utility for live event technicians to quickly plan out IP addresses for their gear.&lt;/p&gt;
 &lt;h4&gt;More Than a Calculator, It&#39;s a Planner&lt;/h4&gt;
 &lt;p&gt;The goal wasn&#39;t just to crunch the numbers on a CIDR range. The goal was to create a usable plan. The tool has two main parts:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;The Calculator:&lt;/strong&gt; You plug in a starting IP address and a subnet size (using a slider or a number input), and it immediately displays the key information: network address, broadcast address, usable host range, and the total number of available hosts. No fluff, just the facts.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;The Device Planner:&lt;/strong&gt; This is where it becomes an &lt;em&gt;AV&lt;/em&gt; tool. Below the calculator, you can list out your equipment. Name a device (e.g., &amp;quot;Soundcraft Vi1000&amp;quot;), say how many IP addresses it needs, and click &amp;quot;Add.&amp;quot; The tool instantly assigns it the next available IP address from the range you defined.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Device Planner:&lt;/strong&gt; This is where it becomes an &lt;em&gt;AV&lt;/em&gt; tool. Below the calculator, you can list out your equipment. Name a device (e.g., &amp;quot;Midas m32&amp;quot;), say how many IP addresses it needs, and click &amp;quot;Add.&amp;quot; The tool instantly assigns it the next available IP address from the range you defined.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;You can continue this for all your gear, and in seconds, you have a clean, ordered list of your entire show network. It&#39;s the digital version of that piece of paper you were going to use anyway, but it&#39;s faster and less prone to typos. When you&#39;re done, a &amp;quot;Copy List&amp;quot; button formats the whole plan so you can paste it into your show documentation.&lt;/p&gt;
 &lt;h4&gt;The Tech Behind It: Keeping It Simple&lt;/h4&gt;
@@ -45,7 +45,7 @@ const longToIp = (long) =&amp;gt; { &#92;
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Once the IPs are numbers, calculating the network and broadcast addresses is straightforward. The rest of the code listens for user input, runs the calculations, and updates the display in real-time.&lt;/p&gt;
-&lt;p&gt;###3 A Tool That Works&lt;/p&gt;
+&lt;h4&gt;A Tool That Works&lt;/h4&gt;
 &lt;p&gt;This wasn&#39;t a project that required weeks of development, and that&#39;s the point. It was about identifying a small, recurring friction point in a workflow and building a sharp, simple tool to solve it. It&#39;s a perfect example of how a little bit of code can go a long way in our industry.&lt;/p&gt;
 &lt;p&gt;You can check out the &lt;a href=&quot;http://docs.google.com/link-to-your-app&quot;&gt;AV IP Subnet Calculator here&lt;/a&gt;. I hope you find it as helpful as I do.&lt;/p&gt;
 </content>
@@ -160,40 +160,46 @@ The most critical issue was that my API keys for Gemini and OpenWeatherMap were 
 The solution was to refactor the architecture, introducing a serverless function to act as a secure proxy.
 The New, Secure Architecture:
 Instead of the user&#39;s browser calling the APIs directly, it now makes a single, secure request to a backend function on my own site. This function then calls the external APIs using the keys, which are stored safely as environment variables on Netlify.
-[Your Architecture Diagram Here]
-(Suggestion: Create a simple diagram showing: Browser -&amp;gt; Netlify Function -&amp;gt; (Gemini API &amp;amp; OpenWeatherMap API) -&amp;gt; Browser. This visual is extremely effective for showing you understand the architecture.)
 I created a Netlify Function in netlify/functions/weather.js. This function is the only part of the system that can access the secret keys.&lt;/p&gt;
 &lt;p&gt;JavaScript&lt;/p&gt;
-&lt;p&gt;// netlify/functions/weather.js&lt;/p&gt;
-&lt;p&gt;// Using node-fetch for making API calls in the Node.js environment
-const fetch = require(&#39;node-fetch&#39;);&lt;/p&gt;
-&lt;p&gt;exports.handler = async function (event) {
-// Only allow POST requests for security
-if (event.httpMethod !== &#39;POST&#39;) {
-return { statusCode: 405, body: &#39;Method Not Allowed&#39; };
-}&lt;/p&gt;
-&lt;p&gt;try {
-const { userQuery } = JSON.parse(event.body);&lt;/p&gt;
-&lt;p&gt;// Get API keys from secure environment variables, never exposed to the client
-const { WEATHER_API_KEY, GEMINI_API_KEY } = process.env;&lt;/p&gt;
-&lt;p&gt;// ... (Secure logic to call Gemini and OpenWeatherMap APIs) ...&lt;/p&gt;
-&lt;p&gt;// The function securely gets the data and formats a response
-const botResponse = await getConversationalReply(userQuery);&lt;/p&gt;
-&lt;p&gt;return {
-statusCode: 200,
-body: JSON.stringify({ reply: botResponse }),
-};&lt;/p&gt;
-&lt;p&gt;} catch (error) {
-console.error(&amp;quot;Netlify Function Error:&amp;quot;, error);
-return { statusCode: 500, body: JSON.stringify({ error: &#39;An internal server error occurred.&#39; }) };
-}
-};&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;
+// netlify/functions/weather.js
 
-This serverless architecture completely mitigates the risk of exposing API keys while maintaining the same user experience.
-Final Result and Key Takeaways
-This project was a valuable exercise in building a full-stack application from the ground up. It demonstrates a practical approach to integrating third-party services, securing sensitive data, and—most importantly—systematically debugging the issues that arise when moving from a local machine to a live production environment.
+// Using node-fetch for making API calls in the Node.js environment
+const fetch = require(&#39;node-fetch&#39;);
+
+exports.handler = async function (event) {
+  // Only allow POST requests for security
+  if (event.httpMethod !== &#39;POST&#39;) {
+    return { statusCode: 405, body: &#39;Method Not Allowed&#39; };
+  }
+
+  try {
+    const { userQuery } = JSON.parse(event.body);
+    
+    // Get API keys from secure environment variables, never exposed to the client
+    const { WEATHER_API_KEY, GEMINI_API_KEY } = process.env;
+
+    // ... (Secure logic to call Gemini and OpenWeatherMap APIs) ...
+    
+    // The function securely gets the data and formats a response
+    const botResponse = await getConversationalReply(userQuery);
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ reply: botResponse }),
+    };
+
+  } catch (error) {
+    console.error(&amp;quot;Netlify Function Error:&amp;quot;, error);
+    return { statusCode: 500, body: JSON.stringify({ error: &#39;An internal server error occurred.&#39; }) };
+  }
+};
+
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This serverless architecture completely mitigates the risk of exposing API keys while maintaining the same user experience.&lt;/p&gt;
+&lt;h4&gt;Final Result and Key Takeaways:&lt;/h4&gt;
+&lt;p&gt;This project was a valuable exercise in building a full-stack application from the ground up. It demonstrates a practical approach to integrating third-party services, securing sensitive data, and—most importantly—systematically debugging the issues that arise when moving from a local machine to a live production environment.&lt;/p&gt;
 </content>
   </entry>
   <entry>

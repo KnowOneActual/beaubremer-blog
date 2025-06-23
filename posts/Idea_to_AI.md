@@ -56,12 +56,10 @@ The most critical issue was that my API keys for Gemini and OpenWeatherMap were 
 The solution was to refactor the architecture, introducing a serverless function to act as a secure proxy.
 The New, Secure Architecture:
 Instead of the user's browser calling the APIs directly, it now makes a single, secure request to a backend function on my own site. This function then calls the external APIs using the keys, which are stored safely as environment variables on Netlify.
-[Your Architecture Diagram Here]
-(Suggestion: Create a simple diagram showing: Browser -> Netlify Function -> (Gemini API & OpenWeatherMap API) -> Browser. This visual is extremely effective for showing you understand the architecture.)
 I created a Netlify Function in netlify/functions/weather.js. This function is the only part of the system that can access the secret keys.
 
 JavaScript
-
+```
 
 // netlify/functions/weather.js
 
@@ -95,9 +93,10 @@ exports.handler = async function (event) {
     return { statusCode: 500, body: JSON.stringify({ error: 'An internal server error occurred.' }) };
   }
 };
+
 ```
 
-
 This serverless architecture completely mitigates the risk of exposing API keys while maintaining the same user experience.
-Final Result and Key Takeaways
+
+#### Final Result and Key Takeaways:
 This project was a valuable exercise in building a full-stack application from the ground up. It demonstrates a practical approach to integrating third-party services, securing sensitive data, and—most importantly—systematically debugging the issues that arise when moving from a local machine to a live production environment.

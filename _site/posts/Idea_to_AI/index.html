@@ -113,40 +113,46 @@ The most critical issue was that my API keys for Gemini and OpenWeatherMap were 
 The solution was to refactor the architecture, introducing a serverless function to act as a secure proxy.
 The New, Secure Architecture:
 Instead of the user's browser calling the APIs directly, it now makes a single, secure request to a backend function on my own site. This function then calls the external APIs using the keys, which are stored safely as environment variables on Netlify.
-[Your Architecture Diagram Here]
-(Suggestion: Create a simple diagram showing: Browser -&gt; Netlify Function -&gt; (Gemini API &amp; OpenWeatherMap API) -&gt; Browser. This visual is extremely effective for showing you understand the architecture.)
 I created a Netlify Function in netlify/functions/weather.js. This function is the only part of the system that can access the secret keys.</p>
 <p>JavaScript</p>
-<p>// netlify/functions/weather.js</p>
-<p>// Using node-fetch for making API calls in the Node.js environment
-const fetch = require('node-fetch');</p>
-<p>exports.handler = async function (event) {
-// Only allow POST requests for security
-if (event.httpMethod !== 'POST') {
-return { statusCode: 405, body: 'Method Not Allowed' };
-}</p>
-<p>try {
-const { userQuery } = JSON.parse(event.body);</p>
-<p>// Get API keys from secure environment variables, never exposed to the client
-const { WEATHER_API_KEY, GEMINI_API_KEY } = process.env;</p>
-<p>// ... (Secure logic to call Gemini and OpenWeatherMap APIs) ...</p>
-<p>// The function securely gets the data and formats a response
-const botResponse = await getConversationalReply(userQuery);</p>
-<p>return {
-statusCode: 200,
-body: JSON.stringify({ reply: botResponse }),
-};</p>
-<p>} catch (error) {
-console.error(&quot;Netlify Function Error:&quot;, error);
-return { statusCode: 500, body: JSON.stringify({ error: 'An internal server error occurred.' }) };
-}
-};</p>
 <pre><code>
+// netlify/functions/weather.js
 
-This serverless architecture completely mitigates the risk of exposing API keys while maintaining the same user experience.
-Final Result and Key Takeaways
-This project was a valuable exercise in building a full-stack application from the ground up. It demonstrates a practical approach to integrating third-party services, securing sensitive data, and—most importantly—systematically debugging the issues that arise when moving from a local machine to a live production environment.
+// Using node-fetch for making API calls in the Node.js environment
+const fetch = require('node-fetch');
+
+exports.handler = async function (event) {
+  // Only allow POST requests for security
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, body: 'Method Not Allowed' };
+  }
+
+  try {
+    const { userQuery } = JSON.parse(event.body);
+    
+    // Get API keys from secure environment variables, never exposed to the client
+    const { WEATHER_API_KEY, GEMINI_API_KEY } = process.env;
+
+    // ... (Secure logic to call Gemini and OpenWeatherMap APIs) ...
+    
+    // The function securely gets the data and formats a response
+    const botResponse = await getConversationalReply(userQuery);
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ reply: botResponse }),
+    };
+
+  } catch (error) {
+    console.error(&quot;Netlify Function Error:&quot;, error);
+    return { statusCode: 500, body: JSON.stringify({ error: 'An internal server error occurred.' }) };
+  }
+};
+
 </code></pre>
+<p>This serverless architecture completely mitigates the risk of exposing API keys while maintaining the same user experience.</p>
+<h4>Final Result and Key Takeaways:</h4>
+<p>This project was a valuable exercise in building a full-stack application from the ground up. It demonstrates a practical approach to integrating third-party services, securing sensitive data, and—most importantly—systematically debugging the issues that arise when moving from a local machine to a live production environment.</p>
 
 </article>
         </div>

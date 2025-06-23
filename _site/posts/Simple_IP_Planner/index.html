@@ -67,12 +67,12 @@
 
     <p>Anyone who has set up a network for a show knows the routine. You start with a list—maybe on a notepad, maybe in a spreadsheet—of all the gear that needs an IP address. The audio console, the lighting desk, the stage rack, the video switcher, the RF scanner, the system processor... the list goes on. It’s not just about avoiding conflicts; it's about creating a logical, easy-to-troubleshoot system.</p>
 <p>While there are plenty of powerful subnet calculators online, I've always found they're either too complex for a quick on-site check or too generic. They'll give you the network range and broadcast address, but they won't help you map that ULX-D Rack to .101 and the DiGiCo SD12 to .50.</p>
-<p>That gap is what led to my latest little project: the <strong>AV IP Subnet Calculator</strong>. It was a quick build, but it solves a particular problem: it’s a simple utility for live event technicians to plan out IP addresses for their gear quickly.</p>
+<p>That gap is what led to my latest little project: the <strong>AV IP Subnet Calculator</strong>. It was a quick build, but it solves a specific problem: it’s a simple utility for live event technicians to quickly plan out IP addresses for their gear.</p>
 <h4>More Than a Calculator, It's a Planner</h4>
 <p>The goal wasn't just to crunch the numbers on a CIDR range. The goal was to create a usable plan. The tool has two main parts:</p>
 <ol>
 <li><strong>The Calculator:</strong> You plug in a starting IP address and a subnet size (using a slider or a number input), and it immediately displays the key information: network address, broadcast address, usable host range, and the total number of available hosts. No fluff, just the facts.</li>
-<li><strong>The Device Planner:</strong> This is where it becomes an <em>AV</em> tool. Below the calculator, you can list out your equipment. Name a device (e.g., &quot;Soundcraft Vi1000&quot;), say how many IP addresses it needs, and click &quot;Add.&quot; The tool instantly assigns it the next available IP address from the range you defined.</li>
+<li><strong>The Device Planner:</strong> This is where it becomes an <em>AV</em> tool. Below the calculator, you can list out your equipment. Name a device (e.g., &quot;Midas m32&quot;), say how many IP addresses it needs, and click &quot;Add.&quot; The tool instantly assigns it the next available IP address from the range you defined.</li>
 </ol>
 <p>You can continue this for all your gear, and in seconds, you have a clean, ordered list of your entire show network. It's the digital version of that piece of paper you were going to use anyway, but it's faster and less prone to typos. When you're done, a &quot;Copy List&quot; button formats the whole plan so you can paste it into your show documentation.</p>
 <h4>The Tech Behind It: Keeping It Simple</h4>
@@ -95,7 +95,7 @@ const longToIp = (long) =&gt; { \
 
 </code></pre>
 <p>Once the IPs are numbers, calculating the network and broadcast addresses is straightforward. The rest of the code listens for user input, runs the calculations, and updates the display in real-time.</p>
-<p>###3 A Tool That Works</p>
+<h4>A Tool That Works</h4>
 <p>This wasn't a project that required weeks of development, and that's the point. It was about identifying a small, recurring friction point in a workflow and building a sharp, simple tool to solve it. It's a perfect example of how a little bit of code can go a long way in our industry.</p>
 <p>You can check out the <a href="http://docs.google.com/link-to-your-app">AV IP Subnet Calculator here</a>. I hope you find it as helpful as I do.</p>
 
