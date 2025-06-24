@@ -86,7 +86,7 @@ to watch for:
     files for common errors and enforce a consistent style. This is a 
     lifesaver, especially when collaborating with others.
 * **Learn Your "Flavor"**: Since you're likely writing for a specific 
-    platform (like a blog, GitHub, or a specific app), take a few minutes 
+    platform (like a blog, GitHub, or a particular app), take a few minutes 
     to learn the specifics of its Markdown flavor. This will help you take 
     full advantage of its features and avoid surprises.
 * **Keep Tables Simple**: While many Markdown flavors support tables, they 

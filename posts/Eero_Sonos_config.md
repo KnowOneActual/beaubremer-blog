@@ -18,7 +18,7 @@ This guide will walk you through the solutions, from foundational fixes that add
 
 ### **Start Here: The 4 Non-Negotiable Rules for Stability**
 
-Before you do anything else, you need to establish a solid network foundation. These four steps address the most common and disruptive sources of conflict.
+Before you do anything else, you need to establish a solid foundation for your network. These four steps address the most common and disruptive sources of conflict.
 
 1.  **Eliminate Double NAT (The #1 Culprit):** Most issues where the Sonos app can't find your system are caused by "Double NAT." This happens when your ISP's modem/router and your Eero system are both trying to manage your network.
     * **The Fix:** Log into your ISP's modem/router and enable **"Bridge Mode."** This turns off its routing functions and lets your Eero act as the single, true router for your home. This creates a "flat" network where all your devices can see each other properly.
@@ -26,7 +26,7 @@ Before you do anything else, you need to establish a solid network foundation. T
 2.  **Reserve IP Addresses:** Your router assigns temporary ("dynamic") IP addresses to your devices. If these change, your Sonos app can lose track of a speaker.
     * **The Fix:** In the Eero app, go to each of your Sonos devices and set a **"DHCP Reservation"** or **"Reserve IP."** This makes its IP address permanent, eliminating a common cause of disappearing speakers.
 
-3. **Disable Eero Labs:** The experimental features in "Eero Labs" can be unstable and are a known source of conflicts with Sonos.
+3. **Disable Eero Labs:** The experimental features in "Eero Labs" can be unstable and are known to cause conflicts with Sonos.
     * **The Fix:** In the Eero app, navigate to `Discover > Eero Labs` and **turn off everything**.
 
 4.  **Obey the "Golden Rule" of Wiring:** If you connect more than one Sonos product to your network with an Ethernet cable, they **must** all connect back to the *same* Eero node or the *same* network switch.
@@ -82,7 +82,7 @@ If you've followed the rules above and still have issues, here’s how to tackle
 
 #### **Symptom: Grouped Rooms or Stereo Pairs Fail**
 
-* **The Cause:** Speakers in a group need to talk to each other directly. On a mesh network, Eero might place them on different Wi-Fi bands or nodes, breaking this link.
+* **The Cause:** Speakers in a group need to communicate directly with each other. On a mesh network, Eero might place them on different Wi-Fi bands or nodes, breaking this link.
 * **The Solution:**
     1.  **Switch to SonosNet (WM:0).** This is the most reliable fix for this specific problem. It consolidates all your speakers onto a single, dedicated network layer, ensuring they can communicate seamlessly for perfect synchronization.
 

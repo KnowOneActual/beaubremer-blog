@@ -52,7 +52,7 @@ Command mode.
 #### 4. Save and Quit (The Most Common Exit)
 
 * **What to do:** Type `:wq` and press `Enter`.
-* **What it does:** This is actually two commands: `:w` (write, i.e., save the
+* **What it does:** This is two commands: `:w` (write, i.e., save the
     file) and `:q` (quit). You've successfully saved your commit message and
     exited Vim.
 
@@ -87,3 +87,6 @@ this command in your terminal:
 
 ```bash
 git config --global core.editor "code --wait"
+```
+
+Hope that helped out a bit!

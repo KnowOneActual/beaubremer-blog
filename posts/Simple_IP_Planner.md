@@ -15,7 +15,7 @@ Anyone who has set up a network for a show knows the routine. You start with a l
 
 While there are plenty of powerful subnet calculators online, I've always found they're either too complex for a quick on-site check or too generic. They'll give you the network range and broadcast address, but they won't help you map that ULX-D Rack to .101 and the DiGiCo SD12 to .50.
 
-That gap is what led to my latest little project: the **AV IP Subnet Calculator**. It was a quick build, but it solves a specific problem: it’s a simple utility for live event technicians to quickly plan out IP addresses for their gear.
+That gap is what led to my latest little project: the **AV IP Subnet Calculator**. It was a quick build, but it solves a specific problem: it’s a simple utility for live event technicians to plan out IP addresses for their gear quickly.
 
 
 #### More Than a Calculator, It's a Planner
@@ -40,7 +40,7 @@ For a tool like this, speed and simplicity are key. It needs to load instantly o
 * **Tailwind CSS:** For styling, I pulled in Tailwind via its CDN. This allows you to build a clean, modern UI with utility classes directly in the HTML, which is ideal for small projects where you don't want a separate stylesheet or a build step.
 * **Vanilla JavaScript:** All the logic is handled by plain JavaScript, running right in the browser. No dependencies, no frameworks. This keeps the app incredibly lightweight.
 
-The core of the calculator involves a bit of bitwise manipulation to handle the IP addresses. JavaScript doesn't have native IP address functions, so you can convert the familiar 192.168.1.100 format into a 32-bit integer. This makes all the subnet math much easier.
+The core of the calculator involves a bit of bitwise manipulation to handle the IP addresses. JavaScript doesn't have native IP address functions so that you can convert the familiar 192.168.1.100 format into a 32-bit integer. This makes all the subnet math much easier.
 
 Here’s a peek at the helper functions that do the conversion:
 
@@ -64,4 +64,4 @@ Once the IPs are numbers, calculating the network and broadcast addresses is str
 
 This wasn't a project that required weeks of development, and that's the point. It was about identifying a small, recurring friction point in a workflow and building a sharp, simple tool to solve it. It's a perfect example of how a little bit of code can go a long way in our industry.
 
-You can check out the [AV IP Subnet Calculator here](http://docs.google.com/link-to-your-app). I hope you find it as helpful as I do.
+You can check out https://beaubremer.com/ip_subnet_calculator. I hope you find it as helpful.

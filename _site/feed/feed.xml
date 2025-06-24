@@ -17,7 +17,7 @@
     <id>https://blog.beaubremer.com/posts/Simple_IP_Planner/</id>
     <content xml:lang="en" type="html">&lt;p&gt;Anyone who has set up a network for a show knows the routine. You start with a list—maybe on a notepad, maybe in a spreadsheet—of all the gear that needs an IP address. The audio console, the lighting desk, the stage rack, the video switcher, the RF scanner, the system processor... the list goes on. It’s not just about avoiding conflicts; it&#39;s about creating a logical, easy-to-troubleshoot system.&lt;/p&gt;
 &lt;p&gt;While there are plenty of powerful subnet calculators online, I&#39;ve always found they&#39;re either too complex for a quick on-site check or too generic. They&#39;ll give you the network range and broadcast address, but they won&#39;t help you map that ULX-D Rack to .101 and the DiGiCo SD12 to .50.&lt;/p&gt;
-&lt;p&gt;That gap is what led to my latest little project: the &lt;strong&gt;AV IP Subnet Calculator&lt;/strong&gt;. It was a quick build, but it solves a specific problem: it’s a simple utility for live event technicians to quickly plan out IP addresses for their gear.&lt;/p&gt;
+&lt;p&gt;That gap is what led to my latest little project: the &lt;strong&gt;AV IP Subnet Calculator&lt;/strong&gt;. It was a quick build, but it solves a specific problem: it’s a simple utility for live event technicians to plan out IP addresses for their gear quickly.&lt;/p&gt;
 &lt;h4&gt;More Than a Calculator, It&#39;s a Planner&lt;/h4&gt;
 &lt;p&gt;The goal wasn&#39;t just to crunch the numbers on a CIDR range. The goal was to create a usable plan. The tool has two main parts:&lt;/p&gt;
 &lt;ol&gt;
@@ -32,7 +32,7 @@
 &lt;li&gt;&lt;strong&gt;Tailwind CSS:&lt;/strong&gt; For styling, I pulled in Tailwind via its CDN. This allows you to build a clean, modern UI with utility classes directly in the HTML, which is ideal for small projects where you don&#39;t want a separate stylesheet or a build step.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Vanilla JavaScript:&lt;/strong&gt; All the logic is handled by plain JavaScript, running right in the browser. No dependencies, no frameworks. This keeps the app incredibly lightweight.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The core of the calculator involves a bit of bitwise manipulation to handle the IP addresses. JavaScript doesn&#39;t have native IP address functions, so you can convert the familiar 192.168.1.100 format into a 32-bit integer. This makes all the subnet math much easier.&lt;/p&gt;
+&lt;p&gt;The core of the calculator involves a bit of bitwise manipulation to handle the IP addresses. JavaScript doesn&#39;t have native IP address functions so that you can convert the familiar 192.168.1.100 format into a 32-bit integer. This makes all the subnet math much easier.&lt;/p&gt;
 &lt;p&gt;Here’s a peek at the helper functions that do the conversion:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;
 const ipToLong = (ip) =&amp;gt; { &#92;
@@ -47,7 +47,7 @@ const longToIp = (long) =&amp;gt; { &#92;
 &lt;p&gt;Once the IPs are numbers, calculating the network and broadcast addresses is straightforward. The rest of the code listens for user input, runs the calculations, and updates the display in real-time.&lt;/p&gt;
 &lt;h4&gt;A Tool That Works&lt;/h4&gt;
 &lt;p&gt;This wasn&#39;t a project that required weeks of development, and that&#39;s the point. It was about identifying a small, recurring friction point in a workflow and building a sharp, simple tool to solve it. It&#39;s a perfect example of how a little bit of code can go a long way in our industry.&lt;/p&gt;
-&lt;p&gt;You can check out the &lt;a href=&quot;http://docs.google.com/link-to-your-app&quot;&gt;AV IP Subnet Calculator here&lt;/a&gt;. I hope you find it as helpful as I do.&lt;/p&gt;
+&lt;p&gt;You can check out https://beaubremer.com/ip_subnet_calculator. I hope you find it as helpful.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -90,7 +90,7 @@ do next.&lt;/li&gt;
 &lt;h4&gt;4. Save and Quit (The Most Common Exit)&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;What to do:&lt;/strong&gt; Type &lt;code&gt;:wq&lt;/code&gt; and press &lt;code&gt;Enter&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;What it does:&lt;/strong&gt; This is actually two commands: &lt;code&gt;:w&lt;/code&gt; (write, i.e., save the
+&lt;li&gt;&lt;strong&gt;What it does:&lt;/strong&gt; This is two commands: &lt;code&gt;:w&lt;/code&gt; (write, i.e., save the
 file) and &lt;code&gt;:q&lt;/code&gt; (quit). You&#39;ve successfully saved your commit message and
 exited Vim.&lt;/li&gt;
 &lt;/ul&gt;
@@ -116,7 +116,9 @@ handy.&lt;/p&gt;
 &lt;p&gt;If you&#39;d rather use an editor you already know, you can tell Git to use
 something else. For example, to set VS Code as your default editor, run
 this command in your terminal:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;git config --global core.editor &amp;quot;code --wait&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;git config --global core.editor &amp;quot;code --wait&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Hope that helped out a bit!&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -136,7 +138,7 @@ this command in your terminal:&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;Hosting &amp;amp; Backend:&lt;/strong&gt; &lt;a href=&quot;https://www.netlify.com/&quot;&gt;Netlify&lt;/a&gt;. I opted for a serverless approach because it&#39;s cost-effective, scales automatically, and provides a secure environment for my secret API keys without needing to manage a dedicated server.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Part 1: The Blueprint - A Rapid Prototype&lt;/h3&gt;
-&lt;p&gt;The first step was getting a minimum viable product working. I built the chat interface with simple HTML, styled with Tailwind CSS for a clean look.&lt;/p&gt;
+&lt;p&gt;The first step was getting a minimum viable product working. I built the chat interface using simple HTML and styled it with Tailwind CSS for a clean look.&lt;/p&gt;
 &lt;p&gt;The initial UI structure was straightforward: a container for messages and a form for input.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;div id=&amp;quot;chat-window&amp;quot; class=&amp;quot;flex-1 p-6 overflow-y-auto&amp;quot;&amp;gt;
   &amp;lt;/div&amp;gt;
@@ -146,20 +148,21 @@ this command in your terminal:&lt;/p&gt;
   &amp;lt;button type=&amp;quot;submit&amp;quot;&amp;gt;Send&amp;lt;/button&amp;gt;
 &amp;lt;/form&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Initially, all the logic lived in a client-side JavaScript file. The logic followed three steps: identify the city using the Gemini API, fetch weather data from OpenWeatherMap, and then feed both back into Gemini to generate a human-friendly response. While this was great for quick prototyping, it had a critical security flaw that I planned to address after proving the concept.
-Part 2: From Localhost to Live - The Inevitable Hurdles
-Getting the prototype to run on a live website is where the real problem-solving began. Deploying to Netlify revealed a series of issues that required systematic debugging.
-Challenge 1: The Bot Was Stuck on &amp;quot;Connecting...&amp;quot;
+&lt;p&gt;Initially, all the logic lived in a client-side JavaScript file. The logic followed three steps: identify the city using the Gemini API, fetch weather data from OpenWeatherMap, and then feed both back into Gemini to generate a human-friendly response. While this was great for quick prototyping, it had a critical security flaw that I planned to address after proving the concept.&lt;/p&gt;
+&lt;h3&gt;Part 2:&lt;/h3&gt;
+&lt;p&gt;From Localhost to Live - The Inevitable Hurdles
+Getting the prototype to run on a live website is where the real problem-solving begins. Deploying to Netlify revealed a series of issues that required systematic debugging.&lt;/p&gt;
+&lt;p&gt;####Challenge 1: The Bot Was Stuck on &amp;quot;Connecting...&amp;quot;
 Investigation: The app worked locally but not when deployed. The browser console was clean, which suggested the issue wasn&#39;t a simple code error. I realized my local setup used a development server, but the live site had no database connection configured.
-Solution: I created a production Firebase project and wired it up by adding the firebaseConfig object to my project. This was a classic &amp;quot;dev vs. production&amp;quot; environment mismatch, and it reinforced the need for explicit configuration for deployed services.
-Challenge 2: Authentication and Security Policy Errors
-Investigation: With the database configured, new errors appeared: a Content Security Policy (CSP) block against gstatic.com (a Google domain for Firebase) and an auth/admin-restricted-operation error from Firebase itself.
-Solution: I solved this in two steps. First, I updated the netlify.toml file to explicitly allow scripts from gstatic.com in my CSP. Second, I diagnosed the auth error to mean that while my app was talking to Firebase, no users were authorized to perform actions. I enabled &amp;quot;Anonymous sign-in&amp;quot; in the Firebase console, creating a secure session for any visitor without requiring them to create an account.
-Part 3: The Pro-Level Step - Securing API Keys
-The most critical issue was that my API keys for Gemini and OpenWeatherMap were sitting in my public JavaScript file. Exposing API keys on the frontend is a critical security flaw. A malicious actor could steal them and run up enormous costs on my billing account or have them disabled for abuse. This is unacceptable for any real-world application.
+Solution: I created a production Firebase project and wired it up by adding the firebaseConfig object to my project. This was a classic &amp;quot;dev vs. production&amp;quot; environment mismatch, and it reinforced the need for explicit configuration for deployed services.&lt;/p&gt;
+&lt;h4&gt;Challenge 2: Authentication and Security Policy Errors&lt;/h4&gt;
+&lt;p&gt;Investigation: With the database configured, new errors appeared: a Content Security Policy (CSP) block against gstatic.com (a Google domain for Firebase) and an auth/admin-restricted-operation error from Firebase itself.&lt;/p&gt;
+&lt;p&gt;Solution: I solved this in two steps. First, I updated the netlify.toml file to explicitly allow scripts from gstatic.com in my CSP. Second, I diagnosed the auth error to mean that while my app was talking to Firebase, no users were authorized to perform actions. I enabled &amp;quot;Anonymous sign-in&amp;quot; in the Firebase console, creating a secure session for any visitor without requiring them to create an account.&lt;/p&gt;
+&lt;h3&gt;Part 3: The Pro-Level Step - Securing API Keys&lt;/h3&gt;
+&lt;p&gt;The most critical issue was that my API keys for Gemini and OpenWeatherMap were sitting in my public JavaScript file. Exposing API keys on the frontend is a critical security flaw. A malicious actor could steal them and run up enormous costs on my billing account or have them disabled for abuse. This is unacceptable for any real-world application.
 The solution was to refactor the architecture, introducing a serverless function to act as a secure proxy.
-The New, Secure Architecture:
-Instead of the user&#39;s browser calling the APIs directly, it now makes a single, secure request to a backend function on my own site. This function then calls the external APIs using the keys, which are stored safely as environment variables on Netlify.
+The New, Secure Architecture:&lt;/p&gt;
+&lt;p&gt;Instead of the user&#39;s browser calling the APIs directly, it now makes a single, secure request to a backend function on my own site. This function then calls the external APIs using the keys, which are stored safely as environment variables on Netlify.
 I created a Netlify Function in netlify/functions/weather.js. This function is the only part of the system that can access the secret keys.&lt;/p&gt;
 &lt;p&gt;JavaScript&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;
@@ -278,7 +281,7 @@ break the list&#39;s structure.&lt;/li&gt;
 files for common errors and enforce a consistent style. This is a
 lifesaver, especially when collaborating with others.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Learn Your &amp;quot;Flavor&amp;quot;&lt;/strong&gt;: Since you&#39;re likely writing for a specific
-platform (like a blog, GitHub, or a specific app), take a few minutes
+platform (like a blog, GitHub, or a particular app), take a few minutes
 to learn the specifics of its Markdown flavor. This will help you take
 full advantage of its features and avoid surprises.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Keep Tables Simple&lt;/strong&gt;: While many Markdown flavors support tables, they
@@ -303,7 +306,7 @@ can make it a seamless part of your writing workflow.&lt;/p&gt;
 &lt;p&gt;You&#39;re not alone, and the good news is your gear isn&#39;t faulty. While Sonos and Eero are officially compatible, they don&#39;t always play nicely without some specific configuration. The problem isn&#39;t a fundamental flaw, but a conflict between two sophisticated mesh systems that can be solved.&lt;/p&gt;
 &lt;p&gt;This guide will walk you through the solutions, from foundational fixes that address 90% of issues to advanced tweaks for complex setups. Let&#39;s get your system running reliably.&lt;/p&gt;
 &lt;h3&gt;&lt;strong&gt;Start Here: The 4 Non-Negotiable Rules for Stability&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;Before you do anything else, you need to establish a solid network foundation. These four steps address the most common and disruptive sources of conflict.&lt;/p&gt;
+&lt;p&gt;Before you do anything else, you need to establish a solid foundation for your network. These four steps address the most common and disruptive sources of conflict.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Eliminate Double NAT (The #1 Culprit):&lt;/strong&gt; Most issues where the Sonos app can&#39;t find your system are caused by &amp;quot;Double NAT.&amp;quot; This happens when your ISP&#39;s modem/router and your Eero system are both trying to manage your network.&lt;/p&gt;
@@ -318,7 +321,7 @@ can make it a seamless part of your writing workflow.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Disable Eero Labs:&lt;/strong&gt; The experimental features in &amp;quot;Eero Labs&amp;quot; can be unstable and are a known source of conflicts with Sonos.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Disable Eero Labs:&lt;/strong&gt; The experimental features in &amp;quot;Eero Labs&amp;quot; can be unstable and are known to cause conflicts with Sonos.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;The Fix:&lt;/strong&gt; In the Eero app, navigate to &lt;code&gt;Discover &amp;gt; Eero Labs&lt;/code&gt; and &lt;strong&gt;turn off everything&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
@@ -403,7 +406,7 @@ can make it a seamless part of your writing workflow.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h4&gt;&lt;strong&gt;Symptom: Grouped Rooms or Stereo Pairs Fail&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;The Cause:&lt;/strong&gt; Speakers in a group need to talk to each other directly. On a mesh network, Eero might place them on different Wi-Fi bands or nodes, breaking this link.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Cause:&lt;/strong&gt; Speakers in a group need to communicate directly with each other. On a mesh network, Eero might place them on different Wi-Fi bands or nodes, breaking this link.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;The Solution:&lt;/strong&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Switch to SonosNet (WM:0).&lt;/strong&gt; This is the most reliable fix for this specific problem. It consolidates all your speakers onto a single, dedicated network layer, ensuring they can communicate seamlessly for perfect synchronization.&lt;/li&gt;
@@ -951,31 +954,27 @@ If you&#39;re working on a different branch, you&#39;d replace &lt;code&gt;main&
     <link href="https://blog.beaubremer.com/posts/Eleventy_for_My_Blog/"/>
     <updated>2025-06-11T00:00:00Z</updated>
     <id>https://blog.beaubremer.com/posts/Eleventy_for_My_Blog/</id>
-    <content xml:lang="en" type="html">&lt;p&gt;###After getting my main portfolio site into a stable, secure state, I decided it was time to add a blog.&lt;/p&gt;
+    <content xml:lang="en" type="html">&lt;h4&gt;After getting my main portfolio site into a stable, secure state, I decided it was time to add a blog.&lt;/h4&gt;
 &lt;p&gt;My core requirements were simple but non-negotiable: it had to be modern, straightforward to maintain, and—most importantly—built in a way that couldn&#39;t possibly break my main portfolio site during development.&lt;/p&gt;
-&lt;p&gt;This led me dwon the apth of creating a completely separate, standalone blog site. Here’s a look at the &amp;quot;why&amp;quot; behind the tools I chose and the security precautions we took along the way. Why Eleventy? The &amp;quot;Keep It Simple&amp;quot; Philosophy&lt;/p&gt;
+&lt;p&gt;This led me down the path of creating a completely separate, standalone blog site. Here’s a look at the &amp;quot;why&amp;quot; behind the tools I chose and the security precautions we took along the way. Why Eleventy? The &amp;quot;Keep It Simple&amp;quot; Philosophy&lt;/p&gt;
 &lt;p&gt;In today&#39;s landscape of complex JavaScript frameworks, I was looking for something simpler. After some research, I landed on Eleventy (11ty), a modern Static Site Generator (SSG).&lt;/p&gt;
 &lt;p&gt;It was the perfect choice for a few key reasons:&lt;/p&gt;
-&lt;p&gt;Simplicity and Flexibility: Eleventy doesn&#39;t lock you into a heavy framework like React or Vue. It&#39;s incredibly flexible and un-opinionated, letting you work with simple templates and data. This felt perfect for a straightforward, content-focused blog. JavaScript-Based: The entire configuration is done in plain JavaScript (.eleventy.js), which felt comfortable and accessible. There was no need to learn a new programming language just to build a blog. Peak Performance &amp;amp; Security: By default, Eleventy generates pre-built, static HTML files. This means there&#39;s no database to ahck and no complex server-side code running on every page view. The result is a site that is incredibly fast and secure right out of the box.&lt;/p&gt;
-&lt;p&gt;A Security-First Approach&lt;/p&gt;
-&lt;p&gt;A static site is secure by default, but I wanted to go further and ensure it was hardened against modern web vulnerabilities. The main tool for this was a netlify.toml file placed at the root of the project, which allowed me to define custom HTTP security headers.&lt;/p&gt;
+&lt;p&gt;Simplicity and Flexibility: Eleventy doesn&#39;t lock you into a heavy framework like React or Vue. It&#39;s incredibly flexible and un-opinionated, letting you work with simple templates and data. This felt perfect for a straightforward, content-focused blog. JavaScript-Based: The entire configuration is done in plain JavaScript (.eleventy.js), which felt comfortable and accessible. There was no need to learn a new programming language just to build a blog. Peak Performance &amp;amp; Security: By default, Eleventy generates pre-built, static HTML files. This means there&#39;s no database to hack and no complex server-side code running on every page view. The result is a site that is incredibly fast and secure right out of the box.&lt;/p&gt;
+&lt;h4&gt;A Security-First Approach&lt;/h4&gt;
+&lt;p&gt;A static site is secure by default, but I wanted to take it a step further and ensure it was hardened against modern web vulnerabilities. The main tool for this was Netlify.toml file placed at the root of the project, which allowed me to define custom HTTP security headers.&lt;/p&gt;
 &lt;p&gt;Here are the key security layers we implemented:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Content Security Policy (CSP): The Digital Bouncer&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;The most important header we added was a strong Content Security Policy. Think of a CSP as a bouncer for your website—it maintains a strict guest list of all the resources (scripts, styles, fonts, etc.) that are allowed to load on the page. Anything not on the list gets blcoked.&lt;/p&gt;
+&lt;h4&gt;1. Content Security Policy (CSP): The Digital Bouncer&lt;/h4&gt;
+&lt;p&gt;The most important header we added was a strong Content Security Policy. Think of a CSP as a bouncer for your website—it maintains a strict guest list of all the resources (scripts, styles, fonts, etc.) that are allowed to load on the page. Anything not on the list gets blocked.&lt;/p&gt;
 &lt;p&gt;My policy explicitly whitelists trusted sources for each type of content:&lt;/p&gt;
-&lt;p&gt;script-src: Only allows scripts from my own domain and the trusted Tailwind CSS CDN.
+&lt;p&gt;script-src: Only allows scripts from my domain and the trusted Tailwind CSS CDN.
 style-src: Only allows stylesheets from my domain and Google Fonts.
 font-src: Only allows fonts to be downloaded from Google&#39;s font servers (fonts.gstatic.com).
 object-src &#39;none&#39;: Completely blocks older, insecure plugins like Flash from ever running.&lt;/p&gt;
-&lt;p&gt;The &#39;unsafe-inline&#39; Caveat: The one necessary compromise was allowing &#39;unsafe-inline&#39; for styles. This was required for the Tailwind CSS CDN script to work, as it dynamically injects styles into the page. However, the risk is heavily mitigated because the overall source of any scripts is still locked down by the rest of the policy.&lt;/p&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;Other Essential Headers&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;The &#39;unsafe-inline&#39; Caveat: The one necessary compromise was allowing &#39;unsafe-inline&#39; for styles. This was required for the Tailwind CSS CDN script to work, as it dynamically injects styles into the page. However, the risk is heavily mitigated because the rest of the policy still locks down the overall source of any scripts.&lt;/p&gt;
+&lt;h4&gt;2. Other Essential Headers:&lt;/h4&gt;
 &lt;p&gt;Beyond the CSP, we added several other headers for a layered defense:&lt;/p&gt;
-&lt;p&gt;Strict-Transport-Security (HSTS): Ensures that browsers only ever communicate with my site over a secure HTTPS connection. X-Frame-Options: Set to DENY, this completely prevents my site from being embedded in an &lt;iframe&gt; on another website, which is the primary defense against &amp;quot;clickjacking&amp;quot; attacks. Permissions-Policy: This is a modern header that lets me lock down browser features that my blog has no reason to use, like the microphone, camera, USB devices, and payment APIs.&lt;/iframe&gt;&lt;/p&gt;
-&lt;p&gt;The Result&lt;/p&gt;
+&lt;p&gt;Strict-Transport-Security (HSTS): Ensures that browsers only ever communicate with my site over a secure HTTPS connection. X-Frame-Options: Set to DENY, this completely prevents my site from being embedded in an iframe on another website, which is the primary defense against &amp;quot;clickjacking&amp;quot; attacks. Permissions Policy: This is a modern header that allows me to lock down browser features that my blog has no reason to use, such as the microphone, camera, USB devices, and payment APIs.&lt;/p&gt;
+&lt;h4&gt;The Result:&lt;/h4&gt;
 &lt;p&gt;The outcome is exactly what I was hoping for: a fast, modern blog with an A+ security rating that is completely decoupled from my main portfolio. The workflow is simple—I write a post in a Markdown file, push it to GitHub, and Netlify handles the rest. It’s a setup I can trust while I focus on writing content and my job search.&lt;/p&gt;
 </content>
   </entry>

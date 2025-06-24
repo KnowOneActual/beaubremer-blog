@@ -28,7 +28,7 @@ The goal was a modern, intelligent, and secure application. I chose a tech stack
 
 ### Part 1: The Blueprint - A Rapid Prototype
 
-The first step was getting a minimum viable product working. I built the chat interface with simple HTML, styled with Tailwind CSS for a clean look.
+The first step was getting a minimum viable product working. I built the chat interface using simple HTML and styled it with Tailwind CSS for a clean look.
 
 The initial UI structure was straightforward: a container for messages and a form for input.
 
@@ -43,18 +43,26 @@ The initial UI structure was straightforward: a container for messages and a for
 ```
 
 Initially, all the logic lived in a client-side JavaScript file. The logic followed three steps: identify the city using the Gemini API, fetch weather data from OpenWeatherMap, and then feed both back into Gemini to generate a human-friendly response. While this was great for quick prototyping, it had a critical security flaw that I planned to address after proving the concept.
-Part 2: From Localhost to Live - The Inevitable Hurdles
-Getting the prototype to run on a live website is where the real problem-solving began. Deploying to Netlify revealed a series of issues that required systematic debugging.
-Challenge 1: The Bot Was Stuck on "Connecting..."
+
+### Part 2: 
+
+From Localhost to Live - The Inevitable Hurdles
+Getting the prototype to run on a live website is where the real problem-solving begins. Deploying to Netlify revealed a series of issues that required systematic debugging.
+
+####Challenge 1: The Bot Was Stuck on "Connecting..."
 Investigation: The app worked locally but not when deployed. The browser console was clean, which suggested the issue wasn't a simple code error. I realized my local setup used a development server, but the live site had no database connection configured.
 Solution: I created a production Firebase project and wired it up by adding the firebaseConfig object to my project. This was a classic "dev vs. production" environment mismatch, and it reinforced the need for explicit configuration for deployed services.
-Challenge 2: Authentication and Security Policy Errors
+
+#### Challenge 2: Authentication and Security Policy Errors
 Investigation: With the database configured, new errors appeared: a Content Security Policy (CSP) block against gstatic.com (a Google domain for Firebase) and an auth/admin-restricted-operation error from Firebase itself.
+
 Solution: I solved this in two steps. First, I updated the netlify.toml file to explicitly allow scripts from gstatic.com in my CSP. Second, I diagnosed the auth error to mean that while my app was talking to Firebase, no users were authorized to perform actions. I enabled "Anonymous sign-in" in the Firebase console, creating a secure session for any visitor without requiring them to create an account.
-Part 3: The Pro-Level Step - Securing API Keys
+
+### Part 3: The Pro-Level Step - Securing API Keys
 The most critical issue was that my API keys for Gemini and OpenWeatherMap were sitting in my public JavaScript file. Exposing API keys on the frontend is a critical security flaw. A malicious actor could steal them and run up enormous costs on my billing account or have them disabled for abuse. This is unacceptable for any real-world application.
 The solution was to refactor the architecture, introducing a serverless function to act as a secure proxy.
 The New, Secure Architecture:
+
 Instead of the user's browser calling the APIs directly, it now makes a single, secure request to a backend function on my own site. This function then calls the external APIs using the keys, which are stored safely as environment variables on Netlify.
 I created a Netlify Function in netlify/functions/weather.js. This function is the only part of the system that can access the secret keys.
 
