@@ -43,6 +43,7 @@ Before starting anything new, I always make sure my local project is in sync wit
 ```bash
 # First, switch to your main branch
 git checkout main
+```
 
 # Then, pull the latest changes from GitHub (your remote 'origin')
 git pull origin main
@@ -52,25 +53,33 @@ Step 2: Create Your New Branch
 Next, I created a new branch and immediately switched to it. I gave it a descriptive name so I'd know its purpose.
 
 # Create a new branch and immediately switch to it (-b does both!)
+
+```
 git checkout -b feature/contextual-header-link
+```
 
 Step 3: Do the Work
 
 On this new, safe branch, I edited my layout file (_includes/layouts/base.njk) to add the logic for the contextual link. I made a few small, focused commits along the way to save my progress.
 
 # Stage all modified files for the commit
+```
 git add .
+```
 
 # Commit your changes with a clear, descriptive message
+```
 git commit -m "feat: Make header link contextual"
+```
 
 Step 4: Open a Pull Request
 
 Once I was happy with how it worked on my local machine, I pushed the new branch up to my GitHub repository.
 
 # The -u flag sets the upstream branch, so you can just use `git push` next time
+```
 git push -u origin feature/contextual-header-link
-
+```
 Then, I went to my project on the GitHub website and opened a Pull Request (PR). A PR is a formal way of proposing your changes. It’s a request to pull your new code from the feature/contextual-header-link branch into the main branch.
 
 Step 5: Merge and Clean Up

@@ -99,43 +99,32 @@
 <p>Before starting anything new, I always make sure my local project is in sync with the latest version on GitHub.</p>
 <pre><code class="language-bash"># First, switch to your main branch
 git checkout main
-
-# Then, pull the latest changes from GitHub (your remote 'origin')
-git pull origin main
-
-Step 2: Create Your New Branch
-
-Next, I created a new branch and immediately switched to it. I gave it a descriptive name so I'd know its purpose.
-
-# Create a new branch and immediately switch to it (-b does both!)
-git checkout -b feature/contextual-header-link
-
-Step 3: Do the Work
-
-On this new, safe branch, I edited my layout file (_includes/layouts/base.njk) to add the logic for the contextual link. I made a few small, focused commits along the way to save my progress.
-
-# Stage all modified files for the commit
-git add .
-
-# Commit your changes with a clear, descriptive message
-git commit -m &quot;feat: Make header link contextual&quot;
-
-Step 4: Open a Pull Request
-
-Once I was happy with how it worked on my local machine, I pushed the new branch up to my GitHub repository.
-
-# The -u flag sets the upstream branch, so you can just use `git push` next time
-git push -u origin feature/contextual-header-link
-
-Then, I went to my project on the GitHub website and opened a Pull Request (PR). A PR is a formal way of proposing your changes. It’s a request to pull your new code from the feature/contextual-header-link branch into the main branch.
-
-Step 5: Merge and Clean Up
-
-The Pull Request page on GitHub showed me a summary of all my changes, which I could review one last time. Everything looked good, so I clicked the &quot;Merge pull request&quot; button. This safely merged my work into the main and, in my case, automatically triggered a new deployment to Netlify.
-
-After merging, I deleted the feature branch to keep my repository tidy and signal that the work on that specific feature was complete. The work is now safely part of the main branch.
-
-This whole process might seem like extra work at first, but it'll quickly become a natural part of your routine. It provides a structure for safer, more organized development. Give it a try on your very next task, no matter how small!</code></pre>
+</code></pre>
+<h1>Then, pull the latest changes from GitHub (your remote 'origin')</h1>
+<p>git pull origin main</p>
+<p>Step 2: Create Your New Branch</p>
+<p>Next, I created a new branch and immediately switched to it. I gave it a descriptive name so I'd know its purpose.</p>
+<h1>Create a new branch and immediately switch to it (-b does both!)</h1>
+<pre><code>git checkout -b feature/contextual-header-link
+</code></pre>
+<p>Step 3: Do the Work</p>
+<p>On this new, safe branch, I edited my layout file (_includes/layouts/base.njk) to add the logic for the contextual link. I made a few small, focused commits along the way to save my progress.</p>
+<h1>Stage all modified files for the commit</h1>
+<pre><code>git add .
+</code></pre>
+<h1>Commit your changes with a clear, descriptive message</h1>
+<pre><code>git commit -m &quot;feat: Make header link contextual&quot;
+</code></pre>
+<p>Step 4: Open a Pull Request</p>
+<p>Once I was happy with how it worked on my local machine, I pushed the new branch up to my GitHub repository.</p>
+<h1>The -u flag sets the upstream branch, so you can just use <code>git push</code> next time</h1>
+<pre><code>git push -u origin feature/contextual-header-link
+</code></pre>
+<p>Then, I went to my project on the GitHub website and opened a Pull Request (PR). A PR is a formal way of proposing your changes. It’s a request to pull your new code from the feature/contextual-header-link branch into the main branch.</p>
+<p>Step 5: Merge and Clean Up</p>
+<p>The Pull Request page on GitHub showed me a summary of all my changes, which I could review one last time. Everything looked good, so I clicked the &quot;Merge pull request&quot; button. This safely merged my work into the main and, in my case, automatically triggered a new deployment to Netlify.</p>
+<p>After merging, I deleted the feature branch to keep my repository tidy and signal that the work on that specific feature was complete. The work is now safely part of the main branch.</p>
+<p>This whole process might seem like extra work at first, but it'll quickly become a natural part of your routine. It provides a structure for safer, more organized development. Give it a try on your very next task, no matter how small!</p>
 
 </article>
         </div>
