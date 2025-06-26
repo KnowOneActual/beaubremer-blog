@@ -45,7 +45,7 @@ This is the default, all-wireless setup, where every Sonos speaker connects to y
 
 #### **Case for SonosNet (WM:0 - The Classic Fix)**
 
-This setup is created by connecting **one** Sonos product (a speaker or a Sonos Boost) to your gateway Eero with an Ethernet cable. This device then creates a separate, private 2.4GHz wireless network exclusively for your other Sonos speakers.
+This setup is created by connecting **one** Sonos product to your gateway Eero with an Ethernet cable. This device then creates a separate, private 2.4GHz wireless network exclusively for your other Sonos speakers.
 
 * **Why use it?** SonosNet isolates your sensitive audio traffic from all the other Wi-Fi noise in your house. It's the most proven and effective fix for dropouts and issues with grouped speakers, especially in busy network environments.
 * **Best for:** Users with older hardware, high Wi-Fi interference, or anyone experiencing stubborn dropouts and stereo pair failures.
