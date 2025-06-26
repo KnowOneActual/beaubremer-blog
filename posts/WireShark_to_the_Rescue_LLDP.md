@@ -88,7 +88,7 @@ End of LLDPDU
 
 ### Saving Your Favorite Filters
 
-Tired of typing `lldp` every time? Wireshark lets you save your favorite filters so they're just a click away!
+Tired of remembering `lldp` every time? Wireshark lets you save your favorite filters so they're just a click away!
 
 
 
