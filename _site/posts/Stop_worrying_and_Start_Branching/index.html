@@ -75,55 +75,62 @@
     <p>You're deep in concentration, adding a new feature to your website, when you suddenly realize... you've broken everything. The page won't load, styles are a mess, and that familiar panic sets in. I've definitely been there. For too long, I did all my work directly on the <code>main</code> branch—the one my live site was built from. Every change was a high-stakes gamble.</p>
 <p>Then, I embraced a professional workflow that brought a new level of safety and confidence to my work: <strong>Git branching</strong>.</p>
 <p>Think of your <code>main</code> branch as the &quot;golden copy&quot; of your project. It's the version that is live, working, and stable. A branch is a parallel copy of your project where you can experiment freely. If your new idea works, you merge it into the golden copy. If it's a disaster, you delete the branch, and <code>main</code> remains untouched.</p>
+<p><img src="/images/blog/git-branching-diagram.svg" alt="A diagram showing feature branches splitting off from the main Git branch and merging back in."></p>
 <p>It brings peace of mind to the development process. Here’s why you should be using it.</p>
-<h3>Why Bother with Branches?</h3>
+<h2>Why Bother with Branches?</h2>
 <p>It might seem like a few extra steps, but the benefits are enormous.</p>
 <ul>
-<li>
-<p><strong>Protect Your Live Site:</strong> Your <code>main</code> branch is always protected. You can be confident that it's in a deployable, working state at all times. No more &quot;I just broke the live site!&quot; panic.</p>
-</li>
-<li>
-<p><strong>Experiment Freely:</strong> Want to try a new layout or a wild idea? Create a branch! You can make a mess, try things out, and break whatever you want without any risk to your core project. If it doesn't work out, there's no harm done.</p>
-</li>
-<li>
-<p><strong>Stay Organized:</strong> Create a separate branch for each new feature or bug fix. This keeps your work isolated and easy to track. For example, <code>feature/new-contact-form</code> or <code>fix/mobile-menu-bug</code>.</p>
-</li>
-<li>
-<p><strong>Easier Collaboration and Code Reviews:</strong> If you work on a team, branches are essential for facilitating easier collaboration and code reviews. Even for solo developers, they allow you to use Pull Requests on GitHub to review your work before merging. It's a great way to catch your own mistakes.</p>
-</li>
+<li><strong>Protect Your Live Site:</strong> Your <code>main</code> branch is always protected. You can be confident that it's in a deployable, working state at all times. No more &quot;I just broke the live site!&quot; panic.</li>
+<li><strong>Experiment Freely:</strong> Want to try a new layout or a wild idea? Create a branch! You can make a mess, try things out, and break whatever you want without any risk to your core project. If it doesn't work out, there's no harm done.</li>
+<li><strong>Stay Organized:</strong> Create a separate branch for each new feature or bug fix. This keeps your work isolated and easy to track. For example, <code>feature/new-contact-form</code> or <code>fix/mobile-menu-bug</code>.</li>
+<li><strong>Easier Collaboration and Code Reviews:</strong> If you work on a team, branches are essential. Even for solo developers, they allow you to use Pull Requests on GitHub to review your work before merging. It's a great way to catch your own mistakes.</li>
 </ul>
-<h3>My 5-Step Branching Workflow</h3>
+<h2>My 5-Step Branching Workflow</h2>
 <p>To make this concrete, let me walk you through a real-world example. I recently wanted to change the main header link on my blog. On the homepage, it should point to my main portfolio, but on individual posts, it should point back to the blog's index. This was a perfect use case for a feature branch.</p>
 <p>Here’s the exact workflow I followed:</p>
-<p><strong>Step 1: Start from a Clean Slate</strong></p>
+<ol>
+<li>
+<p><strong>Start from a Clean Slate</strong></p>
 <p>Before starting anything new, I always make sure my local project is in sync with the latest version on GitHub.</p>
 <pre><code class="language-bash"># First, switch to your main branch
 git checkout main
+
+# Then, pull the latest changes from GitHub (your remote 'origin')
+git pull origin main
 </code></pre>
-<h1>Then, pull the latest changes from GitHub (your remote 'origin')</h1>
-<p>git pull origin main</p>
-<p>Step 2: Create Your New Branch</p>
-<p>Next, I created a new branch and immediately switched to it. I gave it a descriptive name so I'd know its purpose.</p>
-<h1>Create a new branch and immediately switch to it (-b does both!)</h1>
-<pre><code>git checkout -b feature/contextual-header-link
+</li>
+<li>
+<p><strong>Create Your New Branch</strong></p>
+<p>Next, I created a new branch and immediately switched to it. I gave it a descriptive name so I'd know its purpose. The <code>-b</code> flag handles both creating the branch and checking it out in one step.</p>
+<pre><code class="language-bash"># The -b flag creates a new branch and switches to it
+git checkout -b feature/contextual-header-link
 </code></pre>
-<p>Step 3: Do the Work</p>
-<p>On this new, safe branch, I edited my layout file (_includes/layouts/base.njk) to add the logic for the contextual link. I made a few small, focused commits along the way to save my progress.</p>
-<h1>Stage all modified files for the commit</h1>
-<pre><code>git add .
+</li>
+<li>
+<p><strong>Do the Work</strong></p>
+<p>On this new, safe branch, I edited my layout file (<code>_includes/layouts/base.njk</code>) to add the logic for the contextual link. I made a few small, focused commits along the way to save my progress.</p>
+<pre><code class="language-bash"># Stage all modified files for the commit
+git add .
+
+# Commit your changes with a clear, descriptive message
+git commit -m &quot;feat: Make header link contextual&quot;
 </code></pre>
-<h1>Commit your changes with a clear, descriptive message</h1>
-<pre><code>git commit -m &quot;feat: Make header link contextual&quot;
-</code></pre>
-<p>Step 4: Open a Pull Request</p>
+</li>
+<li>
+<p><strong>Open a Pull Request</strong></p>
 <p>Once I was happy with how it worked on my local machine, I pushed the new branch up to my GitHub repository.</p>
-<h1>The -u flag sets the upstream branch, so you can just use <code>git push</code> next time</h1>
-<pre><code>git push -u origin feature/contextual-header-link
+<pre><code class="language-bash"># Push the new branch to your remote repo named 'origin'
+# The -u flag sets the upstream branch for future pushes
+git push -u origin feature/contextual-header-link
 </code></pre>
-<p>Then, I went to my project on the GitHub website and opened a Pull Request (PR). A PR is a formal way of proposing your changes. It’s a request to pull your new code from the feature/contextual-header-link branch into the main branch.</p>
-<p>Step 5: Merge and Clean Up</p>
-<p>The Pull Request page on GitHub showed me a summary of all my changes, which I could review one last time. Everything looked good, so I clicked the &quot;Merge pull request&quot; button. This safely merged my work into the main and, in my case, automatically triggered a new deployment to Netlify.</p>
-<p>After merging, I deleted the feature branch to keep my repository tidy and signal that the work on that specific feature was complete. The work is now safely part of the main branch.</p>
+<p>Then, I went to my project on the GitHub website and opened a Pull Request (PR). A PR is a formal way of proposing your changes. It’s a request to pull your new code from the <code>feature/contextual-header-link</code> branch into the <code>main</code> branch.</p>
+</li>
+<li>
+<p><strong>Merge and Clean Up</strong></p>
+<p>The Pull Request page on GitHub showed me a summary of all my changes, which I could review one last time. Everything looked good, so I clicked the &quot;Merge pull request&quot; button.</p>
+</li>
+</ol>
+<p>This safely merged my work into <code>main</code> and, in my case, automatically triggered a new deployment to Netlify. After merging, I deleted the feature branch to keep my repository tidy and signal that the work on that specific feature was complete. The work is now safely part of the <code>main</code> branch.</p>
 <p>This whole process might seem like extra work at first, but it'll quickly become a natural part of your routine. It provides a structure for safer, more organized development. Give it a try on your very next task, no matter how small!</p>
 
 </article>
