@@ -101,4 +101,4 @@ Now, your saved filter will appear in the drop-down menu next to the display fil
 
 So, the next time you're faced with a wall of unlabeled ports, don't despair! Fire up Wireshark, apply your favorite discovery protocol filter (I'm looking at you, LLDP!), and let the network tell you exactly where you're plugged in. It's a huge time saver and a great way to avoid that awkward "guess and check" dance.
 
-Happy hunting!
+#### Capture Smarter, Not Harder!

@@ -81,7 +81,7 @@ End of LLDPDU
 &lt;/ol&gt;
 &lt;p&gt;Now, your saved filter will appear in the drop-down menu next to the display filter bar. No more typing, just quick access to your most used network sleuth tools!&lt;/p&gt;
 &lt;p&gt;So, the next time you&#39;re faced with a wall of unlabeled ports, don&#39;t despair! Fire up Wireshark, apply your favorite discovery protocol filter (I&#39;m looking at you, LLDP!), and let the network tell you exactly where you&#39;re plugged in. It&#39;s a huge time saver and a great way to avoid that awkward &amp;quot;guess and check&amp;quot; dance.&lt;/p&gt;
-&lt;p&gt;Happy hunting!&lt;/p&gt;
+&lt;h4&gt;Capture Smarter, Not Harder!&lt;/h4&gt;
 </content>
   </entry>
   <entry>
