@@ -1054,6 +1054,80 @@ If you&#39;re working on a different branch, you&#39;d replace &lt;code&gt;main&
 </content>
   </entry>
   <entry>
+    <title>WireShark to the Rescue: Unmasking Unlabeled Network Ports with CDP, LLDP, and More!</title>
+    <link href="https://blog.beaubremer.com/posts/WireShark_to_the_Rescue_LLDP/"/>
+    <updated>2025-06-11T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/WireShark_to_the_Rescue_LLDP/</id>
+    <content xml:lang="en" type="html">&lt;h3&gt;Lost in the Labyrinth of Unlabeled Ports and Ethernet Cables? Wireshark to the Rescue!&lt;/h3&gt;
+&lt;p&gt;Hey everyone! Ever found yourself staring at a rack full of network switches, all blinking enticingly, but with not a single label in sight? You&#39;re not alone. We&#39;ve all been there – needing to track down a specific port, dreading the inevitable &#39;walk of shame&#39; back to the rack room, eyes glazing over at a sea of identical blinking lights, trying to track down a rogue cable. Imagine if you could just ask the network where you are!&lt;/p&gt;
+&lt;p&gt;Good news! You actually can. It involves your trusty laptop and the magic of Wireshark. Today, we&#39;re going to dive into some network discovery protocols that can be your best friends when you&#39;re playing &#39;find the port&#39; in the data room.&lt;/p&gt;
+&lt;h3&gt;Meet the Network Detectives: CDP, LLDP, EDP, and FDP&lt;/h3&gt;
+&lt;p&gt;When I need to figure out what port I&#39;m plugged into, I turn to these four unsung heroes of network discovery. Each one acts like a little beacon, broadcasting information about the device it&#39;s connected to.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CDP (Cisco Discovery Protocol):&lt;/strong&gt; If you&#39;re working with Cisco gear, CDP is your go-to. It&#39;s a proprietary protocol that Cisco devices use to share information about themselves directly with other Cisco devices connected to them.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LLDP (Link Layer Discovery Protocol):&lt;/strong&gt; This is the open standard version of CDP. It works across various vendors, making it incredibly useful in mixed-vendor environments. LLDP is like the universal translator of network discovery.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;EDP (Extreme Discovery Protocol):&lt;/strong&gt; As the name suggests, this protocol is designed for Extreme Networks equipment. Similar to CDP, it&#39;s Extreme&#39;s way of sharing information between its devices.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;FDP (Foundry Discovery Protocol):&lt;/strong&gt; If you&#39;re dealing with Brocade (formerly Foundry Networks) switches, FDP is what you&#39;ll need to look for—another proprietary protocol, but just as helpful in its ecosystem.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My personal favorite, and the one I reach for most often, is &lt;strong&gt;LLDP&lt;/strong&gt;. Why LLDP, you ask? Because in today&#39;s networks, you&#39;re rarely dealing with just one vendor. LLDP gives me the best chance of getting the information I need, no matter whose hardware I&#39;m connected to. It&#39;s the most versatile tool in the box!&lt;/p&gt;
+&lt;h3&gt;How to Use These Filters in Wireshark&lt;/h3&gt;
+&lt;p&gt;Okay, so you&#39;ve got Wireshark open, you&#39;re capturing traffic, but how do you find these little network gems? It&#39;s super simple! Wireshark has a powerful display filter bar that lets you narrow down what you&#39;re seeing.&lt;/p&gt;
+&lt;p&gt;Here&#39;s how to apply each filter:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For CDP: Type &lt;code&gt;cdp&lt;/code&gt; in the display filter bar and hit Enter.&lt;/li&gt;
+&lt;li&gt;For LLDP: Type &lt;code&gt;lldp&lt;/code&gt; in the display filter bar and hit Enter.&lt;/li&gt;
+&lt;li&gt;For EDP: Type &lt;code&gt;edp&lt;/code&gt; in the display filter bar and hit Enter.&lt;/li&gt;
+&lt;li&gt;For FDP: Type &lt;code&gt;fdp&lt;/code&gt; in the display filter bar and hit Enter.&lt;/li&gt;
+&lt;li&gt;For all: Type &lt;code&gt;cdp or lldp or edp or fdp&lt;/code&gt; in the display filter bar and hit Enter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once you apply the filter, you&#39;ll start seeing packets specifically from that protocol. These protocols are designed to periodically broadcast information, so you might need to wait a few seconds for a packet to appear. In these packets, you&#39;ll often find information such as the remote device&#39;s hostname, its IP address, and, most importantly, the remote port it&#39;s connected to. This is gold when you&#39;re trying to figure out which port on that unlabeled switch you&#39;re connected to. This might take one minute or so to show, depending on the switch and message frequency.&lt;/p&gt;
+&lt;h3&gt;Example Output of an LLDP Packet:&lt;/h3&gt;
+&lt;p&gt;Let&#39;s take a look at what an LLDP packet might reveal:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Frame 1: 242 bytes on wire (1936 bits), 242 bytes captured (1936 bits) on interface en7, id 0
+
+Ethernet II, Src: Ubiquiti&#92;_XX:XX:XX (68:d7:9a:XX:XX:XX), Dst: LLDP&#92;_Multicast (01:80:c2:00:00:0e)
+
+Link Layer Discovery Protocol
+
+Chassis Subtype = Locally assigned, Id: 68:d7:9a:XX:XX:XX
+
+Port Subtype = MAC address, Id: 68:d7:9a:XX:XX:XX
+
+Time To Live = 120 sec
+
+System Name = Switch_room102_0012
+
+System Description = Debian GNU/Linux 11 (bullseye) Linux 4.19.152-ui-alpine &#92;#4.19.152 SMP Fri Jun 7 23:26:35 CST 2024 aarch64
+
+Capabilities
+
+Management Address
+
+Management Address
+
+Port Description = eth0
+
+IEEE 802.3 - Link Aggregation
+
+IEEE 802.3 - MAC/PHY Configuration/Status
+
+End of LLDPDU
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Saving Your Favorite Filters&lt;/h3&gt;
+&lt;p&gt;Tired of typing &lt;code&gt;lldp&lt;/code&gt; every time? Wireshark lets you save your favorite filters so they&#39;re just a click away!&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Type your filter&lt;/strong&gt; (e.g., &lt;code&gt;lldp&lt;/code&gt;) into the display filter bar.&lt;/li&gt;
+&lt;li&gt;Click the &lt;strong&gt;plus sign (+)&lt;/strong&gt; next to the display filter bar.&lt;/li&gt;
+&lt;li&gt;A small dialog box will pop up. Give your filter a descriptive &lt;strong&gt;label&lt;/strong&gt; (such as &amp;quot;LLDP Packets&amp;quot;) and, optionally, add a &lt;strong&gt;comment&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;OK&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now, your saved filter will appear in the drop-down menu next to the display filter bar. No more typing, just quick access to your most used network sleuth tools!&lt;/p&gt;
+&lt;p&gt;So, the next time you&#39;re faced with a wall of unlabeled ports, don&#39;t despair! Fire up Wireshark, apply your favorite discovery protocol filter (I&#39;m looking at you, LLDP!), and let the network tell you exactly where you&#39;re plugged in. It&#39;s a huge time saver and a great way to avoid that awkward &amp;quot;guess and check&amp;quot; dance.&lt;/p&gt;
+&lt;p&gt;Happy hunting!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Why I Chose Eleventy for My Blog (And How I Secured It)</title>
     <link href="https://blog.beaubremer.com/posts/Eleventy_for_My_Blog/"/>
     <updated>2025-06-11T00:00:00Z</updated>
