@@ -1,7 +1,7 @@
 ---
 title: "WireShark to the Rescue: Unmasking Unlabeled Network Ports with CDP, LLDP, and More!" 
 description: "Tired of guessing which port is which? Learn how Wireshark and network discovery protocols like LLDP can save you time and frustration in the data room." 
-date: 2025-06-11 
+date: 2025-06-26 
 layout: "post.njk" 
 tags:
  - posts
