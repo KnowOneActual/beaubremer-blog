@@ -26,8 +26,7 @@ When I need to figure out what port I'm plugged into, I turn to these four unsun
 * **CDP (Cisco Discovery Protocol):** If you're working with Cisco gear, CDP is your go-to. It's a proprietary protocol that Cisco devices use to share information about themselves directly with other Cisco devices connected to them.
 * **LLDP (Link Layer Discovery Protocol):** This is the open standard version of CDP. It works across various vendors, making it incredibly useful in mixed-vendor environments. LLDP is like the universal translator of network discovery.
 * **EDP (Extreme Discovery Protocol):** As the name suggests, this protocol is designed for Extreme Networks equipment. Similar to CDP, it's Extreme's way of sharing information between its devices.
-* **FDP (Foundry Discovery Protocol):** If you're dealing with Brocade (formerly Foundry Networks) switches, FDP is what you'll need to look for—another proprietary protocol, but just as helpful in its ecosystem.
-
+* **FDP (Foundry Discovery Protocol):** If you're dealing with Brocade (formerly Foundry Networks) switches, FDP is what you'll need to look for—another proprietary protocol, but just as helpful in its ecosystem. This is not a common one, but I've run it enough that it's on my list.
 My personal favorite, and the one I reach for most often, is **LLDP**. Why LLDP, you ask? Because in today's networks, you're rarely dealing with just one vendor. LLDP gives me the best chance of getting the information I need, no matter whose hardware I'm connected to. It's the most versatile tool in the box!
 
 
@@ -75,7 +74,7 @@ Management Address
 
 Management Address
 
-Port Description = eth0
+Port Description = eth21
 
 IEEE 802.3 - Link Aggregation
 
