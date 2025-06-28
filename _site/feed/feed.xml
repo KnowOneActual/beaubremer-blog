@@ -4,12 +4,37 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-06-26T00:00:00Z</updated>
+  <updated>2025-06-27T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>More Than a Portfolio: The Story Your Personal Site Tells About You</title>
+    <link href="https://blog.beaubremer.com/posts/More_Than_a_Portfolio/"/>
+    <updated>2025-06-27T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/More_Than_a_Portfolio/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;For a long time, I had put off creating a personal website. I already had a resume and a LinkedIn profile—the professional basics. Building a whole site felt like a ton of work for something few people might ever see. Was the effort really worth it?&lt;/p&gt;
+&lt;p&gt;I’ve come to realize the answer is a definite &#39;yes,&#39; but not for the reasons I expected. The real value isn’t just in the finished product. The most powerful message your site sends has nothing to do with the portfolio pieces it hosts or the articles it contains. It’s about what the simple act of building it says about you.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;It Shows You&#39;re Willing to Figure Things Out&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Unless you&#39;re a web developer, building a site means stepping into the unknown. I remember the specific, slightly delirious victory of figuring out what a &#39;serverless function&#39; was—a piece of technical jargon that sounds like it was invented just to make you quit. For a moment there, I felt like I could probably hack the mainframe.&lt;/p&gt;
+&lt;p&gt;That process is a perfect, small-scale prototype of professional problem-solving. It shows a curiosity and a willingness to learn—the exact traits that are valuable in any role where the tools are constantly changing.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Perfection Isn&#39;t the Point&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Here’s the most freeing part: your personal site doesn’t have to be a technical masterpiece. My own site&#39;s design philosophy could best be described as &amp;quot;the buttons work,&amp;quot; and that&#39;s okay. It&#39;s not about proving you can code like a pro; it&#39;s about proving you won&#39;t let a skill gap stop you from getting something done.&lt;/p&gt;
+&lt;p&gt;The belief that we need to be an expert before we start is the biggest thing that holds us back. It’s perfectionism disguised as prudence. Initiative isn&#39;t about having all the answers before you begin; it&#39;s about being resourceful enough to find them along the way.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;You Prove You Can Follow Through&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Launching a website is the exciting part. Maintaining it is where dedication comes in.&lt;/p&gt;
+&lt;p&gt;Think about it this way: when a customer walks into a messy, disorganized garage, they can lose their confidence. When they walk into a clean, well-lit shop, they feel like they&#39;re in good hands. Your website is your digital storefront, and it sends the same signal.&lt;/p&gt;
+&lt;p&gt;Adding a new project, writing a short post, or just updating your bio shows consistency. It demonstrates that you don’t just start things; you see them through and take pride in your work over the long term. A hiring manager who sees a site with recent activity recognizes a person who can own a project beyond day one, just as a customer trusts a mechanic who keeps their shop in order.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;It Signals a Builder&#39;s Mindset&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Ultimately, all these points lead to a fundamental difference between a perfectionist&#39;s mindset and a builder&#39;s mindset. A perfectionist waits for the perfect tools, the perfect idea, and the perfect time. A builder starts with what they have and makes something.&lt;/p&gt;
+&lt;p&gt;Your website is the perfect evidence of that builder&#39;s mindset in action. &lt;strong&gt;Think of it as a working prototype of you as a professional.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The value of a prototype isn’t in its flawless design or exhaustive features; its value lies in the fact that it &lt;em&gt;exists&lt;/em&gt;. It proves that an idea can be brought to life. It shows you can execute and that you understand the crucial concept that &amp;quot;done&amp;quot; is better than &amp;quot;perfect.&amp;quot;&lt;/p&gt;
+&lt;p&gt;The question is simple: who would we rather have on our team? The person who is still polishing a theoretical plan, or the person who has already built and shipped a working solution?&lt;/p&gt;
+&lt;p&gt;Your website answers that question before you even say a word. In the end, it’s more than a link in your signature—it’s your story of how you get things done.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>WireShark to the Rescue: Unmasking Unlabeled Network Ports with CDP, LLDP, and More!</title>
     <link href="https://blog.beaubremer.com/posts/WireShark_to_the_Rescue_LLDP/"/>
