@@ -4,12 +4,81 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-06-27T00:00:00Z</updated>
+  <updated>2025-06-29T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>From Ping to Fix: A Practical Guide to Basic Network Troubleshooting</title>
+    <link href="https://blog.beaubremer.com/posts/From_Ping_to_Fix/"/>
+    <updated>2025-06-29T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/From_Ping_to_Fix/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;It’s a familiar frustration: an application can&#39;t reach its server, your connection feels sluggish, or the internet just cuts out entirely.&lt;/p&gt;
+&lt;p&gt;Before you spend hours searching forums or calling for help, you can often find the root of the problem yourself with just a few tools and a clear strategy.&lt;/p&gt;
+&lt;p&gt;This guide will walk you through a practical approach to network troubleshooting. You&#39;ll learn about three essential commands, a five-step framework for thinking through any problem, and a smart strategy to make your guesswork less random.&lt;/p&gt;
+&lt;h3&gt;Your Core Troubleshooting Toolkit&lt;/h3&gt;
+&lt;p&gt;Think of these three commands as your first line of defense. They are simple, powerful, and give you a quick snapshot of the network&#39;s health.&lt;/p&gt;
+&lt;h4&gt;1. &lt;code&gt;ping&lt;/code&gt;: Is Anyone Home?&lt;/h4&gt;
+&lt;p&gt;The &lt;strong&gt;ping&lt;/strong&gt; command is the simplest way to check if a remote device is online and reachable. It sends a small packet of data and waits for a reply.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Pinging a well-known Google server
+ping 8.8.8.8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;What to look for:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Successful Replies:&lt;/strong&gt; If you see lines that include &lt;code&gt;bytes from... time=...&lt;/code&gt;, it means there&#39;s a live connection between you and the server.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Request Timed Out:&lt;/strong&gt; If you get &amp;quot;Request Timed Out&amp;quot; or &amp;quot;Destination Host Unreachable,&amp;quot; there&#39;s a problem somewhere between your device and the destination.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example of a successful ping:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PING 8.8.8.8 (8.8.8.8): 56 data bytes
+64 bytes from 8.8.8.8: icmp_seq=0 ttl=116 time=13.523 ms
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=116 time=14.128 ms
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;2. &lt;code&gt;traceroute&lt;/code&gt;: What&#39;s the Path?&lt;/h4&gt;
+&lt;p&gt;If &lt;code&gt;ping&lt;/code&gt; fails, &lt;code&gt;traceroute&lt;/code&gt; (or &lt;code&gt;tracert&lt;/code&gt; on Windows) is your next step. It shows you the specific path, or &lt;strong&gt;hops&lt;/strong&gt;, your data takes to get to a destination. This is perfect for spotting exactly where the connection breaks.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Tracing the route to Google&#39;s server
+traceroute 8.8.8.8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You&#39;ll see a list of routers your connection passes through. If the trace stops, shows &lt;code&gt;* * *&lt;/code&gt; for multiple lines, or has a sudden, massive jump in latency (e.g., from &lt;code&gt;15ms&lt;/code&gt; to &lt;code&gt;200ms&lt;/code&gt;), you&#39;ve found a major clue about where the failure is occurring.&lt;/p&gt;
+&lt;h4&gt;3. Port Checking: Is the Service Listening?&lt;/h4&gt;
+&lt;p&gt;Sometimes the server is online (&lt;code&gt;ping&lt;/code&gt; works), but the specific service you need (like a database or a web server) isn&#39;t responding. You need to check if the &lt;strong&gt;port&lt;/strong&gt; for that service is open.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;On Windows (using PowerShell):&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-powershell&quot;&gt;# Checks if Google&#39;s web server is responding on the standard HTTPS port (443)
+Test-NetConnection google.com -Port 443
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;On macOS or Linux:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# The -z flag tells nc to scan without sending data, v is for verbose
+nc -zv google.com 443
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A &amp;quot;success&amp;quot; or &amp;quot;open&amp;quot; message means the service is listening. A failure could point to a firewall blocking the connection or the service being down.&lt;/p&gt;
+&lt;h3&gt;A Framework for Sanity: The 5-Step &amp;quot;Fixit&amp;quot; Process&lt;/h3&gt;
+&lt;p&gt;Commands give you data, but a framework gives you a plan. This is a systematic way to diagnose and solve a problem without getting overwhelmed.&lt;/p&gt;
+&lt;h4&gt;1. Find the Problem&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Clearly define what&#39;s actually failing. &amp;quot;Users can&#39;t log in&amp;quot; is far more useful than &amp;quot;the network is down.&amp;quot;&lt;/p&gt;
+&lt;h4&gt;2. Inspect the Symptoms&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Look for patterns. Does it only happen at 9 AM? Is it only affecting one person, or is it everyone on the office Wi-Fi?&lt;/p&gt;
+&lt;h4&gt;3. Exclude Possibilities&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Rule out what&#39;s working. If you can ping the server, you can probably exclude a full physical network outage.&lt;/p&gt;
+&lt;h4&gt;4. Implement a Hypothesis&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Form a theory and test it. &amp;quot;I think the firewall is blocking the port.&amp;quot; Now, run your port check to verify.&lt;/p&gt;
+&lt;h4&gt;5. Track the Fix&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Once you find the solution, write it down. This simple step saves you (and your future colleagues) from having to solve the same problem all over again.&lt;/p&gt;
+&lt;p&gt;The key thing to remember is that this is a loop, not a straight line. If one hypothesis fails, you just form and test a new one until you find the root cause.&lt;/p&gt;
+&lt;h3&gt;A Smarter Strategy: Thinking in Layers&lt;/h3&gt;
+&lt;p&gt;So you have your commands and a process, but where do you even start looking? The trick is to think about the problem in layers—from the physical cables up to the software application itself. This strategy stops you from guessing randomly.&lt;/p&gt;
+&lt;p&gt;Here are three common approaches based on this layered thinking:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bottom-Up (Is it plugged in?):&lt;/strong&gt; Start at the physical layer. This is the way to go when everything is down. Begin by checking if the cables are plugged in and the Wi-Fi is on before you do anything else.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Top-Down (Is it the app?):&lt;/strong&gt; Start at the application layer. This is best for when a single program is failing, like your email client. Begin by checking the app&#39;s settings and logs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Hybrid (Start in the Middle):&lt;/strong&gt; This is a powerful strategy for almost any situation. Start with a &lt;code&gt;ping&lt;/code&gt; command. If it works, you know the lower layers are fine, and you can look &amp;quot;up&amp;quot; toward the application. If it fails, you know the problem is &amp;quot;down&amp;quot; in the physical or network setup.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Tying It All Together&lt;/h3&gt;
+&lt;p&gt;Troubleshooting doesn&#39;t have to be a mystery. By combining the &lt;em&gt;what&lt;/em&gt; (your core commands), the &lt;em&gt;how&lt;/em&gt; (the Fixit framework), and the &lt;em&gt;where&lt;/em&gt; (the layered strategy), you have a complete system for tackling almost any network issue that comes your way. Now you’re equipped to stop guessing, start diagnosing problems methodically, and prove where the issue is—even if that means proving it&#39;s time to call for backup.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>More Than a Portfolio: The Story Your Personal Site Tells About You</title>
     <link href="https://blog.beaubremer.com/posts/More_Than_a_Portfolio/"/>
