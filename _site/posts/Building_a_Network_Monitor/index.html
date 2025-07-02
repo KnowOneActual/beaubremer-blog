@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>From Bright Idea to Browser: My Journey Building a Network Monitor (and What I Learned When Things Went Sideways) | Beau Bremer&#39;s | Blog</title>
+    <meta name="description" content="A candid look at building a web-based network monitor, the challenges I faced, and the invaluable lessons learned through trial and error." />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
+    
+<link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg" />
+<link rel="icon" type="image/webp" href="/img/favicon/favicon-32x32.webp" sizes="32x32">
+<link rel="icon" type="image/webp" href="/img/favicon/favicon-96x96.webp" sizes="96x96">
+<link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/img/favicon/site.webmanifest" />
+<link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+<link rel="stylesheet" href="/assets/css/lite-yt-embed.css" />
+</head>
+<body class="bg-gray-950 text-white scroll-smooth flex flex-col min-h-screen">
+
+    <header class="py-6 px-6 max-w-3xl mx-auto w-full">
+        <div class="flex justify-between items-center">
+            <div>
+                <a href="/" class="text-2xl font-bold text-white hover:text-fuchsia-400 transition-colors">Beau Bremer&#39;s | Blog</a>
+            </div>
+            <nav>
+              
+                <a href="/" class="text-gray-300 hover:text-white transition-colors">← Back to Blog Home</a>
+              
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto py-12 px-6 flex-grow w-full">
+        <div class="prose prose-invert lg:prose-xl max-w-none">
+            <article>
+    <header>
+        <h1 class="text-5xl font-extrabold text-fuchsia-400 mb-4">From Bright Idea to Browser: My Journey Building a Network Monitor (and What I Learned When Things Went Sideways)</h1>
+        
+            <p class="text-gray-400">
+                <time datetime="2025-07-02T00:00:00.000Z">July 02, 2025</time>
+            </p>
+        
+        
+        
+        
+            <div class="mt-4">
+                <span class="text-gray-400">Tagged in:</span>
+                
+                    
+                
+                    
+                        <a href="/tags/troubleshooting/" class="inline-block bg-gray-800 text-fuchsia-300 rounded-full px-3 py-1 text-sm font-semibold ml-2 hover:bg-gray-700 transition-colors">#troubleshooting</a>
+                    
+                
+                    
+                        <a href="/tags/network/" class="inline-block bg-gray-800 text-fuchsia-300 rounded-full px-3 py-1 text-sm font-semibold ml-2 hover:bg-gray-700 transition-colors">#network</a>
+                    
+                
+            </div>
+        
+    </header>
+    
+    <hr class="border-gray-700 my-8">
+
+    <p>Ever wondered what goes on behind the scenes when you interact with a website? Let's dive into a common challenge in web development and my journey to build a useful tool, even when my initial plans hit a few snags.</p>
+<p>Hey everyone! Beau here, your friendly neighborhood tech enthusiast, sharing a peek behind the curtain of my latest web development adventure. If you've poked around my site lately, you might have noticed a shiny new &quot;Network Latency Monitor&quot; in my <a href="https://beaubremer.com/#creative_library">Creative Resource Library</a>. It’s not just a cool tool; it’s a story about a great idea, a few head-scratching problems, and the beautiful mess of trial and error that makes development so rewarding (and occasionally, frustrating!).</p>
+<h3>The Spark: A Speed Test with &quot;Wow Factor&quot;</h3>
+<p>Initially, I had this neat idea: a network speed test. I thought, &quot;How cool would it be to have a built-in speed checker right on my site?&quot; It felt like a fantastic way to showcase my developing web development skills, my understanding of network principles, and just add a little bit of that interactive &quot;wow factor.&quot; I drafted up a client-side version using JavaScript, complete with progress bars and even parallel connections for downloads and uploads. If you'd like to check it out <a href="https://beaubremer.com/speed_test">Network Speed Test</a></p>
+<p>The initial results? Well, they were... interesting. My script would report a download speed of around 4 Mbps, while a commercial service like Speedtest.net would confidently tell me I was cruising at 400 Mbps! Clearly, something was off.</p>
+<h3>Hitting the Wall: Why My Speed Test Wasn't Usable</h3>
+<p>After some troubleshooting, I realized the core limitation: building a truly accurate speed test with purely client-side JavaScript is incredibly difficult. Commercial speed tests utilize dedicated, high-performance servers distributed globally and employ complex techniques to thoroughly test your connection's capabilities. My simple script, hitting generic public endpoints like <code>httpbin.org</code>, just couldn't give me the results I was looking for.</p>
+<p>It became clear: for all its &quot;wow factor,&quot; if the numbers weren't accurate, the tool wasn't truly &quot;usable.&quot; And if a tool isn't usable, it probably shouldn't be on the front page of your site!</p>
+<h3>A Pivot! From Speed to Stability: The Network Latency Monitor</h3>
+<p>So, I had to make a decision. Scrap the idea entirely? Or pivot? I chose to pivot. Instead of chasing elusive bandwidth numbers, I decided to build a tool that <em>could</em> be accurate and useful within my constraints: a <strong>Network Latency Monitor</strong>.</p>
+<p>The idea was simple: instead of measuring <em>how fast</em> data flows, let’s measure <em>how quickly</em> it responds and if it’s available. This highlights different, but equally important, networking skills – those related to troubleshooting, availability, and responsiveness. Latency, the time it takes for a signal to travel from one point to another, is a crucial indicator of network responsiveness and a great way to assess connectivity.</p>
+<h3>The Journey Continues: New Code, New Headaches (Totally Normal!)</h3>
+<p>Building the latency monitor wasn’t a straight line from idea to completion, either. This is where the &quot;trial and error&quot; comes in – and why it's so vital in development!</p>
+<ol>
+<li><strong>The Silent Startup:</strong> My initial draft of the monitor wouldn't even start checking the default sites automatically. A quick dive into the console revealed a simple JavaScript error: <code>this.startMonitoringAll is not a function</code>. A quick rearrangement of code, and it was alive!
+<ul>
+<li><em>What I Learned:</em> The browser console is your first and best friend for catching those tricky JavaScript errors right when your page loads. Always check it!</li>
+</ul>
+</li>
+<li><strong>The Invisible Wall (CSP):</strong> Once it was running, the default <code>https://</code> sites were showing as &quot;Down.&quot; The console, my best friend during these times, screamed &quot;Content Security Policy (CSP) blocking!&quot; My <code>netlify.toml</code> file had a <code>connect-src</code> directive that was too strict, preventing my own site from connecting to external domains like Google or Cloudflare. This required a small but crucial tweak to my Netlify configuration, expanding the <code>connect-src</code> to allow all <code>https:</code> connections.
+<ul>
+<li><em>What I Learned:</em> Content Security Policy is a powerful browser security feature. While essential for protection, it's also a common reason for external resource loading issues and requires careful configuration.</li>
+</ul>
+</li>
+<li><strong>The Mixed-Up Protocols:</strong> Next, I hit a snag with <code>http://</code> versus <code>https://</code> endpoints. My monitor, running on a secure <code>https://</code> site, was correctly blocking insecure <code>http://</code> requests (thank you, browser security!). But I also realized that if I tried to add <code>http://</code> URLs while testing locally (where my local server was <code>http://</code>), those <code>http://</code> URLs worked, but <code>https://</code> ones sometimes failed. This was a confusing dance between local environment behavior and deployed site behavior. The solution: stick firmly to <code>https://</code> for external monitoring and be very clear with users about this limitation.
+<ul>
+<li><em>What I Learned:</em> Always be mindful of protocol differences (<code>http</code> vs. <code>https</code>) and how they behave in both local development and deployed environments. Browser security models are designed to keep users safe, even if they occasionally make development a little trickier!</li>
+</ul>
+</li>
+<li><strong>The Reappearing Act:</strong> Even after successfully deleting endpoints, they'd pop back up on refresh. It turns out that the monitor was loading a hardcoded list of defaults every time the page loaded, overriding my changes. Implementing <code>localStorage</code> resolved this issue, allowing the monitor to remember user-added or removed endpoints.
+<ul>
+<li><em>What I Learned:</em> For persistent user preferences or data that should survive a page refresh, <code>localStorage</code> is a super handy browser API to remember things between sessions.</li>
+</ul>
+</li>
+</ol>
+<h3>My Big Takeaway: Embrace the Process!</h3>
+<p>This entire experience, from the ambitious (and slightly flawed) speed test to the fully functional latency monitor, reinforced some core beliefs about development:</p>
+<ul>
+<li><strong>You don't have to be perfect from the start.</strong> Ideas evolve, and initial approaches might not be the final ones. It's all part of the learning curve.</li>
+<li><strong>Trial and error is not a sign of failure; it's the path to success.</strong> Every error message, every unexpected behavior, is a clue leading you closer to a robust solution.</li>
+<li><strong>Debugging tools are your superpower.</strong> The browser console, network tab, and HAR files were invaluable in understanding exactly <em>why</em> things weren't working.</li>
+<li><strong>Understanding constraints is key.</strong> Knowing the limitations of free hosting and browser security wasn't a blocker; it shaped the project into something even better.</li>
+</ul>
+<p>So, go ahead, check out the <a href="https://beaubremer.com/network_latency_monitor">Network Latency Monitor</a> on my site! Add a few of your favorite sites, and see how it performs. And remember, every &quot;bug&quot; is just a puzzle waiting to be solved. I'm always keen to dive into new challenges and expand my understanding of web performance!</p>
+
+</article>
+        </div>
+    </main>
+
+    <footer class="text-center py-6 bg-gray-900 text-gray-500">
+        © 2025 Beau Bremer. All rights reserved. Have A Great Day and/or Night!
+    </footer>
+    <script src="/assets/js/lite-yt-embed.js"></script>
+</body>
+</html>

@@ -4,12 +4,63 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-06-29T00:00:00Z</updated>
+  <updated>2025-07-02T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>From Bright Idea to Browser: My Journey Building a Network Monitor (and What I Learned When Things Went Sideways)</title>
+    <link href="https://blog.beaubremer.com/posts/Building_a_Network_Monitor/"/>
+    <updated>2025-07-02T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Building_a_Network_Monitor/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Ever wondered what goes on behind the scenes when you interact with a website? Let&#39;s dive into a common challenge in web development and my journey to build a useful tool, even when my initial plans hit a few snags.&lt;/p&gt;
+&lt;p&gt;Hey everyone! Beau here, your friendly neighborhood tech enthusiast, sharing a peek behind the curtain of my latest web development adventure. If you&#39;ve poked around my site lately, you might have noticed a shiny new &amp;quot;Network Latency Monitor&amp;quot; in my &lt;a href=&quot;https://beaubremer.com/#creative_library&quot;&gt;Creative Resource Library&lt;/a&gt;. It’s not just a cool tool; it’s a story about a great idea, a few head-scratching problems, and the beautiful mess of trial and error that makes development so rewarding (and occasionally, frustrating!).&lt;/p&gt;
+&lt;h3&gt;The Spark: A Speed Test with &amp;quot;Wow Factor&amp;quot;&lt;/h3&gt;
+&lt;p&gt;Initially, I had this neat idea: a network speed test. I thought, &amp;quot;How cool would it be to have a built-in speed checker right on my site?&amp;quot; It felt like a fantastic way to showcase my developing web development skills, my understanding of network principles, and just add a little bit of that interactive &amp;quot;wow factor.&amp;quot; I drafted up a client-side version using JavaScript, complete with progress bars and even parallel connections for downloads and uploads. If you&#39;d like to check it out &lt;a href=&quot;https://beaubremer.com/speed_test&quot;&gt;Network Speed Test&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The initial results? Well, they were... interesting. My script would report a download speed of around 4 Mbps, while a commercial service like Speedtest.net would confidently tell me I was cruising at 400 Mbps! Clearly, something was off.&lt;/p&gt;
+&lt;h3&gt;Hitting the Wall: Why My Speed Test Wasn&#39;t Usable&lt;/h3&gt;
+&lt;p&gt;After some troubleshooting, I realized the core limitation: building a truly accurate speed test with purely client-side JavaScript is incredibly difficult. Commercial speed tests utilize dedicated, high-performance servers distributed globally and employ complex techniques to thoroughly test your connection&#39;s capabilities. My simple script, hitting generic public endpoints like &lt;code&gt;httpbin.org&lt;/code&gt;, just couldn&#39;t give me the results I was looking for.&lt;/p&gt;
+&lt;p&gt;It became clear: for all its &amp;quot;wow factor,&amp;quot; if the numbers weren&#39;t accurate, the tool wasn&#39;t truly &amp;quot;usable.&amp;quot; And if a tool isn&#39;t usable, it probably shouldn&#39;t be on the front page of your site!&lt;/p&gt;
+&lt;h3&gt;A Pivot! From Speed to Stability: The Network Latency Monitor&lt;/h3&gt;
+&lt;p&gt;So, I had to make a decision. Scrap the idea entirely? Or pivot? I chose to pivot. Instead of chasing elusive bandwidth numbers, I decided to build a tool that &lt;em&gt;could&lt;/em&gt; be accurate and useful within my constraints: a &lt;strong&gt;Network Latency Monitor&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The idea was simple: instead of measuring &lt;em&gt;how fast&lt;/em&gt; data flows, let’s measure &lt;em&gt;how quickly&lt;/em&gt; it responds and if it’s available. This highlights different, but equally important, networking skills – those related to troubleshooting, availability, and responsiveness. Latency, the time it takes for a signal to travel from one point to another, is a crucial indicator of network responsiveness and a great way to assess connectivity.&lt;/p&gt;
+&lt;h3&gt;The Journey Continues: New Code, New Headaches (Totally Normal!)&lt;/h3&gt;
+&lt;p&gt;Building the latency monitor wasn’t a straight line from idea to completion, either. This is where the &amp;quot;trial and error&amp;quot; comes in – and why it&#39;s so vital in development!&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;The Silent Startup:&lt;/strong&gt; My initial draft of the monitor wouldn&#39;t even start checking the default sites automatically. A quick dive into the console revealed a simple JavaScript error: &lt;code&gt;this.startMonitoringAll is not a function&lt;/code&gt;. A quick rearrangement of code, and it was alive!
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;What I Learned:&lt;/em&gt; The browser console is your first and best friend for catching those tricky JavaScript errors right when your page loads. Always check it!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Invisible Wall (CSP):&lt;/strong&gt; Once it was running, the default &lt;code&gt;https://&lt;/code&gt; sites were showing as &amp;quot;Down.&amp;quot; The console, my best friend during these times, screamed &amp;quot;Content Security Policy (CSP) blocking!&amp;quot; My &lt;code&gt;netlify.toml&lt;/code&gt; file had a &lt;code&gt;connect-src&lt;/code&gt; directive that was too strict, preventing my own site from connecting to external domains like Google or Cloudflare. This required a small but crucial tweak to my Netlify configuration, expanding the &lt;code&gt;connect-src&lt;/code&gt; to allow all &lt;code&gt;https:&lt;/code&gt; connections.
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;What I Learned:&lt;/em&gt; Content Security Policy is a powerful browser security feature. While essential for protection, it&#39;s also a common reason for external resource loading issues and requires careful configuration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Mixed-Up Protocols:&lt;/strong&gt; Next, I hit a snag with &lt;code&gt;http://&lt;/code&gt; versus &lt;code&gt;https://&lt;/code&gt; endpoints. My monitor, running on a secure &lt;code&gt;https://&lt;/code&gt; site, was correctly blocking insecure &lt;code&gt;http://&lt;/code&gt; requests (thank you, browser security!). But I also realized that if I tried to add &lt;code&gt;http://&lt;/code&gt; URLs while testing locally (where my local server was &lt;code&gt;http://&lt;/code&gt;), those &lt;code&gt;http://&lt;/code&gt; URLs worked, but &lt;code&gt;https://&lt;/code&gt; ones sometimes failed. This was a confusing dance between local environment behavior and deployed site behavior. The solution: stick firmly to &lt;code&gt;https://&lt;/code&gt; for external monitoring and be very clear with users about this limitation.
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;What I Learned:&lt;/em&gt; Always be mindful of protocol differences (&lt;code&gt;http&lt;/code&gt; vs. &lt;code&gt;https&lt;/code&gt;) and how they behave in both local development and deployed environments. Browser security models are designed to keep users safe, even if they occasionally make development a little trickier!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Reappearing Act:&lt;/strong&gt; Even after successfully deleting endpoints, they&#39;d pop back up on refresh. It turns out that the monitor was loading a hardcoded list of defaults every time the page loaded, overriding my changes. Implementing &lt;code&gt;localStorage&lt;/code&gt; resolved this issue, allowing the monitor to remember user-added or removed endpoints.
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;What I Learned:&lt;/em&gt; For persistent user preferences or data that should survive a page refresh, &lt;code&gt;localStorage&lt;/code&gt; is a super handy browser API to remember things between sessions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;My Big Takeaway: Embrace the Process!&lt;/h3&gt;
+&lt;p&gt;This entire experience, from the ambitious (and slightly flawed) speed test to the fully functional latency monitor, reinforced some core beliefs about development:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;You don&#39;t have to be perfect from the start.&lt;/strong&gt; Ideas evolve, and initial approaches might not be the final ones. It&#39;s all part of the learning curve.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Trial and error is not a sign of failure; it&#39;s the path to success.&lt;/strong&gt; Every error message, every unexpected behavior, is a clue leading you closer to a robust solution.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Debugging tools are your superpower.&lt;/strong&gt; The browser console, network tab, and HAR files were invaluable in understanding exactly &lt;em&gt;why&lt;/em&gt; things weren&#39;t working.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Understanding constraints is key.&lt;/strong&gt; Knowing the limitations of free hosting and browser security wasn&#39;t a blocker; it shaped the project into something even better.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So, go ahead, check out the &lt;a href=&quot;https://beaubremer.com/network_latency_monitor&quot;&gt;Network Latency Monitor&lt;/a&gt; on my site! Add a few of your favorite sites, and see how it performs. And remember, every &amp;quot;bug&amp;quot; is just a puzzle waiting to be solved. I&#39;m always keen to dive into new challenges and expand my understanding of web performance!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>From Ping to Fix: A Practical Guide to Basic Network Troubleshooting</title>
     <link href="https://blog.beaubremer.com/posts/From_Ping_to_Fix/"/>
