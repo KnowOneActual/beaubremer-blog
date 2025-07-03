@@ -12,7 +12,7 @@ tags:
 
 Ever wondered what goes on behind the scenes when you interact with a website? Let's dive into a common challenge in web development and my journey to build a useful tool, even when my initial plans hit a few snags.
 
-Hey everyone! Beau here, your friendly neighborhood tech enthusiast, sharing a peek behind the curtain of my latest web development adventure. If you've poked around my site lately, you might have noticed a shiny new "Network Latency Monitor" in my [Creative Resource Library](https://beaubremer.com/#creative_library). It’s not just a cool tool; it’s a story about a great idea, a few head-scratching problems, and the beautiful mess of trial and error that makes development so rewarding (and occasionally, frustrating!).
+Hey everyone! Beau here, your friendly neighborhood tech enthusiast, sharing a peek behind the curtain of my latest web development adventure. If you've poked around my site lately, you might have noticed a shiny new "Network Latency Monitor" in my [My Projects](https://beaubremer.com/#creative_library). It’s not just a cool tool; it’s a story about a great idea, a few head-scratching problems, and the beautiful mess of trial and error that makes development so rewarding (and occasionally, frustrating!).
 
 ### The Spark: A Speed Test with "Wow Factor"
 
