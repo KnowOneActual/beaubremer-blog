@@ -4,12 +4,42 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-07-02T00:00:00Z</updated>
+  <updated>2025-07-06T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>You Might Already Be a Hacker and Not Even Know It</title>
+    <link href="https://blog.beaubremer.com/posts/Already_Be_a_Hacker/"/>
+    <updated>2025-07-06T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Already_Be_a_Hacker/</id>
+    <content xml:lang="en" type="html">&lt;h3&gt;You Might Already Be a Hacker and Not Even Know It&lt;/h3&gt;
+&lt;p&gt;Forget the hoodie. Forget the glowing green code scrolling down a dark screen. The image of the &amp;quot;hacker&amp;quot; that Hollywood sold us isn&#39;t just dramatic—it misses the entire point.&lt;/p&gt;
+&lt;p&gt;Being a hacker has very little to do with breaking into banks and everything to do with a certain kind of creative spark. At its core, it’s about one simple thing: looking at a system or a process and figuring out how to make it do what &lt;em&gt;you&lt;/em&gt; want it to do.&lt;/p&gt;
+&lt;p&gt;If that sounds familiar, it should. It’s a very human way of thinking.&lt;/p&gt;
+&lt;h4&gt;The Joy of the Winding Path&lt;/h4&gt;
+&lt;p&gt;Most of us are taught to follow instructions. We’re given a map and told that success means getting from Point A to Point B.&lt;/p&gt;
+&lt;p&gt;A hacker enjoys the journey off the map. They start with a question, like &amp;quot;What if I tried this?&amp;quot; or &amp;quot;I wonder why this works this way?&amp;quot;. From there, the process is a winding path of discovery. You rarely know where you&#39;re going to end up when you start. You might begin trying to fix one small problem and stumble upon a brilliant solution for a completely different one.&lt;/p&gt;
+&lt;p&gt;It’s not about having all the answers. It’s about being curious enough to start asking the questions and patient enough to follow where they lead.&lt;/p&gt;
+&lt;h4&gt;Following the Recipe vs. Inventing a New Dish&lt;/h4&gt;
+&lt;p&gt;Now, let&#39;s be clear: following a &amp;quot;recipe&amp;quot; is a valuable and necessary skill. Whether it’s running a script to test a network, using a tutorial to learn a new program, or following a guide to fix a leaky faucet, using an established process is how things get done reliably. There is absolutely nothing wrong with that; it&#39;s how we build and maintain the world.&lt;/p&gt;
+&lt;p&gt;However, the hacker is the one who invents the recipe.&lt;/p&gt;
+&lt;p&gt;They’re the chef who’s tired of the standard menu and starts combining new ingredients, tasting, and tweaking until they create a dish that’s uniquely theirs. They are driven by a specific goal—&amp;quot;I want a dish that tastes like a summer evening&amp;quot;—and they learn through trial and error how to make that happen.&lt;/p&gt;
+&lt;p&gt;Running a script someone else wrote is executing a known process. Figuring out how to combine three different tools in a way no one has before to solve your unique problem? That’s the hacker mindset.&lt;/p&gt;
+&lt;h4&gt;Hacking is Everywhere&lt;/h4&gt;
+&lt;p&gt;This is the most important part: this mindset isn’t limited to technology. It’s a way of approaching any challenge or craft.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;strong&gt;mechanic&lt;/strong&gt; who listens to an engine and realizes the problem isn&#39;t what the diagnostic computer says it is, but is instead a clever workaround to fix a recurring issue, is a hacker.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;teacher&lt;/strong&gt; who realizes the standard lesson plan isn&#39;t connecting with their students and redesigns the entire curriculum with new projects and activities is a hacker.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;craft maker&lt;/strong&gt; who looks at a knitting pattern and says, &amp;quot;This is nice, but I&#39;m going to modify it to create a totally different design&amp;quot; is a hacker.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;They all see a system—an engine, a lesson plan, a pattern—and adapt it to better suit their needs. They are problem-solvers who aren&#39;t afraid to experiment to get the result they want.&lt;/p&gt;
+&lt;p&gt;So, look at how you approach your work, your hobbies, and your life. Do you ever go off-script? Do you find joy in figuring things out for yourself? Do you ever tinker with something just to see if you can make it better?&lt;/p&gt;
+&lt;p&gt;If so, you’ve already got the spark. You don&#39;t need to learn to code to be a hacker. You just need to stay curious. Welcome to the club.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>From Bright Idea to Browser: My Journey Building a Network Monitor (and What I Learned When Things Went Sideways)</title>
     <link href="https://blog.beaubremer.com/posts/Building_a_Network_Monitor/"/>
