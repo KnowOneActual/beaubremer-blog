@@ -19,7 +19,7 @@ Sure, we could say "check, check" repeatedly. But where's the fun in that? And m
 
 Imagine this: The venue is quiet. The client is milling about. Maybe the band is watching. The pressure is on to make sure that the mic sounds perfect. And you, the intrepid sound engineer, have to conjure something – anything – to say into it. It’s not just about level and clarity; it's about making sure it sounds good when someone is actually *talking*.
 
-So, you start. "Testing, testing, one, two, three, testing." kOay, standard. However, you then need to stretch it out. You need to hit different vocal ranges, project a little, maybe even whisper. This is where the improv kicks in.
+So, you start. "Testing, testing, one, two, three, testing." Okay, standard. However, you then need to stretch it out. You need to hit different vocal ranges, project a little, maybe even whisper. This is where the improv kicks in.
 
 ---
 
@@ -27,8 +27,12 @@ So, you start. "Testing, testing, one, two, three, testing." kOay, standard. How
 
 There are no official classes for this, no textbooks on "Advanced Mic Check Banter." It’s learned on the job, a quiet rite of passage. Here's a peek into the unwritten rules and common tactics:
 
-* **The Weather Report:** A classic for a reason. "Looks like it's going to be a beautiful day here in Chicago, folks. A little humidity, but nothing we can't handle." Reliable, relatable, and gets enough varied sounds out of your voice. * * *Counting Past Ten (Creatively):** Beyond the basics, you might hear things like, "One thousand one, one thousand two... are we sure this thing is on?" Or counting in another language if you're feeling fancy. * **Reciting Nonsense:** Sometimes, sheer desperation leads to poetry. Or, you know, just listing off groceries. "Milk, bread, eggs, slightly bruised bananas for the crew..."
-* **Fake Announcements:** "Ladies and gentlemen, please remember to silence your cell phones, unless, of course, you're expecting an incredibly important call about a winning lottery ticket." * **The Existential Question:** For the more philosophical engineer. "What *is* sound, really? Is it just vibrations? Or is it a feeling... a connection?" (Best delivered with a straight face.) * **Self-Commentary:** This is where the tongue-in-cheek really shines. "Man, I really need some coffee. Is this thing making my voice sound deeper, or is that just me?"
+* **The Weather Report:** A classic for a reason. "Looks like it's going to be a beautiful day here in Chicago, folks. A little humidity, but nothing we can't handle." Reliable, relatable, and gets enough varied sounds out of your voice. 
+* **Counting Past Ten (Creatively):** Beyond the basics, you might hear things like, "One thousand one, one thousand two... are we sure this thing is on?" Or counting in another language if you're feeling fancy. 
+* **Reciting Nonsense:** Sometimes, sheer desperation leads to poetry. Or, you know, just listing off groceries. "Milk, bread, eggs, slightly bruised bananas for the crew..."
+* **Fake Announcements:** "Ladies and gentlemen, please remember to silence your cell phones, unless, of course, you're expecting an incredibly important call about a winning lottery ticket." 
+* **The Existential Question:** For the more philosophical engineer. "What *is* sound, really? Is it just vibrations? Or is it a feeling... a connection?" (Best delivered with a straight face.) 
+* **Self-Commentary:** This is where the tongue-in-cheek really shines. "Man, I really need some coffee. Is this thing making my voice sound deeper, or is that just me?"
 
 The key is to keep it going without drawing too much attention. You're trying to make the mic sound good, not launch a stand-up comedy career. It’s a delicate balance of projecting confidence while subtly making up words on the fly.
 
