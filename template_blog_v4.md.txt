@@ -24,7 +24,8 @@ You can use **bold text**, *italic text*, and `code snippets`.
 
 {% image "./img/my-cool-photo.jpg", "A descriptive alt text for my cool photo." %} add images to post put file in img/site_content
 
-Rename file .md
+
+[You Might Already Be a Hacker and Not Even Know It]({{ '/posts/already_be_a_hacker/' | url }})
 
 And so on...
 

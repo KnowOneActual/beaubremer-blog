@@ -4,12 +4,115 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-07-06T00:00:00Z</updated>
+  <updated>2025-07-08T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>Okay, I Have the Hacker Mindset. Now What?</title>
+    <link href="https://blog.beaubremer.com/posts/Hacker_Mindset/"/>
+    <updated>2025-07-08T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Hacker_Mindset/</id>
+    <content xml:lang="en" type="html">&lt;h2&gt;Okay, I Have the Hacker Mindset. Now What?&lt;/h2&gt;
+&lt;p&gt;In the post &lt;a href=&quot;https://blog.beaubremer.com/posts/already_be_a_hacker/&quot;&gt;You Might Already Be a Hacker and Not Even Know It&lt;/a&gt;, we explored the idea that being a hacker isn&#39;t about what you see in the movies. It&#39;s a mindset—a spirit of curiosity, creative probl/Users/userx/website_BB/Blog/draft posts/Hacker_Mindset.mdem-solving, and the drive to understand how things &lt;em&gt;really&lt;/em&gt; work.&lt;/p&gt;
+&lt;p&gt;If you read that and thought, &amp;quot;That sounds like me,&amp;quot; you probably finished with the exact question in this title. It&#39;s exciting to identify with a new way of thinking, but it can be hard to know what to &lt;em&gt;do&lt;/em&gt; with that energy. How do you go from feeling like a hacker to actually, well, hacking something?&lt;/p&gt;
+&lt;p&gt;That&#39;s what this post is all about.&lt;/p&gt;
+&lt;p&gt;The goal here isn&#39;t to turn you into a master programmer or engineer overnight. The goal is to give you a playground, a few simple, low-stakes projects where you can start putting that curiosity into practice. It&#39;s time to move from theory to tinkering.&lt;/p&gt;
+&lt;p&gt;Let&#39;s look at a few fun ways to get your hands dirty.&lt;/p&gt;
+&lt;h3&gt;Project 1: The Kitchen Hack — Your First System&lt;/h3&gt;
+&lt;p&gt;Before we touch a line of code, let&#39;s start with a system most of us know: a simple recipe. A recipe is just a program for producing food. Our goal isn&#39;t just to cook, but to intentionally modify the program to get a different result.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Mission:&lt;/strong&gt; Take a simple recipe and change one variable to achieve a specific, desired outcome.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Your Toolkit:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A simple, familiar recipe (think chocolate chip cookies, pancakes, or a basic tomato sauce).&lt;/li&gt;
+&lt;li&gt;A notebook and pen (or a notes app).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The Steps:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Choose Your System:&lt;/strong&gt; Pick a recipe you&#39;ve made before. For this example, let&#39;s use chocolate chip cookies. The standard recipe is our &amp;quot;known system.&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Define Your Goal:&lt;/strong&gt; Be specific. Don&#39;t just aim for &amp;quot;better.&amp;quot; What does &amp;quot;better&amp;quot; mean? Let&#39;s say our goal is to make the cookies &lt;em&gt;chewier&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Form a Hypothesis:&lt;/strong&gt; This is the core of hacking. What do you &lt;em&gt;think&lt;/em&gt; will make the cookies chewier? Your hypothesis is: &amp;quot;Using melted butter will increase the chewiness of the final cookie.&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Run the Experiment:&lt;/strong&gt; Make two small, separate batches: the &lt;strong&gt;Control&lt;/strong&gt; (original recipe) and the &lt;strong&gt;Test&lt;/strong&gt; (with melted butter).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Analyze the Data:&lt;/strong&gt; Now, for the best part —the peer review process. Taste both cookies! Was your hypothesis correct? Did it have other effects? Write down what you learned.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Why This is Hacking:&lt;/strong&gt; You just ran the essential hacker loop. You analyzed a system (the recipe), formed a hypothesis, ran a controlled test, and analyzed the results. You weren&#39;t just following instructions; you were actively manipulating a system to make it do what you want.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Project 2: The Automation Hack — A Taste of Code&lt;/h3&gt;
+&lt;p&gt;Now that you&#39;ve hacked a real-world system, let&#39;s apply the same thinking to a digital one. A common hacker activity is automating boring, repetitive tasks.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Mission:&lt;/strong&gt; Use a few lines of simple code to solve a small, repetitive problem on your computer.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Your Toolkit:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A computer with Python installed (free from &lt;a href=&quot;https://python.org/&quot;&gt;python.org&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;A simple text editor (like Notepad, TextEdit, or VS Code).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The Steps:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Find Your Repetitive Task:&lt;/strong&gt; Imagine you want to rename hundreds of photos like &lt;code&gt;IMG_4021.JPG&lt;/code&gt; to &lt;code&gt;Vacation_2025_1.JPG&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Think Through the Logic:&lt;/strong&gt; Before coding, plan in plain English: Tell the program where to look, retrieve a list of files, create a new name for each, and then perform the renaming.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Write the &amp;quot;Spell&amp;quot; (The Code):&lt;/strong&gt; This logic translates into Python. Save this as &lt;code&gt;rename_files.py&lt;/code&gt; in a folder with a &lt;em&gt;copy&lt;/em&gt; of your photos.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python:rename_files.py&quot;&gt;import os
+
+# The folder with your photos. The &amp;quot;.&amp;quot; means &amp;quot;this current folder&amp;quot;.
+folder_path = &amp;quot;.&amp;quot;
+# What you want the new name to be.
+new_name_base = &amp;quot;Vacation_2025_&amp;quot;
+# A counter to make each filename unique.
+counter = 1
+
+# Loop through every file in the folder.
+for filename in os.listdir(folder_path):
+    # Check if the file is a JPG image.
+    if filename.endswith(&amp;quot;.JPG&amp;quot;):
+        # Create the new filename.
+        new_filename = f&amp;quot;{new_name_base}{counter}.JPG&amp;quot;
+        # Rename the file.
+        os.rename(filename, new_filename)
+        # Add 1 to the counter for the next loop.
+        counter += 1
+
+print(&amp;quot;File renaming complete!&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Run the Experiment:&lt;/strong&gt; &lt;strong&gt;Important:&lt;/strong&gt; Test this on a &lt;em&gt;copy&lt;/em&gt; of your files first! Open your computer&#39;s command line or terminal, navigate to that folder, and type &lt;code&gt;python rename_files.py&lt;/code&gt;. Press Enter.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Why This is Hacking:&lt;/strong&gt; You didn&#39;t do the work; you built a tool to do the work for you. You analyzed a tedious system, understood its rules, and wrote new, more powerful rules (your script) to get the job done instantly.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Project 3: The Information Hack — Look Under the Hood&lt;/h3&gt;
+&lt;p&gt;Hackers need to see how things work. Let&#39;s take a common &amp;quot;black box&amp;quot;—a website—and peek under the hood.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Mission:&lt;/strong&gt; Use your browser&#39;s built-in tools to inspect and temporarily change any website.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Your Toolkit:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Your web browser (Chrome, Firefox, Edge, etc.). That&#39;s it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The Steps:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Choose Your Subject:&lt;/strong&gt; Go to any website. A simple blog or news article is a great starting point.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Open the &amp;quot;Secret&amp;quot; Tools:&lt;/strong&gt; Right-click on any element on the page (a headline, a paragraph) and choose &lt;strong&gt;&amp;quot;Inspect&amp;quot;&lt;/strong&gt; or &lt;strong&gt;&amp;quot;Inspect Element.&amp;quot;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;See the Skeleton (HTML):&lt;/strong&gt; A panel will open showing the site&#39;s code. As you move your mouse over the code, the corresponding parts of the page will highlight.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Run the Experiment (Change Reality):&lt;/strong&gt; Find a headline in the code panel, double-click the text, type something new, and press Enter. You just changed the webpage on your screen! (This is temporary and only on your computer).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Why This is Hacking:&lt;/strong&gt; You deconstructed a system to understand its components. This desire to peel back the layers and refuse to accept a system at face value is the essence of the hacker mindset.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Your Turn to Play&lt;/h3&gt;
+&lt;p&gt;From a cookie recipe to a folder of messy files to the website you&#39;re reading right now, you&#39;ve seen the hacker mindset in action. The common thread wasn&#39;t about being a master chef or an expert coder; it was about the process. It was about being curious enough to ask, &amp;quot;What if I tried this?&amp;quot;&lt;/p&gt;
+&lt;p&gt;That&#39;s the secret. Hacking isn&#39;t a single skill you need to master. It&#39;s a habit you can build by refusing to accept that things have to be the way they are. It&#39;s the habit of looking at a system and wanting to understand it, adapt it, and make it work better for you.&lt;/p&gt;
+&lt;p&gt;You don&#39;t need a grand plan. Your next step is simply to start looking for opportunities in your own life. The next time you face a tedious task, a frustrating process, or a &amp;quot;black box&amp;quot; you don&#39;t understand, let that little question pop into your head:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&amp;quot;I wonder if there&#39;s a better way?&amp;quot;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;That&#39;s the spark. Now go find something to tinker with. The playground is open.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>You Might Already Be a Hacker and Not Even Know It</title>
     <link href="https://blog.beaubremer.com/posts/Already_Be_a_Hacker/"/>
