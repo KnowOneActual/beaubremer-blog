@@ -4,19 +4,25 @@ const Image = require("@11ty/eleventy-img");
 const path = require("path");
 
 module.exports = function(eleventyConfig) {
-  // Plugins
+  // === PLUGINS ===
   eleventyConfig.addPlugin(pluginRss);
 
-  // Passthrough Copies
+  // === PASSTHROUGH COPIES ===
+  // **THE FIX IS HERE:** The destination paths now correctly include the "assets" folder.
+  eleventyConfig.addPassthroughCopy({ "node_modules/lite-youtube-embed/src/lite-yt-embed.css": "assets/css/lite-yt-embed.css" });
+  eleventyConfig.addPassthroughCopy({ "node_modules/lite-youtube-embed/src/lite-yt-embed.js": "assets/js/lite-yt-embed.js" });
+  
+  // Your other passthrough copies
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy(".well-known");
   eleventyConfig.addPassthroughCopy("robots.txt");
-  
-  // Custom Shortcodes
+
+  // === CUSTOM SHORTCODES ===
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
-  
-  eleventyConfig.addShortcode("youtube", function(videoId) {
-    return `<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.youtube.com/embed/${videoId}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen></iframe></div>`;
+
+  // Using addNunjucksShortcode to ensure it's available in Markdown files
+  eleventyConfig.addNunjucksShortcode("youtube", (videoId, label = "Play YouTube video") => {
+    return `<lite-youtube videoid="${videoId}" playlabel="${label}"></lite-youtube>`;
   });
 
   eleventyConfig.addNunjucksAsyncShortcode("image", async function(src, alt, sizes = "100vw") {
@@ -47,7 +53,7 @@ module.exports = function(eleventyConfig) {
     </picture>`;
   });
 
-  // Custom Collections & Filters
+  // === CUSTOM COLLECTIONS & FILTERS ===
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("LLLL dd, yyyy");
   });
@@ -55,7 +61,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("posts/*.md");
   });
-  
+
   eleventyConfig.addCollection("tagList", function(collectionApi) {
     const tagSet = new Set();
     collectionApi.getAll().forEach(item => {
@@ -64,10 +70,11 @@ module.exports = function(eleventyConfig) {
     return [...tagSet].sort((a, b) => a.localeCompare(b));
   });
 
+  // === ELEVENTY CONFIGURATION ===
   return {
-    markdownTemplateEngine: "njk",
+    markdownTemplateEngine: "njk", 
     dir: {
-      input: ".", 
+      input: ".",
       output: "_site",
       includes: "_includes"
     }
