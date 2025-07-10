@@ -6,7 +6,7 @@ This blog serves as a space for my writing and a practical playground for explor
 
 ## Why Eleventy?
 
-After setting up my main portfolio, I wanted a simple, modern, and maintainable platform for a content-focused blog. I chose **Eleventy (11ty)** for a few key reasons:
+After setting up my main portfolio, I wanted a simple, modern, and maintainable platform for a content-focused blog. I chose **Eleventy (11ty)** [11ty.dev](https://www.11ty.dev/) for a few key reasons:
 
   * **Simplicity and Flexibility:** Eleventy is an un-opinionated static site generator that doesn't lock you into a heavy framework. This was perfect for a straightforward, content-focused blog.
   * **JavaScript-Based:** The entire configuration is done in plain JavaScript (`.eleventy.js`), which made it comfortable and accessible to work with.
