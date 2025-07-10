@@ -1,5 +1,7 @@
 # Blog & Personal Writing Space
 
+![Beau Bremer's Blog Screenshot](https://blog.beaubremer.com/img/site_content/blog_beaubremer_screen.jpg) 
+
 Welcome to the GitHub repository for my personal blog, [blog.beaubremer.com](https://blog.beaubremer.com). This project is a standalone site built with the static site generator Eleventy.
 
 This blog serves as a space for my writing and a practical playground for exploring web development best practices, from performance optimization to security hardening.
