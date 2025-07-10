@@ -1,1 +1,30 @@
-<h1>beaubremer-blog-tailwind</h1>
+<h1>Blog &amp; Personal Writing Space</h1>
+<p>Welcome to the GitHub repository for my personal blog, <a href="https://blog.beaubremer.com">blog.beaubremer.com</a>. This project is a standalone site built with the static site generator Eleventy.</p>
+<p>This blog serves as a space for my writing and a practical playground for exploring web development best practices, from performance optimization to security hardening.</p>
+<h2>Why Eleventy?</h2>
+<p>After setting up my main portfolio, I wanted a simple, modern, and maintainable platform for a content-focused blog. I chose <strong>Eleventy (11ty)</strong> <a href="https://www.11ty.dev/">11ty.dev</a> for a few key reasons:</p>
+<ul>
+<li><strong>Simplicity and Flexibility:</strong> Eleventy is an un-opinionated static site generator that doesn't lock you into a heavy framework. This was perfect for a straightforward, content-focused blog.</li>
+<li><strong>JavaScript-Based:</strong> The entire configuration is done in plain JavaScript (<code>.eleventy.js</code>), which made it comfortable and accessible to work with.</li>
+<li><strong>Performance &amp; Security by Default:</strong> Eleventy generates pre-built, static HTML files. This means there's no database to hack and no complex server-side code running on every page view, resulting in a site that is incredibly fast and secure out of the box.</li>
+</ul>
+<h2>Key Features &amp; Upgrades</h2>
+<p>A website is never truly &quot;finished.&quot; I've implemented several powerful features to improve performance, streamline my writing workflow, and enhance the site's overall quality.</p>
+<ul>
+<li><strong>Custom Date Filters:</strong> To ensure a clean and consistent look for post dates (e.g., &quot;June 21, 2025&quot;), I implemented a custom Eleventy filter using the <strong>Luxon</strong> library for reliable date formatting. This keeps my templates clean and ensures all dates are styled uniformly.</li>
+<li><strong>Reusable Shortcodes:</strong> To avoid pasting messy <code>&lt;iframe&gt;</code> code every time I want to embed a video, I created a custom <code>&lt;lite-youtube videoid=&quot;&quot; playlabel=&quot;Play YouTube video&quot;&gt;&lt;/lite-youtube&gt;</code> shortcode. Eleventy sees this tag in my Markdown files and automatically replaces it with the full, optimized embed code during the build process.</li>
+<li><strong>Automatic Image Optimization:</strong> I'm using the official <strong><code>@11ty/eleventy-img</code></strong> plugin to automatically optimize images. When I add an image, the plugin creates multiple smaller sizes, converts them to modern formats like <strong>WebP</strong>, and generates the <code>&lt;picture&gt;</code> element. This ensures browsers only download the most efficient image size, dramatically improving page load speed and user experience.</li>
+</ul>
+<h2>A Security-First Approach</h2>
+<p>While static sites are secure by default, I took extra steps to harden the blog against modern web vulnerabilities using a <code>netlify.toml</code> file to define custom HTTP security headers.</p>
+<ul>
+<li><strong>Content Security Policy (CSP):</strong> I implemented a strong CSP that acts like a bouncer, maintaining a strict guest list of allowed resources (scripts, styles, fonts). It explicitly whitelists trusted sources like the Tailwind CSS CDN and Google Fonts, while blocking insecure plugins like Flash entirely.</li>
+<li><strong>Other Essential Headers:</strong> For a layered defense, I also added:
+<ul>
+<li><strong>Strict-Transport-Security (HSTS):</strong> Ensures browsers only communicate with my site over a secure HTTPS connection.</li>
+<li><strong>X-Frame-Options:</strong> Set to <code>DENY</code> to prevent clickjacking attacks.</li>
+<li><strong>Permissions-Policy:</strong> Locks down browser features the blog doesn't need, like the microphone, camera, or USB devices.</li>
+</ul>
+</li>
+</ul>
+<p>The result is a fast, modern blog with an A+ security rating that is completely decoupled from my main portfolio, allowing me to focus on creating content.</p>
