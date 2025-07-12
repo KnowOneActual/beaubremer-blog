@@ -11,6 +11,47 @@
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
   <entry>
+    <title>Recording a Last-Minute &#39;Voice of God&#39;: Your On-Site Guide</title>
+    <link href="https://blog.beaubremer.com/posts/last_minute_VOG_logicpro/"/>
+    <updated>2025-07-11T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/last_minute_VOG_logicpro/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;It&#39;s a familiar scenario for any event&#39;s audio tech: the show is about to start, and a last-minute &amp;quot;Voice of God&amp;quot; (VOG) announcement needs to be recorded. With everyone looking to you, it&#39;s time to work some magic with the tools you have on hand. Here&#39;s a straightforward guide to capturing a clean, professional-sounding VOG on-site with a USB interface, a laptop with Logic Pro, and the trusty Shure SM58.&lt;/p&gt;
+&lt;h2&gt;Setting the Scene: Your Impromptu Vocal Booth&lt;/h2&gt;
+&lt;p&gt;Before you even plug anything in, your first priority is to find the best possible recording location. In a bustling event space, this can be a challenge, but it&#39;s crucial for minimizing background noise and unwanted room reflections in your recording.&lt;/p&gt;
+&lt;p&gt;Your goal is to create a space that is as &amp;quot;dead&amp;quot; as possible, meaning it absorbs sound rather than letting it bounce around. Look for a small, quiet room away from the main event floor. A storage closet, an office, or even a quiet corner can work in a pinch.&lt;/p&gt;
+&lt;p&gt;Once you&#39;ve found your spot, it&#39;s time to build a makeshift vocal booth. Grab any soft materials you can find—coats, blankets, or event draping are perfect. Drape them over mic stands, chairs, or anything else you can use to build a small enclosure where you&#39;ll be recording. This will help to absorb your voice&#39;s reflections and block out some of the ambient noise.&lt;/p&gt;
+&lt;h2&gt;Gear Up: The Essentials for a Clean Take&lt;/h2&gt;
+&lt;p&gt;With your impromptu studio ready, it&#39;s time to get your gear set up for success.&lt;/p&gt;
+&lt;h3&gt;Mic Technique with the SM58&lt;/h3&gt;
+&lt;p&gt;The Shure SM58 is a fantastic microphone for live vocals, and its cardioid pickup pattern is a lifesaver in noisy environments. This pattern means it primarily picks up sound from directly in front of it while rejecting sound from the sides and rear.&lt;/p&gt;
+&lt;p&gt;For a clear voiceover, have the speaker hold the microphone about 4-6 inches away from their mouth. This proximity will give you a nice, full sound without being too boomy. If you get too close, the &amp;quot;proximity effect&amp;quot; of the SM58 will kick in, adding a muddy low-end to the voice. Have the speaker talk directly into the top of the microphone, not across it.&lt;/p&gt;
+&lt;h3&gt;The All-Important Pop Filter&lt;/h3&gt;
+&lt;p&gt;A pop filter is essential for preventing &amp;quot;plosives&amp;quot;—those harsh &amp;quot;p&amp;quot; and &amp;quot;b&amp;quot; sounds that can ruin a recording. If you don&#39;t have a commercial one on hand, don&#39;t worry. You can easily make one with items likely found at any event:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Sock Method:&lt;/strong&gt; A clean, thin dress sock pulled over the microphone&#39;s grille can work wonders.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Coat Hanger &amp;amp; Pantyhose:&lt;/strong&gt; Find a wire coat hanger and bend it into a circular shape. Stretch a pair of pantyhose over the wireframe, and you have a surprisingly effective pop filter. You can then attach this to the mic stand with some gaffer tape.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Recording and Polishing in Logic Pro&lt;/h2&gt;
+&lt;p&gt;With your talent in the &amp;quot;booth&amp;quot; and your mic ready to go, it&#39;s time to launch Logic Pro and get ready to record.&lt;/p&gt;
+&lt;h3&gt;Setting Up Your Session&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Create a New Audio Track:&lt;/strong&gt; Open a new Logic Pro project and create a new audio track.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Set Your Input:&lt;/strong&gt; In the channel strip on the left, make sure the input is set to your USB audio interface.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Check Your Levels:&lt;/strong&gt; Have the person speaking do a test run of the announcement. Watch the meter on the audio track. You want the level to be consistently in the green and yellow, with the loudest peaks just barely touching the orange. You never want the meter to hit red, as this means your audio is clipping and will be distorted.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;A Quick and Effective Effects Chain&lt;/h3&gt;
+&lt;p&gt;Once you have a good take, it&#39;s time to add a few touches to make it shine. Logic Pro&#39;s built-in plugins are more than capable of getting a professional sound quickly. A great starting point is to use one of Logic&#39;s vocal presets. In the Library, you can find a variety of vocal channel strips that will load a pre-configured chain of effects.&lt;/p&gt;
+&lt;p&gt;Here&#39;s a simple and effective chain you can also build yourself for a clean VOG:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;EQ (Channel EQ):&lt;/strong&gt; The first thing you&#39;ll want to do is roll off any unnecessary low-end rumble. Apply a high-pass filter and set it to around 80-100Hz. This will clean up the voice without making it sound thin.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DeEsser:&lt;/strong&gt; This will tame any harsh &amp;quot;s&amp;quot; sounds. Logic&#39;s DeEsser is very effective. Start with a preset and adjust the threshold until you hear the sibilance soften.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Compressor:&lt;/strong&gt; A compressor will even out the volume of the voice, making it sound more consistent and present. Logic&#39;s stock compressor has a &amp;quot;Vocal&amp;quot; preset that is a great starting point. You want to aim for just a few decibels of gain reduction on the meter.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Limiter:&lt;/strong&gt; To make the final recording loud and clear for playback, add a limiter at the end of your chain. This will bring up the overall volume without letting it clip.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once you&#39;re happy with the sound, bounce the track as a high-quality WAV or MP3 file, and your &amp;quot;Voice of God&amp;quot; is ready to be heard. With a bit of resourcefulness and these quick tips, you can deliver a polished, professional recording, even when the clock is ticking.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>From Flash Drive Frenzy to Slideshow Serenity</title>
     <link href="https://blog.beaubremer.com/posts/Slideshow_Serenity/"/>
     <updated>2025-07-11T00:00:00Z</updated>
