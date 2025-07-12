@@ -4,12 +4,53 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-07-09T00:00:00Z</updated>
+  <updated>2025-07-11T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>From Flash Drive Frenzy to Slideshow Serenity</title>
+    <link href="https://blog.beaubremer.com/posts/Slideshow_Serenity/"/>
+    <updated>2025-07-11T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Slideshow_Serenity/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;We&#39;ve all been there. You&#39;re minutes away from the start of a corporate event, and someone hands you a flash drive packed with hundreds of photos. The request? &amp;quot;Can we get these looping on the big screen?&amp;quot;&lt;/p&gt;
+&lt;p&gt;That moment of quiet panic is a rite of passage in the event world. But it doesn&#39;t have to be. Instead of manually inserting, resizing, and centering every single image, you can automate the entire process. Let&#39;s walk through two fantastic ways to turn that chaotic folder of photos into a polished, professional PowerPoint slideshow.&lt;/p&gt;
+&lt;h3&gt;Method 1: The Ultimate Automation with Python (SlideWrangler)&lt;/h3&gt;
+&lt;p&gt;If you find yourself tackling this task often, a Python script is your new best friend. It&#39;s fast, reusable, and does all the heavy lifting for you. To make this as easy as possible, I&#39;ve created a tool called &lt;strong&gt;SlideWrangler&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why use a script?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;It&#39;s incredibly fast.&lt;/strong&gt; It processes hundreds of images in seconds.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It&#39;s smart.&lt;/strong&gt; SlideWrangler automatically fixes sideways photos, skips non-image files, and optimizes everything for screen display.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It&#39;s consistent.&lt;/strong&gt; Every slideshow comes out perfectly formatted, every time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How to get it:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;All the code and step-by-step instructions are available on GitHub. Just head over to the repository to get started.&lt;/p&gt;
+&lt;p&gt;➡️ &lt;strong&gt;&lt;a href=&quot;https://github.com/KnowOneActual/SlideWrangler&quot;&gt;Get SlideWrangler on GitHub&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The README file there will walk you through the simple setup. In just a few minutes, you&#39;ll have a powerful tool ready to handle any photo dump that comes your way.&lt;/p&gt;
+&lt;h3&gt;Method 2: The Quick Fix Inside PowerPoint&lt;/h3&gt;
+&lt;p&gt;If you&#39;re not ready to dive into scripting or just need a quick, one-time solution, PowerPoint has a great built-in feature that works wonders.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why use this method?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;No setup required.&lt;/strong&gt; Everything you need is already part of PowerPoint.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It&#39;s visual and intuitive.&lt;/strong&gt; You can see what you&#39;re doing every step of the way.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It&#39;s surprisingly fast.&lt;/strong&gt; While not as automated as the script, it&#39;s much faster than adding photos one by one.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Here&#39;s how you do it:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open PowerPoint and go to the &lt;strong&gt;Insert&lt;/strong&gt; tab.&lt;/li&gt;
+&lt;li&gt;Click on &lt;strong&gt;Photo Album&lt;/strong&gt; and select &lt;strong&gt;New Photo Album...&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;A new window will pop up. Click the &lt;strong&gt;File/Disk...&lt;/strong&gt; button.&lt;/li&gt;
+&lt;li&gt;Navigate to the flash drive or folder with the images, select all of them (a handy shortcut is Ctrl+A), and click &lt;strong&gt;Insert&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;In the Photo Album window, you can make a few adjustments. For a standard look, set the &lt;strong&gt;Picture layout&lt;/strong&gt; to &lt;strong&gt;Fit to slide&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Create&lt;/strong&gt;, and PowerPoint will instantly generate a new presentation with one photo on each slide.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Which Method is Right for You?&lt;/h3&gt;
+&lt;p&gt;If you&#39;re an event tech or someone who handles presentations regularly, taking a few minutes to set up &lt;strong&gt;SlideWrangler&lt;/strong&gt; will pay off immensely in the long run. For a quick, one-off task, the built-in Photo Album feature is a lifesaver.&lt;/p&gt;
+&lt;p&gt;Either way, you&#39;re now equipped to handle that last-minute flash drive with confidence. No more frantic clicking—just a smooth, seamless slideshow, ready for the show.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The Case for a Second Look: Why Revisiting Your Writing is a Superpower</title>
     <link href="https://blog.beaubremer.com/posts/the_case_for_a_second_look/"/>
