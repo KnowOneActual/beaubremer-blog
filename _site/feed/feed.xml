@@ -11,6 +11,44 @@
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
   <entry>
+    <title>That Flash Drive Isn&#39;t Broken, It&#39;s Just Full of Mac &#39;Crumbs&#39;</title>
+    <link href="https://blog.beaubremer.com/posts/That_Flash_Drive%20_Isn&#39;t_Broken/"/>
+    <updated>2025-07-12T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/That_Flash_Drive%20_Isn&#39;t_Broken/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Have you ever loaded a USB flash drive with music or movies, plugged it into your media player (like a Micca), TV, or car stereo, and been met with a complete mess? You can see your files, but they&#39;re surrounded by weird, unplayable &amp;quot;ghost&amp;quot; files, many starting with &lt;code&gt;._&lt;/code&gt; or named &lt;code&gt;.DS_Store&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;It&#39;s a super common problem, and the good news is your drive isn&#39;t broken! It&#39;s just cluttered with hidden helper files that macOS leaves behind.&lt;/p&gt;
+&lt;h3&gt;So, What Are These Mystery Files?&lt;/h3&gt;
+&lt;p&gt;Whenever you use a Mac, it creates small files to remember things like custom icon positions, folder view settings (&lt;code&gt;.DS_Store&lt;/code&gt;), and other metadata (&lt;code&gt;._&lt;/code&gt; files). On a Mac, this is a helpful system that makes the user experience feel seamless.&lt;/p&gt;
+&lt;p&gt;The problem starts when you take that drive to a device that doesn&#39;t speak &amp;quot;Mac&amp;quot;—like a Windows PC, a smart TV, a digital projector, or your car&#39;s media player. To these devices, the helper files are just digital junk. They show up as unplayable files, cluttering your folders and making it hard to find what you&#39;re actually looking for.&lt;/p&gt;
+&lt;p&gt;Luckily, cleaning them up is easy. Here are two simple, one-click solutions to tidy up your drives.&lt;/p&gt;
+&lt;h3&gt;The Fix for Windows Users&lt;/h3&gt;
+&lt;p&gt;If you&#39;re on Windows and got a drive from a Mac user, this little script is your best friend.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Download the Script:&lt;/strong&gt; Go to the GitHub repository here: &lt;strong&gt;&lt;a href=&quot;https://github.com/KnowOneActual/AppleCrumbs-Remover-Windows&quot;&gt;AppleCrumbs-Remover for Windows&lt;/a&gt;&lt;/strong&gt;. Click on the &lt;code&gt;CleanDrive.bat&lt;/code&gt; file and then click the &amp;quot;Download raw file&amp;quot; button.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Run It:&lt;/strong&gt; Find the &lt;code&gt;CleanDrive.bat&lt;/code&gt; file you downloaded and double-click it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enter the Drive Letter:&lt;/strong&gt; A command window will pop up asking for the drive letter of your flash drive (like &lt;code&gt;E:&lt;/code&gt; or &lt;code&gt;F:&lt;/code&gt;). Type the correct letter and hit Enter.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Confirm:&lt;/strong&gt; It will give you a final warning. Press any key to continue, and the script will quickly sweep through the drive, deleting all the Mac-specific junk files.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;That&#39;s it! Your drive is now clean and ready to use anywhere without the extra clutter.&lt;/p&gt;
+&lt;h3&gt;How to Clean a Drive on Your Mac (Before Sharing)&lt;/h3&gt;
+&lt;p&gt;If you&#39;re a Mac user sharing a drive, it&#39;s good practice to clean it first. The easiest method is to create a &amp;quot;Quick Action&amp;quot; that lets you clean any drive with a simple right-click. You only have to set this up once!&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Get the Script:&lt;/strong&gt; First, you need the script itself. You can find it here: &lt;strong&gt;&lt;a href=&quot;https://github.com/KnowOneActual/-AppleCrumbs-Remover-MAC&quot;&gt;AppleCrumbs-Remover for Mac&lt;/a&gt;&lt;/strong&gt;. Just copy the entire block of code from the &lt;code&gt;clean_drive.sh&lt;/code&gt; file.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Open Automator:&lt;/strong&gt; This handy app is already on your Mac. You can find it in your &lt;code&gt;Applications&lt;/code&gt; folder or by searching with Spotlight.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create the Quick Action:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;In Automator, choose &amp;quot;New Document&amp;quot; &amp;gt; &amp;quot;Quick Action&amp;quot;.&lt;/li&gt;
+&lt;li&gt;At the top, set the workflow to receive &lt;strong&gt;&amp;quot;files or folders&amp;quot;&lt;/strong&gt; in &lt;strong&gt;&amp;quot;Finder&amp;quot;&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;In the actions library on the left, search for &lt;strong&gt;&amp;quot;Run Shell Script&amp;quot;&lt;/strong&gt; and drag it into the main workflow area on the right.&lt;/li&gt;
+&lt;li&gt;In the &amp;quot;Run Shell Script&amp;quot; box, delete any text that&#39;s already there and paste the code you copied from GitHub.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Save Your Action:&lt;/strong&gt; Go to &lt;strong&gt;File &amp;gt; Save&lt;/strong&gt; and name it something memorable, like &amp;quot;Clean Drive for Sharing&amp;quot;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now, whenever you want to clean a USB drive, just right-click on its icon on your desktop, go to &lt;strong&gt;Quick Actions&lt;/strong&gt; in the menu, and select your &amp;quot;Clean Drive for Sharing&amp;quot; action. In a moment, it&#39;ll be ready to hand off, completely free of any digital crumbs.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Recording a Last-Minute &#39;Voice of God&#39; in Reaper</title>
     <link href="https://blog.beaubremer.com/posts/Last_Minute_VoG_reaper/"/>
     <updated>2025-07-12T00:00:00Z</updated>

@@ -1151,6 +1151,10 @@ video {
   display: table;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-auto {
   height: auto;
 }
