@@ -98,8 +98,8 @@
     <id>https://blog.beaubremer.com/posts/Slideshow_Serenity/</id>
     <content xml:lang="en" type="html">&lt;p&gt;We&#39;ve all been there. You&#39;re minutes away from the start of a corporate event, and someone hands you a flash drive packed with hundreds of photos. The request? &amp;quot;Can we get these looping on the big screen?&amp;quot;&lt;/p&gt;
 &lt;p&gt;That moment of quiet panic is a rite of passage in the event world. But it doesn&#39;t have to be. Instead of manually inserting, resizing, and centering every single image, you can automate the entire process. Let&#39;s walk through two fantastic ways to turn that chaotic folder of photos into a polished, professional PowerPoint slideshow.&lt;/p&gt;
-&lt;h3&gt;Method 1: The Ultimate Automation with Python (SlideWrangler)&lt;/h3&gt;
-&lt;p&gt;If you find yourself tackling this task often, a Python script is your new best friend. It&#39;s fast, reusable, and does all the heavy lifting for you. To make this as easy as possible, I&#39;ve created a tool called &lt;strong&gt;SlideWrangler&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3&gt;Method 1: The Ultimate Automation with Python&lt;/h3&gt;
+&lt;p&gt;If you find yourself tackling this task often, a Python script is your new best friend. It&#39;s fast, reusable, and does all the heavy lifting for you. To make this as easy as possible, I&#39;ve created a script called &lt;strong&gt;SlideWrangler&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Why use a script?&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;It&#39;s incredibly fast.&lt;/strong&gt; It processes hundreds of images in seconds.&lt;/li&gt;

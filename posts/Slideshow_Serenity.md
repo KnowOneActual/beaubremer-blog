@@ -16,9 +16,9 @@ We've all been there. You're minutes away from the start of a corporate event, a
 That moment of quiet panic is a rite of passage in the event world. But it doesn't have to be. Instead of manually inserting, resizing, and centering every single image, you can automate the entire process. Let's walk through two fantastic ways to turn that chaotic folder of photos into a polished, professional PowerPoint slideshow.
 
 
-### Method 1: The Ultimate Automation with Python (SlideWrangler)
+### Method 1: The Ultimate Automation with Python
 
-If you find yourself tackling this task often, a Python script is your new best friend. It's fast, reusable, and does all the heavy lifting for you. To make this as easy as possible, I've created a tool called **SlideWrangler**.
+If you find yourself tackling this task often, a Python script is your new best friend. It's fast, reusable, and does all the heavy lifting for you. To make this as easy as possible, I've created a script called **SlideWrangler**.
 
 **Why use a script?**
 
