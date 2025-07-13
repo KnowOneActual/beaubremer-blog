@@ -4,14 +4,54 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-07-11T00:00:00Z</updated>
+  <updated>2025-07-12T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
   <entry>
-    <title>Recording a Last-Minute &#39;Voice of God&#39;: Your On-Site Guide</title>
+    <title>Recording a Last-Minute &#39;Voice of God&#39; in Reaper</title>
+    <link href="https://blog.beaubremer.com/posts/Last_Minute_VoG_reaper/"/>
+    <updated>2025-07-12T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Last_Minute_VoG_reaper/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;It’s a scenario every event audio tech knows well: the show is about to start, and a last-minute &amp;quot;Voice of God&amp;quot; (VOG) announcement needs to be recorded. All eyes are on you. It&#39;s time to work some magic with the tools you have on hand.&lt;/p&gt;
+&lt;p&gt;Here’s a straightforward guide to capturing a clean, professional-sounding VOG using a simple USB interface, a laptop with &lt;a href=&quot;https://www.reaper.fm/&quot;&gt;REAPER&lt;/a&gt;, and the trusty Shure SM58.&lt;/p&gt;
+&lt;h3&gt;First, Find Your &amp;quot;Vocal Booth&amp;quot;&lt;/h3&gt;
+&lt;p&gt;Before you plug anything in, your top priority is finding the best possible place to record. In a bustling event space, this can be tricky, but it&#39;s essential for avoiding background noise and ugly room echo in your recording.&lt;/p&gt;
+&lt;p&gt;Your goal is to find a space that is as &amp;quot;dead&amp;quot; as possible, meaning it absorbs sound instead of letting it bounce around. Look for a small, quiet room away from the main action. A storage closet, an empty office, or even a quiet corner can work in a pinch.&lt;/p&gt;
+&lt;p&gt;Once you’ve found your spot, build a makeshift vocal booth. Grab any soft materials you can find—coats, blankets, or event draping are perfect. Drape them over mic stands or chairs to build a small enclosure. This will help absorb vocal reflections and block out some of that distracting ambient noise.&lt;/p&gt;
+&lt;h3&gt;Gear and Mic Technique&lt;/h3&gt;
+&lt;p&gt;With your impromptu studio ready, it&#39;s time to get your gear set up for a great take.&lt;/p&gt;
+&lt;h4&gt;Using the SM58&lt;/h4&gt;
+&lt;p&gt;The Shure SM58 is a legend for a reason. Its cardioid pickup pattern is a lifesaver in noisy environments because it’s designed to pick up sound from the front and reject sound from the sides and rear.&lt;/p&gt;
+&lt;p&gt;For a clear voiceover, have the speaker hold the microphone about 4-6 inches from their mouth. This gives you a full, present sound. If you get too close, the &amp;quot;proximity effect&amp;quot; will kick in and make the voice sound boomy and muffled. Make sure the speaker is talking directly into the top of the mic, not across it.&lt;/p&gt;
+&lt;h4&gt;The All-Important Pop Filter&lt;/h4&gt;
+&lt;p&gt;A pop filter is crucial for stopping plosives—those harsh &amp;quot;p&amp;quot; and &amp;quot;b&amp;quot; sounds that can ruin a take. If you don’t have a real one, no problem. You can make an effective one with items found at almost any event:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Sock Method:&lt;/strong&gt; A clean, thin dress sock pulled over the microphone&#39;s grille works surprisingly well.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Coat Hanger &amp;amp; Pantyhose:&lt;/strong&gt; Bend a wire coat hanger into a circle. Stretch a pair of pantyhose over the frame and use gaffer tape to attach it to the mic stand.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Setting Up Your Reaper Session&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Create a New Track:&lt;/strong&gt; In your Reaper project, go to the &lt;code&gt;Track&lt;/code&gt; menu and select &lt;code&gt;Insert new track&lt;/code&gt; (or use the shortcut &lt;code&gt;Ctrl+T&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Arm the Track &amp;amp; Select Your Input:&lt;/strong&gt; Click the red &lt;code&gt;Arm for recording&lt;/code&gt; button on the new track. Next, click the input box (which usually says &lt;code&gt;Input 1&lt;/code&gt;) and choose the correct input from your USB audio interface.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Check Your Levels:&lt;/strong&gt; Have the person read a line from the announcement at the volume they&#39;ll be using. Watch the track&#39;s meter. You want the level to average around &lt;strong&gt;-12dBFS&lt;/strong&gt;, with the loudest peaks hitting about &lt;strong&gt;-6dBFS&lt;/strong&gt;. As long as the meter stays in the green and yellow, you&#39;re good. If it hits red, the signal is clipping (distorting), and you&#39;ll need to turn down the gain on your audio interface.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;A Quick and Effective FX Chain&lt;/h3&gt;
+&lt;p&gt;Once you have a good take, you can use a few of Reaper&#39;s excellent built-in plugins (ReaPlugs) to add a professional polish. Click the &lt;code&gt;FX&lt;/code&gt; button on your track to open the effects window.&lt;/p&gt;
+&lt;p&gt;Here’s a simple chain that works wonders for VOG recordings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ReaEQ:&lt;/strong&gt; Start with an EQ to clean up the signal. Add a &lt;code&gt;High Pass&lt;/code&gt; filter and set the &lt;code&gt;Frequency&lt;/code&gt; to around &lt;strong&gt;80-100Hz&lt;/strong&gt;. This removes low-end rumble from things like HVAC systems. You can also use ReaEQ to tame any harsh &amp;quot;s&amp;quot; sounds (sibilance). Find the frequency where the &amp;quot;s&amp;quot; is most piercing (usually 5-8kHz) and use a narrow &lt;code&gt;Band&lt;/code&gt; to cut it by a few decibels.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ReaComp:&lt;/strong&gt; Next, add a compressor to even out the volume. Think of it as an automatic volume fader. A &lt;code&gt;Ratio&lt;/code&gt; of &lt;strong&gt;3:1&lt;/strong&gt; or &lt;strong&gt;4:1&lt;/strong&gt; is a great starting point. Lower the &lt;code&gt;Threshold&lt;/code&gt; until you see the meter showing about &lt;strong&gt;3-6dB&lt;/strong&gt; of gain reduction on the loudest words. This will make the entire announcement sound more consistent and easier to understand.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JS: Master Limiter:&lt;/strong&gt; Add this JS plugin at the end of your chain to make the final recording loud and clear without clipping. It raises the overall volume and sets a hard ceiling that the audio can&#39;t go past. Simply adjust the &lt;code&gt;Threshold&lt;/code&gt; to get a strong final level.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once you’re happy with the sound, it&#39;s time to render the file. Go to &lt;code&gt;File &amp;gt; Render&lt;/code&gt; and choose your output format (WAV is best for quality).&lt;/p&gt;
+&lt;p&gt;And that&#39;s it! With a little resourcefulness and these quick tips, you can turn a last-minute request into a polished, professional recording that&#39;s ready for the show.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Recording a Last-Minute &#39;Voice of God&#39;: in Logic Pro</title>
     <link href="https://blog.beaubremer.com/posts/last_minute_VOG_logicpro/"/>
     <updated>2025-07-11T00:00:00Z</updated>
     <id>https://blog.beaubremer.com/posts/last_minute_VOG_logicpro/</id>

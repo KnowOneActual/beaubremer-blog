@@ -1,5 +1,5 @@
 ---
-title: "Recording a Last-Minute 'Voice of God': Your On-Site Guide"
+title: "Recording a Last-Minute 'Voice of God': in Logic Pro"
 description: "An audio emergency? Here's how to quickly record a clean, professional 'Voice of God' announcement on-site using an SM58, a laptop, and Logic Pro."
 date: 2025-07-11
 layout: "post.njk"
