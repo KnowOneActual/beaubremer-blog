@@ -1,7 +1,7 @@
 ---
 title: "That Flash Drive Isn't Broken, It's Just Full of Mac 'Crumbs'"
 description: "Ever plugged a USB drive into a TV or car stereo and seen a mess of unplayable files starting with '._'? Here's why it happens and how to fix it."
-date: 2025-07-12
+date: 2025-07-13
 layout: "post.njk"
 tags:
   - mac
