@@ -4,12 +4,38 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-07-13T00:00:00Z</updated>
+  <updated>2025-07-18T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>From Joke to Playground: The Story of profitandego.com</title>
+    <link href="https://blog.beaubremer.com/posts/Joke_to_Playground/"/>
+    <updated>2025-07-18T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Joke_to_Playground/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;It all started with a domain name.&lt;/p&gt;
+&lt;p&gt;A couple of friends and I came up with &lt;code&gt;profitandego.com&lt;/code&gt; years ago on a Lake Michigan beach. It perfectly captured the strange, satirical dance of modern ambition. I&#39;d been sitting on this domain for years, and while I wanted to do something with it, I just didn&#39;t know what.&lt;/p&gt;
+&lt;h3&gt;The Spark: Ego as a Service (EaaS)&lt;/h3&gt;
+&lt;p&gt;While reading an article about SaaS, it hit me out of nowhere. The idea stuck out for its simplicity and humor: an &amp;quot;Ego as a Service&amp;quot; (EaaS) page. The concept was simple: a single button that, when clicked, serves up a dose of over-the-top corporate praise.&lt;/p&gt;
+&lt;p&gt;I put together a single-page site using HTML, Tailwind CSS for styling, and vanilla JavaScript. The goal was to make it look sleek and modern, a fun contrast to the absurdity of the content. Within a day, the first version was live, complete with affirmations like, &amp;quot;Your strategic vision is so clear, it&#39;s practically a premonition.&amp;quot;&lt;/p&gt;
+&lt;h3&gt;Expanding the Joke&lt;/h3&gt;
+&lt;p&gt;The site was fun, but it felt like the joke could go further. That&#39;s when I came up with the idea for satirical pricing tiers. I fleshed out three plans: &amp;quot;The Intern,&amp;quot; &amp;quot;The Manager,&amp;quot; and &amp;quot;The CEO,&amp;quot; each offering increasingly ridiculous services, from a &amp;quot;Like Bot&amp;quot; to a &amp;quot;Rival Roast Report.&amp;quot; This added a new layer to the satire, mimicking the SaaS world we&#39;ve become so familiar with.&lt;/p&gt;
+&lt;h3&gt;The Logo Saga&lt;/h3&gt;
+&lt;p&gt;Every good (or in this case, fake) company needs a logo, and this turned into a surprisingly tricky part of the project. After a few initial designs didn&#39;t quite fit the site&#39;s aesthetic, I decided to create something new. The &amp;quot;Ascending Bar Chart&amp;quot; felt like the perfect visual gag for &amp;quot;profit.&amp;quot;&lt;/p&gt;
+&lt;p&gt;However, getting it to look right on the page was a challenge. After struggling with image padding and alignment, I landed on a much better solution: embedding the logo directly into the HTML as an SVG. I&#39;d never done this before, but I remembered read about it a couple of months back. With a little help from Google, I figured it out. This meant it would load instantly, scale perfectly, and I&#39;d never have to worry about broken image links. It was a great reminder that sometimes the most robust solution is also the simplest.&lt;/p&gt;
+&lt;h3&gt;A Dose of Reality: Securing the Site&lt;/h3&gt;
+&lt;p&gt;With the site up and running, I decided to run it through a security scanner out of curiosity. The result? A failing grade.&lt;/p&gt;
+&lt;p&gt;While the site is just for fun, it was a perfect learning opportunity. The report from &lt;a href=&quot;https://securityheaders.com/&quot;&gt;securityheaders.com&lt;/a&gt; showed I was missing key instructions that tell browsers how to handle my site&#39;s content securely. Since the site is hosted with Cloudflare, the fix was elegant and simple: I created a &lt;code&gt;_headers&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;This single file allowed me to define all the necessary security headers, like Content-Security-Policy and X-Frame-Options, keeping the configuration right alongside my code. After pushing the file, a new scan confirmed the fix: an &amp;quot;A+&amp;quot; rating!&lt;/p&gt;
+&lt;h3&gt;An Unexpected Side Effect&lt;/h3&gt;
+&lt;p&gt;Implementing a strong Content-Security-Policy (CSP) had one immediate side effect: the &amp;quot;Validate Me&amp;quot; button stopped working. This wasn&#39;t a bug, but rather the CSP doing its job perfectly. It blocked the &amp;quot;inline&amp;quot; JavaScript I had originally written directly in my &lt;code&gt;index.html&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;The solution was to refactor the code. I moved the JavaScript from the &lt;code&gt;index.html&lt;/code&gt; file into its own &lt;code&gt;script.js&lt;/code&gt; file. After updating the HTML to reference the new external script, the button was back in business, and the site was more secure and better organized for it.&lt;/p&gt;
+&lt;h3&gt;Why Bother?&lt;/h3&gt;
+&lt;p&gt;As the site&#39;s &lt;a href=&quot;https://github.com/KnowOneActual/profitandego_website/blob/main/README.md&quot;&gt;README file on GitHub&lt;/a&gt; says, this project is a playground. It&#39;s a low-stakes environment where I can try out new ideas, test Cloudflare features, and just have fun building something. It&#39;s a reminder that not every project needs to be a serious venture. Sometimes, the best way to learn is by building something for the joy of it.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>That Flash Drive Isn&#39;t Broken, It&#39;s Just Full of Mac &#39;Crumbs&#39;</title>
     <link href="https://blog.beaubremer.com/posts/That_Flash_Drive%20_Isn&#39;t_Broken/"/>
