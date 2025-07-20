@@ -24,6 +24,5 @@ jobs:
           # I've disabled auto-fixes for now to be safe.
           # You can change this to 'true' later if you want!
           APPLY_FIXES: false
-          DISABLE_LINTERS:
-            - SPELL_CSPELL
-            - SPELL_LYCHEE
+          # Correctly formatted as a comma-separated string
+          DISABLE_LINTERS: "SPELL_CSPELL,SPELL_LYCHEE"
