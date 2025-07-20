@@ -1,0 +1,26 @@
+name: Mega-Linter
+
+on:
+  # Run on pushes to the main branch
+  push:
+    branches: [main]
+  # Also run on pull requests to the main branch
+  pull_request:
+    branches: [main]
+
+jobs:
+  megalinter:
+    name: Mega-Linter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Mega-Linter
+        uses: oxsecurity/megalinter@v7
+        env:
+          # This is required for MegaLinter to report back to GitHub
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # I've disabled auto-fixes for now to be safe.
+          # You can change this to 'true' later if you want!
+          APPLY_FIXES: false
