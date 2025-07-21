@@ -1,0 +1,9 @@
+# In .mega-linter.yml (in the main/root folder)
+
+# I've disabled auto-fixes for now to be safe.
+APPLY_FIXES: false
+
+# List of linters to disable
+DISABLE_LINTERS:
+  - SPELL_CSPELL
+  - SPELL_LYCHEE
