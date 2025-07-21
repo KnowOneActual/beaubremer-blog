@@ -23,7 +23,7 @@ DISABLE_LINTERS:
   - REPOSITORY_CHECKOV   # And another one
   #- HTML_DJLINT          # You already have htmlhint, one is enough for now
   - SPELL_CSPELL         # The spelling checker
-  - SPELL_LYCHEE         # The link checker
+  #- SPELL_LYCHEE         # The link checker
 
 # By default, MegaLinter ignores a lot of generated folders.
 # Your Eleventy output folder is '_site'. Let's add it here to be sure.
