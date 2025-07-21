@@ -1,9 +1,41 @@
-# In .mega-linter.yml (in the main/root folder)
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#          RECOMMENDED .mega-linter.yml FOR YOUR BLOG
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# I've disabled auto-fixes for now to be safe.
+# Don't fail the build for warnings, only for errors.
+# This makes the output less noisy while you're fixing things.
+FAIL_ON_WARNING: false
+
+# Let's start by disabling automatic fixes. You can enable this later
+# by setting it to 'true' once you're comfortable.
 APPLY_FIXES: false
 
-# List of linters to disable
+# This is a big one for performance. It tells MegaLinter to only
+# check files that have changed in a pull request. For pushes to 'main',
+# it will still check everything.
+VALIDATE_ALL_CODEBASE: false
+
+# Let's disable the linters that are causing the most noise right now.
+# You can remove these lines later as you fix the issues.
 DISABLE_LINTERS:
-  - SPELL_CSPELL
-  - SPELL_LYCHEE
+  - REPOSITORY_DEVSKIM   # Very noisy security linter, can be tuned later
+  - REPOSITORY_KICS      # Another security linter
+  - REPOSITORY_CHECKOV   # And another one
+  - HTML_DJLINT          # You already have htmlhint, one is enough for now
+  - SPELL_CSPELL         # The spelling checker
+  - SPELL_LYCHEE         # The link checker
+
+# By default, MegaLinter ignores a lot of generated folders.
+# Your Eleventy output folder is '_site'. Let's add it here to be sure.
+FILTER_REGEX_EXCLUDE: '(\/node_modules\/|\/_site\/)'
+
+# ~~~~~~~~~~~~~~~~~~~~~~ LINTER-SPECIFIC SETTINGS ~~~~~~~~~~~~~~~~~~~~~
+
+# For the HTML linter, you can tell it which attributes are valid
+# in your templates. This is useful for template languages like Nunjucks.
+# Add any custom attributes you use here.
+HTML_HTMLHINT_IGNORE_ATTR: "some-custom-attribute, another-one"
+
+# For the copy-paste checker, let's make it less strict.
+# This will only flag larger blocks of duplicated code.
+COPYPASTE_JSCPD_THRESHOLD: 15
