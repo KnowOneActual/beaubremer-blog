@@ -1,10 +1,9 @@
+# In .github/workflows/mega-linter.yml
 name: Mega-Linter
 
 on:
-  # Run on pushes to the main branch
   push:
     branches: [main]
-  # Also run on pull requests to the main branch
   pull_request:
     branches: [main]
 
@@ -19,10 +18,4 @@ jobs:
       - name: Mega-Linter
         uses: oxsecurity/megalinter@v7
         env:
-          # This is required for MegaLinter to report back to GitHub
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # I've disabled auto-fixes for now to be safe.
-          # You can change this to 'true' later if you want!
-          APPLY_FIXES: false
-          # Correctly formatted as a comma-separated string
-          DISABLE_LINTERS: "SPELL_CSPELL,SPELL_LYCHEE"
