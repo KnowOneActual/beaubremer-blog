@@ -8,7 +8,7 @@ FAIL_ON_WARNING: false
 
 # Let's start by disabling automatic fixes. You can enable this later
 # by setting it to 'true' once you're comfortable.
-APPLY_FIXES: false
+APPLY_FIXES: true
 
 # This is a big one for performance. It tells MegaLinter to only
 # check files that have changed in a pull request. For pushes to 'main',
