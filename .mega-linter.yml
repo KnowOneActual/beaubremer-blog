@@ -21,7 +21,7 @@ DISABLE_LINTERS:
   - REPOSITORY_DEVSKIM   # Very noisy security linter, can be tuned later
   - REPOSITORY_KICS      # Another security linter
   - REPOSITORY_CHECKOV   # And another one
-  - HTML_DJLINT          # You already have htmlhint, one is enough for now
+  #- HTML_DJLINT          # You already have htmlhint, one is enough for now
   - SPELL_CSPELL         # The spelling checker
   - SPELL_LYCHEE         # The link checker
 
