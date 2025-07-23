@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="img/favicon/favicon.svg" alt="alt text" width="200">
+</p>
+
 # Blog & Personal Writing Space
 
 Welcome to the GitHub repository for my personal blog, [blog.beaubremer.com](https://blog.beaubremer.com). This project is a standalone site built with the static site generator Eleventy.
