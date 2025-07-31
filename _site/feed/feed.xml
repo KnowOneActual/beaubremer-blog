@@ -4,12 +4,60 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-07-18T00:00:00Z</updated>
+  <updated>2025-07-30T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>I Gave My Blog a Robot Assistant with GitHub Actions</title>
+    <link href="https://blog.beaubremer.com/posts/Robot_Assistant_with_GitHub_Actions/"/>
+    <updated>2025-07-30T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Robot_Assistant_with_GitHub_Actions/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;My personal blog has been just that—personal. It&#39;s a project I work on when I have time, which means small mistakes can slip through. A typo in a CSS class, a broken link in an old post, or inconsistent code formatting. None of these are critical, but they add up. I always figured keeping things tidy required a lot of manual effort, but it turns out I just needed a robot assistant.&lt;/p&gt;
+&lt;p&gt;That robot is &lt;strong&gt;GitHub Actions&lt;/strong&gt;. This post is about my first dive into this powerful tool: what it is, how I used it to automate quality control for my blog, and the lessons I learned along the way.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;What Exactly Are GitHub Actions?&lt;/h2&gt;
+&lt;p&gt;At its core, GitHub Actions is an automation tool built right into GitHub. Think of it as a set of programmable recipes that can run whenever something happens in your repository. You can tell it to run tests, deploy your website, or, in my case, check for errors every time I push new code.&lt;/p&gt;
+&lt;p&gt;The whole system is based on a few simple concepts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Workflows&lt;/strong&gt;: These are the main recipes. You define them in a &lt;code&gt;.yml&lt;/code&gt; file that lives in a specific folder in your repository: &lt;code&gt;.github/workflows/&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Events&lt;/strong&gt;: These are the triggers that start a workflow. The most common one is &lt;code&gt;push&lt;/code&gt;, which runs whenever you push code to a branch.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Actions&lt;/strong&gt;: These are the individual steps in your recipe. They are pre-built, shareable apps that perform a specific task, like checking out your code or running a linter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can find actions for almost anything in the &lt;a href=&quot;https://github.com/marketplace?type=actions&quot;&gt;GitHub Marketplace&lt;/a&gt;, most of them free to use.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;My Mission: Getting a Handle on Code Quality&lt;/h2&gt;
+&lt;p&gt;My goal was straightforward: I wanted an automated way to check my blog&#39;s files for errors. This includes checking for broken links in my Markdown posts, validating my HTML, and ensuring my CSS is clean.&lt;/p&gt;
+&lt;p&gt;Doing this manually would be tedious. Instead, I used a single, powerful action called &lt;strong&gt;MegaLinter&lt;/strong&gt;. It&#39;s an all-in-one tool that bundles over a hundred different linters for dozens of languages. It was the perfect tool for the job.&lt;/p&gt;
+&lt;p&gt;Here’s the process I followed:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Created a Workflow&lt;/strong&gt;: I started by creating a file at &lt;code&gt;.github/workflows/mega-linter.yml&lt;/code&gt;. This file tells GitHub Actions to run MegaLinter every time I push code to my &lt;code&gt;main&lt;/code&gt; branch.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The First Run (and the Wall of Errors)&lt;/strong&gt;: The first time the action ran, it came back with over 500 errors! It was overwhelming but also helpful. It showed me all the little things, like spelling mistakes, that had accumulated over time.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Refining the Process&lt;/strong&gt;: The default setup was too noisy. To fix this, I created a &lt;code&gt;.mega-linter.yml&lt;/code&gt; file in the root of my repository. This is a dedicated configuration file where I could fine-tune MegaLinter&#39;s behavior. I configured it to:
+&lt;ul&gt;
+&lt;li&gt;Ignore the generated &lt;code&gt;_site&lt;/code&gt; folder.&lt;/li&gt;
+&lt;li&gt;Temporarily disable the noisy spell-checkers.&lt;/li&gt;
+&lt;li&gt;Only check files that have changed in a pull request to speed things up.&lt;/li&gt;
+&lt;li&gt;Stop flagging warnings as build failures.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After a few adjustments, the output became much more manageable and, more importantly, useful.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;What GitHub Actions &lt;em&gt;Aren&#39;t&lt;/em&gt; For&lt;/h2&gt;
+&lt;p&gt;While they are incredibly versatile, Actions aren&#39;t the solution for every problem. Here are a few things they don&#39;t do well or aren&#39;t designed for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Running Your Live Application&lt;/strong&gt;: Actions are for automation &lt;em&gt;related&lt;/em&gt; to your code (testing, building, deploying). They are not a server for hosting a live, 24/7 application.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Long, Intensive Tasks&lt;/strong&gt;: The free runners are general-purpose virtual machines. They aren&#39;t ideal for tasks that require hours of computation or specialized hardware like GPUs, although you can get runners with more power.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Complex, Interdependent Pipelines&lt;/strong&gt;: For massive enterprise projects with complex build chains, a dedicated CI/CD tool like Jenkins or CircleCI might offer more granular control. GitHub Actions is designed for ease of use and integration, making it perfect for most individual and team projects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h2&gt;Final Thoughts&lt;/h2&gt;
+&lt;p&gt;Setting up GitHub Actions was surprisingly simple. In just a short time, I went from not knowing what it was to having an automated system that helps me maintain my blog&#39;s quality. It’s like having a meticulous teammate who reviews every change I make. If you have a personal project on GitHub, I highly recommend giving it a try. You might be surprised by what your new robot assistant can do for you.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>From Joke to Playground: The Story of profitandego.com</title>
     <link href="https://blog.beaubremer.com/posts/Joke_to_Playground/"/>
