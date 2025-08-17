@@ -18,7 +18,7 @@ It’s a fun, sci-fi concept, but let's be honest: it's a meaningless escalation
 
 ### Complexity for Its Own Sake
 
-In a previous article, I made the case for checkers, a game whose simple rules hide a staggering amount of strategic depth. The beauty of a game like that, or real chess, is in mastering the complexity within a clear, defined system.
+In a previous post [The Tell-Tale Cliché: Why Chess, Not Checkers Misses the Mark](https://blog.beaubremer.com/posts/are_you_playing_chess_v2/), I made the case for checkers, a game whose simple rules hide a staggering amount of strategic depth. The beauty of a game like that, or real chess, is in mastering the complexity within a clear, defined system.
 
 The "5D chess" boast does the opposite. It suggests that real genius isn't found in mastering a system, but in making it so convoluted that it becomes incomprehensible. The goal seems to be complexity for its own sake.
 
