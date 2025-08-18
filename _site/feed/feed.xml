@@ -4,12 +4,90 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-08-15T00:00:00Z</updated>
+  <updated>2025-08-17T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>What&#39;s in a Name? A Guide to DNS Troubleshooting with nslookup</title>
+    <link href="https://blog.beaubremer.com/posts/A_Guide_to_DNS%20Troubleshooting_with_nslookup/"/>
+    <updated>2025-08-17T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/A_Guide_to_DNS%20Troubleshooting_with_nslookup/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;You&#39;ve run a &lt;code&gt;ping&lt;/code&gt; to a server, and it fails. Or maybe a website suddenly won&#39;t load, even though the rest of your internet seems fine. Is the server down, or is something else going on? Often, the problem isn&#39;t with the connection itself but with the internet&#39;s address book: the &lt;strong&gt;Domain Name System (DNS)&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This is where &lt;code&gt;nslookup&lt;/code&gt; comes in. While &lt;code&gt;ping&lt;/code&gt; tells you &lt;em&gt;if&lt;/em&gt; a server is reachable, &lt;code&gt;nslookup&lt;/code&gt; tells you how your computer finds it in the first place. It&#39;s the perfect next step in your troubleshooting toolkit, helping you diagnose a whole new class of network problems.&lt;/p&gt;
+&lt;h3&gt;What is &lt;code&gt;nslookup&lt;/code&gt; and Why Use It?&lt;/h3&gt;
+&lt;p&gt;Every time you type a domain like &lt;code&gt;google.com&lt;/code&gt; into your browser, your computer needs to translate that human-friendly name into a machine-friendly IP address (like &lt;code&gt;142.250.217.78&lt;/code&gt;). DNS is the global system that handles this translation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;nslookup&lt;/code&gt; (short for &amp;quot;name server lookup&amp;quot;) is a command-line tool that lets you directly ask the DNS system for information.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Think of DNS as the internet&#39;s phonebook. &lt;code&gt;nslookup&lt;/code&gt; is the tool you use to look up a person&#39;s name to find their phone number. It&#39;s essential for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Finding a domain&#39;s IP address:&lt;/strong&gt; The most basic and common use.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Troubleshooting website access:&lt;/strong&gt; See if a domain is pointing to the correct server.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Verifying DNS changes:&lt;/strong&gt; Check if your new DNS records have gone live.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Diagnosing email problems:&lt;/strong&gt; Find the mail servers responsible for a domain.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Basic Lookups: The First Step&lt;/h3&gt;
+&lt;p&gt;Let&#39;s start with the simplest query: finding the IP address for a domain. This is known as an &lt;strong&gt;A record&lt;/strong&gt; lookup.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;nslookup google.com 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;What to look for:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The output gives you two key pieces of information. First, it tells you which DNS server answered your request. Then, it provides the answer itself.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example of a successful lookup:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Server:		192.168.1.1
+Address:	192.168.1.1#53&lt;/p&gt;
+&lt;p&gt;Non-authoritative answer:
+Name:	google.com
+Address: 142.250.217.78&lt;/p&gt;
+&lt;p&gt;The &amp;quot;Non-authoritative answer&amp;quot; just means your local DNS server gave you a cached answer rather than asking Google&#39;s official servers directly. The important part is the &lt;strong&gt;Name&lt;/strong&gt; and &lt;strong&gt;Address&lt;/strong&gt;, which confirms the lookup was successful.&lt;/p&gt;
+&lt;h3&gt;Advanced Queries: Digging Deeper&lt;/h3&gt;
+&lt;p&gt;Sometimes, you need more than just an IP address. nslookup can ask for different types of DNS records to get more specific information.&lt;/p&gt;
+&lt;h4&gt;1. Finding Mail Servers (MX Records)&lt;/h4&gt;
+&lt;p&gt;If you&#39;re having trouble with email, you can check the &lt;strong&gt;Mail Exchanger (MX)&lt;/strong&gt; records to see where email for a domain is supposed to be sent.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;
+# You can also use &amp;quot;set type=mx&amp;quot; in interactive mode 
+nslookup -query=mx google.com 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;What to look for:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You&#39;ll get a list of servers, each with a priority number. The lower the number, the higher the priority. Mail will always try to be delivered to the highest-priority server first.&lt;/p&gt;
+&lt;p&gt;google.com	mail exchanger = 10 smtp.google.com.&lt;/p&gt;
+&lt;h4&gt;2. Finding a Domain&#39;s Official Name Servers (NS Records)&lt;/h4&gt;
+&lt;p&gt;The &lt;strong&gt;Name Server (NS)&lt;/strong&gt; records tell you which servers are the official source of DNS information for a domain. This is useful for checking if a domain is configured correctly.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;
+nslookup -query=ns google.com 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will return a list of the authoritative name servers for that domain, like ns1.google.com.&lt;/p&gt;
+&lt;h4&gt;3. Reverse DNS Lookup (Finding the Name for an IP)&lt;/h4&gt;
+&lt;p&gt;What if you have an IP address and want to know what domain name is associated with it? That&#39;s a &lt;strong&gt;reverse lookup (PTR record)&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Just give nslookup the IP address.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;
+nslookup 8.8.8.8 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;What to look for:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The output will show you the name associated with that IP. In this case, you&#39;ll see it resolves to dns.google.&lt;/p&gt;
+&lt;p&gt;8.8.8.8.in-addr.arpa	name = dns.google.&lt;/p&gt;
+&lt;h4&gt;4. Using a Specific DNS Server for Your Query&lt;/h4&gt;
+&lt;p&gt;By default, nslookup uses your system&#39;s configured DNS server. But what if you want to see if your DNS changes have propagated to a public server like Cloudflare (1.1.1.1) or Google (8.8.8.8)?&lt;/p&gt;
+&lt;p&gt;You can tell nslookup to ask a specific server by adding it to the end of the command.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;
+# Ask Cloudflare&#39;s server for the IP of google.com 
+nslookup google.com 1.1.1.1 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is incredibly useful for confirming that a DNS change is visible to the rest of the world, not just on your own network.&lt;/p&gt;
+&lt;h3&gt;Putting It All Together&lt;/h3&gt;
+&lt;p&gt;nslookup bridges the gap between a connection working and not working. It shifts your thinking from &amp;quot;Can I reach this server?&amp;quot; to &amp;quot;Does the internet even know how to find this server?&amp;quot;&lt;/p&gt;
+&lt;p&gt;By learning to ask for different record types, you can diagnose not just web traffic issues but problems with email and other services, too. It’s a simple command that gives you a direct line to the fundamental address book of the internet, making it an indispensable tool for any troubleshooter.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Forget 5D Chess, Just Play the Board in Front of You</title>
     <link href="https://blog.beaubremer.com/posts/Forget_5D_Chess_Just_Play/"/>
