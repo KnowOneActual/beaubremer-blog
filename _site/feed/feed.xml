@@ -4,12 +4,115 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-08-17T00:00:00Z</updated>
+  <updated>2025-08-28T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>Building a Privacy-First Image Cleaner on a Tor Onion Service</title>
+    <link href="https://blog.beaubremer.com/posts/iimage_cleaner_on_a_tor_onion_service/"/>
+    <updated>2025-08-28T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/iimage_cleaner_on_a_tor_onion_service/</id>
+    <content xml:lang="en" type="html">&lt;h2&gt;Building a Privacy-First Image Cleaner&lt;/h2&gt;
+&lt;p&gt;In today&#39;s digital world, privacy is paramount. Every photo we take with our smartphones or digital cameras often contains hidden data—known as EXIF metadata—that can reveal sensitive information like our location, the device model, and even the exact time a picture was taken. Sharing these images online without cleaning them can inadvertently expose personal details.&lt;/p&gt;
+&lt;p&gt;This post details how I built a privacy-focused web service to solve this problem: a &lt;strong&gt;Secure Image Cleaner&lt;/strong&gt; hosted entirely on a Tor Onion Service. You can try it out here (requires Tor Browser): &lt;a href=&quot;http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html&quot;&gt;http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html&lt;/a&gt;. This project was a great way to dive deep into Tor, server administration, and secure web development.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Why a Secure Image Cleaner on Tor?&lt;/h3&gt;
+&lt;p&gt;A privacy-focused version of my personal website is also hosted as a Tor Onion Service, primarily as a project to explore privacy-first web development. The goal is to strip away all unnecessary JavaScript, tracking, and external resources for a truly minimalist and secure browsing experience.&lt;/p&gt;
+&lt;p&gt;Building an image cleaner on this foundation felt like a natural extension of that mission:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Enhanced Privacy:&lt;/strong&gt; For users concerned about their digital footprint, cleaning metadata locally is good, but doing it through a trusted, anonymous Tor service adds another layer of protection.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Demonstrating Expertise:&lt;/strong&gt; This project allowed me to showcase practical skills in several key areas:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Linux Server Administration:&lt;/strong&gt; Configuring and managing an Ubuntu VM on Google Cloud.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Networking:&lt;/strong&gt; Understanding and implementing Tor hidden services.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Web Development:&lt;/strong&gt; Building a minimalist, functional web application.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Backend Engineering:&lt;/strong&gt; Developing a Python Flask application.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Web Server Configuration:&lt;/strong&gt; Setting up Nginx as a reverse proxy.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;System Services:&lt;/strong&gt; Managing applications with &lt;code&gt;systemd&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Real-World Utility:&lt;/strong&gt; It&#39;s not just a demo; it&#39;s a genuinely useful tool for anyone looking to share images more privately.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;h3&gt;The Architecture: A Full Stack Journey&lt;/h3&gt;
+&lt;p&gt;Creating this service involved a stack chosen specifically for functionality and privacy.&lt;/p&gt;
+&lt;p&gt;Here’s a breakdown of the core components:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tor Onion Service:&lt;/strong&gt; The entry point for users, providing anonymity and encryption.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Google Cloud Platform (GCP) e2-micro VM:&lt;/strong&gt; The hosting environment, leveraging the &amp;quot;Always Free&amp;quot; tier for cost-effectiveness.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ubuntu Server:&lt;/strong&gt; A robust and flexible operating system.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nginx:&lt;/strong&gt; Acts as the web server for static files and as a &lt;strong&gt;reverse proxy&lt;/strong&gt; to forward dynamic requests to the Python application.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gunicorn:&lt;/strong&gt; A production-ready Python WSGI HTTP Server that interfaces between Nginx and our Flask application.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flask Application (&lt;code&gt;image_cleaner.py&lt;/code&gt;):&lt;/strong&gt; The Python backend that handles receiving image uploads, stripping metadata, and returning the cleaned image.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pillow Library:&lt;/strong&gt; A powerful image processing library for Python, used to manipulate image data and remove EXIF tags.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Python Virtual Environments:&lt;/strong&gt; Essential for isolating project dependencies and maintaining a clean system.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;systemd&lt;/code&gt;:&lt;/strong&gt; Manages the Gunicorn service, ensuring it runs reliably in the background and starts automatically on boot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3&gt;How It Works: A Step-by-Step Overview&lt;/h3&gt;
+&lt;p&gt;The process for a user is simple, but the backend is a finely tuned orchestration of services:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;User Accesses the Page:&lt;/strong&gt; A user visits the &lt;strong&gt;&lt;a href=&quot;http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html&quot;&gt;Image Cleaner page&lt;/a&gt;&lt;/strong&gt; on the Tor Onion Service using a Tor Browser. The page contains a minimalist HTML form to upload an image.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Image Upload &amp;amp; Nginx Interception:&lt;/strong&gt; When the user selects an image (up to 10MB) and clicks &amp;quot;Clean and Download,&amp;quot; the browser sends a POST request to the &lt;code&gt;/upload&lt;/code&gt; endpoint. Nginx receives this request first.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nginx Proxies to Gunicorn:&lt;/strong&gt; Based on its configuration, Nginx recognizes the /upload path and proxies the request to the Gunicorn server, which is listening on a local Unix socket (image_cleaner.sock).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This is the exact Nginx location block that handles the magic. It forwards the request to the Gunicorn socket and adds several important headers so our Flask application knows about the original user.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Nginx&quot;&gt;
+location /upload {
+    proxy_pass http://unix:/home/userx/image_cleaner_app/image_cleaner.sock;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;&lt;strong&gt;Gunicorn Hands Off to Flask:&lt;/strong&gt; Gunicorn receives the request and passes it to our Flask application (&lt;code&gt;image_cleaner.py&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flask Processes the Image:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;The Flask app securely saves the uploaded image to a temporary folder.&lt;/li&gt;
+&lt;li&gt;It uses the Pillow library to open the image.&lt;/li&gt;
+&lt;li&gt;Crucially, it reads only the raw pixel data, leaving all EXIF metadata behind.&lt;/li&gt;
+&lt;li&gt;A new image is created from this clean pixel data and saved temporarily.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Secure Download &amp;amp; Cleanup:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;The Flask app sends the cleaned image back to the user&#39;s browser for download.&lt;/li&gt;
+&lt;li&gt;Immediately after the file is sent, &lt;strong&gt;both the original and the cleaned temporary files are deleted.&lt;/strong&gt; This ensures no user data persists on the server.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;systemd&lt;/code&gt; Reliability:&lt;/strong&gt; The entire Python application, managed by Gunicorn, runs as a &lt;code&gt;systemd&lt;/code&gt; service. If the server reboots or the application crashes, &lt;code&gt;systemd&lt;/code&gt; automatically restarts it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Key Learnings &amp;amp; Takeaways&lt;/h3&gt;
+&lt;p&gt;This project provided invaluable insights into a few areas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Virtual Environments are Non-Negotiable:&lt;/strong&gt; Managing Python dependencies with &lt;code&gt;venv&lt;/code&gt; is critical for clean, reproducible deployments. It&#39;s the best way to avoid using &lt;code&gt;sudo pip install&lt;/code&gt; on system-managed Python environments (a lesson I learned firsthand!).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nginx as a Powerful Gateway:&lt;/strong&gt; Beyond serving static files, Nginx&#39;s role as a reverse proxy is fundamental for robust web services. Understanding &lt;code&gt;location&lt;/code&gt; blocks and &lt;code&gt;proxy_pass&lt;/code&gt; is key.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;systemd&lt;/code&gt; for Production Readiness:&lt;/strong&gt; Turning a simple Python script into a reliable, self-starting service with &lt;code&gt;systemd&lt;/code&gt; is a crucial skill for server administration.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Security by Design:&lt;/strong&gt; From ephemeral file storage to an intentionally minimalist design (no JavaScript, no tracking), every aspect of this project emphasized privacy and security.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Troubleshooting is King:&lt;/strong&gt; Reading error messages carefully (like &amp;quot;413 Request Entity Too Large&amp;quot;) and knowing how to debug Nginx or &lt;code&gt;systemd&lt;/code&gt; logs is an essential skill.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3&gt;See the Code&lt;/h3&gt;
+&lt;p&gt;For those interested in the technical details, the source code for this project is available on GitHub. You can find it in the &lt;code&gt;onion-version&lt;/code&gt; branch of my website&#39;s repository.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/KnowOneActual/BB_Website/tree/onion-version&quot;&gt;View the project on GitHub&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Looking Ahead&lt;/h3&gt;
+&lt;p&gt;This Secure Image Cleaner is a proof-of-concept, but it could easily be expanded. Future enhancements might include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Support for more image formats (e.g., WebP).&lt;/li&gt;
+&lt;li&gt;A cleaner user interface.&lt;/li&gt;
+&lt;li&gt;An option to simply view metadata before removal.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This was an journey into building a privacy-conscious online tool. It&#39;s a testament to the power of open-source technologies like Tor, Nginx, and Flask to create secure and useful applications. Give the &lt;strong&gt;&lt;a href=&quot;http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html&quot;&gt;Image Cleaner&lt;/a&gt;&lt;/strong&gt; (Note: Open in a Tor Browser) a try and let me know what you think!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>What&#39;s in a Name? A Guide to DNS Troubleshooting with nslookup</title>
     <link href="https://blog.beaubremer.com/posts/A_Guide_to_DNS%20Troubleshooting_with_nslookup/"/>
