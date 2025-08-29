@@ -114,6 +114,89 @@ location /upload {
 </content>
   </entry>
   <entry>
+    <title>My Weekend Project: Turning My Personal Site into a Tor Onion Service</title>
+    <link href="https://blog.beaubremer.com/posts/Site_into_a_Tor_Onion_Service/"/>
+    <updated>2025-08-25T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Site_into_a_Tor_Onion_Service/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Have you ever looked at your personal site and thought, &amp;quot;This is cool, but what could be &lt;em&gt;cooler&lt;/em&gt;&amp;quot;? Maybe you&#39;re looking for a weekend project that&#39;s a little different, something that teaches you about the hidden corners of the internet.&lt;/p&gt;
+&lt;p&gt;If so, I&#39;ve got the perfect project for you: creating a Tor onion service for your existing website.&lt;/p&gt;
+&lt;p&gt;It may sound complex and mysterious, but it&#39;s actually surprisingly straightforward. At its core, it&#39;s a fantastic exercise in basic server administration and networking. We&#39;re not doing anything shady; we&#39;re just experimenting with technology to see how it works.&lt;/p&gt;
+&lt;h3&gt;First, What Is an Onion Service?&lt;/h3&gt;
+&lt;p&gt;An onion service (you&#39;ve probably seen their long, nonsensical addresses ending in &lt;code&gt;.onion&lt;/code&gt;) is a website that&#39;s only accessible through the Tor network. The &amp;quot;onion&amp;quot; name comes from the layers of encryption that protect both the person visiting the site and the server hosting it.&lt;/p&gt;
+&lt;p&gt;When you visit a normal website, your computer connects directly to its server. With an onion service, your connection is bounced through several random computers (called relays) in the Tor network before it reaches the server. The server&#39;s location is also hidden. This provides a powerful layer of privacy and anonymity that you just don&#39;t get on the regular internet.&lt;/p&gt;
+&lt;h3&gt;Why Bother?&lt;/h3&gt;
+&lt;p&gt;For me, this wasn&#39;t about hiding from anyone. It was about curiosity and learning. Here&#39;s why I think it&#39;s a great project:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;It&#39;s a fantastic learning experience.&lt;/strong&gt; You&#39;ll get hands-on with a Linux server, a web server like Nginx, and the Tor software itself.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It&#39;s a great story.&lt;/strong&gt; Let&#39;s be honest, it&#39;s a neat trick. Being able to say you have your site running as an onion service just to see if you could is a fun talking point.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It&#39;s basically free.&lt;/strong&gt; We can do this entire project using the &amp;quot;Always Free&amp;quot; tier from a cloud provider like Google Cloud.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;The How-To: A Step-by-Step Guide&lt;/h3&gt;
+&lt;p&gt;My goal is simple: get a small, free virtual server online, put our website files on it, and then install and configure Tor to act as the gateway.&lt;/p&gt;
+&lt;h4&gt;Step 1: Get a Free Server on Google Cloud&lt;/h4&gt;
+&lt;p&gt;We&#39;ll use Google Cloud&#39;s &amp;quot;Always Free&amp;quot; tier, which gives you one tiny &lt;code&gt;e2-micro&lt;/code&gt; virtual machine (VM) forever, at no cost. This is more than enough for a simple static website.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Sign up for Google Cloud&lt;/strong&gt; and create a new project.&lt;/li&gt;
+&lt;li&gt;Navigate to &lt;strong&gt;Compute Engine&lt;/strong&gt; -&amp;gt; &lt;strong&gt;VM instances&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;&amp;quot;Create Instance&amp;quot;&lt;/strong&gt; and use these exact settings to stay in the free tier:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Region:&lt;/strong&gt; &lt;code&gt;us-west1&lt;/code&gt;, &lt;code&gt;us-central1&lt;/code&gt;, or &lt;code&gt;us-east1&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Machine type:&lt;/strong&gt; &lt;code&gt;e2-micro&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Boot disk:&lt;/strong&gt; Ubuntu or Debian, 30 GB or less.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Firewall:&lt;/strong&gt; Check the box to &amp;quot;Allow HTTP traffic.&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Step 2: Connect to Your Server&lt;/h4&gt;
+&lt;p&gt;Once the VM is running, connect to it using a command-line terminal. The easiest way is with Google&#39;s own command-line tool.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://cloud.google.com/sdk/docs/install&quot;&gt;Install the gcloud CLI&lt;/a&gt; on your local computer.&lt;/li&gt;
+&lt;li&gt;Open your terminal and run &lt;code&gt;gcloud init&lt;/code&gt; to log in and select your project.&lt;/li&gt;
+&lt;li&gt;Connect to your VM with this command (replace with your VM&#39;s name and zone):&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;gcloud compute ssh your-vm-name --zone its-zone
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Step 3: Install the Software&lt;/h4&gt;
+&lt;p&gt;Once you&#39;re connected, run these commands to install everything you need.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Update the server and install Nginx (web server), Tor, and Git
+sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y
+sudo apt install git nginx tor -y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Step 4: Add Your Website Files&lt;/h4&gt;
+&lt;p&gt;Now, pull your website&#39;s code from its repository and place it where Nginx can find it.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Clone your site (use your own repo URL)
+git clone [https://github.com/your-username/your-repo.git](https://github.com/your-username/your-repo.git)
+
+# Move the files to the web server&#39;s public directory
+sudo cp -r ~/your-repo/* /var/www/html/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Step 5: Configure Tor and Get Your Address!&lt;/h4&gt;
+&lt;p&gt;This is the magic step. You just need to add two lines to Tor&#39;s configuration file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# This command adds the necessary lines to the end of the config file
+echo -e &amp;quot;HiddenServiceDir /var/lib/tor/hidden_service/&#92;nHiddenServicePort 80 127.0.0.1:80&amp;quot; | sudo tee -a /etc/tor/torrc
+
+# Restart the services to apply the changes
+sudo systemctl restart nginx
+sudo systemctl restart tor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Wait about a minute, then run this command to see your new address:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo cat /var/lib/tor/hidden_service/hostname
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Copy that long &lt;code&gt;.onion&lt;/code&gt; address, paste it into the &lt;a href=&quot;https://www.torproject.org/download/&quot;&gt;Tor Browser&lt;/a&gt;, and you should see your site!&lt;/p&gt;
+&lt;h3&gt;The Pitfalls: A Warning for the Weary&lt;/h3&gt;
+&lt;p&gt;Now, let&#39;s be honest. The process above looks simple, but getting there was a journey. Here&#39;s what I learned the hard way:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Onboarding is Confusing.&lt;/strong&gt; Getting started with a Google cloud as an individual can be a bit of a maze. The menus are built for giant corporations, not for someone doing a weekend project. Be prepared to feel like you&#39;re doing everything wrong. You&#39;re not—the design is the problem.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;quot;Free&amp;quot; Requires a Billing Account.&lt;/strong&gt; You will have to link a credit card to a billing account, even for the &amp;quot;Always Free&amp;quot; tier. This is for verification, and you won&#39;t be charged as long as you stay within the free limits.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Cost Estimate is Misleading.&lt;/strong&gt; When you create your free &lt;code&gt;e2-micro&lt;/code&gt; VM, the console will show you a monthly cost estimate (around $7). &lt;strong&gt;Ignore it.&lt;/strong&gt; This is the list price. The &amp;quot;Always Free&amp;quot; discount is applied at the end of the month, making your bill zero. It&#39;s confusing, but you just have to trust the process.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The In-Browser SSH is Terrible.&lt;/strong&gt; Don&#39;t even bother with it. It&#39;s laggy and unresponsive. Take the five minutes to install the &lt;code&gt;gcloud&lt;/code&gt; CLI and connect with your local terminal. It will save you a world of frustration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the end, I got it working, and you can too. This project is a perfect example of something that is technically simple but is wrapped in layers of corporate administrative nonsense. Pushing through that is a victory in itself.&lt;/p&gt;
+&lt;p&gt;So go ahead, give it a try. It&#39;s a fun challenge, a great story to tell, and a fantastic way to prove that you can figure things out, no matter how poorly they&#39;re designed.&lt;/p&gt;
+&lt;p&gt;You can access the live site using the &lt;a href=&quot;http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/&quot;&gt;Tor Browser via this link&lt;/a&gt;. Please note that this link will only resolve if you are using the &lt;a href=&quot;https://www.torproject.org/download/&quot;&gt;Tor Browser&lt;/a&gt;. (32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion)&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>What&#39;s in a Name? A Guide to DNS Troubleshooting with nslookup</title>
     <link href="https://blog.beaubremer.com/posts/A_Guide_to_DNS%20Troubleshooting_with_nslookup/"/>
     <updated>2025-08-17T00:00:00Z</updated>

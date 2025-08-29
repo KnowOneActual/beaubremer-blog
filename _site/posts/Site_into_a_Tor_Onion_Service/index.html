@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Weekend Project: Turning My Personal Site into a Tor Onion Service | Beau Bremer&#39;s | Blog</title>
+    <meta name="description" content="A step-by-step guide to making your website accessible on the Tor network using a free Google Cloud server. It&#39;s easier than you think!" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
+    
+<link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg" />
+<link rel="icon" type="image/webp" href="/img/favicon/favicon-32x32.webp" sizes="32x32">
+<link rel="icon" type="image/webp" href="/img/favicon/favicon-96x96.webp" sizes="96x96">
+<link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/img/favicon/site.webmanifest" />
+<link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+<link rel="stylesheet" href="/assets/css/lite-yt-embed.css" />
+</head>
+<body class="bg-gray-950 text-white scroll-smooth flex flex-col min-h-screen">
+
+    <header class="py-6 px-6 max-w-3xl mx-auto w-full">
+        <div class="flex justify-between items-center">
+            <div>
+                <a href="/" class="text-2xl font-bold text-white hover:text-fuchsia-400 transition-colors">Beau Bremer&#39;s | Blog</a>
+            </div>
+            <nav>
+              
+                <a href="/" class="text-gray-300 hover:text-white transition-colors">← Back to Blog Home</a>
+              
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto py-12 px-6 flex-grow w-full">
+        <div class="prose prose-invert lg:prose-xl max-w-none">
+            <article>
+    <header>
+        <h1 class="text-5xl font-extrabold text-fuchsia-400 mb-4">My Weekend Project: Turning My Personal Site into a Tor Onion Service</h1>
+        
+            <p class="text-gray-400">
+                <time datetime="2025-08-25T00:00:00.000Z">August 25, 2025</time>
+            </p>
+        
+        
+        
+        
+            <div class="mt-4">
+                <span class="text-gray-400">Tagged in:</span>
+                
+                    
+                
+                    
+                        <a href="/tags/tor/" class="inline-block bg-gray-800 text-fuchsia-300 rounded-full px-3 py-1 text-sm font-semibold ml-2 hover:bg-gray-700 transition-colors">#tor</a>
+                    
+                
+                    
+                        <a href="/tags/privacy/" class="inline-block bg-gray-800 text-fuchsia-300 rounded-full px-3 py-1 text-sm font-semibold ml-2 hover:bg-gray-700 transition-colors">#privacy</a>
+                    
+                
+                    
+                        <a href="/tags/sysadmin/" class="inline-block bg-gray-800 text-fuchsia-300 rounded-full px-3 py-1 text-sm font-semibold ml-2 hover:bg-gray-700 transition-colors">#sysadmin</a>
+                    
+                
+                    
+                        <a href="/tags/nginx/" class="inline-block bg-gray-800 text-fuchsia-300 rounded-full px-3 py-1 text-sm font-semibold ml-2 hover:bg-gray-700 transition-colors">#Nginx</a>
+                    
+                
+            </div>
+        
+    </header>
+    
+    <hr class="border-gray-700 my-8">
+
+    <p>Have you ever looked at your personal site and thought, &quot;This is cool, but what could be <em>cooler</em>&quot;? Maybe you're looking for a weekend project that's a little different, something that teaches you about the hidden corners of the internet.</p>
+<p>If so, I've got the perfect project for you: creating a Tor onion service for your existing website.</p>
+<p>It may sound complex and mysterious, but it's actually surprisingly straightforward. At its core, it's a fantastic exercise in basic server administration and networking. We're not doing anything shady; we're just experimenting with technology to see how it works.</p>
+<h3>First, What Is an Onion Service?</h3>
+<p>An onion service (you've probably seen their long, nonsensical addresses ending in <code>.onion</code>) is a website that's only accessible through the Tor network. The &quot;onion&quot; name comes from the layers of encryption that protect both the person visiting the site and the server hosting it.</p>
+<p>When you visit a normal website, your computer connects directly to its server. With an onion service, your connection is bounced through several random computers (called relays) in the Tor network before it reaches the server. The server's location is also hidden. This provides a powerful layer of privacy and anonymity that you just don't get on the regular internet.</p>
+<h3>Why Bother?</h3>
+<p>For me, this wasn't about hiding from anyone. It was about curiosity and learning. Here's why I think it's a great project:</p>
+<ul>
+<li><strong>It's a fantastic learning experience.</strong> You'll get hands-on with a Linux server, a web server like Nginx, and the Tor software itself.</li>
+<li><strong>It's a great story.</strong> Let's be honest, it's a neat trick. Being able to say you have your site running as an onion service just to see if you could is a fun talking point.</li>
+<li><strong>It's basically free.</strong> We can do this entire project using the &quot;Always Free&quot; tier from a cloud provider like Google Cloud.</li>
+</ul>
+<h3>The How-To: A Step-by-Step Guide</h3>
+<p>My goal is simple: get a small, free virtual server online, put our website files on it, and then install and configure Tor to act as the gateway.</p>
+<h4>Step 1: Get a Free Server on Google Cloud</h4>
+<p>We'll use Google Cloud's &quot;Always Free&quot; tier, which gives you one tiny <code>e2-micro</code> virtual machine (VM) forever, at no cost. This is more than enough for a simple static website.</p>
+<ol>
+<li><strong>Sign up for Google Cloud</strong> and create a new project.</li>
+<li>Navigate to <strong>Compute Engine</strong> -&gt; <strong>VM instances</strong>.</li>
+<li>Click <strong>&quot;Create Instance&quot;</strong> and use these exact settings to stay in the free tier:
+<ul>
+<li><strong>Region:</strong> <code>us-west1</code>, <code>us-central1</code>, or <code>us-east1</code>.</li>
+<li><strong>Machine type:</strong> <code>e2-micro</code>.</li>
+<li><strong>Boot disk:</strong> Ubuntu or Debian, 30 GB or less.</li>
+<li><strong>Firewall:</strong> Check the box to &quot;Allow HTTP traffic.&quot;</li>
+</ul>
+</li>
+</ol>
+<h4>Step 2: Connect to Your Server</h4>
+<p>Once the VM is running, connect to it using a command-line terminal. The easiest way is with Google's own command-line tool.</p>
+<ol>
+<li><a href="https://cloud.google.com/sdk/docs/install">Install the gcloud CLI</a> on your local computer.</li>
+<li>Open your terminal and run <code>gcloud init</code> to log in and select your project.</li>
+<li>Connect to your VM with this command (replace with your VM's name and zone):<pre><code class="language-bash">gcloud compute ssh your-vm-name --zone its-zone
+</code></pre>
+</li>
+</ol>
+<h4>Step 3: Install the Software</h4>
+<p>Once you're connected, run these commands to install everything you need.</p>
+<pre><code class="language-bash"># Update the server and install Nginx (web server), Tor, and Git
+sudo apt update &amp;&amp; sudo apt upgrade -y
+sudo apt install git nginx tor -y
+</code></pre>
+<h4>Step 4: Add Your Website Files</h4>
+<p>Now, pull your website's code from its repository and place it where Nginx can find it.</p>
+<pre><code class="language-bash"># Clone your site (use your own repo URL)
+git clone [https://github.com/your-username/your-repo.git](https://github.com/your-username/your-repo.git)
+
+# Move the files to the web server's public directory
+sudo cp -r ~/your-repo/* /var/www/html/
+</code></pre>
+<h4>Step 5: Configure Tor and Get Your Address!</h4>
+<p>This is the magic step. You just need to add two lines to Tor's configuration file.</p>
+<pre><code class="language-bash"># This command adds the necessary lines to the end of the config file
+echo -e &quot;HiddenServiceDir /var/lib/tor/hidden_service/\nHiddenServicePort 80 127.0.0.1:80&quot; | sudo tee -a /etc/tor/torrc
+
+# Restart the services to apply the changes
+sudo systemctl restart nginx
+sudo systemctl restart tor
+</code></pre>
+<p>Wait about a minute, then run this command to see your new address:</p>
+<pre><code class="language-bash">sudo cat /var/lib/tor/hidden_service/hostname
+</code></pre>
+<p>Copy that long <code>.onion</code> address, paste it into the <a href="https://www.torproject.org/download/">Tor Browser</a>, and you should see your site!</p>
+<h3>The Pitfalls: A Warning for the Weary</h3>
+<p>Now, let's be honest. The process above looks simple, but getting there was a journey. Here's what I learned the hard way:</p>
+<ul>
+<li><strong>The Onboarding is Confusing.</strong> Getting started with a Google cloud as an individual can be a bit of a maze. The menus are built for giant corporations, not for someone doing a weekend project. Be prepared to feel like you're doing everything wrong. You're not—the design is the problem.</li>
+<li><strong>&quot;Free&quot; Requires a Billing Account.</strong> You will have to link a credit card to a billing account, even for the &quot;Always Free&quot; tier. This is for verification, and you won't be charged as long as you stay within the free limits.</li>
+<li><strong>The Cost Estimate is Misleading.</strong> When you create your free <code>e2-micro</code> VM, the console will show you a monthly cost estimate (around $7). <strong>Ignore it.</strong> This is the list price. The &quot;Always Free&quot; discount is applied at the end of the month, making your bill zero. It's confusing, but you just have to trust the process.</li>
+<li><strong>The In-Browser SSH is Terrible.</strong> Don't even bother with it. It's laggy and unresponsive. Take the five minutes to install the <code>gcloud</code> CLI and connect with your local terminal. It will save you a world of frustration.</li>
+</ul>
+<p>In the end, I got it working, and you can too. This project is a perfect example of something that is technically simple but is wrapped in layers of corporate administrative nonsense. Pushing through that is a victory in itself.</p>
+<p>So go ahead, give it a try. It's a fun challenge, a great story to tell, and a fantastic way to prove that you can figure things out, no matter how poorly they're designed.</p>
+<p>You can access the live site using the <a href="http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion">Tor Browser via this link</a>. Please note that this link will only resolve if you are using the <a href="https://www.torproject.org/download/">Tor Browser</a>. (32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion)</p>
+
+</article>
+        </div>
+    </main>
+
+    <footer class="text-center py-6 bg-gray-950 text-gray-500">
+    <div class="mb-2">
+      <a href="https://blog.beaubremer.com/" target="_blank" class="hover:text-fuchsia-400 mx-2">Blog Home</a>
+      <a href="https://github.com/KnowOneActual" target="_blank" class="hover:text-fuchsia-400 mx-2">GitHub</a>
+     </div>
+    <p>© 2025 Beau Bremer. Stay bold, keep creating, and rock on! All rights reserved.
+    </p>
+  </footer>
+    <script src="/assets/js/lite-yt-embed.js"></script>
+</body>
+</html>
