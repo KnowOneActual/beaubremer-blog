@@ -1,0 +1,9 @@
+WARP.md
+README.md
+node_modules/
+.git/
+package.json
+package-lock.json
+netlify.toml
+tailwind.config.js
+.eleventy.js

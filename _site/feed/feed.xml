@@ -4,12 +4,71 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-08-28T00:00:00Z</updated>
+  <updated>2025-09-02T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>When a Service Plays Dead: A Sysadmin&#39;s Debugging Guide</title>
+    <link href="https://blog.beaubremer.com/posts/debugging_a_service_that_won&#39;t_start/"/>
+    <updated>2025-09-02T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/debugging_a_service_that_won&#39;t_start/</id>
+    <content xml:lang="en" type="html">&lt;h2&gt;A Sysadmin&#39;s Tale: Debugging a Service That Won&#39;t Start&lt;/h2&gt;
+&lt;p&gt;Every so often in server administration, you run into a problem that defies the usual solutions. A service that should be running simply isn&#39;t, and the quick fixes don&#39;t work. A recent troubleshooting session with a self-hosted Tor Onion Service served as a great reminder of some valuable lessons in persistence and diagnostics.&lt;/p&gt;
+&lt;p&gt;While the context here is a Tor service, the step-by-step process of elimination is a universal guide to debugging almost any misbehaving service on a Linux server.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;The Problem: A Service Playing Dead&lt;/h3&gt;
+&lt;p&gt;The initial symptom was simple: the onion site was down. After connecting to the server, the first command in any admin&#39;s toolkit is &lt;code&gt;systemctl status&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo systemctl status tor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The output holds the first major clue: &lt;strong&gt;&lt;code&gt;Active: active (exited)&lt;/code&gt;&lt;/strong&gt;. For a service that&#39;s supposed to run continuously, this is a red flag. It means the service started, did something, and then immediately shut down without an obvious error. This is far trickier to debug than a simple crash.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;The Diagnostic Journey: Peeling the Onion&lt;/h3&gt;
+&lt;p&gt;When the main status is unhelpful, it&#39;s time to dig deeper. Here&#39;s a reliable path to follow, moving from the most general to the most specific tests.&lt;/p&gt;
+&lt;h4&gt;1. Check the System Logs (&lt;code&gt;journalctl&lt;/code&gt;)&lt;/h4&gt;
+&lt;p&gt;The next logical step is to check the system&#39;s journal for the service. The &lt;code&gt;-e&lt;/code&gt; flag jumps you to the end of the log, which is where the most recent events are.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo journalctl -u tor -e
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Unfortunately, the logs were as unhelpful as the status. They only confirmed that the service was starting and stopping, without providing any application-specific errors. This tells us the problem likely isn&#39;t with &lt;code&gt;systemd&lt;/code&gt; itself, but with the Tor application.&lt;/p&gt;
+&lt;h4&gt;2. Check the Application Logs&lt;/h4&gt;
+&lt;p&gt;Most applications write their own, more detailed logs. For Tor, this is usually &lt;code&gt;/var/log/tor/notices.log&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo cat /var/log/tor/notices.log
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The output here provides another huge clue: &lt;strong&gt;&lt;code&gt;No such file or directory&lt;/code&gt;&lt;/strong&gt;. A service that can&#39;t create its own log file is a strong sign of a &lt;strong&gt;file permissions problem&lt;/strong&gt;. Even after trying to fix ownership with &lt;code&gt;chown&lt;/code&gt;, the issue persisted, suggesting the problem was somewhere else.&lt;/p&gt;
+&lt;h4&gt;3. Inspect the Service File&lt;/h4&gt;
+&lt;p&gt;Sometimes the investigation leads to a surprising discovery. After reinstalling the &lt;code&gt;tor&lt;/code&gt; package didn&#39;t help, the next place to look was the &lt;code&gt;systemd&lt;/code&gt; service file itself.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;cat /lib/systemd/system/tor.service
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Somehow, the file had been replaced with a generic placeholder. A critical line, &lt;code&gt;ExecStart=/bin/true&lt;/code&gt;, was telling the service to run a command that does nothing and immediately exits successfully. After replacing the file&#39;s contents with the correct, default configuration, a real error message finally appeared.&lt;/p&gt;
+&lt;h4&gt;4. Verify the Configuration&lt;/h4&gt;
+&lt;p&gt;With the service file fixed, &lt;code&gt;systemctl restart tor&lt;/code&gt; now failed with a proper error. This allows us to move on to verifying Tor&#39;s own configuration.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo -u debian-tor tor --verify-config
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This command passed, indicating that &lt;code&gt;/etc/tor/torrc&lt;/code&gt; was syntactically correct. This is a classic troubleshooting moment: the config file is valid, but the service still won&#39;t run. The problem isn&#39;t the file&#39;s syntax, but &lt;em&gt;what the file is telling the service to do&lt;/em&gt;.&lt;/p&gt;
+&lt;h4&gt;5. Run the Service Manually (The Breakthrough)&lt;/h4&gt;
+&lt;p&gt;This is often the final and most critical step. Bypassing &lt;code&gt;systemd&lt;/code&gt; and running the Tor startup command directly, as the correct user, lets you see the live output.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo -u debian-tor /usr/bin/tor --defaults-torrc /usr/share/tor/tor-service-defaults-torrc -f /etc/tor/torrc --RunAsDaemon 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And there it was, in plain text:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;[warn] Failed to parse/validate config: Problem with User value. See logs for details.&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The &lt;code&gt;systemd&lt;/code&gt; service was already starting the process as the &lt;code&gt;debian-tor&lt;/code&gt; user, but a default Tor configuration file was &lt;em&gt;also&lt;/em&gt; trying to switch to the &lt;code&gt;debian-tor&lt;/code&gt; user. This redundant user-switching conflict caused the service to crash instantly.&lt;/p&gt;
+&lt;p&gt;The fix was to edit &lt;code&gt;/usr/share/tor/tor-service-defaults-torrc&lt;/code&gt; and comment out the &lt;code&gt;User debian-tor&lt;/code&gt; line. After that, the service started perfectly.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Lessons Learned&lt;/h3&gt;
+&lt;p&gt;This deep dive highlights a few core principles of system administration:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Trust the Process:&lt;/strong&gt; Start broad (&lt;code&gt;systemctl status&lt;/code&gt;) and get progressively more specific. Don&#39;t jump to conclusions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Permissions Are a Common Culprit:&lt;/strong&gt; When in doubt, check file and directory ownership and permissions (&lt;code&gt;chown&lt;/code&gt;, &lt;code&gt;chmod&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Find the Right Logs:&lt;/strong&gt; If the main system log is unhelpful, find the application&#39;s own log file. If it doesn&#39;t exist, that itself is a clue.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Run It Manually:&lt;/strong&gt; If a service fails via &lt;code&gt;systemd&lt;/code&gt;, run its startup command directly in the terminal. The live output is often the most valuable diagnostic information you can get.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;While the context was specific to a Tor service, this methodical approach of checking services, logs, permissions, and configurations—and finally running the process manually—is a playbook that can solve almost any &amp;quot;service that won&#39;t start&amp;quot; mystery.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Building a Privacy-First Image Cleaner on a Tor Onion Service</title>
     <link href="https://blog.beaubremer.com/posts/iimage_cleaner_on_a_tor_onion_service/"/>
@@ -115,10 +174,10 @@ location /upload {
   </entry>
   <entry>
     <title>My Weekend Project: Turning My Personal Site into a Tor Onion Service</title>
-    <link href="https://blog.beaubremer.com/posts/Site_into_a_Tor_Onion_Service/"/>
+    <link href="https://blog.beaubremer.com/posts/site_into_a_tor_onion_service/"/>
     <updated>2025-08-25T00:00:00Z</updated>
-    <id>https://blog.beaubremer.com/posts/Site_into_a_Tor_Onion_Service/</id>
-    <content xml:lang="en" type="html">&lt;p&gt;Have you ever looked at your personal site and thought, &amp;quot;This is cool, but what could be &lt;em&gt;cooler&lt;/em&gt;&amp;quot;? Maybe you&#39;re looking for a weekend project that&#39;s a little different, something that teaches you about the hidden corners of the internet.&lt;/p&gt;
+    <id>https://blog.beaubremer.com/posts/site_into_a_tor_onion_service/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Maybe you&#39;re looking for a weekend project that&#39;s a little different, something that teaches you about the hidden corners of the internet.&lt;/p&gt;
 &lt;p&gt;If so, I&#39;ve got the perfect project for you: creating a Tor onion service for your existing website.&lt;/p&gt;
 &lt;p&gt;It may sound complex and mysterious, but it&#39;s actually surprisingly straightforward. At its core, it&#39;s a fantastic exercise in basic server administration and networking. We&#39;re not doing anything shady; we&#39;re just experimenting with technology to see how it works.&lt;/p&gt;
 &lt;h3&gt;First, What Is an Onion Service?&lt;/h3&gt;
@@ -198,9 +257,9 @@ sudo systemctl restart tor
   </entry>
   <entry>
     <title>What&#39;s in a Name? A Guide to DNS Troubleshooting with nslookup</title>
-    <link href="https://blog.beaubremer.com/posts/A_Guide_to_DNS%20Troubleshooting_with_nslookup/"/>
+    <link href="https://blog.beaubremer.com/posts/A_Guide_to_DNS_Troubleshooting_with_nslookup/"/>
     <updated>2025-08-17T00:00:00Z</updated>
-    <id>https://blog.beaubremer.com/posts/A_Guide_to_DNS%20Troubleshooting_with_nslookup/</id>
+    <id>https://blog.beaubremer.com/posts/A_Guide_to_DNS_Troubleshooting_with_nslookup/</id>
     <content xml:lang="en" type="html">&lt;p&gt;You&#39;ve run a &lt;code&gt;ping&lt;/code&gt; to a server, and it fails. Or maybe a website suddenly won&#39;t load, even though the rest of your internet seems fine. Is the server down, or is something else going on? Often, the problem isn&#39;t with the connection itself but with the internet&#39;s address book: the &lt;strong&gt;Domain Name System (DNS)&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;This is where &lt;code&gt;nslookup&lt;/code&gt; comes in. While &lt;code&gt;ping&lt;/code&gt; tells you &lt;em&gt;if&lt;/em&gt; a server is reachable, &lt;code&gt;nslookup&lt;/code&gt; tells you how your computer finds it in the first place. It&#39;s the perfect next step in your troubleshooting toolkit, helping you diagnose a whole new class of network problems.&lt;/p&gt;
 &lt;h3&gt;What is &lt;code&gt;nslookup&lt;/code&gt; and Why Use It?&lt;/h3&gt;

@@ -12,7 +12,7 @@ tags:
 
 ---
 
-Have you ever looked at your personal site and thought, "This is cool, but what could be *cooler*"? Maybe you're looking for a weekend project that's a little different, something that teaches you about the hidden corners of the internet.
+Maybe you're looking for a weekend project that's a little different, something that teaches you about the hidden corners of the internet.
 
 If so, I've got the perfect project for you: creating a Tor onion service for your existing website.
 
