@@ -4,12 +4,80 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-09-11T00:00:00Z</updated>
+  <updated>2025-09-13T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>Terminal Tips: Uncovering Hidden Text with `strings`</title>
+    <link href="https://blog.beaubremer.com/posts/Uncovering_Hidden_Text_with_strings/"/>
+    <updated>2025-09-13T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/Uncovering_Hidden_Text_with_strings/</id>
+    <content xml:lang="en" type="html">&lt;h2&gt;Uncovering Hidden Text with &lt;code&gt;strings&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Have you ever come across a file and had no idea what it was? It&#39;s not a text file, you can&#39;t open it in a normal editor, and the name gives nothing away. Before you resort to more complex tools, there&#39;s a simple command that can give you some quick clues: &lt;code&gt;strings&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;strings&lt;/code&gt; command is a fantastic little utility that scans a file for human-readable text and prints it out. Think of it like looking at a complex engine and being able to instantly spot all the text on the labels and instruction plates. You might not understand how the whole engine works, but those labels can tell you who made it, what model it is, or give you warnings.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;How It Works&lt;/h3&gt;
+&lt;p&gt;At its core, &lt;code&gt;strings&lt;/code&gt; looks for sequences of printable characters. By default, it looks for strings that are at least four characters long. This is useful for peeking inside &lt;strong&gt;&lt;strong&gt;binary files&lt;/strong&gt;&lt;/strong&gt;, like compiled programs, to see what they might contain.&lt;/p&gt;
+&lt;p&gt;To use it, just give it a file name. For example, let&#39;s peek inside the common &lt;code&gt;ls&lt;/code&gt; command that lives in your &lt;code&gt;/bin/&lt;/code&gt; directory:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;strings /bin/ls
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You&#39;ll see a long list of text scroll by. This includes things like error messages (&amp;quot;cannot access&amp;quot;), help text (&amp;quot;--all&amp;quot;), and other text that the program uses internally. You&#39;re getting a sneak peek at the program&#39;s raw ingredients.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;A Note for Windows Users&lt;/h3&gt;
+&lt;p&gt;You might be wondering if this command works on Windows. While strings aren&#39;t included by default in the Windows Command Prompt or PowerShell, they can be easily obtained. Here are a few great options:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Microsoft Sysinternals:&lt;/strong&gt; The easiest method is to download the strings utility directly from Microsoft&#39;s own Sysinternals suite, a collection of free, powerful tools.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Git for Windows:&lt;/strong&gt; If you already have Git installed, you&#39;re in luck! The included &lt;strong&gt;Git Bash&lt;/strong&gt; terminal gives you a Linux-like environment on Windows and comes with the strings command built in.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windows Subsystem for Linux (WSL):&lt;/strong&gt; For the most powerful experience, you can enable WSL and install a complete Linux distribution (like Ubuntu) from the Microsoft Store. This gives you a full Linux terminal and all its native commands, including strings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Making strings More Powerful&lt;/h3&gt;
+&lt;p&gt;While the basic command is excellent, a few options make it even better.&lt;/p&gt;
+&lt;h4&gt;Change the Minimum String Length&lt;/h4&gt;
+&lt;p&gt;Sometimes the default length of four characters creates a lot of noise. You can use the -n flag to make strings show longer, potentially more interesting text. To see only strings that are at least 10 characters long, you would run:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;strings -n 10 /bin/ls
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This helps filter out a lot of the random, short matches and lets you focus on more meaningful text, like sentences or file paths.&lt;/p&gt;
+&lt;h4&gt;Find Out &lt;em&gt;&lt;strong&gt;Where&lt;/strong&gt;&lt;/em&gt; the Text Is&lt;/h4&gt;
+&lt;p&gt;It can be helpful to know the location, or &lt;strong&gt;offset&lt;/strong&gt;, of a string within a file. This is useful for more advanced analysis. The -t flag tells strings to print the offset before each line. You can specify the format: d for decimal, o for octal, and x for hexadecimal (which is the most common for this kind of work).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;# Show the location of each string in hexadecimal format 
+strings -t x /bin/ls
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now the output will look something like this, with the file location on the left:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; 2d98 /lib64/ld-linux-x86-64.so.2 
+ 301b GLIBC_2.2.5 
+ 30c8 __cxa_finalize 
+ ... 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Combine with Other Tools&lt;/h4&gt;
+&lt;p&gt;The real power of terminal commands comes from combining them. The output of strings can be long, so you can &amp;quot;pipe&amp;quot; it to another command like grep to search for precisely what you need. The pipe symbol (|) sends the output of one command to the input of the next.&lt;/p&gt;
+&lt;p&gt;For example, to search for any mention of &amp;quot;GLIBC&amp;quot; inside the ls binary, you could run:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;strings /bin/ls | grep GLIBC
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is much faster than reading through hundreds of lines of output.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;A Real-World Scenario&lt;/h3&gt;
+&lt;p&gt;Imagine a different situation: you have a document—maybe a word processing file or a presentation—that has somehow become corrupted. When you try to open it, the application gives you an error. It can be frustrating to think the content is lost forever.&lt;/p&gt;
+&lt;p&gt;This is where strings can be a lifesaver. While it can&#39;t fix the file, it can often bypass the corrupted parts and pull out any raw text it can find inside.&lt;/p&gt;
+&lt;p&gt;Let&#39;s say you have a file named important_notes.docx that won&#39;t open. You can try to recover the text from it by running this command:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;strings important_notes.docx &amp;gt; recovered_text.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let&#39;s break that down:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;strings important_notes.docx finds all the readable text inside your corrupted document.&lt;/li&gt;
+&lt;li&gt;The &amp;gt; symbol is a &lt;strong&gt;redirect&lt;/strong&gt;. Instead of printing the text to the screen, it sends all of that output into a new file.&lt;/li&gt;
+&lt;li&gt;recovered_text.txt is the new, clean text file you&#39;re creating.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You won&#39;t get any of your original formatting, images, or special characters back. But there&#39;s a very good chance you&#39;ll recover the most essential part: the actual words you wrote. It&#39;s a quick and powerful way to rescue content from otherwise inaccessible files.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Why It&#39;s a Great First Step&lt;/h3&gt;
+&lt;p&gt;The strings command won&#39;t tell you everything about a file, but it&#39;s an excellent starting point. It&#39;s a fast and easy way to get clues about what a program does, what libraries it uses, or what data is hidden inside a file without needing any complex reverse-engineering tools.&lt;/p&gt;
+&lt;p&gt;Next time, we’ll take a look at grep, the tool used to filter our output and find exactly what we were looking for.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Mapping the Matrix: A Practical Guide to Nmap</title>
     <link href="https://blog.beaubremer.com/posts/A_Practical_Guide_to_Nmap/"/>
