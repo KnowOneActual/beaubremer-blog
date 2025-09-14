@@ -247,7 +247,7 @@ nmap -A scanme.nmap.org
     <id>https://blog.beaubremer.com/posts/iimage_cleaner_on_a_tor_onion_service/</id>
     <content xml:lang="en" type="html">&lt;h2&gt;Building a Privacy-First Image Cleaner&lt;/h2&gt;
 &lt;p&gt;In today&#39;s digital world, privacy is paramount. Every photo we take with our smartphones or digital cameras often contains hidden data—known as EXIF metadata—that can reveal sensitive information like our location, the device model, and even the exact time a picture was taken. Sharing these images online without cleaning them can inadvertently expose personal details.&lt;/p&gt;
-&lt;p&gt;This post details how I built a privacy-focused web service to solve this problem: a &lt;strong&gt;Secure Image Cleaner&lt;/strong&gt; hosted entirely on a Tor Onion Service. You can try it out here (requires Tor Browser): &lt;a href=&quot;http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html&quot;&gt;http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html&lt;/a&gt;. This project was a great way to dive deep into Tor, server administration, and secure web development.&lt;/p&gt;
+&lt;p&gt;This post details how I built a privacy-focused web service to solve this problem: a &lt;strong&gt;Secure Image Cleaner&lt;/strong&gt; hosted entirely on a Tor Onion Service. You can try it out here (requires Tor Browser): &lt;a href=&quot;http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html&quot;&gt;http://wb7kwfl6bygqg4zh2fdk7jk6v2ab3bhmjo63xtdm2nltl33vuwoqlkqd.onion/cleaner.html&lt;/a&gt;. This project was a great way to dive deep into Tor, server administration, and secure web development.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;Why a Secure Image Cleaner on Tor?&lt;/h3&gt;
 &lt;p&gt;A privacy-focused version of my personal website is also hosted as a Tor Onion Service, primarily as a project to explore privacy-first web development. The goal is to strip away all unnecessary JavaScript, tracking, and external resources for a truly minimalist and secure browsing experience.&lt;/p&gt;
@@ -285,7 +285,7 @@ nmap -A scanme.nmap.org
 &lt;h3&gt;How It Works: A Step-by-Step Overview&lt;/h3&gt;
 &lt;p&gt;The process for a user is simple, but the backend is a finely tuned orchestration of services:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;User Accesses the Page:&lt;/strong&gt; A user visits the &lt;strong&gt;&lt;a href=&quot;http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html&quot;&gt;Image Cleaner page&lt;/a&gt;&lt;/strong&gt; on the Tor Onion Service using a Tor Browser. The page contains a minimalist HTML form to upload an image.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;User Accesses the Page:&lt;/strong&gt; A user visits the &lt;strong&gt;&lt;a href=&quot;http://wb7kwfl6bygqg4zh2fdk7jk6v2ab3bhmjo63xtdm2nltl33vuwoqlkqd.onion/cleaner.html&quot;&gt;Image Cleaner page&lt;/a&gt;&lt;/strong&gt; on the Tor Onion Service using a Tor Browser. The page contains a minimalist HTML form to upload an image.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Image Upload &amp;amp; Nginx Interception:&lt;/strong&gt; When the user selects an image (up to 10MB) and clicks &amp;quot;Clean and Download,&amp;quot; the browser sends a POST request to the &lt;code&gt;/upload&lt;/code&gt; endpoint. Nginx receives this request first.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Nginx Proxies to Gunicorn:&lt;/strong&gt; Based on its configuration, Nginx recognizes the /upload path and proxies the request to the Gunicorn server, which is listening on a local Unix socket (image_cleaner.sock).&lt;/li&gt;
 &lt;/ol&gt;
@@ -423,7 +423,7 @@ sudo systemctl restart tor
 &lt;/ul&gt;
 &lt;p&gt;In the end, I got it working, and you can too. This project is a perfect example of something that is technically simple but is wrapped in layers of corporate administrative nonsense. Pushing through that is a victory in itself.&lt;/p&gt;
 &lt;p&gt;So go ahead, give it a try. It&#39;s a fun challenge, a great story to tell, and a fantastic way to prove that you can figure things out, no matter how poorly they&#39;re designed.&lt;/p&gt;
-&lt;p&gt;You can access the live site using the &lt;a href=&quot;http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/&quot;&gt;Tor Browser via this link&lt;/a&gt;. Please note that this link will only resolve if you are using the &lt;a href=&quot;https://www.torproject.org/download/&quot;&gt;Tor Browser&lt;/a&gt;. (32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion)&lt;/p&gt;
+&lt;p&gt;You can access the live site using the &lt;a href=&quot;http://wb7kwfl6bygqg4zh2fdk7jk6v2ab3bhmjo63xtdm2nltl33vuwoqlkqd.onion/&quot;&gt;Tor Browser via this link&lt;/a&gt;. Please note that this link will only resolve if you are using the &lt;a href=&quot;https://www.torproject.org/download/&quot;&gt;Tor Browser&lt;/a&gt;. (wb7kwfl6bygqg4zh2fdk7jk6v2ab3bhmjo63xtdm2nltl33vuwoqlkqd.onion)&lt;/p&gt;
 </content>
   </entry>
   <entry>

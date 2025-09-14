@@ -76,7 +76,7 @@
 
     <h2>Building a Privacy-First Image Cleaner</h2>
 <p>In today's digital world, privacy is paramount. Every photo we take with our smartphones or digital cameras often contains hidden data—known as EXIF metadata—that can reveal sensitive information like our location, the device model, and even the exact time a picture was taken. Sharing these images online without cleaning them can inadvertently expose personal details.</p>
-<p>This post details how I built a privacy-focused web service to solve this problem: a <strong>Secure Image Cleaner</strong> hosted entirely on a Tor Onion Service. You can try it out here (requires Tor Browser): <a href="http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html">http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html</a>. This project was a great way to dive deep into Tor, server administration, and secure web development.</p>
+<p>This post details how I built a privacy-focused web service to solve this problem: a <strong>Secure Image Cleaner</strong> hosted entirely on a Tor Onion Service. You can try it out here (requires Tor Browser): <a href="http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html">http://wb7kwfl6bygqg4zh2fdk7jk6v2ab3bhmjo63xtdm2nltl33vuwoqlkqd.onion/cleaner.html</a>. This project was a great way to dive deep into Tor, server administration, and secure web development.</p>
 <hr>
 <h3>Why a Secure Image Cleaner on Tor?</h3>
 <p>A privacy-focused version of my personal website is also hosted as a Tor Onion Service, primarily as a project to explore privacy-first web development. The goal is to strip away all unnecessary JavaScript, tracking, and external resources for a truly minimalist and secure browsing experience.</p>
@@ -114,7 +114,7 @@
 <h3>How It Works: A Step-by-Step Overview</h3>
 <p>The process for a user is simple, but the backend is a finely tuned orchestration of services:</p>
 <ol>
-<li><strong>User Accesses the Page:</strong> A user visits the <strong><a href="http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html">Image Cleaner page</a></strong> on the Tor Onion Service using a Tor Browser. The page contains a minimalist HTML form to upload an image.</li>
+<li><strong>User Accesses the Page:</strong> A user visits the <strong><a href="http://wb7kwfl6bygqg4zh2fdk7jk6v2ab3bhmjo63xtdm2nltl33vuwoqlkqd.onion/cleaner.html">Image Cleaner page</a></strong> on the Tor Onion Service using a Tor Browser. The page contains a minimalist HTML form to upload an image.</li>
 <li><strong>Image Upload &amp; Nginx Interception:</strong> When the user selects an image (up to 10MB) and clicks &quot;Clean and Download,&quot; the browser sends a POST request to the <code>/upload</code> endpoint. Nginx receives this request first.</li>
 <li><strong>Nginx Proxies to Gunicorn:</strong> Based on its configuration, Nginx recognizes the /upload path and proxies the request to the Gunicorn server, which is listening on a local Unix socket (image_cleaner.sock).</li>
 </ol>

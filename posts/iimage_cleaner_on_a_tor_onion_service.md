@@ -15,7 +15,7 @@ tags:
 
 In today's digital world, privacy is paramount. Every photo we take with our smartphones or digital cameras often contains hidden data—known as EXIF metadata—that can reveal sensitive information like our location, the device model, and even the exact time a picture was taken. Sharing these images online without cleaning them can inadvertently expose personal details.
 
-This post details how I built a privacy-focused web service to solve this problem: a **Secure Image Cleaner** hosted entirely on a Tor Onion Service. You can try it out here (requires Tor Browser): [http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html](http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html). This project was a great way to dive deep into Tor, server administration, and secure web development.
+This post details how I built a privacy-focused web service to solve this problem: a **Secure Image Cleaner** hosted entirely on a Tor Onion Service. You can try it out here (requires Tor Browser): [http://wb7kwfl6bygqg4zh2fdk7jk6v2ab3bhmjo63xtdm2nltl33vuwoqlkqd.onion/cleaner.html](http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html). This project was a great way to dive deep into Tor, server administration, and secure web development.
 
 ---
 
@@ -59,7 +59,7 @@ Here’s a breakdown of the core components:
 
 The process for a user is simple, but the backend is a finely tuned orchestration of services:
 
-1.  **User Accesses the Page:** A user visits the **[Image Cleaner page](http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html)** on the Tor Onion Service using a Tor Browser. The page contains a minimalist HTML form to upload an image.
+1.  **User Accesses the Page:** A user visits the **[Image Cleaner page](http://wb7kwfl6bygqg4zh2fdk7jk6v2ab3bhmjo63xtdm2nltl33vuwoqlkqd.onion/cleaner.html)** on the Tor Onion Service using a Tor Browser. The page contains a minimalist HTML form to upload an image.
 2.  **Image Upload & Nginx Interception:** When the user selects an image (up to 10MB) and clicks "Clean and Download," the browser sends a POST request to the `/upload` endpoint. Nginx receives this request first.
 3.  **Nginx Proxies to Gunicorn:** Based on its configuration, Nginx recognizes the /upload path and proxies the request to the Gunicorn server, which is listening on a local Unix socket (image_cleaner.sock).
 

@@ -121,4 +121,4 @@ In the end, I got it working, and you can too. This project is a perfect example
 
 So go ahead, give it a try. It's a fun challenge, a great story to tell, and a fantastic way to prove that you can figure things out, no matter how poorly they're designed.
 
-You can access the live site using the [Tor Browser via this link](http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion). Please note that this link will only resolve if you are using the [Tor Browser](https://www.torproject.org/download/). (32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion)
+You can access the live site using the [Tor Browser via this link](http://wb7kwfl6bygqg4zh2fdk7jk6v2ab3bhmjo63xtdm2nltl33vuwoqlkqd.onion). Please note that this link will only resolve if you are using the [Tor Browser](https://www.torproject.org/download/). (wb7kwfl6bygqg4zh2fdk7jk6v2ab3bhmjo63xtdm2nltl33vuwoqlkqd.onion)
