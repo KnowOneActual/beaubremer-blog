@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terminal Tips: Finding Needles in Haystacks with `grep` | Beau Bremer&#39;s | Blog</title>
+    <meta name="description" content="Learn how to use the powerful `grep` command to search for text within files and command outputs, making it easy to find exactly what you need." />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="me" href="https://mastodon.social/@grimburly">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
+    
+<link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg" />
+<link rel="icon" type="image/webp" href="/img/favicon/favicon-32x32.webp" sizes="32x32">
+<link rel="icon" type="image/webp" href="/img/favicon/favicon-96x96.webp" sizes="96x96">
+<link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/img/favicon/site.webmanifest" />
+<link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+<link rel="stylesheet" href="/assets/css/lite-yt-embed.css" />
+</head>
+<body class="bg-gray-950 text-white scroll-smooth flex flex-col min-h-screen">
+
+    <header class="py-6 px-6 max-w-3xl mx-auto w-full">
+        <div class="flex justify-between items-center">
+            <div>
+                <a href="/" class="text-2xl font-bold text-white hover:text-fuchsia-400 transition-colors">Beau Bremer&#39;s | Blog</a>
+            </div>
+            <nav>
+              
+                <a href="/" class="text-gray-300 hover:text-white transition-colors">← Back to Blog Home</a>
+              
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto py-12 px-6 flex-grow w-full">
+        <div class="prose prose-invert lg:prose-xl max-w-none">
+            <article>
+    <header>
+        <h1 class="text-5xl font-extrabold text-fuchsia-400 mb-4">Terminal Tips: Finding Needles in Haystacks with `grep`</h1>
+        
+            <p class="text-gray-400">
+                <time datetime="2025-09-20T00:00:00.000Z">September 20, 2025</time>
+            </p>
+        
+        
+        
+        
+            <div class="mt-4">
+                <span class="text-gray-400">Tagged in:</span>
+                
+                    
+                
+                    
+                        <a href="/tags/cli/" class="inline-block bg-gray-800 text-fuchsia-300 rounded-full px-3 py-1 text-sm font-semibold ml-2 hover:bg-gray-700 transition-colors">#cli</a>
+                    
+                
+                    
+                        <a href="/tags/terminal/" class="inline-block bg-gray-800 text-fuchsia-300 rounded-full px-3 py-1 text-sm font-semibold ml-2 hover:bg-gray-700 transition-colors">#terminal</a>
+                    
+                
+                    
+                        <a href="/tags/techtips/" class="inline-block bg-gray-800 text-fuchsia-300 rounded-full px-3 py-1 text-sm font-semibold ml-2 hover:bg-gray-700 transition-colors">#techtips</a>
+                    
+                
+            </div>
+        
+    </header>
+    
+    <hr class="border-gray-700 my-8">
+
+    <h2>Finding Needles in Haystacks with <code>grep</code></h2>
+<p>In our last tip <a href="/posts/Uncovering_Hidden_Text_with_strings/">Uncovering Hidden Text with <code>strings</code></a>, we used the <code>strings</code> command to pull readable text out of binary files. That's great for getting all the text, but what if you're looking for something specific? Scrolling through hundreds or thousands of lines isn't very efficient.</p>
+<p>That's where <code>grep</code> comes in. Think of <code>grep</code> as the command-line version of &quot;Find&quot; (Ctrl+F or Cmd+F) on steroids. It searches for specific text inside files or within the output of other commands and shows you only the lines that match. Its name comes from a command in an old editor, <code>g/re/p</code>, which stood for &quot;globally search for a regular expression and print.&quot;</p>
+<p>It's one of the most essential tools in any terminal user's toolkit.</p>
+<hr>
+<h3>How It Works</h3>
+<p>The most basic way to use <code>grep</code> is to give it a piece of text to search for (the &quot;pattern&quot;) and a file to search in.</p>
+<p><code>grep &quot;search_term&quot; filename.txt</code></p>
+<p>Let's say you have a file called <code>shopping_list.txt</code> with the following contents:</p>
+<pre><code class="language-text">- Apples
+- Milk
+- Bread
+- Orange Juice
+- butter
+</code></pre>
+<p>If you want to find the line with &quot;Milk&quot; on it, you would run:</p>
+<pre><code class="language-bash">grep &quot;Milk&quot; shopping_list.txt
+</code></pre>
+<p>And the terminal would instantly show you the matching line:</p>
+<pre><code>Milk
+</code></pre>
+<p>Simple, right? But its real power comes from a handful of options and its ability to work with other tools.</p>
+<hr>
+<h3>Making <code>grep</code> More Powerful</h3>
+<p>A few simple flags can completely change how <code>grep</code> behaves, making your searches much more effective.</p>
+<h4>Ignore Case (<code>-i</code>)</h4>
+<p>What if you searched for &quot;butter&quot; but forgot it was lowercase in the file? By default, <code>grep</code> is case-sensitive. The <code>-i</code> flag tells it to ignore the case.</p>
+<pre><code class="language-bash">grep -i &quot;butter&quot; shopping_list.txt
+</code></pre>
+<p>This will find &quot;butter,&quot; &quot;Butter,&quot; or even &quot;bUtTeR.&quot;</p>
+<h4>Invert the Match (<code>-v</code>)</h4>
+<p>Sometimes it's more useful to find what <em>doesn't</em> match. The <code>-v</code> flag inverts the search, showing you every line that <strong>does not</strong> contain the pattern. For example, to see everything on your shopping list that <em>isn't</em> milk:</p>
+<pre><code class="language-bash">grep -v &quot;Milk&quot; shopping_list.txt
+</code></pre>
+<p>The output would be:</p>
+<pre><code>- Apples
+- Bread
+- Orange Juice
+- butter
+</code></pre>
+<p>This is incredibly useful for filtering out noise, like commented-out lines in a configuration file.</p>
+<h4>Search in Every File (<code>-r</code>)</h4>
+<p>Imagine you know you have an API key stored in a configuration file somewhere in a project folder, but you don't remember which one. The <code>-r</code> flag performs a <strong>recursive</strong> search, meaning it will look inside the current directory and all subdirectories for your term.</p>
+<pre><code class="language-bash"># Don't run this in your home directory unless you have time to wait!
+grep -r &quot;API_KEY&quot; ./my_project/
+</code></pre>
+<p><code>grep</code> will then print out the filename (and path) for every match it finds, showing you exactly where your key is.</p>
+<hr>
+<h3>Combining with Other Tools</h3>
+<p>As we saw in the <code>strings</code> post <a href="/posts/uncovering_hidden_text_with_strings/">link</a>, the real magic of the terminal is combining commands with the pipe (<code>|</code>) symbol. This sends the output of one command directly to the input of the next.</p>
+<p>Let's go back to our example of looking inside the <code>ls</code> command.</p>
+<pre><code class="language-bash">strings /bin/ls | grep &quot;GLIBC&quot;
+</code></pre>
+<p>Here's what happens:</p>
+<ol>
+<li><code>strings /bin/ls</code> runs first, pulling out all the readable text from the file.</li>
+<li>The pipe (<code>|</code>) takes that big wall of text and, instead of printing it to the screen, sends it over to <code>grep</code>.</li>
+<li><code>grep &quot;GLIBC&quot;</code> then searches that text and only shows you the lines that contain &quot;GLIBC&quot;.</li>
+</ol>
+<p>This is a fundamental concept on the command line. You can use it to filter process lists (<code>ps aux | grep &quot;python&quot;</code>), search your command history (<code>history | grep &quot;docker&quot;</code>), and so much more.</p>
+<hr>
+<h3>A Quick Peek at Regular Expressions</h3>
+<p><code>grep</code> can also search for <em>patterns</em>, not just fixed text. This is done with <strong>regular expressions</strong>, or &quot;regex.&quot; Regex is a massive topic, but even a little bit is incredibly powerful.</p>
+<ul>
+<li>
+<p>To find lines that <strong>start with</strong> a pattern, use the <code>^</code> symbol. For example, to find all comments in a file that start with <code>#</code>:</p>
+<pre><code class="language-bash">grep &quot;^#&quot; config.ini
+</code></pre>
+</li>
+<li>
+<p>To find lines that <strong>end with</strong> a pattern, use the <code>$</code> symbol.</p>
+<pre><code class="language-bash">grep &quot;.com$&quot; urls.txt
+</code></pre>
+</li>
+</ul>
+<p>Learning just these two symbols allows you to be much more specific in your searches.</p>
+<p><code>grep</code> is a tool you'll probably use every day once you get the hang of it. It's the fastest way to find what you're looking for, whether it's in a single file, a whole project, or the output of another command.</p>
+
+</article>
+        </div>
+    </main>
+
+    <footer class="text-center py-6 bg-gray-950 text-gray-500">
+    <div class="mb-2">
+      <a href="https://blog.beaubremer.com/" target="_blank" class="hover:text-fuchsia-400 mx-2">Blog Home</a>
+      <a href="https://github.com/KnowOneActual" target="_blank" class="hover:text-fuchsia-400 mx-2">GitHub</a>
+     </div>
+    <p>© 2025 Beau Bremer. Stay bold, keep creating, and rock on! All rights reserved.
+    </p>
+  </footer>
+    <script src="/assets/js/lite-yt-embed.js"></script>
+</body>
+</html>

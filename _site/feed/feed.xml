@@ -4,12 +4,96 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-09-13T00:00:00Z</updated>
+  <updated>2025-09-20T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>Terminal Tips: Finding Needles in Haystacks with `grep`</title>
+    <link href="https://blog.beaubremer.com/posts/finding_needles_in_haystacks_with_grep/"/>
+    <updated>2025-09-20T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/finding_needles_in_haystacks_with_grep/</id>
+    <content xml:lang="en" type="html">&lt;h2&gt;Finding Needles in Haystacks with &lt;code&gt;grep&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;In our last tip &lt;a href=&quot;https://blog.beaubremer.com/posts/Uncovering_Hidden_Text_with_strings/&quot;&gt;Uncovering Hidden Text with &lt;code&gt;strings&lt;/code&gt;&lt;/a&gt;, we used the &lt;code&gt;strings&lt;/code&gt; command to pull readable text out of binary files. That&#39;s great for getting all the text, but what if you&#39;re looking for something specific? Scrolling through hundreds or thousands of lines isn&#39;t very efficient.&lt;/p&gt;
+&lt;p&gt;That&#39;s where &lt;code&gt;grep&lt;/code&gt; comes in. Think of &lt;code&gt;grep&lt;/code&gt; as the command-line version of &amp;quot;Find&amp;quot; (Ctrl+F or Cmd+F) on steroids. It searches for specific text inside files or within the output of other commands and shows you only the lines that match. Its name comes from a command in an old editor, &lt;code&gt;g/re/p&lt;/code&gt;, which stood for &amp;quot;globally search for a regular expression and print.&amp;quot;&lt;/p&gt;
+&lt;p&gt;It&#39;s one of the most essential tools in any terminal user&#39;s toolkit.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;How It Works&lt;/h3&gt;
+&lt;p&gt;The most basic way to use &lt;code&gt;grep&lt;/code&gt; is to give it a piece of text to search for (the &amp;quot;pattern&amp;quot;) and a file to search in.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;grep &amp;quot;search_term&amp;quot; filename.txt&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Let&#39;s say you have a file called &lt;code&gt;shopping_list.txt&lt;/code&gt; with the following contents:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-text&quot;&gt;- Apples
+- Milk
+- Bread
+- Orange Juice
+- butter
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you want to find the line with &amp;quot;Milk&amp;quot; on it, you would run:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;grep &amp;quot;Milk&amp;quot; shopping_list.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And the terminal would instantly show you the matching line:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Milk
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Simple, right? But its real power comes from a handful of options and its ability to work with other tools.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Making &lt;code&gt;grep&lt;/code&gt; More Powerful&lt;/h3&gt;
+&lt;p&gt;A few simple flags can completely change how &lt;code&gt;grep&lt;/code&gt; behaves, making your searches much more effective.&lt;/p&gt;
+&lt;h4&gt;Ignore Case (&lt;code&gt;-i&lt;/code&gt;)&lt;/h4&gt;
+&lt;p&gt;What if you searched for &amp;quot;butter&amp;quot; but forgot it was lowercase in the file? By default, &lt;code&gt;grep&lt;/code&gt; is case-sensitive. The &lt;code&gt;-i&lt;/code&gt; flag tells it to ignore the case.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;grep -i &amp;quot;butter&amp;quot; shopping_list.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will find &amp;quot;butter,&amp;quot; &amp;quot;Butter,&amp;quot; or even &amp;quot;bUtTeR.&amp;quot;&lt;/p&gt;
+&lt;h4&gt;Invert the Match (&lt;code&gt;-v&lt;/code&gt;)&lt;/h4&gt;
+&lt;p&gt;Sometimes it&#39;s more useful to find what &lt;em&gt;doesn&#39;t&lt;/em&gt; match. The &lt;code&gt;-v&lt;/code&gt; flag inverts the search, showing you every line that &lt;strong&gt;does not&lt;/strong&gt; contain the pattern. For example, to see everything on your shopping list that &lt;em&gt;isn&#39;t&lt;/em&gt; milk:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;grep -v &amp;quot;Milk&amp;quot; shopping_list.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The output would be:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- Apples
+- Bread
+- Orange Juice
+- butter
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is incredibly useful for filtering out noise, like commented-out lines in a configuration file.&lt;/p&gt;
+&lt;h4&gt;Search in Every File (&lt;code&gt;-r&lt;/code&gt;)&lt;/h4&gt;
+&lt;p&gt;Imagine you know you have an API key stored in a configuration file somewhere in a project folder, but you don&#39;t remember which one. The &lt;code&gt;-r&lt;/code&gt; flag performs a &lt;strong&gt;recursive&lt;/strong&gt; search, meaning it will look inside the current directory and all subdirectories for your term.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Don&#39;t run this in your home directory unless you have time to wait!
+grep -r &amp;quot;API_KEY&amp;quot; ./my_project/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; will then print out the filename (and path) for every match it finds, showing you exactly where your key is.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Combining with Other Tools&lt;/h3&gt;
+&lt;p&gt;As we saw in the &lt;code&gt;strings&lt;/code&gt; post &lt;a href=&quot;https://blog.beaubremer.com/posts/uncovering_hidden_text_with_strings/&quot;&gt;link&lt;/a&gt;, the real magic of the terminal is combining commands with the pipe (&lt;code&gt;|&lt;/code&gt;) symbol. This sends the output of one command directly to the input of the next.&lt;/p&gt;
+&lt;p&gt;Let&#39;s go back to our example of looking inside the &lt;code&gt;ls&lt;/code&gt; command.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;strings /bin/ls | grep &amp;quot;GLIBC&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here&#39;s what happens:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;strings /bin/ls&lt;/code&gt; runs first, pulling out all the readable text from the file.&lt;/li&gt;
+&lt;li&gt;The pipe (&lt;code&gt;|&lt;/code&gt;) takes that big wall of text and, instead of printing it to the screen, sends it over to &lt;code&gt;grep&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;grep &amp;quot;GLIBC&amp;quot;&lt;/code&gt; then searches that text and only shows you the lines that contain &amp;quot;GLIBC&amp;quot;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This is a fundamental concept on the command line. You can use it to filter process lists (&lt;code&gt;ps aux | grep &amp;quot;python&amp;quot;&lt;/code&gt;), search your command history (&lt;code&gt;history | grep &amp;quot;docker&amp;quot;&lt;/code&gt;), and so much more.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;A Quick Peek at Regular Expressions&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; can also search for &lt;em&gt;patterns&lt;/em&gt;, not just fixed text. This is done with &lt;strong&gt;regular expressions&lt;/strong&gt;, or &amp;quot;regex.&amp;quot; Regex is a massive topic, but even a little bit is incredibly powerful.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;To find lines that &lt;strong&gt;start with&lt;/strong&gt; a pattern, use the &lt;code&gt;^&lt;/code&gt; symbol. For example, to find all comments in a file that start with &lt;code&gt;#&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;grep &amp;quot;^#&amp;quot; config.ini
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To find lines that &lt;strong&gt;end with&lt;/strong&gt; a pattern, use the &lt;code&gt;$&lt;/code&gt; symbol.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;grep &amp;quot;.com$&amp;quot; urls.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Learning just these two symbols allows you to be much more specific in your searches.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; is a tool you&#39;ll probably use every day once you get the hang of it. It&#39;s the fastest way to find what you&#39;re looking for, whether it&#39;s in a single file, a whole project, or the output of another command.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Terminal Tips: Uncovering Hidden Text with `strings`</title>
     <link href="https://blog.beaubremer.com/posts/Uncovering_Hidden_Text_with_strings/"/>
