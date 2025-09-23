@@ -4,12 +4,84 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-09-20T00:00:00Z</updated>
+  <updated>2025-09-21T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>Terminal Tips: A Guide to Zsh Aliases</title>
+    <link href="https://blog.beaubremer.com/posts/a_guide_to_zsh_aliases/"/>
+    <updated>2025-09-21T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/a_guide_to_zsh_aliases/</id>
+    <content xml:lang="en" type="html">&lt;h2&gt;Terminal Tips: A Guide to Zsh Aliases&lt;/h2&gt;
+&lt;p&gt;If you&#39;re tired of typing the same long commands in your terminal, aliases are the perfect solution. An alias is a custom shortcut you create for a longer command, and it&#39;s a simple way to make your Zsh workflow faster and more efficient.&lt;/p&gt;
+&lt;p&gt;Think of it like speed dial for your command line. Instead of typing a long, complex command every time, you can just use a short, memorable alias. This is great for a few reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;It saves time.&lt;/strong&gt; This is the biggest benefit. Shortening commands you use often will save you a lot of keystrokes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It reduces typos.&lt;/strong&gt; Fewer characters typed means fewer chances for errors.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It makes complex commands simple.&lt;/strong&gt; You can wrap up a command with multiple flags or pipes into a single, easy-to-remember word.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It helps you customize your terminal.&lt;/strong&gt; You can create shortcuts that make sense for your specific habits and projects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;How to Create an Alias&lt;/h3&gt;
+&lt;p&gt;Setting up an alias is easy. You simply need to add it to your Zsh configuration file, located at &lt;code&gt;~/.zshrc&lt;/code&gt;.&lt;/p&gt;
+&lt;h4&gt;1. Open your &lt;code&gt;.zshrc&lt;/code&gt; file&lt;/h4&gt;
+&lt;p&gt;Your &lt;code&gt;.zshrc&lt;/code&gt; file is a plain text file in your home directory (&lt;code&gt;~/&lt;/code&gt;). Zsh reads this file every time it starts a new session. You can open it with any text editor you like.&lt;/p&gt;
+&lt;p&gt;For example, using &lt;code&gt;nano&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;nano ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;2. Add your alias&lt;/h4&gt;
+&lt;p&gt;It&#39;s good practice to add new aliases at the end of the file. The syntax is straightforward:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;alias shortcut=&amp;quot;your_full_command&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A couple of things to keep in mind:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Use quotes.&lt;/strong&gt; Always wrap the whole command in double quotes (&lt;code&gt;&amp;quot;&lt;/code&gt;). This makes sure that commands with spaces or special characters are handled correctly.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Use full paths for scripts.&lt;/strong&gt; If your alias runs a custom script, use its full path (e.g., &lt;code&gt;~/scripts/my_script.sh&lt;/code&gt;) so Zsh can always find it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Make scripts executable.&lt;/strong&gt; If you&#39;re aliasing a script you wrote, make sure it has execute permissions. You can do this with &lt;code&gt;chmod +x /path/to/your/script.sh&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;3. Save and reload your configuration&lt;/h4&gt;
+&lt;p&gt;Once you&#39;ve added your aliases, save the file. For the changes to take effect, you need to reload the configuration. You can either close and reopen your terminal or run the following command:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;source ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Your new alias is now ready to use.&lt;/p&gt;
+&lt;h3&gt;Managing Your Aliases&lt;/h3&gt;
+&lt;p&gt;Once you start creating aliases, you may want to view a list of them or remove one that you no longer need.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;To list all current aliases&lt;/strong&gt;, just type &lt;code&gt;alias&lt;/code&gt; in your terminal and press Enter. This will show you every alias you&#39;ve defined.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;To remove an alias&lt;/strong&gt; for your current session, use the &lt;code&gt;unalias&lt;/code&gt; command. For example, to remove the &lt;code&gt;ll&lt;/code&gt; alias, you would type &lt;code&gt;unalias ll&lt;/code&gt;. To remove it permanently, you&#39;ll need to delete the corresponding line from your &lt;code&gt;.zshrc&lt;/code&gt; file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Practical Examples&lt;/h3&gt;
+&lt;p&gt;Here are a few common aliases to get you started. Feel free to add these to your own &lt;code&gt;.zshrc&lt;/code&gt; file.&lt;/p&gt;
+&lt;h4&gt;Navigation Shortcuts&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;alias ..=&amp;quot;cd ..&amp;quot;           # Go up one directory
+alias ...=&amp;quot;cd ../..&amp;quot;         # Go up two directories
+alias ....=&amp;quot;cd ../../..&amp;quot;     # Go up three directories
+alias home=&amp;quot;cd ~&amp;quot;          # Go to your home directory
+alias dev=&amp;quot;cd ~/Developer&amp;quot; # A shortcut to your development folder
+alias dl=&amp;quot;cd ~/Downloads&amp;quot;  # A shortcut to your downloads folder
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Git Aliases&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;alias gs=&amp;quot;git status&amp;quot;           # Check Git status
+alias ga=&amp;quot;git add .&amp;quot;            # Add all changes
+alias gc=&amp;quot;git commit -m&amp;quot;        # Commit with a message (e.g., gc &amp;quot;Initial commit&amp;quot;)
+alias gp=&amp;quot;git push&amp;quot;             # Push to origin
+alias pull=&amp;quot;git pull&amp;quot;           # Pull from origin
+alias gl=&amp;quot;git log --oneline --decorate --all --graph&amp;quot; # A decorated Git log
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;System &amp;amp; Utility Aliases&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;alias ls=&amp;quot;ls -F&amp;quot;                  # Add a character to show file type (e.g., / for directories)
+alias ll=&amp;quot;ls -lh&amp;quot;                 # List in long format with human-readable sizes
+alias la=&amp;quot;ls -la&amp;quot;                 # List all files, including hidden ones
+alias update=&amp;quot;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y&amp;quot; # For Debian/Ubuntu systems
+alias sz=&amp;quot;source ~/.zshrc&amp;quot;        # Quickly reload your Zsh config
+alias myip=&amp;quot;curl ipinfo.io/ip&amp;quot;    # Get your external IP address
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Make Your Terminal Your Own&lt;/h3&gt;
+&lt;p&gt;Aliases are a simple but powerful way to make your time in the terminal more productive. Start with a few of these examples, and you&#39;ll soon find yourself creating your own shortcuts for the commands you use most.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Terminal Tips: Finding Needles in Haystacks with `grep`</title>
     <link href="https://blog.beaubremer.com/posts/finding_needles_in_haystacks_with_grep/"/>
