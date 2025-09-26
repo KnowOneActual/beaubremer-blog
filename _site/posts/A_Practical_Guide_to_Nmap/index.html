@@ -6,6 +6,7 @@
     <title>Mapping the Matrix: A Practical Guide to Nmap | Beau Bremer&#39;s | Blog</title>
     <meta name="description" content="Learn how to install and use Nmap to discover open ports, identify services, and get a detailed map of any host on your network." />
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="me" href="https://mastodon.social/@grimburly">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
@@ -104,20 +105,17 @@
 <li><strong>Installer:</strong> Download the <code>.dmg</code> file from the <a href="https://nmap.org/download.html">Nmap download page</a>. Open it and run the <code>.mpkg</code> installer. You may need to right-click and select &quot;Open&quot; to get past security warnings.</li>
 <li><strong>Homebrew:</strong> If you have Homebrew installed, just open Terminal and run:</li>
 </ul>
-<pre><code class="language-bash">brew install nmap 
-</code></pre>
+<pre class="language-bash"><code class="language-bash">brew <span class="token function">install</span> nmap </code></pre>
 <h4>Linux</h4>
 <p>Most Linux distributions have Nmap in their default package repositories. Open your terminal and use the appropriate command for your system.</p>
 <ul>
 <li>
 <p><strong>Debian / Ubuntu:</strong></p>
-<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install nmap 
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> nmap </code></pre>
 </li>
 <li>
 <p><strong>Fedora / CentOS / RHEL:</strong></p>
-<pre><code class="language-bash">sudo dnf install nmap 
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> dnf <span class="token function">install</span> nmap </code></pre>
 </li>
 </ul>
 <h3>Basic Scans: Your First Look</h3>
@@ -125,14 +123,12 @@
 <h4>1. Ping Scan: Who is on the Network?</h4>
 <p>Before you do a deep scan on a host, you might want to see which hosts are even online. A ping scan is perfect for this, as it only identifies active hosts without doing a full port scan.</p>
 <p><strong>How to use it:</strong></p>
-<pre><code class="language-bash">nmap -sn 192.168.1.1/24 
-</code></pre>
+<pre class="language-bash"><code class="language-bash">nmap <span class="token parameter variable">-sn</span> <span class="token number">192.168</span>.1.1/24 </code></pre>
 <p>The -sn flag tells Nmap to skip the port scan, making it fast and unobtrusive.</p>
 <h4>2. Default Scan: The Standard Approach</h4>
 <p>This is the most common Nmap command. It scans the 1,000 most popular ports for a given host, which is usually enough to identify its primary services.</p>
 <p><strong>How to use it:</strong></p>
-<pre><code class="language-Bash">nmap scanme.nmap.org 
-</code></pre>
+<pre class="language-Bash"><code class="language-Bash">nmap scanme.nmap.org </code></pre>
 <p><strong>What to look for:</strong></p>
 <p>Starting Nmap 7.92 ( <a href="https://nmap.org">https://nmap.org</a> )
 Nmap scan report for scanme.nmap.org (45.33.32.156)
@@ -147,26 +143,23 @@ PORT   STATE SERVICE
 <h4>1. Service Version Detection</h4>
 <p>Knowing a port is open is good, but knowing <em>what</em> is running on it is better. The -sV flag asks Nmap to try and determine the version of the service.</p>
 <p><strong>How to use it:</strong></p>
-<pre><code class="language-Bash">nmap -sV scanme.nmap.org 
-</code></pre>
+<pre class="language-Bash"><code class="language-Bash">nmap -sV scanme.nmap.org </code></pre>
 <p>The output will now include a VERSION column, which might show something like OpenSSH 6.6.1p1 or Apache httpd 2.4.7.</p>
 <h4>2. Operating System Detection</h4>
 <p>Nmap can make an educated guess about the target's operating system by analyzing its TCP/IP stack. This requires root or administrator privileges.</p>
 <p><strong>How to use it:</strong></p>
-<pre><code class="language-Bash">
+<pre class="language-Bash"><code class="language-Bash">
 # On Linux/macOS 
 sudo nmap -O scanme.nmap.org 
  
 # On Windows (in an Administrator prompt) 
-nmap -O scanme.nmap.org 
-</code></pre>
+nmap -O scanme.nmap.org </code></pre>
 <p>Nmap will add a section to the report with its best guess, like OS details: Linux 3.10 - 4.11.</p>
 <h4>3. Aggressive Scan: The All-in-One</h4>
 <p>For a comprehensive look, the aggressive scan (-A) is a powerful shortcut. It enables OS detection, version detection, script scanning, and traceroute all in one command.</p>
 <p><strong>How to use it:</strong></p>
-<pre><code class="language-Bash">
-nmap -A scanme.nmap.org 
-</code></pre>
+<pre class="language-Bash"><code class="language-Bash">
+nmap -A scanme.nmap.org </code></pre>
 <p>This scan is more &quot;noisy&quot; on the network but gives you a very detailed report, perfect for when you need a deep dive on a single host.</p>
 <h3>Putting It All Together</h3>
 <p>Nmap transforms your view of a network from a list of addresses to a detailed map of active services. It's the tool that helps you answer not just &quot;Are you there?&quot; but &quot;Who are you and what are you doing?&quot;. By starting with simple scans and gradually adding flags for more detail, you can efficiently diagnose issues, verify configurations, and get a much clearer picture of your network's landscape.</p>

@@ -6,6 +6,7 @@
     <title>What&#39;s in a Name? A Guide to DNS Troubleshooting with nslookup | Beau Bremer&#39;s | Blog</title>
     <meta name="description" content="Go beyond ping and learn how to use the nslookup command to diagnose DNS issues, verify domain configurations, and understand how the web finds its way." />
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="me" href="https://mastodon.social/@grimburly">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
@@ -88,8 +89,7 @@
 <h3>Basic Lookups: The First Step</h3>
 <p>Let's start with the simplest query: finding the IP address for a domain. This is known as an <strong>A record</strong> lookup.</p>
 <p><strong>How to use it:</strong></p>
-<pre><code class="language-bash">nslookup google.com 
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">nslookup</span> google.com </code></pre>
 <p><strong>What to look for:</strong></p>
 <p>The output gives you two key pieces of information. First, it tells you which DNS server answered your request. Then, it provides the answer itself.</p>
 <p><strong>Example of a successful lookup:</strong></p>
@@ -104,10 +104,9 @@ Address: 142.250.217.78</p>
 <h4>1. Finding Mail Servers (MX Records)</h4>
 <p>If you're having trouble with email, you can check the <strong>Mail Exchanger (MX)</strong> records to see where email for a domain is supposed to be sent.</p>
 <p><strong>How to use it:</strong></p>
-<pre><code class="language-Bash">
-# You can also use &quot;set type=mx&quot; in interactive mode 
+<pre class="language-Bash"><code class="language-Bash">
+# You can also use "set type=mx" in interactive mode 
 nslookup -query=mx google.com 
-
 </code></pre>
 <p><strong>What to look for:</strong></p>
 <p>You'll get a list of servers, each with a priority number. The lower the number, the higher the priority. Mail will always try to be delivered to the highest-priority server first.</p>
@@ -115,18 +114,16 @@ nslookup -query=mx google.com
 <h4>2. Finding a Domain's Official Name Servers (NS Records)</h4>
 <p>The <strong>Name Server (NS)</strong> records tell you which servers are the official source of DNS information for a domain. This is useful for checking if a domain is configured correctly.</p>
 <p><strong>How to use it:</strong></p>
-<pre><code class="language-Bash">
+<pre class="language-Bash"><code class="language-Bash">
 nslookup -query=ns google.com 
-
 </code></pre>
 <p>This will return a list of the authoritative name servers for that domain, like ns1.google.com.</p>
 <h4>3. Reverse DNS Lookup (Finding the Name for an IP)</h4>
 <p>What if you have an IP address and want to know what domain name is associated with it? That's a <strong>reverse lookup (PTR record)</strong>.</p>
 <p><strong>How to use it:</strong></p>
 <p>Just give nslookup the IP address.</p>
-<pre><code class="language-Bash">
+<pre class="language-Bash"><code class="language-Bash">
 nslookup 8.8.8.8 
-
 </code></pre>
 <p><strong>What to look for:</strong></p>
 <p>The output will show you the name associated with that IP. In this case, you'll see it resolves to dns.google.</p>
@@ -135,10 +132,9 @@ nslookup 8.8.8.8
 <p>By default, nslookup uses your system's configured DNS server. But what if you want to see if your DNS changes have propagated to a public server like Cloudflare (1.1.1.1) or Google (8.8.8.8)?</p>
 <p>You can tell nslookup to ask a specific server by adding it to the end of the command.</p>
 <p><strong>How to use it:</strong></p>
-<pre><code class="language-Bash">
+<pre class="language-Bash"><code class="language-Bash">
 # Ask Cloudflare's server for the IP of google.com 
 nslookup google.com 1.1.1.1 
-
 </code></pre>
 <p>This is incredibly useful for confirming that a DNS change is visible to the rest of the world, not just on your own network.</p>
 <h3>Putting It All Together</h3>

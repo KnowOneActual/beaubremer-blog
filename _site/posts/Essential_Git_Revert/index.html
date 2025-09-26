@@ -6,6 +6,7 @@
     <title>Essential Git: Part 2: Safely Undoing Changes with git revert | Beau Bremer&#39;s | Blog</title>
     <meta name="description" content="Learn how to use `git revert` to safely undo unwanted changes in your Git history, even after pushing to a remote repository, and how to resolve common conflicts." />
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="me" href="https://mastodon.social/@grimburly">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
@@ -75,136 +76,135 @@
 <h4>Step 1: Identify the Commit to Revert</h4>
 <p>First, you need to find the commit hash (the unique ID) of the commit you want to undo. This should be the commit that introduced the changes you want to reverse.</p>
 <p>Open your terminal or Git Bash in your project's root directory and run:</p>
-<pre><code class="language-bash">git log
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> log
 
 
-This command shows you your project's commit history, with the most recent commits at the top. Scroll down until you find the commit you want to undo. The commit hash is the long string of characters next to commit (e.g., 71a224ee41eec4599329bb65c893de855d441f62).
-Once you've found it, copy its full hash.
+This <span class="token builtin class-name">command</span> shows you your project<span class="token string">'s commit history, with the most recent commits at the top. Scroll down until you find the commit you want to undo. The commit hash is the long string of characters next to commit (e.g., 71a224ee41eec4599329bb65c893de855d441f62).
+Once you'</span>ve found it, copy its full hash.
 
 
 
-```markdown
-#### Step 2: Perform the Revert
+``<span class="token variable"><span class="token variable">`</span>markdown
+<span class="token comment">#### Step 2: Perform the Revert</span>
 
-Now, use the `git revert` command with the commit hash you copied.
+Now, use the <span class="token variable">`</span></span><span class="token function">git</span> revert<span class="token variable"><span class="token variable">`</span> <span class="token builtin class-name">command</span> with the commit <span class="token builtin class-name">hash</span> you copied.
 
-```bash
-git revert &lt;commit-hash&gt;
+<span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span><span class="token function">bash</span>
+<span class="token function">git</span> revert <span class="token operator">&lt;</span>commit-hash<span class="token operator">></span>
 
 
-Replace &lt;commit-hash&gt; with the actual hash.
+Replace <span class="token operator">&lt;</span>commit-hash<span class="token operator">></span> with the actual hash.
 What happens next?
 Git will attempt to reverse the changes introduced by that commit.
-If the revert is straightforward (no conflicts), Git will automatically prepare a new commit for you.
-Step 3: Handle the Commit Message
-When git revert prepares a new commit, it will automatically open your default Git editor (like Vim or Nano in the terminal, or potentially VS Code if configured) with a pre-filled commit message. This message typically starts with &quot;Revert&quot; and includes information about the commit you're undoing.
+If the revert is straightforward <span class="token punctuation">(</span>no conflicts<span class="token punctuation">)</span>, Git will automatically prepare a new commit <span class="token keyword">for</span> you.
+Step <span class="token number">3</span>: Handle the Commit Message
+When <span class="token function">git</span> revert prepares a new commit, it will automatically <span class="token function">open</span> your default Git editor <span class="token punctuation">(</span>like Vim or Nano <span class="token keyword">in</span> the terminal, or potentially VS Code <span class="token keyword">if</span> configured<span class="token punctuation">)</span> with a pre-filled commit message. This message typically starts with <span class="token string">"Revert"</span> and includes information about the commit you<span class="token string">'re undoing.
 You can accept the default message as is.
-You can add your own notes to explain why you're reverting.
-To save and exit the commit message:
-If it's Vim: Press the Esc key, then type :wq and press Enter.
-If it's Nano, press Ctrl+X, then Y to confirm saving, and then press Enter.
-Once you save and exit, Git will create the new &quot;revert&quot; commit.
-Step 4: Push Your Reverted Changes
-Finally, push your new revert commit to your remote repository (e.g., GitHub, GitLab, or Vercel).
+You can add your own notes to explain why you'</span>re reverting.
+To save and <span class="token builtin class-name">exit</span> the commit message:
+If it<span class="token string">'s Vim: Press the Esc key, then type :wq and press Enter.
+If it'</span>s Nano, press Ctrl+X, <span class="token keyword">then</span> Y to confirm saving, and <span class="token keyword">then</span> press Enter.
+Once you save and exit, Git will create the new <span class="token string">"revert"</span> commit.
+Step <span class="token number">4</span>: Push Your Reverted Changes
+Finally, push your new revert commit to your remote repository <span class="token punctuation">(</span>e.g., GitHub, GitLab, or Vercel<span class="token punctuation">)</span>.
 
 Bash
 
 
-git push
+<span class="token function">git</span> push
 
 
-This will update your remote branch, and if you're using Vercel, it will trigger a new deployment with the reverted code.
+This will update your remote branch, and <span class="token keyword">if</span> you<span class="token string">'re using Vercel, it will trigger a new deployment with the reverted code.
 Troubleshooting Common git revert Issues
-Sometimes, git revert isn't a smooth ride. Here are the most common bumps you might hit and how to fix them:
-Issue 1: Merge Conflicts (CONFLICT (content): Merge conflict in &lt;filename&gt;)
-This is what we faced! It means Git found changes in the commit you're reverting that overlap with other changes made since that commit. Git doesn't know which version to keep, so it asks you to decide.
+Sometimes, git revert isn'</span>t a smooth ride. Here are the <span class="token function">most</span> common bumps you might hit and how to fix them:
+Issue <span class="token number">1</span>: Merge Conflicts <span class="token punctuation">(</span>CONFLICT <span class="token punctuation">(</span>content<span class="token punctuation">)</span>: Merge conflict <span class="token keyword">in</span> <span class="token operator">&lt;</span>filename<span class="token operator">></span><span class="token punctuation">)</span>
+This is what we faced<span class="token operator">!</span> It means Git found changes <span class="token keyword">in</span> the commit you<span class="token string">'re reverting that overlap with other changes made since that commit. Git doesn'</span>t know <span class="token function">which</span> version to keep, so it asks you to decide.
 How to fix it:
-Identify the Conflict: Git will tell you which files have conflicts (e.g., script.js). Open these files in your code editor.
-Look for Conflict Markers: Inside the conflicted file, you'll see special markers like this:
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-// Code from your current branch (your latest work)
-=======
-// Code from the commit you are trying to revert (the older version)
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; &lt;commit-hash-of-reverted-commit&gt;
+Identify the Conflict: Git will tell you <span class="token function">which</span> files have conflicts <span class="token punctuation">(</span>e.g., script.js<span class="token punctuation">)</span>. Open these files <span class="token keyword">in</span> your code editor.
+Look <span class="token keyword">for</span> Conflict Markers: Inside the conflicted file, you'll see special markers like this:
+<span class="token operator">&lt;&lt;&lt;</span><span class="token operator">&lt;&lt;&lt;</span><span class="token operator">&lt;</span> HEAD
+// Code from your current branch <span class="token punctuation">(</span>your latest work<span class="token punctuation">)</span>
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+// Code from the commit you are trying to revert <span class="token punctuation">(</span>the older version<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">>></span><span class="token operator">>></span><span class="token operator">></span> <span class="token operator">&lt;</span>commit-hash-of-reverted-commit<span class="token operator">></span>
 
 
 
 
 
-```markdown
+<span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span>markdown
     * **Manually Resolve:**
-        * Delete the Git conflict markers (`&lt;&lt;&lt;&lt;&lt;&lt;&lt;`, `=======`, `&gt;&gt;&gt;&gt;&gt;&gt;&gt;`).
-        * Edit the code within that section. Since you're trying to undo, you'll typically want to delete the code that was introduced by the commit you're reverting (the part between `=======` and `&gt;&gt;&gt;&gt;&gt;&gt;&gt;`) and keep the `HEAD` version, or combine them as needed to achieve the desired state of the file without the problematic changes.
+        * Delete the Git conflict markers <span class="token punctuation">(</span><span class="token variable">`</span></span><span class="token operator">&lt;&lt;&lt;</span><span class="token operator">&lt;&lt;&lt;</span><span class="token operator">&lt;</span><span class="token variable"><span class="token variable">`</span>, <span class="token variable">`</span></span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span>, <span class="token variable">`</span></span><span class="token operator">>></span><span class="token operator">>></span><span class="token operator">>></span><span class="token operator">></span><span class="token variable"><span class="token variable">`</span><span class="token punctuation">)</span>.
+        * Edit the code within that section. Since you<span class="token string">'re trying to undo, you'</span>ll typically want to delete the code that was introduced by the commit you're reverting <span class="token punctuation">(</span>the part between <span class="token variable">`</span></span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span> and <span class="token variable">`</span></span><span class="token operator">>></span><span class="token operator">>></span><span class="token operator">>></span><span class="token operator">></span><span class="token variable"><span class="token variable">`</span><span class="token punctuation">)</span> and keep the <span class="token variable">`</span></span>HEAD<span class="token variable"><span class="token variable">`</span> version, or combine them as needed to achieve the desired state of the <span class="token function">file</span> without the problematic changes.
         * Save the file.
 
-    * **Stage the Resolved File:** After fixing the file and saving it, you must tell Git that you've resolved the conflict:
+    * **Stage the Resolved File:** After fixing the <span class="token function">file</span> and saving it, you must tell Git that you've resolved the conflict:
 
-        ```bash
-        git add &lt;filename&gt;
-        ```
-        Example: `git add script.js`
+        <span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span><span class="token function">bash</span>
+        <span class="token function">git</span> <span class="token function">add</span> <span class="token operator">&lt;</span>filename<span class="token operator">></span>
+        <span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span>
+        Example: <span class="token variable">`</span></span><span class="token function">git</span> <span class="token function">add</span> script.js<span class="token variable"><span class="token variable">`</span>
 
     * **Complete the Revert Commit:** Now that the conflict is staged, you can finalize the revert:
 
-        ```bash
-        git commit
-        ```
-        This will open the commit message editor. Save and exit as in Step 3 of the main tutorial.
+        <span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span><span class="token function">bash</span>
+        <span class="token function">git</span> commit
+        <span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span>
+        This will <span class="token function">open</span> the commit message editor. Save and <span class="token builtin class-name">exit</span> as <span class="token keyword">in</span> Step <span class="token number">3</span> of the main tutorial.
 
 
 
 Markdown
 
 
-#### Issue 2: &quot;Nothing to commit&quot; or &quot;empty revert&quot;
+<span class="token comment">#### Issue 2: "Nothing to commit" or "empty revert"</span>
 
-This message appears if the commit you're trying to revert doesn't actually introduce any new changes, or if those changes have already been undone by a subsequent commit. Git determines there's nothing to revert.
+This message appears <span class="token keyword">if</span> the commit you<span class="token string">'re trying to revert doesn'</span>t actually introduce any new changes, or <span class="token keyword">if</span> those changes have already been undone by a subsequent commit. Git determines there<span class="token string">'s nothing to revert.
 
 * **What to do:**
-    * If you're sure there were changes, double-check your `git log` to ensure you picked the correct commit hash.
-    * If the changes truly vanished or were undone, you might not need to do anything.
+    * If you'</span>re sure there were changes, double-check your <span class="token variable">`</span></span><span class="token function">git</span> log<span class="token variable"><span class="token variable">`</span> to ensure you picked the correct commit hash.
+    * If the changes truly vanished or were undone, you might not need to <span class="token keyword">do</span> anything.
 
-#### Issue 3: Reverting a Range of Commits
+<span class="token comment">#### Issue 3: Reverting a Range of Commits</span>
 
-If you want to undo several commits in a sequence, you can specify a range:
+If you want to undo several commits <span class="token keyword">in</span> a sequence, you can specify a range:
 
-```bash
-git revert &lt;FIRST_COMMIT_HASH&gt;..&lt;LAST_COMMIT_HASH&gt;
+<span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span><span class="token function">bash</span>
+<span class="token function">git</span> revert <span class="token operator">&lt;</span>FIRST_COMMIT_HASH<span class="token operator">></span><span class="token punctuation">..</span><span class="token operator">&lt;</span>LAST_COMMIT_HASH<span class="token operator">></span>
 
 
-This will revert each commit one by one. You might be prompted for a commit message for each revert, or you might hit merge conflicts for each.
-You can add --no-edit to use the default message for each revert without opening the editor:
+This will revert each commit one by one. You might be prompted <span class="token keyword">for</span> a commit message <span class="token keyword">for</span> each revert, or you might hit merge conflicts <span class="token keyword">for</span> each.
+You can <span class="token function">add</span> --no-edit to use the default message <span class="token keyword">for</span> each revert without opening the editor:
 Bash
-git revert --no-edit &lt;FIRST_COMMIT_HASH&gt;..&lt;LAST_COMMIT_HASH&gt;
+<span class="token function">git</span> revert --no-edit <span class="token operator">&lt;</span>FIRST_COMMIT_HASH<span class="token operator">></span><span class="token punctuation">..</span><span class="token operator">&lt;</span>LAST_COMMIT_HASH<span class="token operator">></span>
 
 
-Or --no-commit to stage all reverts as one single new commit, which is often cleaner:
+Or --no-commit to stage all reverts as one single new commit, <span class="token function">which</span> is often cleaner:
 Bash
-git revert --no-commit &lt;FIRST_COMMIT_HASH&gt;..&lt;LAST_COMMIT_HASH&gt;
-followed by a single git commit.
+<span class="token function">git</span> revert --no-commit <span class="token operator">&lt;</span>FIRST_COMMIT_HASH<span class="token operator">></span><span class="token punctuation">..</span><span class="token operator">&lt;</span>LAST_COMMIT_HASH<span class="token operator">></span>
+followed by a single <span class="token function">git</span> commit.
 
 
 
-```markdown
-#### Issue 4: You Need to Go Back to an Exact Past State, Not Just Undo Specific Commits
+<span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span>markdown
+<span class="token comment">#### Issue 4: You Need to Go Back to an Exact Past State, Not Just Undo Specific Commits</span>
 
-Sometimes, you don't just want to undo specific commits, but instead completely reset your branch to how it looked at a previous point in history, discarding everything that came after. This is where `git reset --hard` comes in.
+Sometimes, you don't just want to undo specific commits, but instead completely reset your branch to how it looked at a previous point <span class="token keyword">in</span> history, discarding everything that came after. This is where <span class="token variable">`</span></span><span class="token function">git</span> reset --hard<span class="token variable"><span class="token variable">`</span> comes in.
 
-**WARNING:** `git reset --hard` rewrites history. If you've pushed these commits, using `git reset --hard` followed by `git push --force` will cause problems for collaborators who have the older history. Only use this if you are absolutely sure you are the sole contributor or can coordinate with your team.
+**WARNING:** <span class="token variable">`</span></span><span class="token function">git</span> reset --hard<span class="token variable"><span class="token variable">`</span> rewrites history. If you've pushed these commits, using <span class="token variable">`</span></span><span class="token function">git</span> reset --hard<span class="token variable"><span class="token variable">`</span> followed by <span class="token variable">`</span></span><span class="token function">git</span> push --force<span class="token variable"><span class="token variable">`</span> will cause problems <span class="token keyword">for</span> collaborators <span class="token function">who</span> have the older history. Only use this <span class="token keyword">if</span> you are absolutely sure you are the sole contributor or can coordinate with your team.
 
-* **How to do it (use with extreme caution):**
-    * **Find the desired commit hash:** Use `git log` to find the commit hash of the exact state you want your branch to be in.
+* **How to <span class="token keyword">do</span> it <span class="token punctuation">(</span>use with extreme caution<span class="token punctuation">)</span>:**
+    * **Find the desired commit hash:** Use <span class="token variable">`</span></span><span class="token function">git</span> log<span class="token variable"><span class="token variable">`</span> to <span class="token function">find</span> the commit <span class="token builtin class-name">hash</span> of the exact state you want your branch to be in.
     * **Reset locally:**
-        ```bash
-        git reset --hard &lt;commit-hash&gt;
-        ```
+        <span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span><span class="token function">bash</span>
+        <span class="token function">git</span> reset <span class="token parameter variable">--hard</span> <span class="token operator">&lt;</span>commit-hash<span class="token operator">></span>
+        <span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span>
     * **Force Push:**
-        ```bash
-        git push --force
-        ```
+        <span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span><span class="token function">bash</span>
+        <span class="token function">git</span> push <span class="token parameter variable">--force</span>
+        <span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span>
 
-`git revert` is a powerful and safe way to manage your project's history. Understanding how to use it, especially for handling conflicts, will save you a lot of headaches in your development journey!
-</code></pre>
+<span class="token variable">`</span></span><span class="token function">git</span> revert` is a powerful and safe way to manage your project's history. Understanding how to use it, especially <span class="token keyword">for</span> handling conflicts, will save you a lot of headaches <span class="token keyword">in</span> your development journey<span class="token operator">!</span></code></pre>
 
 </article>
         </div>

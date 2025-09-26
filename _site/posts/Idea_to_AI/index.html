@@ -7,6 +7,7 @@
     <meta name="description" content="A case study on building a conversational AI weather bot with the Gemini API and Netlify Serverless Functions. Learn how to secure API keys and debug deployment issues.
 " />
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="me" href="https://mastodon.social/@grimburly">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
@@ -121,41 +122,40 @@
 <p>[Gemini API (Key Exposed!)] &amp; [OpenWeatherMap API (Key Exposed!)] --&gt;
 [Netlify Function] ---&gt; [Gemini API (Key Secure)] &amp; [OpenWeatherMap API (Key Secure)] --&gt;</p>
 <p>I created a Netlify Function that is the only part of the system that can access the secret keys.</p>
-<pre><code class="language-javascript">
-// netlify/functions/weather.js
+<pre class="language-javascript"><code class="language-javascript">
+<span class="token comment">// netlify/functions/weather.js</span>
 
-// Using node-fetch for making API calls in the Node.js environment
-const fetch = require('node-fetch');
+<span class="token comment">// Using node-fetch for making API calls in the Node.js environment</span>
+<span class="token keyword">const</span> fetch <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'node-fetch'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-exports.handler = async function (event) {
-  // Best practice: Ensure the function only responds to POST requests.
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
-  }
+exports<span class="token punctuation">.</span><span class="token function-variable function">handler</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Best practice: Ensure the function only responds to POST requests.</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>event<span class="token punctuation">.</span>httpMethod <span class="token operator">!==</span> <span class="token string">'POST'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">statusCode</span><span class="token operator">:</span> <span class="token number">405</span><span class="token punctuation">,</span> <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token string">'Method Not Allowed'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  try {
-    const { userQuery } = JSON.parse(event.body);
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> userQuery <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    // API keys are pulled from Netlify's secure environment variables.
-    // They are never exposed to the user's browser.
-    const { WEATHER_API_KEY, GEMINI_API_KEY } = process.env;
+    <span class="token comment">// API keys are pulled from Netlify's secure environment variables.</span>
+    <span class="token comment">// They are never exposed to the user's browser.</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token constant">WEATHER_API_KEY</span><span class="token punctuation">,</span> <span class="token constant">GEMINI_API_KEY</span> <span class="token punctuation">}</span> <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">;</span>
 
-    // ... (Secure logic to call Gemini and OpenWeatherMap APIs) ...
+    <span class="token comment">// ... (Secure logic to call Gemini and OpenWeatherMap APIs) ...</span>
 
-    const botResponse = await getConversationalReply(userQuery);
+    <span class="token keyword">const</span> botResponse <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getConversationalReply</span><span class="token punctuation">(</span>userQuery<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ reply: botResponse }),
-    };
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">statusCode</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">reply</span><span class="token operator">:</span> botResponse <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-  } catch (error) {
-    // It's good practice to log errors for easier debugging.
-    console.error(&quot;Netlify Function Error:&quot;, error);
-    return { statusCode: 500, body: JSON.stringify({ error: 'An internal server error occurred.' }) };
-  }
-};
-</code></pre>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// It's good practice to log errors for easier debugging.</span>
+    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"Netlify Function Error:"</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">statusCode</span><span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">error</span><span class="token operator">:</span> <span class="token string">'An internal server error occurred.'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p>This serverless architecture completely mitigates the risk of exposing API keys while maintaining the exact same user experience.</p>
 <hr>
 <h3>Final Result and Key Takeaways</h3>
