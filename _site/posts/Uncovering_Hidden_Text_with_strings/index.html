@@ -6,6 +6,7 @@
     <title>Terminal Tips: Uncovering Hidden Text with `strings` | Beau Bremer&#39;s | Blog</title>
     <meta name="description" content="Learn how to use the simple `strings` command to peek inside binary files, find hidden clues, and even recover text from corrupted documents." />
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="me" href="https://mastodon.social/@grimburly">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
@@ -78,8 +79,7 @@
 <h3>How It Works</h3>
 <p>At its core, <code>strings</code> looks for sequences of printable characters. By default, it looks for strings that are at least four characters long. This is useful for peeking inside <strong><strong>binary files</strong></strong>, like compiled programs, to see what they might contain.</p>
 <p>To use it, just give it a file name. For example, let's peek inside the common <code>ls</code> command that lives in your <code>/bin/</code> directory:</p>
-<pre><code class="language-bash">strings /bin/ls
-</code></pre>
+<pre class="language-bash"><code class="language-bash">strings /bin/ls</code></pre>
 <p>You'll see a long list of text scroll by. This includes things like error messages (&quot;cannot access&quot;), help text (&quot;--all&quot;), and other text that the program uses internally. You're getting a sneak peek at the program's raw ingredients.</p>
 <hr>
 <h3>A Note for Windows Users</h3>
@@ -94,14 +94,12 @@
 <p>While the basic command is excellent, a few options make it even better.</p>
 <h4>Change the Minimum String Length</h4>
 <p>Sometimes the default length of four characters creates a lot of noise. You can use the -n flag to make strings show longer, potentially more interesting text. To see only strings that are at least 10 characters long, you would run:</p>
-<pre><code class="language-Bash">strings -n 10 /bin/ls
-</code></pre>
+<pre class="language-Bash"><code class="language-Bash">strings -n 10 /bin/ls</code></pre>
 <p>This helps filter out a lot of the random, short matches and lets you focus on more meaningful text, like sentences or file paths.</p>
 <h4>Find Out <em><strong>Where</strong></em> the Text Is</h4>
 <p>It can be helpful to know the location, or <strong>offset</strong>, of a string within a file. This is useful for more advanced analysis. The -t flag tells strings to print the offset before each line. You can specify the format: d for decimal, o for octal, and x for hexadecimal (which is the most common for this kind of work).</p>
-<pre><code class="language-Bash"># Show the location of each string in hexadecimal format 
-strings -t x /bin/ls
-</code></pre>
+<pre class="language-Bash"><code class="language-Bash"># Show the location of each string in hexadecimal format 
+strings -t x /bin/ls</code></pre>
 <p>Now the output will look something like this, with the file location on the left:</p>
 <pre><code> 2d98 /lib64/ld-linux-x86-64.so.2 
  301b GLIBC_2.2.5 
@@ -111,16 +109,14 @@ strings -t x /bin/ls
 <h4>Combine with Other Tools</h4>
 <p>The real power of terminal commands comes from combining them. The output of strings can be long, so you can &quot;pipe&quot; it to another command like grep to search for precisely what you need. The pipe symbol (|) sends the output of one command to the input of the next.</p>
 <p>For example, to search for any mention of &quot;GLIBC&quot; inside the ls binary, you could run:</p>
-<pre><code class="language-Bash">strings /bin/ls | grep GLIBC
-</code></pre>
+<pre class="language-Bash"><code class="language-Bash">strings /bin/ls | grep GLIBC</code></pre>
 <p>This is much faster than reading through hundreds of lines of output.</p>
 <hr>
 <h3>A Real-World Scenario</h3>
 <p>Imagine a different situation: you have a document—maybe a word processing file or a presentation—that has somehow become corrupted. When you try to open it, the application gives you an error. It can be frustrating to think the content is lost forever.</p>
 <p>This is where strings can be a lifesaver. While it can't fix the file, it can often bypass the corrupted parts and pull out any raw text it can find inside.</p>
 <p>Let's say you have a file named important_notes.docx that won't open. You can try to recover the text from it by running this command:</p>
-<pre><code class="language-Bash">strings important_notes.docx &gt; recovered_text.txt
-</code></pre>
+<pre class="language-Bash"><code class="language-Bash">strings important_notes.docx > recovered_text.txt</code></pre>
 <p>Let's break that down:</p>
 <ul>
 <li>strings important_notes.docx finds all the readable text inside your corrupted document.</li>

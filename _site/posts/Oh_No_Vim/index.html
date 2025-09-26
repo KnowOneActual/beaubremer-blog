@@ -6,6 +6,7 @@
     <title>Oh No, Vim! Your Emergency Kit for Getting Unstuck | Beau Bremer&#39;s | Blog</title>
     <meta name="description" content="Accidentally opened Vim from a git commit and can&#39;t get out? Here’s a simple, step-by-step guide to safely save and exit." />
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="me" href="https://mastodon.social/@grimburly">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
@@ -134,8 +135,7 @@ handy.</p>
 <p>If you'd rather use an editor you already know, you can tell Git to use
 something else. For example, to set VS Code as your default editor, run
 this command in your terminal:</p>
-<pre><code class="language-bash">git config --global core.editor &quot;code --wait&quot;
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> core.editor <span class="token string">"code --wait"</span></code></pre>
 <p>Hope that helped out a bit!</p>
 
 </article>

@@ -29,12 +29,10 @@
 &lt;h4&gt;1. Open your &lt;code&gt;.zshrc&lt;/code&gt; file&lt;/h4&gt;
 &lt;p&gt;Your &lt;code&gt;.zshrc&lt;/code&gt; file is a plain text file in your home directory (&lt;code&gt;~/&lt;/code&gt;). Zsh reads this file every time it starts a new session. You can open it with any text editor you like.&lt;/p&gt;
 &lt;p&gt;For example, using &lt;code&gt;nano&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;nano ~/.zshrc
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;nano&lt;/span&gt; ~/.zshrc&lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;2. Add your alias&lt;/h4&gt;
 &lt;p&gt;It&#39;s good practice to add new aliases at the end of the file. The syntax is straightforward:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;alias shortcut=&amp;quot;your_full_command&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;shortcut&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;your_full_command&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;A couple of things to keep in mind:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Use quotes.&lt;/strong&gt; Always wrap the whole command in double quotes (&lt;code&gt;&amp;quot;&lt;/code&gt;). This makes sure that commands with spaces or special characters are handled correctly.&lt;/li&gt;
@@ -43,8 +41,7 @@
 &lt;/ul&gt;
 &lt;h4&gt;3. Save and reload your configuration&lt;/h4&gt;
 &lt;p&gt;Once you&#39;ve added your aliases, save the file. For the changes to take effect, you need to reload the configuration. You can either close and reopen your terminal or run the following command:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;source ~/.zshrc
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;source&lt;/span&gt; ~/.zshrc&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Your new alias is now ready to use.&lt;/p&gt;
 &lt;h3&gt;Managing Your Aliases&lt;/h3&gt;
 &lt;p&gt;Once you start creating aliases, you may want to view a list of them or remove one that you no longer need.&lt;/p&gt;
@@ -55,29 +52,26 @@
 &lt;h3&gt;Practical Examples&lt;/h3&gt;
 &lt;p&gt;Here are a few common aliases to get you started. Feel free to add these to your own &lt;code&gt;.zshrc&lt;/code&gt; file.&lt;/p&gt;
 &lt;h4&gt;Navigation Shortcuts&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;alias ..=&amp;quot;cd ..&amp;quot;           # Go up one directory
-alias ...=&amp;quot;cd ../..&amp;quot;         # Go up two directories
-alias ....=&amp;quot;cd ../../..&amp;quot;     # Go up three directories
-alias home=&amp;quot;cd ~&amp;quot;          # Go to your home directory
-alias dev=&amp;quot;cd ~/Developer&amp;quot; # A shortcut to your development folder
-alias dl=&amp;quot;cd ~/Downloads&amp;quot;  # A shortcut to your downloads folder
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;cd ..&quot;&lt;/span&gt;           &lt;span class=&quot;token comment&quot;&gt;# Go up one directory&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;cd ../..&quot;&lt;/span&gt;         &lt;span class=&quot;token comment&quot;&gt;# Go up two directories&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;cd ../../..&quot;&lt;/span&gt;     &lt;span class=&quot;token comment&quot;&gt;# Go up three directories&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;cd ~&quot;&lt;/span&gt;          &lt;span class=&quot;token comment&quot;&gt;# Go to your home directory&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;dev&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;cd ~/Developer&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# A shortcut to your development folder&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;dl&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;cd ~/Downloads&quot;&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;# A shortcut to your downloads folder&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;Git Aliases&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;alias gs=&amp;quot;git status&amp;quot;           # Check Git status
-alias ga=&amp;quot;git add .&amp;quot;            # Add all changes
-alias gc=&amp;quot;git commit -m&amp;quot;        # Commit with a message (e.g., gc &amp;quot;Initial commit&amp;quot;)
-alias gp=&amp;quot;git push&amp;quot;             # Push to origin
-alias pull=&amp;quot;git pull&amp;quot;           # Pull from origin
-alias gl=&amp;quot;git log --oneline --decorate --all --graph&amp;quot; # A decorated Git log
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;gs&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;git status&quot;&lt;/span&gt;           &lt;span class=&quot;token comment&quot;&gt;# Check Git status&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;ga&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;git add .&quot;&lt;/span&gt;            &lt;span class=&quot;token comment&quot;&gt;# Add all changes&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;gc&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;git commit -m&quot;&lt;/span&gt;        &lt;span class=&quot;token comment&quot;&gt;# Commit with a message (e.g., gc &quot;Initial commit&quot;)&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;gp&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;git push&quot;&lt;/span&gt;             &lt;span class=&quot;token comment&quot;&gt;# Push to origin&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;pull&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;git pull&quot;&lt;/span&gt;           &lt;span class=&quot;token comment&quot;&gt;# Pull from origin&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;git log --oneline --decorate --all --graph&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# A decorated Git log&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;System &amp;amp; Utility Aliases&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;alias ls=&amp;quot;ls -F&amp;quot;                  # Add a character to show file type (e.g., / for directories)
-alias ll=&amp;quot;ls -lh&amp;quot;                 # List in long format with human-readable sizes
-alias la=&amp;quot;ls -la&amp;quot;                 # List all files, including hidden ones
-alias update=&amp;quot;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y&amp;quot; # For Debian/Ubuntu systems
-alias sz=&amp;quot;source ~/.zshrc&amp;quot;        # Quickly reload your Zsh config
-alias myip=&amp;quot;curl ipinfo.io/ip&amp;quot;    # Get your external IP address
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;ls -F&quot;&lt;/span&gt;                  &lt;span class=&quot;token comment&quot;&gt;# Add a character to show file type (e.g., / for directories)&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;ll&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;ls -lh&quot;&lt;/span&gt;                 &lt;span class=&quot;token comment&quot;&gt;# List in long format with human-readable sizes&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;la&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;ls -la&quot;&lt;/span&gt;                 &lt;span class=&quot;token comment&quot;&gt;# List all files, including hidden ones&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# For Debian/Ubuntu systems&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;sz&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;source ~/.zshrc&quot;&lt;/span&gt;        &lt;span class=&quot;token comment&quot;&gt;# Quickly reload your Zsh config&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;myip&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;curl ipinfo.io/ip&quot;&lt;/span&gt;    &lt;span class=&quot;token comment&quot;&gt;# Get your external IP address&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3&gt;Make Your Terminal Your Own&lt;/h3&gt;
 &lt;p&gt;Aliases are a simple but powerful way to make your time in the terminal more productive. Start with a few of these examples, and you&#39;ll soon find yourself creating your own shortcuts for the commands you use most.&lt;/p&gt;
 </content>
@@ -96,15 +90,13 @@ alias myip=&amp;quot;curl ipinfo.io/ip&amp;quot;    # Get your external IP addre
 &lt;p&gt;The most basic way to use &lt;code&gt;grep&lt;/code&gt; is to give it a piece of text to search for (the &amp;quot;pattern&amp;quot;) and a file to search in.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;grep &amp;quot;search_term&amp;quot; filename.txt&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Let&#39;s say you have a file called &lt;code&gt;shopping_list.txt&lt;/code&gt; with the following contents:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-text&quot;&gt;- Apples
+&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- Apples
 - Milk
 - Bread
 - Orange Juice
-- butter
-&lt;/code&gt;&lt;/pre&gt;
+- butter&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you want to find the line with &amp;quot;Milk&amp;quot; on it, you would run:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;grep &amp;quot;Milk&amp;quot; shopping_list.txt
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Milk&quot;&lt;/span&gt; shopping_list.txt&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And the terminal would instantly show you the matching line:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Milk
 &lt;/code&gt;&lt;/pre&gt;
@@ -114,13 +106,11 @@ alias myip=&amp;quot;curl ipinfo.io/ip&amp;quot;    # Get your external IP addre
 &lt;p&gt;A few simple flags can completely change how &lt;code&gt;grep&lt;/code&gt; behaves, making your searches much more effective.&lt;/p&gt;
 &lt;h4&gt;Ignore Case (&lt;code&gt;-i&lt;/code&gt;)&lt;/h4&gt;
 &lt;p&gt;What if you searched for &amp;quot;butter&amp;quot; but forgot it was lowercase in the file? By default, &lt;code&gt;grep&lt;/code&gt; is case-sensitive. The &lt;code&gt;-i&lt;/code&gt; flag tells it to ignore the case.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;grep -i &amp;quot;butter&amp;quot; shopping_list.txt
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;butter&quot;&lt;/span&gt; shopping_list.txt&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This will find &amp;quot;butter,&amp;quot; &amp;quot;Butter,&amp;quot; or even &amp;quot;bUtTeR.&amp;quot;&lt;/p&gt;
 &lt;h4&gt;Invert the Match (&lt;code&gt;-v&lt;/code&gt;)&lt;/h4&gt;
 &lt;p&gt;Sometimes it&#39;s more useful to find what &lt;em&gt;doesn&#39;t&lt;/em&gt; match. The &lt;code&gt;-v&lt;/code&gt; flag inverts the search, showing you every line that &lt;strong&gt;does not&lt;/strong&gt; contain the pattern. For example, to see everything on your shopping list that &lt;em&gt;isn&#39;t&lt;/em&gt; milk:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;grep -v &amp;quot;Milk&amp;quot; shopping_list.txt
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Milk&quot;&lt;/span&gt; shopping_list.txt&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The output would be:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;- Apples
 - Bread
@@ -130,16 +120,14 @@ alias myip=&amp;quot;curl ipinfo.io/ip&amp;quot;    # Get your external IP addre
 &lt;p&gt;This is incredibly useful for filtering out noise, like commented-out lines in a configuration file.&lt;/p&gt;
 &lt;h4&gt;Search in Every File (&lt;code&gt;-r&lt;/code&gt;)&lt;/h4&gt;
 &lt;p&gt;Imagine you know you have an API key stored in a configuration file somewhere in a project folder, but you don&#39;t remember which one. The &lt;code&gt;-r&lt;/code&gt; flag performs a &lt;strong&gt;recursive&lt;/strong&gt; search, meaning it will look inside the current directory and all subdirectories for your term.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Don&#39;t run this in your home directory unless you have time to wait!
-grep -r &amp;quot;API_KEY&amp;quot; ./my_project/
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Don&#39;t run this in your home directory unless you have time to wait!&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;API_KEY&quot;&lt;/span&gt; ./my_project/&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;grep&lt;/code&gt; will then print out the filename (and path) for every match it finds, showing you exactly where your key is.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;Combining with Other Tools&lt;/h3&gt;
 &lt;p&gt;As we saw in the &lt;code&gt;strings&lt;/code&gt; post &lt;a href=&quot;https://blog.beaubremer.com/posts/uncovering_hidden_text_with_strings/&quot;&gt;link&lt;/a&gt;, the real magic of the terminal is combining commands with the pipe (&lt;code&gt;|&lt;/code&gt;) symbol. This sends the output of one command directly to the input of the next.&lt;/p&gt;
 &lt;p&gt;Let&#39;s go back to our example of looking inside the &lt;code&gt;ls&lt;/code&gt; command.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;strings /bin/ls | grep &amp;quot;GLIBC&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;strings /bin/ls &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;GLIBC&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Here&#39;s what happens:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;strings /bin/ls&lt;/code&gt; runs first, pulling out all the readable text from the file.&lt;/li&gt;
@@ -153,13 +141,11 @@ grep -r &amp;quot;API_KEY&amp;quot; ./my_project/
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;To find lines that &lt;strong&gt;start with&lt;/strong&gt; a pattern, use the &lt;code&gt;^&lt;/code&gt; symbol. For example, to find all comments in a file that start with &lt;code&gt;#&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;grep &amp;quot;^#&amp;quot; config.ini
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;^#&quot;&lt;/span&gt; config.ini&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;To find lines that &lt;strong&gt;end with&lt;/strong&gt; a pattern, use the &lt;code&gt;$&lt;/code&gt; symbol.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;grep &amp;quot;.com$&amp;quot; urls.txt
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;.com$&quot;&lt;/span&gt; urls.txt&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Learning just these two symbols allows you to be much more specific in your searches.&lt;/p&gt;
@@ -178,8 +164,7 @@ grep -r &amp;quot;API_KEY&amp;quot; ./my_project/
 &lt;h3&gt;How It Works&lt;/h3&gt;
 &lt;p&gt;At its core, &lt;code&gt;strings&lt;/code&gt; looks for sequences of printable characters. By default, it looks for strings that are at least four characters long. This is useful for peeking inside &lt;strong&gt;&lt;strong&gt;binary files&lt;/strong&gt;&lt;/strong&gt;, like compiled programs, to see what they might contain.&lt;/p&gt;
 &lt;p&gt;To use it, just give it a file name. For example, let&#39;s peek inside the common &lt;code&gt;ls&lt;/code&gt; command that lives in your &lt;code&gt;/bin/&lt;/code&gt; directory:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;strings /bin/ls
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;strings /bin/ls&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You&#39;ll see a long list of text scroll by. This includes things like error messages (&amp;quot;cannot access&amp;quot;), help text (&amp;quot;--all&amp;quot;), and other text that the program uses internally. You&#39;re getting a sneak peek at the program&#39;s raw ingredients.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;A Note for Windows Users&lt;/h3&gt;
@@ -194,14 +179,12 @@ grep -r &amp;quot;API_KEY&amp;quot; ./my_project/
 &lt;p&gt;While the basic command is excellent, a few options make it even better.&lt;/p&gt;
 &lt;h4&gt;Change the Minimum String Length&lt;/h4&gt;
 &lt;p&gt;Sometimes the default length of four characters creates a lot of noise. You can use the -n flag to make strings show longer, potentially more interesting text. To see only strings that are at least 10 characters long, you would run:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;strings -n 10 /bin/ls
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-Bash&quot;&gt;&lt;code class=&quot;language-Bash&quot;&gt;strings -n 10 /bin/ls&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This helps filter out a lot of the random, short matches and lets you focus on more meaningful text, like sentences or file paths.&lt;/p&gt;
 &lt;h4&gt;Find Out &lt;em&gt;&lt;strong&gt;Where&lt;/strong&gt;&lt;/em&gt; the Text Is&lt;/h4&gt;
 &lt;p&gt;It can be helpful to know the location, or &lt;strong&gt;offset&lt;/strong&gt;, of a string within a file. This is useful for more advanced analysis. The -t flag tells strings to print the offset before each line. You can specify the format: d for decimal, o for octal, and x for hexadecimal (which is the most common for this kind of work).&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;# Show the location of each string in hexadecimal format 
-strings -t x /bin/ls
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-Bash&quot;&gt;&lt;code class=&quot;language-Bash&quot;&gt;# Show the location of each string in hexadecimal format 
+strings -t x /bin/ls&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now the output will look something like this, with the file location on the left:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt; 2d98 /lib64/ld-linux-x86-64.so.2 
  301b GLIBC_2.2.5 
@@ -211,16 +194,14 @@ strings -t x /bin/ls
 &lt;h4&gt;Combine with Other Tools&lt;/h4&gt;
 &lt;p&gt;The real power of terminal commands comes from combining them. The output of strings can be long, so you can &amp;quot;pipe&amp;quot; it to another command like grep to search for precisely what you need. The pipe symbol (|) sends the output of one command to the input of the next.&lt;/p&gt;
 &lt;p&gt;For example, to search for any mention of &amp;quot;GLIBC&amp;quot; inside the ls binary, you could run:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;strings /bin/ls | grep GLIBC
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-Bash&quot;&gt;&lt;code class=&quot;language-Bash&quot;&gt;strings /bin/ls | grep GLIBC&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This is much faster than reading through hundreds of lines of output.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;A Real-World Scenario&lt;/h3&gt;
 &lt;p&gt;Imagine a different situation: you have a document—maybe a word processing file or a presentation—that has somehow become corrupted. When you try to open it, the application gives you an error. It can be frustrating to think the content is lost forever.&lt;/p&gt;
 &lt;p&gt;This is where strings can be a lifesaver. While it can&#39;t fix the file, it can often bypass the corrupted parts and pull out any raw text it can find inside.&lt;/p&gt;
 &lt;p&gt;Let&#39;s say you have a file named important_notes.docx that won&#39;t open. You can try to recover the text from it by running this command:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;strings important_notes.docx &amp;gt; recovered_text.txt
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-Bash&quot;&gt;&lt;code class=&quot;language-Bash&quot;&gt;strings important_notes.docx &gt; recovered_text.txt&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Let&#39;s break that down:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;strings important_notes.docx finds all the readable text inside your corrupted document.&lt;/li&gt;
@@ -266,20 +247,17 @@ strings -t x /bin/ls
 &lt;li&gt;&lt;strong&gt;Installer:&lt;/strong&gt; Download the &lt;code&gt;.dmg&lt;/code&gt; file from the &lt;a href=&quot;https://nmap.org/download.html&quot;&gt;Nmap download page&lt;/a&gt;. Open it and run the &lt;code&gt;.mpkg&lt;/code&gt; installer. You may need to right-click and select &amp;quot;Open&amp;quot; to get past security warnings.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Homebrew:&lt;/strong&gt; If you have Homebrew installed, just open Terminal and run:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;brew install nmap 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; nmap &lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;Linux&lt;/h4&gt;
 &lt;p&gt;Most Linux distributions have Nmap in their default package repositories. Open your terminal and use the appropriate command for your system.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Debian / Ubuntu:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo apt update &amp;amp;&amp;amp; sudo apt install nmap 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt&lt;/span&gt; update &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; nmap &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Fedora / CentOS / RHEL:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo dnf install nmap 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; dnf &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; nmap &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Basic Scans: Your First Look&lt;/h3&gt;
@@ -287,14 +265,12 @@ strings -t x /bin/ls
 &lt;h4&gt;1. Ping Scan: Who is on the Network?&lt;/h4&gt;
 &lt;p&gt;Before you do a deep scan on a host, you might want to see which hosts are even online. A ping scan is perfect for this, as it only identifies active hosts without doing a full port scan.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;nmap -sn 192.168.1.1/24 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;nmap &lt;span class=&quot;token parameter variable&quot;&gt;-sn&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;192.168&lt;/span&gt;.1.1/24 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The -sn flag tells Nmap to skip the port scan, making it fast and unobtrusive.&lt;/p&gt;
 &lt;h4&gt;2. Default Scan: The Standard Approach&lt;/h4&gt;
 &lt;p&gt;This is the most common Nmap command. It scans the 1,000 most popular ports for a given host, which is usually enough to identify its primary services.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;nmap scanme.nmap.org 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-Bash&quot;&gt;&lt;code class=&quot;language-Bash&quot;&gt;nmap scanme.nmap.org &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;What to look for:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Starting Nmap 7.92 ( &lt;a href=&quot;https://nmap.org/&quot;&gt;https://nmap.org&lt;/a&gt; )
 Nmap scan report for scanme.nmap.org (45.33.32.156)
@@ -309,26 +285,23 @@ PORT   STATE SERVICE
 &lt;h4&gt;1. Service Version Detection&lt;/h4&gt;
 &lt;p&gt;Knowing a port is open is good, but knowing &lt;em&gt;what&lt;/em&gt; is running on it is better. The -sV flag asks Nmap to try and determine the version of the service.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;nmap -sV scanme.nmap.org 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-Bash&quot;&gt;&lt;code class=&quot;language-Bash&quot;&gt;nmap -sV scanme.nmap.org &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The output will now include a VERSION column, which might show something like OpenSSH 6.6.1p1 or Apache httpd 2.4.7.&lt;/p&gt;
 &lt;h4&gt;2. Operating System Detection&lt;/h4&gt;
 &lt;p&gt;Nmap can make an educated guess about the target&#39;s operating system by analyzing its TCP/IP stack. This requires root or administrator privileges.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;
+&lt;pre class=&quot;language-Bash&quot;&gt;&lt;code class=&quot;language-Bash&quot;&gt;
 # On Linux/macOS 
 sudo nmap -O scanme.nmap.org 
  
 # On Windows (in an Administrator prompt) 
-nmap -O scanme.nmap.org 
-&lt;/code&gt;&lt;/pre&gt;
+nmap -O scanme.nmap.org &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Nmap will add a section to the report with its best guess, like OS details: Linux 3.10 - 4.11.&lt;/p&gt;
 &lt;h4&gt;3. Aggressive Scan: The All-in-One&lt;/h4&gt;
 &lt;p&gt;For a comprehensive look, the aggressive scan (-A) is a powerful shortcut. It enables OS detection, version detection, script scanning, and traceroute all in one command.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;
-nmap -A scanme.nmap.org 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-Bash&quot;&gt;&lt;code class=&quot;language-Bash&quot;&gt;
+nmap -A scanme.nmap.org &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This scan is more &amp;quot;noisy&amp;quot; on the network but gives you a very detailed report, perfect for when you need a deep dive on a single host.&lt;/p&gt;
 &lt;h3&gt;Putting It All Together&lt;/h3&gt;
 &lt;p&gt;Nmap transforms your view of a network from a list of addresses to a detailed map of active services. It&#39;s the tool that helps you answer not just &amp;quot;Are you there?&amp;quot; but &amp;quot;Who are you and what are you doing?&amp;quot;. By starting with simple scans and gradually adding flags for more detail, you can efficiently diagnose issues, verify configurations, and get a much clearer picture of your network&#39;s landscape.&lt;/p&gt;
@@ -348,36 +321,30 @@ nmap -A scanme.nmap.org
 &lt;hr /&gt;
 &lt;h3&gt;The Problem: A Service Playing Dead&lt;/h3&gt;
 &lt;p&gt;The initial symptom was simple: the onion site was down. After connecting to the server, the first command in any admin&#39;s toolkit is &lt;code&gt;systemctl status&lt;/code&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo systemctl status tor
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; systemctl status tor&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The output holds the first major clue: &lt;strong&gt;&lt;code&gt;Active: active (exited)&lt;/code&gt;&lt;/strong&gt;. For a service that&#39;s supposed to run continuously, this is a red flag. It means the service started, did something, and then immediately shut down without an obvious error. This is far trickier to debug than a simple crash.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;The Diagnostic Journey: Peeling the Onion&lt;/h3&gt;
 &lt;p&gt;When the main status is unhelpful, it&#39;s time to dig deeper. Here&#39;s a reliable path to follow, moving from the most general to the most specific tests.&lt;/p&gt;
 &lt;h4&gt;1. Check the System Logs (&lt;code&gt;journalctl&lt;/code&gt;)&lt;/h4&gt;
 &lt;p&gt;The next logical step is to check the system&#39;s journal for the service. The &lt;code&gt;-e&lt;/code&gt; flag jumps you to the end of the log, which is where the most recent events are.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo journalctl -u tor -e
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; journalctl &lt;span class=&quot;token parameter variable&quot;&gt;-u&lt;/span&gt; tor &lt;span class=&quot;token parameter variable&quot;&gt;-e&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Unfortunately, the logs were as unhelpful as the status. They only confirmed that the service was starting and stopping, without providing any application-specific errors. This tells us the problem likely isn&#39;t with &lt;code&gt;systemd&lt;/code&gt; itself, but with the Tor application.&lt;/p&gt;
 &lt;h4&gt;2. Check the Application Logs&lt;/h4&gt;
 &lt;p&gt;Most applications write their own, more detailed logs. For Tor, this is usually &lt;code&gt;/var/log/tor/notices.log&lt;/code&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo cat /var/log/tor/notices.log
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; /var/log/tor/notices.log&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The output here provides another huge clue: &lt;strong&gt;&lt;code&gt;No such file or directory&lt;/code&gt;&lt;/strong&gt;. A service that can&#39;t create its own log file is a strong sign of a &lt;strong&gt;file permissions problem&lt;/strong&gt;. Even after trying to fix ownership with &lt;code&gt;chown&lt;/code&gt;, the issue persisted, suggesting the problem was somewhere else.&lt;/p&gt;
 &lt;h4&gt;3. Inspect the Service File&lt;/h4&gt;
 &lt;p&gt;Sometimes the investigation leads to a surprising discovery. After reinstalling the &lt;code&gt;tor&lt;/code&gt; package didn&#39;t help, the next place to look was the &lt;code&gt;systemd&lt;/code&gt; service file itself.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;cat /lib/systemd/system/tor.service
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; /lib/systemd/system/tor.service&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Somehow, the file had been replaced with a generic placeholder. A critical line, &lt;code&gt;ExecStart=/bin/true&lt;/code&gt;, was telling the service to run a command that does nothing and immediately exits successfully. After replacing the file&#39;s contents with the correct, default configuration, a real error message finally appeared.&lt;/p&gt;
 &lt;h4&gt;4. Verify the Configuration&lt;/h4&gt;
 &lt;p&gt;With the service file fixed, &lt;code&gt;systemctl restart tor&lt;/code&gt; now failed with a proper error. This allows us to move on to verifying Tor&#39;s own configuration.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo -u debian-tor tor --verify-config
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-u&lt;/span&gt; debian-tor tor --verify-config&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This command passed, indicating that &lt;code&gt;/etc/tor/torrc&lt;/code&gt; was syntactically correct. This is a classic troubleshooting moment: the config file is valid, but the service still won&#39;t run. The problem isn&#39;t the file&#39;s syntax, but &lt;em&gt;what the file is telling the service to do&lt;/em&gt;.&lt;/p&gt;
 &lt;h4&gt;5. Run the Service Manually (The Breakthrough)&lt;/h4&gt;
 &lt;p&gt;This is often the final and most critical step. Bypassing &lt;code&gt;systemd&lt;/code&gt; and running the Tor startup command directly, as the correct user, lets you see the live output.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo -u debian-tor /usr/bin/tor --defaults-torrc /usr/share/tor/tor-service-defaults-torrc -f /etc/tor/torrc --RunAsDaemon 0
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-u&lt;/span&gt; debian-tor /usr/bin/tor --defaults-torrc /usr/share/tor/tor-service-defaults-torrc &lt;span class=&quot;token parameter variable&quot;&gt;-f&lt;/span&gt; /etc/tor/torrc &lt;span class=&quot;token parameter variable&quot;&gt;--RunAsDaemon&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And there it was, in plain text:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;[warn] Failed to parse/validate config: Problem with User value. See logs for details.&lt;/code&gt;&lt;/p&gt;
@@ -446,7 +413,7 @@ nmap -A scanme.nmap.org
 &lt;li&gt;&lt;strong&gt;Nginx Proxies to Gunicorn:&lt;/strong&gt; Based on its configuration, Nginx recognizes the /upload path and proxies the request to the Gunicorn server, which is listening on a local Unix socket (image_cleaner.sock).&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;This is the exact Nginx location block that handles the magic. It forwards the request to the Gunicorn socket and adds several important headers so our Flask application knows about the original user.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Nginx&quot;&gt;
+&lt;pre class=&quot;language-Nginx&quot;&gt;&lt;code class=&quot;language-Nginx&quot;&gt;
 location /upload {
     proxy_pass http://unix:/home/userx/image_cleaner_app/image_cleaner.sock;
     proxy_set_header Host $host;
@@ -454,7 +421,6 @@ location /upload {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header X-Forwarded-Proto $scheme;
 }
-
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ol start=&quot;4&quot;&gt;
 &lt;li&gt;&lt;strong&gt;Gunicorn Hands Off to Flask:&lt;/strong&gt; Gunicorn receives the request and passes it to our Flask application (&lt;code&gt;image_cleaner.py&lt;/code&gt;).&lt;/li&gt;
@@ -538,36 +504,31 @@ location /upload {
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/sdk/docs/install&quot;&gt;Install the gcloud CLI&lt;/a&gt; on your local computer.&lt;/li&gt;
 &lt;li&gt;Open your terminal and run &lt;code&gt;gcloud init&lt;/code&gt; to log in and select your project.&lt;/li&gt;
-&lt;li&gt;Connect to your VM with this command (replace with your VM&#39;s name and zone):&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;gcloud compute ssh your-vm-name --zone its-zone
-&lt;/code&gt;&lt;/pre&gt;
+&lt;li&gt;Connect to your VM with this command (replace with your VM&#39;s name and zone):&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;gcloud compute &lt;span class=&quot;token function&quot;&gt;ssh&lt;/span&gt; your-vm-name &lt;span class=&quot;token parameter variable&quot;&gt;--zone&lt;/span&gt; its-zone&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4&gt;Step 3: Install the Software&lt;/h4&gt;
 &lt;p&gt;Once you&#39;re connected, run these commands to install everything you need.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Update the server and install Nginx (web server), Tor, and Git
-sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y
-sudo apt install git nginx tor -y
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Update the server and install Nginx (web server), Tor, and Git&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt&lt;/span&gt; update &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt&lt;/span&gt; upgrade &lt;span class=&quot;token parameter variable&quot;&gt;-y&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; nginx tor &lt;span class=&quot;token parameter variable&quot;&gt;-y&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;Step 4: Add Your Website Files&lt;/h4&gt;
 &lt;p&gt;Now, pull your website&#39;s code from its repository and place it where Nginx can find it.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Clone your site (use your own repo URL)
-git clone [https://github.com/your-username/your-repo.git](https://github.com/your-username/your-repo.git)
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Clone your site (use your own repo URL)&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;https://github.com/your-username/your-repo.git&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;https://github.com/your-username/your-repo.git&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 
-# Move the files to the web server&#39;s public directory
-sudo cp -r ~/your-repo/* /var/www/html/
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token comment&quot;&gt;# Move the files to the web server&#39;s public directory&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-r&lt;/span&gt; ~/your-repo/* /var/www/html/&lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;Step 5: Configure Tor and Get Your Address!&lt;/h4&gt;
 &lt;p&gt;This is the magic step. You just need to add two lines to Tor&#39;s configuration file.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# This command adds the necessary lines to the end of the config file
-echo -e &amp;quot;HiddenServiceDir /var/lib/tor/hidden_service/&#92;nHiddenServicePort 80 127.0.0.1:80&amp;quot; | sudo tee -a /etc/tor/torrc
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# This command adds the necessary lines to the end of the config file&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;HiddenServiceDir /var/lib/tor/hidden_service/&lt;span class=&quot;token entity&quot; title=&quot;&#92;n&quot;&gt;&#92;n&lt;/span&gt;HiddenServicePort 80 127.0.0.1:80&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;tee&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-a&lt;/span&gt; /etc/tor/torrc
 
-# Restart the services to apply the changes
-sudo systemctl restart nginx
-sudo systemctl restart tor
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token comment&quot;&gt;# Restart the services to apply the changes&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; systemctl restart nginx
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; systemctl restart tor&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Wait about a minute, then run this command to see your new address:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo cat /var/lib/tor/hidden_service/hostname
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; /var/lib/tor/hidden_service/hostname&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Copy that long &lt;code&gt;.onion&lt;/code&gt; address, paste it into the &lt;a href=&quot;https://www.torproject.org/download/&quot;&gt;Tor Browser&lt;/a&gt;, and you should see your site!&lt;/p&gt;
 &lt;h3&gt;The Pitfalls: A Warning for the Weary&lt;/h3&gt;
 &lt;p&gt;Now, let&#39;s be honest. The process above looks simple, but getting there was a journey. Here&#39;s what I learned the hard way:&lt;/p&gt;
@@ -602,8 +563,7 @@ sudo systemctl restart tor
 &lt;h3&gt;Basic Lookups: The First Step&lt;/h3&gt;
 &lt;p&gt;Let&#39;s start with the simplest query: finding the IP address for a domain. This is known as an &lt;strong&gt;A record&lt;/strong&gt; lookup.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;nslookup google.com 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;nslookup&lt;/span&gt; google.com &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;What to look for:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;The output gives you two key pieces of information. First, it tells you which DNS server answered your request. Then, it provides the answer itself.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example of a successful lookup:&lt;/strong&gt;&lt;/p&gt;
@@ -618,10 +578,9 @@ Address: 142.250.217.78&lt;/p&gt;
 &lt;h4&gt;1. Finding Mail Servers (MX Records)&lt;/h4&gt;
 &lt;p&gt;If you&#39;re having trouble with email, you can check the &lt;strong&gt;Mail Exchanger (MX)&lt;/strong&gt; records to see where email for a domain is supposed to be sent.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;
-# You can also use &amp;quot;set type=mx&amp;quot; in interactive mode 
+&lt;pre class=&quot;language-Bash&quot;&gt;&lt;code class=&quot;language-Bash&quot;&gt;
+# You can also use &quot;set type=mx&quot; in interactive mode 
 nslookup -query=mx google.com 
-
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;What to look for:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;You&#39;ll get a list of servers, each with a priority number. The lower the number, the higher the priority. Mail will always try to be delivered to the highest-priority server first.&lt;/p&gt;
@@ -629,18 +588,16 @@ nslookup -query=mx google.com
 &lt;h4&gt;2. Finding a Domain&#39;s Official Name Servers (NS Records)&lt;/h4&gt;
 &lt;p&gt;The &lt;strong&gt;Name Server (NS)&lt;/strong&gt; records tell you which servers are the official source of DNS information for a domain. This is useful for checking if a domain is configured correctly.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;
+&lt;pre class=&quot;language-Bash&quot;&gt;&lt;code class=&quot;language-Bash&quot;&gt;
 nslookup -query=ns google.com 
-
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This will return a list of the authoritative name servers for that domain, like ns1.google.com.&lt;/p&gt;
 &lt;h4&gt;3. Reverse DNS Lookup (Finding the Name for an IP)&lt;/h4&gt;
 &lt;p&gt;What if you have an IP address and want to know what domain name is associated with it? That&#39;s a &lt;strong&gt;reverse lookup (PTR record)&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Just give nslookup the IP address.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;
+&lt;pre class=&quot;language-Bash&quot;&gt;&lt;code class=&quot;language-Bash&quot;&gt;
 nslookup 8.8.8.8 
-
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;What to look for:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;The output will show you the name associated with that IP. In this case, you&#39;ll see it resolves to dns.google.&lt;/p&gt;
@@ -649,10 +606,9 @@ nslookup 8.8.8.8
 &lt;p&gt;By default, nslookup uses your system&#39;s configured DNS server. But what if you want to see if your DNS changes have propagated to a public server like Cloudflare (1.1.1.1) or Google (8.8.8.8)?&lt;/p&gt;
 &lt;p&gt;You can tell nslookup to ask a specific server by adding it to the end of the command.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;
+&lt;pre class=&quot;language-Bash&quot;&gt;&lt;code class=&quot;language-Bash&quot;&gt;
 # Ask Cloudflare&#39;s server for the IP of google.com 
 nslookup google.com 1.1.1.1 
-
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This is incredibly useful for confirming that a DNS change is visible to the rest of the world, not just on your own network.&lt;/p&gt;
 &lt;h3&gt;Putting It All Together&lt;/h3&gt;
@@ -992,28 +948,27 @@ nslookup google.com 1.1.1.1
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Write the &amp;quot;Spell&amp;quot; (The Code):&lt;/strong&gt; This logic translates into Python. Save this as &lt;code&gt;rename_files.py&lt;/code&gt; in a folder with a &lt;em&gt;copy&lt;/em&gt; of your photos.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-python:rename_files.py&quot;&gt;import os
+&lt;pre class=&quot;language-python:rename_files.py&quot;&gt;&lt;code class=&quot;language-python:rename_files.py&quot;&gt;import os
 
-# The folder with your photos. The &amp;quot;.&amp;quot; means &amp;quot;this current folder&amp;quot;.
-folder_path = &amp;quot;.&amp;quot;
+# The folder with your photos. The &quot;.&quot; means &quot;this current folder&quot;.
+folder_path = &quot;.&quot;
 # What you want the new name to be.
-new_name_base = &amp;quot;Vacation_2025_&amp;quot;
+new_name_base = &quot;Vacation_2025_&quot;
 # A counter to make each filename unique.
 counter = 1
 
 # Loop through every file in the folder.
 for filename in os.listdir(folder_path):
     # Check if the file is a JPG image.
-    if filename.endswith(&amp;quot;.JPG&amp;quot;):
+    if filename.endswith(&quot;.JPG&quot;):
         # Create the new filename.
-        new_filename = f&amp;quot;{new_name_base}{counter}.JPG&amp;quot;
+        new_filename = f&quot;{new_name_base}{counter}.JPG&quot;
         # Rename the file.
         os.rename(filename, new_filename)
         # Add 1 to the counter for the next loop.
         counter += 1
 
-print(&amp;quot;File renaming complete!&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
+print(&quot;File renaming complete!&quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Run the Experiment:&lt;/strong&gt; &lt;strong&gt;Important:&lt;/strong&gt; Test this on a &lt;em&gt;copy&lt;/em&gt; of your files first! Open your computer&#39;s command line or terminal, navigate to that folder, and type &lt;code&gt;python rename_files.py&lt;/code&gt;. Press Enter.&lt;/p&gt;
@@ -1143,9 +1098,8 @@ print(&amp;quot;File renaming complete!&amp;quot;)
 &lt;h4&gt;1. &lt;code&gt;ping&lt;/code&gt;: Is Anyone Home?&lt;/h4&gt;
 &lt;p&gt;The &lt;strong&gt;ping&lt;/strong&gt; command is the simplest way to check if a remote device is online and reachable. It sends a small packet of data and waits for a reply.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Pinging a well-known Google server
-ping 8.8.8.8
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Pinging a well-known Google server&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;ping&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;8.8&lt;/span&gt;.8.8&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;What to look for:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Successful Replies:&lt;/strong&gt; If you see lines that include &lt;code&gt;bytes from... time=...&lt;/code&gt;, it means there&#39;s a live connection between you and the server.&lt;/li&gt;
@@ -1159,20 +1113,17 @@ ping 8.8.8.8
 &lt;h4&gt;2. &lt;code&gt;traceroute&lt;/code&gt;: What&#39;s the Path?&lt;/h4&gt;
 &lt;p&gt;If &lt;code&gt;ping&lt;/code&gt; fails, &lt;code&gt;traceroute&lt;/code&gt; (or &lt;code&gt;tracert&lt;/code&gt; on Windows) is your next step. It shows you the specific path, or &lt;strong&gt;hops&lt;/strong&gt;, your data takes to get to a destination. This is perfect for spotting exactly where the connection breaks.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How to use it:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Tracing the route to Google&#39;s server
-traceroute 8.8.8.8
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Tracing the route to Google&#39;s server&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;traceroute&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;8.8&lt;/span&gt;.8.8&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You&#39;ll see a list of routers your connection passes through. If the trace stops, shows &lt;code&gt;* * *&lt;/code&gt; for multiple lines, or has a sudden, massive jump in latency (e.g., from &lt;code&gt;15ms&lt;/code&gt; to &lt;code&gt;200ms&lt;/code&gt;), you&#39;ve found a major clue about where the failure is occurring.&lt;/p&gt;
 &lt;h4&gt;3. Port Checking: Is the Service Listening?&lt;/h4&gt;
 &lt;p&gt;Sometimes the server is online (&lt;code&gt;ping&lt;/code&gt; works), but the specific service you need (like a database or a web server) isn&#39;t responding. You need to check if the &lt;strong&gt;port&lt;/strong&gt; for that service is open.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;On Windows (using PowerShell):&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-powershell&quot;&gt;# Checks if Google&#39;s web server is responding on the standard HTTPS port (443)
-Test-NetConnection google.com -Port 443
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-powershell&quot;&gt;&lt;code class=&quot;language-powershell&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Checks if Google&#39;s web server is responding on the standard HTTPS port (443)&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;Test-NetConnection&lt;/span&gt; google&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;com &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;Port 443&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;On macOS or Linux:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# The -z flag tells nc to scan without sending data, v is for verbose
-nc -zv google.com 443
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# The -z flag tells nc to scan without sending data, v is for verbose&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;nc&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-zv&lt;/span&gt; google.com &lt;span class=&quot;token number&quot;&gt;443&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;A &amp;quot;success&amp;quot; or &amp;quot;open&amp;quot; message means the service is listening. A failure could point to a firewall blocking the connection or the service being down.&lt;/p&gt;
 &lt;h3&gt;A Framework for Sanity: The 5-Step &amp;quot;Fixit&amp;quot; Process&lt;/h3&gt;
 &lt;p&gt;Commands give you data, but a framework gives you a plan. This is a systematic way to diagnose and solve a problem without getting overwhelmed.&lt;/p&gt;
@@ -1404,8 +1355,7 @@ handy.&lt;/p&gt;
 &lt;p&gt;If you&#39;d rather use an editor you already know, you can tell Git to use
 something else. For example, to set VS Code as your default editor, run
 this command in your terminal:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;git config --global core.editor &amp;quot;code --wait&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; config &lt;span class=&quot;token parameter variable&quot;&gt;--global&lt;/span&gt; core.editor &lt;span class=&quot;token string&quot;&gt;&quot;code --wait&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Hope that helped out a bit!&lt;/p&gt;
 </content>
   </entry>
@@ -1453,41 +1403,40 @@ this command in your terminal:&lt;/p&gt;
 &lt;p&gt;[Gemini API (Key Exposed!)] &amp;amp; [OpenWeatherMap API (Key Exposed!)] --&amp;gt;
 [Netlify Function] ---&amp;gt; [Gemini API (Key Secure)] &amp;amp; [OpenWeatherMap API (Key Secure)] --&amp;gt;&lt;/p&gt;
 &lt;p&gt;I created a Netlify Function that is the only part of the system that can access the secret keys.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;
-// netlify/functions/weather.js
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+&lt;span class=&quot;token comment&quot;&gt;// netlify/functions/weather.js&lt;/span&gt;
 
-// Using node-fetch for making API calls in the Node.js environment
-const fetch = require(&#39;node-fetch&#39;);
+&lt;span class=&quot;token comment&quot;&gt;// Using node-fetch for making API calls in the Node.js environment&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; fetch &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;node-fetch&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-exports.handler = async function (event) {
-  // Best practice: Ensure the function only responds to POST requests.
-  if (event.httpMethod !== &#39;POST&#39;) {
-    return { statusCode: 405, body: &#39;Method Not Allowed&#39; };
-  }
+exports&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;handler&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// Best practice: Ensure the function only responds to POST requests.&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;event&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;httpMethod &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;POST&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;statusCode&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;405&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;Method Not Allowed&#39;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-  try {
-    const { userQuery } = JSON.parse(event.body);
+  &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; userQuery &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;event&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;body&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-    // API keys are pulled from Netlify&#39;s secure environment variables.
-    // They are never exposed to the user&#39;s browser.
-    const { WEATHER_API_KEY, GEMINI_API_KEY } = process.env;
+    &lt;span class=&quot;token comment&quot;&gt;// API keys are pulled from Netlify&#39;s secure environment variables.&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// They are never exposed to the user&#39;s browser.&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;WEATHER_API_KEY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;GEMINI_API_KEY&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; process&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;env&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-    // ... (Secure logic to call Gemini and OpenWeatherMap APIs) ...
+    &lt;span class=&quot;token comment&quot;&gt;// ... (Secure logic to call Gemini and OpenWeatherMap APIs) ...&lt;/span&gt;
 
-    const botResponse = await getConversationalReply(userQuery);
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; botResponse &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getConversationalReply&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;userQuery&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ reply: botResponse }),
-    };
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token literal-property property&quot;&gt;statusCode&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token literal-property property&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;reply&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; botResponse &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  } catch (error) {
-    // It&#39;s good practice to log errors for easier debugging.
-    console.error(&amp;quot;Netlify Function Error:&amp;quot;, error);
-    return { statusCode: 500, body: JSON.stringify({ error: &#39;An internal server error occurred.&#39; }) };
-  }
-};
-&lt;/code&gt;&lt;/pre&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// It&#39;s good practice to log errors for easier debugging.&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Netlify Function Error:&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;statusCode&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;An internal server error occurred.&#39;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This serverless architecture completely mitigates the risk of exposing API keys while maintaining the exact same user experience.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;Final Result and Key Takeaways&lt;/h3&gt;
@@ -1761,37 +1710,33 @@ can make it a seamless part of your writing workflow.&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Start from a Clean Slate&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Before starting anything new, I always make sure my local project is in sync with the latest version on GitHub.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# First, switch to your main branch
-git checkout main
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# First, switch to your main branch&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout main
 
-# Then, pull the latest changes from GitHub (your remote &#39;origin&#39;)
-git pull origin main
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token comment&quot;&gt;# Then, pull the latest changes from GitHub (your remote &#39;origin&#39;)&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; pull origin main&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Create Your New Branch&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Next, I created a new branch and immediately switched to it. I gave it a descriptive name so I&#39;d know its purpose. The &lt;code&gt;-b&lt;/code&gt; flag handles both creating the branch and checking it out in one step.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# The -b flag creates a new branch and switches to it
-git checkout -b feature/contextual-header-link
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# The -b flag creates a new branch and switches to it&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout &lt;span class=&quot;token parameter variable&quot;&gt;-b&lt;/span&gt; feature/contextual-header-link&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Do the Work&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;On this new, safe branch, I edited my layout file (&lt;code&gt;_includes/layouts/base.njk&lt;/code&gt;) to add the logic for the contextual link. I made a few small, focused commits along the way to save my progress.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Stage all modified files for the commit
-git add .
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Stage all modified files for the commit&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;
 
-# Commit your changes with a clear, descriptive message
-git commit -m &amp;quot;feat: Make header link contextual&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token comment&quot;&gt;# Commit your changes with a clear, descriptive message&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit &lt;span class=&quot;token parameter variable&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;feat: Make header link contextual&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Open a Pull Request&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Once I was happy with how it worked on my local machine, I pushed the new branch up to my GitHub repository.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Push the new branch to your remote repo named &#39;origin&#39;
-# The -u flag sets the upstream branch for future pushes
-git push -u origin feature/contextual-header-link
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Push the new branch to your remote repo named &#39;origin&#39;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# The -u flag sets the upstream branch for future pushes&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; push &lt;span class=&quot;token parameter variable&quot;&gt;-u&lt;/span&gt; origin feature/contextual-header-link&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then, I went to my project on the GitHub website and opened a Pull Request (PR). A PR is a formal way of proposing your changes. It’s a request to pull your new code from the &lt;code&gt;feature/contextual-header-link&lt;/code&gt; branch into the &lt;code&gt;main&lt;/code&gt; branch.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -1979,136 +1924,135 @@ This is perhaps the most underestimated phase, and yet, it&#39;s absolutely cruc
 &lt;h4&gt;Step 1: Identify the Commit to Revert&lt;/h4&gt;
 &lt;p&gt;First, you need to find the commit hash (the unique ID) of the commit you want to undo. This should be the commit that introduced the changes you want to reverse.&lt;/p&gt;
 &lt;p&gt;Open your terminal or Git Bash in your project&#39;s root directory and run:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;git log
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log
 
 
-This command shows you your project&#39;s commit history, with the most recent commits at the top. Scroll down until you find the commit you want to undo. The commit hash is the long string of characters next to commit (e.g., 71a224ee41eec4599329bb65c893de855d441f62).
-Once you&#39;ve found it, copy its full hash.
+This &lt;span class=&quot;token builtin class-name&quot;&gt;command&lt;/span&gt; shows you your project&lt;span class=&quot;token string&quot;&gt;&#39;s commit history, with the most recent commits at the top. Scroll down until you find the commit you want to undo. The commit hash is the long string of characters next to commit (e.g., 71a224ee41eec4599329bb65c893de855d441f62).
+Once you&#39;&lt;/span&gt;ve found it, copy its full hash.
 
 
 
-```markdown
-#### Step 2: Perform the Revert
+``&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;markdown
+&lt;span class=&quot;token comment&quot;&gt;#### Step 2: Perform the Revert&lt;/span&gt;
 
-Now, use the `git revert` command with the commit hash you copied.
+Now, use the &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; revert&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;command&lt;/span&gt; with the commit &lt;span class=&quot;token builtin class-name&quot;&gt;hash&lt;/span&gt; you copied.
 
-```bash
-git revert &amp;lt;commit-hash&amp;gt;
+&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;`&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; revert &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;commit-hash&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
 
 
-Replace &amp;lt;commit-hash&amp;gt; with the actual hash.
+Replace &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;commit-hash&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; with the actual hash.
 What happens next?
 Git will attempt to reverse the changes introduced by that commit.
-If the revert is straightforward (no conflicts), Git will automatically prepare a new commit for you.
-Step 3: Handle the Commit Message
-When git revert prepares a new commit, it will automatically open your default Git editor (like Vim or Nano in the terminal, or potentially VS Code if configured) with a pre-filled commit message. This message typically starts with &amp;quot;Revert&amp;quot; and includes information about the commit you&#39;re undoing.
+If the revert is straightforward &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;no conflicts&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;, Git will automatically prepare a new commit &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; you.
+Step &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;: Handle the Commit Message
+When &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; revert prepares a new commit, it will automatically &lt;span class=&quot;token function&quot;&gt;open&lt;/span&gt; your default Git editor &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;like Vim or Nano &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; the terminal, or potentially VS Code &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; configured&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; with a pre-filled commit message. This message typically starts with &lt;span class=&quot;token string&quot;&gt;&quot;Revert&quot;&lt;/span&gt; and includes information about the commit you&lt;span class=&quot;token string&quot;&gt;&#39;re undoing.
 You can accept the default message as is.
-You can add your own notes to explain why you&#39;re reverting.
-To save and exit the commit message:
-If it&#39;s Vim: Press the Esc key, then type :wq and press Enter.
-If it&#39;s Nano, press Ctrl+X, then Y to confirm saving, and then press Enter.
-Once you save and exit, Git will create the new &amp;quot;revert&amp;quot; commit.
-Step 4: Push Your Reverted Changes
-Finally, push your new revert commit to your remote repository (e.g., GitHub, GitLab, or Vercel).
+You can add your own notes to explain why you&#39;&lt;/span&gt;re reverting.
+To save and &lt;span class=&quot;token builtin class-name&quot;&gt;exit&lt;/span&gt; the commit message:
+If it&lt;span class=&quot;token string&quot;&gt;&#39;s Vim: Press the Esc key, then type :wq and press Enter.
+If it&#39;&lt;/span&gt;s Nano, press Ctrl+X, &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt; Y to confirm saving, and &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt; press Enter.
+Once you save and exit, Git will create the new &lt;span class=&quot;token string&quot;&gt;&quot;revert&quot;&lt;/span&gt; commit.
+Step &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;: Push Your Reverted Changes
+Finally, push your new revert commit to your remote repository &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;e.g., GitHub, GitLab, or Vercel&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;.
 
 Bash
 
 
-git push
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; push
 
 
-This will update your remote branch, and if you&#39;re using Vercel, it will trigger a new deployment with the reverted code.
+This will update your remote branch, and &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; you&lt;span class=&quot;token string&quot;&gt;&#39;re using Vercel, it will trigger a new deployment with the reverted code.
 Troubleshooting Common git revert Issues
-Sometimes, git revert isn&#39;t a smooth ride. Here are the most common bumps you might hit and how to fix them:
-Issue 1: Merge Conflicts (CONFLICT (content): Merge conflict in &amp;lt;filename&amp;gt;)
-This is what we faced! It means Git found changes in the commit you&#39;re reverting that overlap with other changes made since that commit. Git doesn&#39;t know which version to keep, so it asks you to decide.
+Sometimes, git revert isn&#39;&lt;/span&gt;t a smooth ride. Here are the &lt;span class=&quot;token function&quot;&gt;most&lt;/span&gt; common bumps you might hit and how to fix them:
+Issue &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;: Merge Conflicts &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;CONFLICT &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;content&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;: Merge conflict &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;filename&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+This is what we faced&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt; It means Git found changes &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; the commit you&lt;span class=&quot;token string&quot;&gt;&#39;re reverting that overlap with other changes made since that commit. Git doesn&#39;&lt;/span&gt;t know &lt;span class=&quot;token function&quot;&gt;which&lt;/span&gt; version to keep, so it asks you to decide.
 How to fix it:
-Identify the Conflict: Git will tell you which files have conflicts (e.g., script.js). Open these files in your code editor.
-Look for Conflict Markers: Inside the conflicted file, you&#39;ll see special markers like this:
-&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
-// Code from your current branch (your latest work)
-=======
-// Code from the commit you are trying to revert (the older version)
-&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; &amp;lt;commit-hash-of-reverted-commit&amp;gt;
+Identify the Conflict: Git will tell you &lt;span class=&quot;token function&quot;&gt;which&lt;/span&gt; files have conflicts &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;e.g., script.js&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;. Open these files &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; your code editor.
+Look &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; Conflict Markers: Inside the conflicted file, you&#39;ll see special markers like this:
+&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; HEAD
+// Code from your current branch &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;your latest work&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;
+// Code from the commit you are trying to revert &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;the older version&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;commit-hash-of-reverted-commit&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
 
 
 
 
 
-```markdown
+&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;`&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;markdown
     * **Manually Resolve:**
-        * Delete the Git conflict markers (`&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;`, `=======`, `&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;`).
-        * Edit the code within that section. Since you&#39;re trying to undo, you&#39;ll typically want to delete the code that was introduced by the commit you&#39;re reverting (the part between `=======` and `&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;`) and keep the `HEAD` version, or combine them as needed to achieve the desired state of the file without the problematic changes.
+        * Delete the Git conflict markers &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;, &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;, &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;.
+        * Edit the code within that section. Since you&lt;span class=&quot;token string&quot;&gt;&#39;re trying to undo, you&#39;&lt;/span&gt;ll typically want to delete the code that was introduced by the commit you&#39;re reverting &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;the part between &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt; and &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; and keep the &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;HEAD&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt; version, or combine them as needed to achieve the desired state of the &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; without the problematic changes.
         * Save the file.
 
-    * **Stage the Resolved File:** After fixing the file and saving it, you must tell Git that you&#39;ve resolved the conflict:
+    * **Stage the Resolved File:** After fixing the &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; and saving it, you must tell Git that you&#39;ve resolved the conflict:
 
-        ```bash
-        git add &amp;lt;filename&amp;gt;
-        ```
-        Example: `git add script.js`
+        &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;`&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;filename&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+        &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;`&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;
+        Example: &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; script.js&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;
 
     * **Complete the Revert Commit:** Now that the conflict is staged, you can finalize the revert:
 
-        ```bash
-        git commit
-        ```
-        This will open the commit message editor. Save and exit as in Step 3 of the main tutorial.
+        &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;`&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit
+        &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;`&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;
+        This will &lt;span class=&quot;token function&quot;&gt;open&lt;/span&gt; the commit message editor. Save and &lt;span class=&quot;token builtin class-name&quot;&gt;exit&lt;/span&gt; as &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; Step &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt; of the main tutorial.
 
 
 
 Markdown
 
 
-#### Issue 2: &amp;quot;Nothing to commit&amp;quot; or &amp;quot;empty revert&amp;quot;
+&lt;span class=&quot;token comment&quot;&gt;#### Issue 2: &quot;Nothing to commit&quot; or &quot;empty revert&quot;&lt;/span&gt;
 
-This message appears if the commit you&#39;re trying to revert doesn&#39;t actually introduce any new changes, or if those changes have already been undone by a subsequent commit. Git determines there&#39;s nothing to revert.
+This message appears &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; the commit you&lt;span class=&quot;token string&quot;&gt;&#39;re trying to revert doesn&#39;&lt;/span&gt;t actually introduce any new changes, or &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; those changes have already been undone by a subsequent commit. Git determines there&lt;span class=&quot;token string&quot;&gt;&#39;s nothing to revert.
 
 * **What to do:**
-    * If you&#39;re sure there were changes, double-check your `git log` to ensure you picked the correct commit hash.
-    * If the changes truly vanished or were undone, you might not need to do anything.
+    * If you&#39;&lt;/span&gt;re sure there were changes, double-check your &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt; to ensure you picked the correct commit hash.
+    * If the changes truly vanished or were undone, you might not need to &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt; anything.
 
-#### Issue 3: Reverting a Range of Commits
+&lt;span class=&quot;token comment&quot;&gt;#### Issue 3: Reverting a Range of Commits&lt;/span&gt;
 
-If you want to undo several commits in a sequence, you can specify a range:
+If you want to undo several commits &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; a sequence, you can specify a range:
 
-```bash
-git revert &amp;lt;FIRST_COMMIT_HASH&amp;gt;..&amp;lt;LAST_COMMIT_HASH&amp;gt;
+&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;`&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; revert &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;FIRST_COMMIT_HASH&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;LAST_COMMIT_HASH&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
 
 
-This will revert each commit one by one. You might be prompted for a commit message for each revert, or you might hit merge conflicts for each.
-You can add --no-edit to use the default message for each revert without opening the editor:
+This will revert each commit one by one. You might be prompted &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; a commit message &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; each revert, or you might hit merge conflicts &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; each.
+You can &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; --no-edit to use the default message &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; each revert without opening the editor:
 Bash
-git revert --no-edit &amp;lt;FIRST_COMMIT_HASH&amp;gt;..&amp;lt;LAST_COMMIT_HASH&amp;gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; revert --no-edit &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;FIRST_COMMIT_HASH&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;LAST_COMMIT_HASH&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
 
 
-Or --no-commit to stage all reverts as one single new commit, which is often cleaner:
+Or --no-commit to stage all reverts as one single new commit, &lt;span class=&quot;token function&quot;&gt;which&lt;/span&gt; is often cleaner:
 Bash
-git revert --no-commit &amp;lt;FIRST_COMMIT_HASH&amp;gt;..&amp;lt;LAST_COMMIT_HASH&amp;gt;
-followed by a single git commit.
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; revert --no-commit &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;FIRST_COMMIT_HASH&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;LAST_COMMIT_HASH&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+followed by a single &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit.
 
 
 
-```markdown
-#### Issue 4: You Need to Go Back to an Exact Past State, Not Just Undo Specific Commits
+&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;`&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;markdown
+&lt;span class=&quot;token comment&quot;&gt;#### Issue 4: You Need to Go Back to an Exact Past State, Not Just Undo Specific Commits&lt;/span&gt;
 
-Sometimes, you don&#39;t just want to undo specific commits, but instead completely reset your branch to how it looked at a previous point in history, discarding everything that came after. This is where `git reset --hard` comes in.
+Sometimes, you don&#39;t just want to undo specific commits, but instead completely reset your branch to how it looked at a previous point &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; history, discarding everything that came after. This is where &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; reset --hard&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt; comes in.
 
-**WARNING:** `git reset --hard` rewrites history. If you&#39;ve pushed these commits, using `git reset --hard` followed by `git push --force` will cause problems for collaborators who have the older history. Only use this if you are absolutely sure you are the sole contributor or can coordinate with your team.
+**WARNING:** &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; reset --hard&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt; rewrites history. If you&#39;ve pushed these commits, using &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; reset --hard&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt; followed by &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; push --force&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt; will cause problems &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; collaborators &lt;span class=&quot;token function&quot;&gt;who&lt;/span&gt; have the older history. Only use this &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; you are absolutely sure you are the sole contributor or can coordinate with your team.
 
-* **How to do it (use with extreme caution):**
-    * **Find the desired commit hash:** Use `git log` to find the commit hash of the exact state you want your branch to be in.
+* **How to &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt; it &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use with extreme caution&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;:**
+    * **Find the desired commit hash:** Use &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt; to &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt; the commit &lt;span class=&quot;token builtin class-name&quot;&gt;hash&lt;/span&gt; of the exact state you want your branch to be in.
     * **Reset locally:**
-        ```bash
-        git reset --hard &amp;lt;commit-hash&amp;gt;
-        ```
+        &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;`&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; reset &lt;span class=&quot;token parameter variable&quot;&gt;--hard&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;commit-hash&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+        &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;`&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;
     * **Force Push:**
-        ```bash
-        git push --force
-        ```
+        &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;`&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; push &lt;span class=&quot;token parameter variable&quot;&gt;--force&lt;/span&gt;
+        &lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;`&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;
 
-`git revert` is a powerful and safe way to manage your project&#39;s history. Understanding how to use it, especially for handling conflicts, will save you a lot of headaches in your development journey!
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; revert` is a powerful and safe way to manage your project&#39;s history. Understanding how to use it, especially &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; handling conflicts, will save you a lot of headaches &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; your development journey&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 </content>
   </entry>
   <entry>
@@ -2122,36 +2066,32 @@ Sometimes, you don&#39;t just want to undo specific commits, but instead complet
 &lt;h3&gt;1. &lt;code&gt;git status&lt;/code&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Why you use it:&lt;/strong&gt; Before you do anything else, you&#39;ll want to know what&#39;s going on. &lt;code&gt;git status&lt;/code&gt; tells you which files you&#39;ve changed, which ones are new, and whether anything is ready to be saved. It&#39;s your quick check-in to see the current state of your working directory compared to your last saved version.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;How you use it:&lt;/strong&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Check the current status of your Git repository
-git status
-&lt;/code&gt;&lt;/pre&gt;
+&lt;li&gt;&lt;strong&gt;How you use it:&lt;/strong&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Check the current status of your Git repository&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; status&lt;/code&gt;&lt;/pre&gt;
 This command will give you a clear rundown of your changes.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;2. &lt;code&gt;git add .&lt;/code&gt; (or &lt;code&gt;git add &amp;lt;filename&amp;gt;&lt;/code&gt;)&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Why you use it:&lt;/strong&gt; When you make changes to your files, Git doesn&#39;t automatically track them for your next save. You need to explicitly tell Git which changes you want to include in your next &amp;quot;snapshot&amp;quot; (called a commit). Using &lt;code&gt;git add .&lt;/code&gt; is a common shortcut to add all modified and new files in your current directory and its subdirectories to the &amp;quot;staging area.&amp;quot; If you only want to add a specific file, you&#39;d use &lt;code&gt;git add &amp;lt;filename&amp;gt;&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;How you use it:&lt;/strong&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# To stage all modified and new files in the current directory and subdirectories
-git add .
+&lt;li&gt;&lt;strong&gt;How you use it:&lt;/strong&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# To stage all modified and new files in the current directory and subdirectories&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;
 
-# To stage only a specific file
-git add my-new-feature.js
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token comment&quot;&gt;# To stage only a specific file&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; my-new-feature.js&lt;/code&gt;&lt;/pre&gt;
 You&#39;ll often run &lt;code&gt;git status&lt;/code&gt; right after this to confirm what you&#39;ve staged.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;3. &lt;code&gt;git commit -m &amp;quot;Your descriptive message here&amp;quot;&lt;/code&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Why you use it:&lt;/strong&gt; A commit is a snapshot of your project at a specific point in time. It&#39;s like taking a picture of your entire project&#39;s state. The &lt;code&gt;-m&lt;/code&gt; flag lets you add a short, descriptive message about what changes you made in that commit. Good commit messages are essential – they help you (and others) understand the history of your project.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;How you use it:&lt;/strong&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Create a new commit with a descriptive message
-git commit -m &amp;quot;Add user login functionality and fix button styling&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;li&gt;&lt;strong&gt;How you use it:&lt;/strong&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Create a new commit with a descriptive message&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit &lt;span class=&quot;token parameter variable&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Add user login functionality and fix button styling&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 Make sure your message is clear and concise!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;4. &lt;code&gt;git push origin main&lt;/code&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Why you use it:&lt;/strong&gt; After you&#39;ve committed your changes locally, they&#39;re only on your computer. To share them with others or to back them up on a remote server (like GitHub, GitLab, or Bitbucket), you use &lt;code&gt;git push&lt;/code&gt;. &lt;code&gt;origin&lt;/code&gt; typically refers to the default remote repository where your project lives online, and &lt;code&gt;main&lt;/code&gt; is the name of the branch you&#39;re pushing to (it used to be called &lt;code&gt;master&lt;/code&gt;, but &lt;code&gt;main&lt;/code&gt; is the new standard).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;How you use it:&lt;/strong&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Push your committed changes from your local &#39;main&#39; branch to the &#39;origin&#39; remote
-git push origin main
-&lt;/code&gt;&lt;/pre&gt;
+&lt;li&gt;&lt;strong&gt;How you use it:&lt;/strong&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Push your committed changes from your local &#39;main&#39; branch to the &#39;origin&#39; remote&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; push origin main&lt;/code&gt;&lt;/pre&gt;
 If you&#39;re working on a different branch, you&#39;d replace &lt;code&gt;main&lt;/code&gt; with your branch name.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;A Few Extra Tips!&lt;/h3&gt;

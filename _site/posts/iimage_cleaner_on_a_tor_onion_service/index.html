@@ -6,6 +6,7 @@
     <title>Building a Privacy-First Image Cleaner on a Tor Onion Service | Beau Bremer&#39;s | Blog</title>
     <meta name="description" content="A deep dive into creating a secure image metadata cleaner hosted on a Tor Onion Service. Follow my journey with Python, Flask, Nginx, and Linux server administration to build a practical, privacy-focused tool." />
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="me" href="https://mastodon.social/@grimburly">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
@@ -120,7 +121,7 @@
 <li><strong>Nginx Proxies to Gunicorn:</strong> Based on its configuration, Nginx recognizes the /upload path and proxies the request to the Gunicorn server, which is listening on a local Unix socket (image_cleaner.sock).</li>
 </ol>
 <p>This is the exact Nginx location block that handles the magic. It forwards the request to the Gunicorn socket and adds several important headers so our Flask application knows about the original user.</p>
-<pre><code class="language-Nginx">
+<pre class="language-Nginx"><code class="language-Nginx">
 location /upload {
     proxy_pass http://unix:/home/userx/image_cleaner_app/image_cleaner.sock;
     proxy_set_header Host $host;
@@ -128,7 +129,6 @@ location /upload {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header X-Forwarded-Proto $scheme;
 }
-
 </code></pre>
 <ol start="4">
 <li><strong>Gunicorn Hands Off to Flask:</strong> Gunicorn receives the request and passes it to our Flask application (<code>image_cleaner.py</code>).</li>

@@ -6,6 +6,7 @@
     <title>Stop Worrying and Start Branching: A Guide to Safer Development with Git | Beau Bremer&#39;s | Blog</title>
     <meta name="description" content="Learn how to use Git branches to test new features without the fear of breaking your live website. A practical, step-by-step guide." />
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="me" href="https://mastodon.social/@grimburly">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
@@ -93,37 +94,33 @@
 <li>
 <p><strong>Start from a Clean Slate</strong></p>
 <p>Before starting anything new, I always make sure my local project is in sync with the latest version on GitHub.</p>
-<pre><code class="language-bash"># First, switch to your main branch
-git checkout main
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># First, switch to your main branch</span>
+<span class="token function">git</span> checkout main
 
-# Then, pull the latest changes from GitHub (your remote 'origin')
-git pull origin main
-</code></pre>
+<span class="token comment"># Then, pull the latest changes from GitHub (your remote 'origin')</span>
+<span class="token function">git</span> pull origin main</code></pre>
 </li>
 <li>
 <p><strong>Create Your New Branch</strong></p>
 <p>Next, I created a new branch and immediately switched to it. I gave it a descriptive name so I'd know its purpose. The <code>-b</code> flag handles both creating the branch and checking it out in one step.</p>
-<pre><code class="language-bash"># The -b flag creates a new branch and switches to it
-git checkout -b feature/contextual-header-link
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># The -b flag creates a new branch and switches to it</span>
+<span class="token function">git</span> checkout <span class="token parameter variable">-b</span> feature/contextual-header-link</code></pre>
 </li>
 <li>
 <p><strong>Do the Work</strong></p>
 <p>On this new, safe branch, I edited my layout file (<code>_includes/layouts/base.njk</code>) to add the logic for the contextual link. I made a few small, focused commits along the way to save my progress.</p>
-<pre><code class="language-bash"># Stage all modified files for the commit
-git add .
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Stage all modified files for the commit</span>
+<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
 
-# Commit your changes with a clear, descriptive message
-git commit -m &quot;feat: Make header link contextual&quot;
-</code></pre>
+<span class="token comment"># Commit your changes with a clear, descriptive message</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"feat: Make header link contextual"</span></code></pre>
 </li>
 <li>
 <p><strong>Open a Pull Request</strong></p>
 <p>Once I was happy with how it worked on my local machine, I pushed the new branch up to my GitHub repository.</p>
-<pre><code class="language-bash"># Push the new branch to your remote repo named 'origin'
-# The -u flag sets the upstream branch for future pushes
-git push -u origin feature/contextual-header-link
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Push the new branch to your remote repo named 'origin'</span>
+<span class="token comment"># The -u flag sets the upstream branch for future pushes</span>
+<span class="token function">git</span> push <span class="token parameter variable">-u</span> origin feature/contextual-header-link</code></pre>
 <p>Then, I went to my project on the GitHub website and opened a Pull Request (PR). A PR is a formal way of proposing your changes. It’s a request to pull your new code from the <code>feature/contextual-header-link</code> branch into the <code>main</code> branch.</p>
 </li>
 <li>

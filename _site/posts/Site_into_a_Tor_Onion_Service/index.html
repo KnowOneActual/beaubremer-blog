@@ -6,6 +6,7 @@
     <title>My Weekend Project: Turning My Personal Site into a Tor Onion Service | Beau Bremer&#39;s | Blog</title>
     <meta name="description" content="A step-by-step guide to making your website accessible on the Tor network using a free Google Cloud server. It&#39;s easier than you think!" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="me" href="https://mastodon.social/@grimburly">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
@@ -109,36 +110,31 @@
 <ol>
 <li><a href="https://cloud.google.com/sdk/docs/install">Install the gcloud CLI</a> on your local computer.</li>
 <li>Open your terminal and run <code>gcloud init</code> to log in and select your project.</li>
-<li>Connect to your VM with this command (replace with your VM's name and zone):<pre><code class="language-bash">gcloud compute ssh your-vm-name --zone its-zone
-</code></pre>
+<li>Connect to your VM with this command (replace with your VM's name and zone):<pre class="language-bash"><code class="language-bash">gcloud compute <span class="token function">ssh</span> your-vm-name <span class="token parameter variable">--zone</span> its-zone</code></pre>
 </li>
 </ol>
 <h4>Step 3: Install the Software</h4>
 <p>Once you're connected, run these commands to install everything you need.</p>
-<pre><code class="language-bash"># Update the server and install Nginx (web server), Tor, and Git
-sudo apt update &amp;&amp; sudo apt upgrade -y
-sudo apt install git nginx tor -y
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Update the server and install Nginx (web server), Tor, and Git</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> upgrade <span class="token parameter variable">-y</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">git</span> nginx tor <span class="token parameter variable">-y</span></code></pre>
 <h4>Step 4: Add Your Website Files</h4>
 <p>Now, pull your website's code from its repository and place it where Nginx can find it.</p>
-<pre><code class="language-bash"># Clone your site (use your own repo URL)
-git clone [https://github.com/your-username/your-repo.git](https://github.com/your-username/your-repo.git)
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Clone your site (use your own repo URL)</span>
+<span class="token function">git</span> clone <span class="token punctuation">[</span>https://github.com/your-username/your-repo.git<span class="token punctuation">]</span><span class="token punctuation">(</span>https://github.com/your-username/your-repo.git<span class="token punctuation">)</span>
 
-# Move the files to the web server's public directory
-sudo cp -r ~/your-repo/* /var/www/html/
-</code></pre>
+<span class="token comment"># Move the files to the web server's public directory</span>
+<span class="token function">sudo</span> <span class="token function">cp</span> <span class="token parameter variable">-r</span> ~/your-repo/* /var/www/html/</code></pre>
 <h4>Step 5: Configure Tor and Get Your Address!</h4>
 <p>This is the magic step. You just need to add two lines to Tor's configuration file.</p>
-<pre><code class="language-bash"># This command adds the necessary lines to the end of the config file
-echo -e &quot;HiddenServiceDir /var/lib/tor/hidden_service/\nHiddenServicePort 80 127.0.0.1:80&quot; | sudo tee -a /etc/tor/torrc
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># This command adds the necessary lines to the end of the config file</span>
+<span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"HiddenServiceDir /var/lib/tor/hidden_service/<span class="token entity" title="\n">\n</span>HiddenServicePort 80 127.0.0.1:80"</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> <span class="token parameter variable">-a</span> /etc/tor/torrc
 
-# Restart the services to apply the changes
-sudo systemctl restart nginx
-sudo systemctl restart tor
-</code></pre>
+<span class="token comment"># Restart the services to apply the changes</span>
+<span class="token function">sudo</span> systemctl restart nginx
+<span class="token function">sudo</span> systemctl restart tor</code></pre>
 <p>Wait about a minute, then run this command to see your new address:</p>
-<pre><code class="language-bash">sudo cat /var/lib/tor/hidden_service/hostname
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">cat</span> /var/lib/tor/hidden_service/hostname</code></pre>
 <p>Copy that long <code>.onion</code> address, paste it into the <a href="https://www.torproject.org/download/">Tor Browser</a>, and you should see your site!</p>
 <h3>The Pitfalls: A Warning for the Weary</h3>
 <p>Now, let's be honest. The process above looks simple, but getting there was a journey. Here's what I learned the hard way:</p>

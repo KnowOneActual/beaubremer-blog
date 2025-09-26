@@ -6,6 +6,7 @@
     <title>Terminal Tips: A Guide to Zsh Aliases | Beau Bremer&#39;s | Blog</title>
     <meta name="description" content="A practical guide to creating and using Zsh aliases to save time, reduce typos, and streamline your command-line workflow." />
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="me" href="https://mastodon.social/@grimburly">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
@@ -85,12 +86,10 @@
 <h4>1. Open your <code>.zshrc</code> file</h4>
 <p>Your <code>.zshrc</code> file is a plain text file in your home directory (<code>~/</code>). Zsh reads this file every time it starts a new session. You can open it with any text editor you like.</p>
 <p>For example, using <code>nano</code>:</p>
-<pre><code class="language-bash">nano ~/.zshrc
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">nano</span> ~/.zshrc</code></pre>
 <h4>2. Add your alias</h4>
 <p>It's good practice to add new aliases at the end of the file. The syntax is straightforward:</p>
-<pre><code class="language-bash">alias shortcut=&quot;your_full_command&quot;
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">alias</span> <span class="token assign-left variable">shortcut</span><span class="token operator">=</span><span class="token string">"your_full_command"</span></code></pre>
 <p>A couple of things to keep in mind:</p>
 <ul>
 <li><strong>Use quotes.</strong> Always wrap the whole command in double quotes (<code>&quot;</code>). This makes sure that commands with spaces or special characters are handled correctly.</li>
@@ -99,8 +98,7 @@
 </ul>
 <h4>3. Save and reload your configuration</h4>
 <p>Once you've added your aliases, save the file. For the changes to take effect, you need to reload the configuration. You can either close and reopen your terminal or run the following command:</p>
-<pre><code class="language-bash">source ~/.zshrc
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.zshrc</code></pre>
 <p>Your new alias is now ready to use.</p>
 <h3>Managing Your Aliases</h3>
 <p>Once you start creating aliases, you may want to view a list of them or remove one that you no longer need.</p>
@@ -111,29 +109,26 @@
 <h3>Practical Examples</h3>
 <p>Here are a few common aliases to get you started. Feel free to add these to your own <code>.zshrc</code> file.</p>
 <h4>Navigation Shortcuts</h4>
-<pre><code class="language-bash">alias ..=&quot;cd ..&quot;           # Go up one directory
-alias ...=&quot;cd ../..&quot;         # Go up two directories
-alias ....=&quot;cd ../../..&quot;     # Go up three directories
-alias home=&quot;cd ~&quot;          # Go to your home directory
-alias dev=&quot;cd ~/Developer&quot; # A shortcut to your development folder
-alias dl=&quot;cd ~/Downloads&quot;  # A shortcut to your downloads folder
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">alias</span> <span class="token punctuation">..</span><span class="token operator">=</span><span class="token string">"cd .."</span>           <span class="token comment"># Go up one directory</span>
+<span class="token builtin class-name">alias</span> <span class="token punctuation">..</span>.<span class="token operator">=</span><span class="token string">"cd ../.."</span>         <span class="token comment"># Go up two directories</span>
+<span class="token builtin class-name">alias</span> <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token operator">=</span><span class="token string">"cd ../../.."</span>     <span class="token comment"># Go up three directories</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">home</span><span class="token operator">=</span><span class="token string">"cd ~"</span>          <span class="token comment"># Go to your home directory</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">dev</span><span class="token operator">=</span><span class="token string">"cd ~/Developer"</span> <span class="token comment"># A shortcut to your development folder</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">dl</span><span class="token operator">=</span><span class="token string">"cd ~/Downloads"</span>  <span class="token comment"># A shortcut to your downloads folder</span></code></pre>
 <h4>Git Aliases</h4>
-<pre><code class="language-bash">alias gs=&quot;git status&quot;           # Check Git status
-alias ga=&quot;git add .&quot;            # Add all changes
-alias gc=&quot;git commit -m&quot;        # Commit with a message (e.g., gc &quot;Initial commit&quot;)
-alias gp=&quot;git push&quot;             # Push to origin
-alias pull=&quot;git pull&quot;           # Pull from origin
-alias gl=&quot;git log --oneline --decorate --all --graph&quot; # A decorated Git log
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">alias</span> <span class="token assign-left variable">gs</span><span class="token operator">=</span><span class="token string">"git status"</span>           <span class="token comment"># Check Git status</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ga</span><span class="token operator">=</span><span class="token string">"git add ."</span>            <span class="token comment"># Add all changes</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">gc</span><span class="token operator">=</span><span class="token string">"git commit -m"</span>        <span class="token comment"># Commit with a message (e.g., gc "Initial commit")</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">gp</span><span class="token operator">=</span><span class="token string">"git push"</span>             <span class="token comment"># Push to origin</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">pull</span><span class="token operator">=</span><span class="token string">"git pull"</span>           <span class="token comment"># Pull from origin</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">gl</span><span class="token operator">=</span><span class="token string">"git log --oneline --decorate --all --graph"</span> <span class="token comment"># A decorated Git log</span></code></pre>
 <h4>System &amp; Utility Aliases</h4>
-<pre><code class="language-bash">alias ls=&quot;ls -F&quot;                  # Add a character to show file type (e.g., / for directories)
-alias ll=&quot;ls -lh&quot;                 # List in long format with human-readable sizes
-alias la=&quot;ls -la&quot;                 # List all files, including hidden ones
-alias update=&quot;sudo apt update &amp;&amp; sudo apt upgrade -y&quot; # For Debian/Ubuntu systems
-alias sz=&quot;source ~/.zshrc&quot;        # Quickly reload your Zsh config
-alias myip=&quot;curl ipinfo.io/ip&quot;    # Get your external IP address
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">alias</span> <span class="token assign-left variable">ls</span><span class="token operator">=</span><span class="token string">"ls -F"</span>                  <span class="token comment"># Add a character to show file type (e.g., / for directories)</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ll</span><span class="token operator">=</span><span class="token string">"ls -lh"</span>                 <span class="token comment"># List in long format with human-readable sizes</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">la</span><span class="token operator">=</span><span class="token string">"ls -la"</span>                 <span class="token comment"># List all files, including hidden ones</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">update</span><span class="token operator">=</span><span class="token string">"sudo apt update &amp;&amp; sudo apt upgrade -y"</span> <span class="token comment"># For Debian/Ubuntu systems</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">sz</span><span class="token operator">=</span><span class="token string">"source ~/.zshrc"</span>        <span class="token comment"># Quickly reload your Zsh config</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">myip</span><span class="token operator">=</span><span class="token string">"curl ipinfo.io/ip"</span>    <span class="token comment"># Get your external IP address</span></code></pre>
 <h3>Make Your Terminal Your Own</h3>
 <p>Aliases are a simple but powerful way to make your time in the terminal more productive. Start with a few of these examples, and you'll soon find yourself creating your own shortcuts for the commands you use most.</p>
 

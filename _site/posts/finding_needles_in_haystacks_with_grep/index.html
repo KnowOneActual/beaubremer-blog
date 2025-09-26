@@ -6,6 +6,7 @@
     <title>Terminal Tips: Finding Needles in Haystacks with `grep` | Beau Bremer&#39;s | Blog</title>
     <meta name="description" content="Learn how to use the powerful `grep` command to search for text within files and command outputs, making it easy to find exactly what you need." />
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="me" href="https://mastodon.social/@grimburly">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
@@ -80,15 +81,13 @@
 <p>The most basic way to use <code>grep</code> is to give it a piece of text to search for (the &quot;pattern&quot;) and a file to search in.</p>
 <p><code>grep &quot;search_term&quot; filename.txt</code></p>
 <p>Let's say you have a file called <code>shopping_list.txt</code> with the following contents:</p>
-<pre><code class="language-text">- Apples
+<pre class="language-text"><code class="language-text">- Apples
 - Milk
 - Bread
 - Orange Juice
-- butter
-</code></pre>
+- butter</code></pre>
 <p>If you want to find the line with &quot;Milk&quot; on it, you would run:</p>
-<pre><code class="language-bash">grep &quot;Milk&quot; shopping_list.txt
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">grep</span> <span class="token string">"Milk"</span> shopping_list.txt</code></pre>
 <p>And the terminal would instantly show you the matching line:</p>
 <pre><code>Milk
 </code></pre>
@@ -98,13 +97,11 @@
 <p>A few simple flags can completely change how <code>grep</code> behaves, making your searches much more effective.</p>
 <h4>Ignore Case (<code>-i</code>)</h4>
 <p>What if you searched for &quot;butter&quot; but forgot it was lowercase in the file? By default, <code>grep</code> is case-sensitive. The <code>-i</code> flag tells it to ignore the case.</p>
-<pre><code class="language-bash">grep -i &quot;butter&quot; shopping_list.txt
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">grep</span> <span class="token parameter variable">-i</span> <span class="token string">"butter"</span> shopping_list.txt</code></pre>
 <p>This will find &quot;butter,&quot; &quot;Butter,&quot; or even &quot;bUtTeR.&quot;</p>
 <h4>Invert the Match (<code>-v</code>)</h4>
 <p>Sometimes it's more useful to find what <em>doesn't</em> match. The <code>-v</code> flag inverts the search, showing you every line that <strong>does not</strong> contain the pattern. For example, to see everything on your shopping list that <em>isn't</em> milk:</p>
-<pre><code class="language-bash">grep -v &quot;Milk&quot; shopping_list.txt
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">grep</span> <span class="token parameter variable">-v</span> <span class="token string">"Milk"</span> shopping_list.txt</code></pre>
 <p>The output would be:</p>
 <pre><code>- Apples
 - Bread
@@ -114,16 +111,14 @@
 <p>This is incredibly useful for filtering out noise, like commented-out lines in a configuration file.</p>
 <h4>Search in Every File (<code>-r</code>)</h4>
 <p>Imagine you know you have an API key stored in a configuration file somewhere in a project folder, but you don't remember which one. The <code>-r</code> flag performs a <strong>recursive</strong> search, meaning it will look inside the current directory and all subdirectories for your term.</p>
-<pre><code class="language-bash"># Don't run this in your home directory unless you have time to wait!
-grep -r &quot;API_KEY&quot; ./my_project/
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Don't run this in your home directory unless you have time to wait!</span>
+<span class="token function">grep</span> <span class="token parameter variable">-r</span> <span class="token string">"API_KEY"</span> ./my_project/</code></pre>
 <p><code>grep</code> will then print out the filename (and path) for every match it finds, showing you exactly where your key is.</p>
 <hr>
 <h3>Combining with Other Tools</h3>
 <p>As we saw in the <code>strings</code> post <a href="/posts/uncovering_hidden_text_with_strings/">link</a>, the real magic of the terminal is combining commands with the pipe (<code>|</code>) symbol. This sends the output of one command directly to the input of the next.</p>
 <p>Let's go back to our example of looking inside the <code>ls</code> command.</p>
-<pre><code class="language-bash">strings /bin/ls | grep &quot;GLIBC&quot;
-</code></pre>
+<pre class="language-bash"><code class="language-bash">strings /bin/ls <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"GLIBC"</span></code></pre>
 <p>Here's what happens:</p>
 <ol>
 <li><code>strings /bin/ls</code> runs first, pulling out all the readable text from the file.</li>
@@ -137,13 +132,11 @@ grep -r &quot;API_KEY&quot; ./my_project/
 <ul>
 <li>
 <p>To find lines that <strong>start with</strong> a pattern, use the <code>^</code> symbol. For example, to find all comments in a file that start with <code>#</code>:</p>
-<pre><code class="language-bash">grep &quot;^#&quot; config.ini
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">grep</span> <span class="token string">"^#"</span> config.ini</code></pre>
 </li>
 <li>
 <p>To find lines that <strong>end with</strong> a pattern, use the <code>$</code> symbol.</p>
-<pre><code class="language-bash">grep &quot;.com$&quot; urls.txt
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">grep</span> <span class="token string">".com$"</span> urls.txt</code></pre>
 </li>
 </ul>
 <p>Learning just these two symbols allows you to be much more specific in your searches.</p>

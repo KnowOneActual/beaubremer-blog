@@ -6,6 +6,7 @@
     <title>Okay, I Have the Hacker Mindset. Now What? | Beau Bremer&#39;s | Blog</title>
     <meta name="description" content="A practical guide with simple projects for anyone ready to turn the hacker mindset into action. Learn to tinker with recipes, code, and websites." />
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="me" href="https://mastodon.social/@grimburly">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
@@ -118,28 +119,27 @@
 </li>
 <li>
 <p><strong>Write the &quot;Spell&quot; (The Code):</strong> This logic translates into Python. Save this as <code>rename_files.py</code> in a folder with a <em>copy</em> of your photos.</p>
-<pre><code class="language-python:rename_files.py">import os
+<pre class="language-python:rename_files.py"><code class="language-python:rename_files.py">import os
 
-# The folder with your photos. The &quot;.&quot; means &quot;this current folder&quot;.
-folder_path = &quot;.&quot;
+# The folder with your photos. The "." means "this current folder".
+folder_path = "."
 # What you want the new name to be.
-new_name_base = &quot;Vacation_2025_&quot;
+new_name_base = "Vacation_2025_"
 # A counter to make each filename unique.
 counter = 1
 
 # Loop through every file in the folder.
 for filename in os.listdir(folder_path):
     # Check if the file is a JPG image.
-    if filename.endswith(&quot;.JPG&quot;):
+    if filename.endswith(".JPG"):
         # Create the new filename.
-        new_filename = f&quot;{new_name_base}{counter}.JPG&quot;
+        new_filename = f"{new_name_base}{counter}.JPG"
         # Rename the file.
         os.rename(filename, new_filename)
         # Add 1 to the counter for the next loop.
         counter += 1
 
-print(&quot;File renaming complete!&quot;)
-</code></pre>
+print("File renaming complete!")</code></pre>
 </li>
 <li>
 <p><strong>Run the Experiment:</strong> <strong>Important:</strong> Test this on a <em>copy</em> of your files first! Open your computer's command line or terminal, navigate to that folder, and type <code>python rename_files.py</code>. Press Enter.</p>

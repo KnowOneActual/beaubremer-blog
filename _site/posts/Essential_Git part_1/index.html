@@ -6,6 +6,7 @@
     <title>Essential Git: Part 1 | Beau Bremer&#39;s | Blog</title>
     <meta name="description" content="New to Git? This friendly guide introduces the essential commands you&#39;ll use daily to track changes, save your work, and collaborate on code projects." />
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="me" href="https://mastodon.social/@grimburly">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
@@ -58,36 +59,32 @@
 <h3>1. <code>git status</code></h3>
 <ul>
 <li><strong>Why you use it:</strong> Before you do anything else, you'll want to know what's going on. <code>git status</code> tells you which files you've changed, which ones are new, and whether anything is ready to be saved. It's your quick check-in to see the current state of your working directory compared to your last saved version.</li>
-<li><strong>How you use it:</strong><pre><code class="language-bash"># Check the current status of your Git repository
-git status
-</code></pre>
+<li><strong>How you use it:</strong><pre class="language-bash"><code class="language-bash"><span class="token comment"># Check the current status of your Git repository</span>
+<span class="token function">git</span> status</code></pre>
 This command will give you a clear rundown of your changes.</li>
 </ul>
 <h3>2. <code>git add .</code> (or <code>git add &lt;filename&gt;</code>)</h3>
 <ul>
 <li><strong>Why you use it:</strong> When you make changes to your files, Git doesn't automatically track them for your next save. You need to explicitly tell Git which changes you want to include in your next &quot;snapshot&quot; (called a commit). Using <code>git add .</code> is a common shortcut to add all modified and new files in your current directory and its subdirectories to the &quot;staging area.&quot; If you only want to add a specific file, you'd use <code>git add &lt;filename&gt;</code>.</li>
-<li><strong>How you use it:</strong><pre><code class="language-bash"># To stage all modified and new files in the current directory and subdirectories
-git add .
+<li><strong>How you use it:</strong><pre class="language-bash"><code class="language-bash"><span class="token comment"># To stage all modified and new files in the current directory and subdirectories</span>
+<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
 
-# To stage only a specific file
-git add my-new-feature.js
-</code></pre>
+<span class="token comment"># To stage only a specific file</span>
+<span class="token function">git</span> <span class="token function">add</span> my-new-feature.js</code></pre>
 You'll often run <code>git status</code> right after this to confirm what you've staged.</li>
 </ul>
 <h3>3. <code>git commit -m &quot;Your descriptive message here&quot;</code></h3>
 <ul>
 <li><strong>Why you use it:</strong> A commit is a snapshot of your project at a specific point in time. It's like taking a picture of your entire project's state. The <code>-m</code> flag lets you add a short, descriptive message about what changes you made in that commit. Good commit messages are essential – they help you (and others) understand the history of your project.</li>
-<li><strong>How you use it:</strong><pre><code class="language-bash"># Create a new commit with a descriptive message
-git commit -m &quot;Add user login functionality and fix button styling&quot;
-</code></pre>
+<li><strong>How you use it:</strong><pre class="language-bash"><code class="language-bash"><span class="token comment"># Create a new commit with a descriptive message</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Add user login functionality and fix button styling"</span></code></pre>
 Make sure your message is clear and concise!</li>
 </ul>
 <h3>4. <code>git push origin main</code></h3>
 <ul>
 <li><strong>Why you use it:</strong> After you've committed your changes locally, they're only on your computer. To share them with others or to back them up on a remote server (like GitHub, GitLab, or Bitbucket), you use <code>git push</code>. <code>origin</code> typically refers to the default remote repository where your project lives online, and <code>main</code> is the name of the branch you're pushing to (it used to be called <code>master</code>, but <code>main</code> is the new standard).</li>
-<li><strong>How you use it:</strong><pre><code class="language-bash"># Push your committed changes from your local 'main' branch to the 'origin' remote
-git push origin main
-</code></pre>
+<li><strong>How you use it:</strong><pre class="language-bash"><code class="language-bash"><span class="token comment"># Push your committed changes from your local 'main' branch to the 'origin' remote</span>
+<span class="token function">git</span> push origin main</code></pre>
 If you're working on a different branch, you'd replace <code>main</code> with your branch name.</li>
 </ul>
 <h3>A Few Extra Tips!</h3>

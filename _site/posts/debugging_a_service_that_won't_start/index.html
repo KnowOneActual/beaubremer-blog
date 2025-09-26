@@ -6,6 +6,7 @@
     <title>When a Service Plays Dead: A Sysadmin&#39;s Debugging Guide | Beau Bremer&#39;s | Blog</title>
     <meta name="description" content="A step-by-step guide to troubleshooting a Linux service that won&#39;t start, using a real-world example with a stubborn Tor Onion Service." />
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="me" href="https://mastodon.social/@grimburly">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
@@ -81,36 +82,30 @@
 <hr>
 <h3>The Problem: A Service Playing Dead</h3>
 <p>The initial symptom was simple: the onion site was down. After connecting to the server, the first command in any admin's toolkit is <code>systemctl status</code>.</p>
-<pre><code class="language-bash">sudo systemctl status tor
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> systemctl status tor</code></pre>
 <p>The output holds the first major clue: <strong><code>Active: active (exited)</code></strong>. For a service that's supposed to run continuously, this is a red flag. It means the service started, did something, and then immediately shut down without an obvious error. This is far trickier to debug than a simple crash.</p>
 <hr>
 <h3>The Diagnostic Journey: Peeling the Onion</h3>
 <p>When the main status is unhelpful, it's time to dig deeper. Here's a reliable path to follow, moving from the most general to the most specific tests.</p>
 <h4>1. Check the System Logs (<code>journalctl</code>)</h4>
 <p>The next logical step is to check the system's journal for the service. The <code>-e</code> flag jumps you to the end of the log, which is where the most recent events are.</p>
-<pre><code class="language-bash">sudo journalctl -u tor -e
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> journalctl <span class="token parameter variable">-u</span> tor <span class="token parameter variable">-e</span></code></pre>
 <p>Unfortunately, the logs were as unhelpful as the status. They only confirmed that the service was starting and stopping, without providing any application-specific errors. This tells us the problem likely isn't with <code>systemd</code> itself, but with the Tor application.</p>
 <h4>2. Check the Application Logs</h4>
 <p>Most applications write their own, more detailed logs. For Tor, this is usually <code>/var/log/tor/notices.log</code>.</p>
-<pre><code class="language-bash">sudo cat /var/log/tor/notices.log
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">cat</span> /var/log/tor/notices.log</code></pre>
 <p>The output here provides another huge clue: <strong><code>No such file or directory</code></strong>. A service that can't create its own log file is a strong sign of a <strong>file permissions problem</strong>. Even after trying to fix ownership with <code>chown</code>, the issue persisted, suggesting the problem was somewhere else.</p>
 <h4>3. Inspect the Service File</h4>
 <p>Sometimes the investigation leads to a surprising discovery. After reinstalling the <code>tor</code> package didn't help, the next place to look was the <code>systemd</code> service file itself.</p>
-<pre><code class="language-bash">cat /lib/systemd/system/tor.service
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">cat</span> /lib/systemd/system/tor.service</code></pre>
 <p>Somehow, the file had been replaced with a generic placeholder. A critical line, <code>ExecStart=/bin/true</code>, was telling the service to run a command that does nothing and immediately exits successfully. After replacing the file's contents with the correct, default configuration, a real error message finally appeared.</p>
 <h4>4. Verify the Configuration</h4>
 <p>With the service file fixed, <code>systemctl restart tor</code> now failed with a proper error. This allows us to move on to verifying Tor's own configuration.</p>
-<pre><code class="language-bash">sudo -u debian-tor tor --verify-config
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token parameter variable">-u</span> debian-tor tor --verify-config</code></pre>
 <p>This command passed, indicating that <code>/etc/tor/torrc</code> was syntactically correct. This is a classic troubleshooting moment: the config file is valid, but the service still won't run. The problem isn't the file's syntax, but <em>what the file is telling the service to do</em>.</p>
 <h4>5. Run the Service Manually (The Breakthrough)</h4>
 <p>This is often the final and most critical step. Bypassing <code>systemd</code> and running the Tor startup command directly, as the correct user, lets you see the live output.</p>
-<pre><code class="language-bash">sudo -u debian-tor /usr/bin/tor --defaults-torrc /usr/share/tor/tor-service-defaults-torrc -f /etc/tor/torrc --RunAsDaemon 0
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token parameter variable">-u</span> debian-tor /usr/bin/tor --defaults-torrc /usr/share/tor/tor-service-defaults-torrc <span class="token parameter variable">-f</span> /etc/tor/torrc <span class="token parameter variable">--RunAsDaemon</span> <span class="token number">0</span></code></pre>
 <p>And there it was, in plain text:</p>
 <blockquote>
 <p><code>[warn] Failed to parse/validate config: Problem with User value. See logs for details.</code></p>
