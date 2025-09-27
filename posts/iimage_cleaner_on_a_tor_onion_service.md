@@ -13,7 +13,7 @@ tags:
 
 ## Building a Privacy-First Image Cleaner
 
-In today's digital world, privacy is paramount. Every photo we take with our smartphones or digital cameras often contains hidden data—known as EXIF metadata—that can reveal sensitive information like our location, the device model, and even the exact time a picture was taken. Sharing these images online without cleaning them can inadvertently expose personal details.
+In today's digital world, privacy is paramount. Every photo we take with our smartphones or digital cameras often contains hidden data—known as EXIF metadata—that can reveal sensitive information, such as our location, the device model, and even the exact time a picture was taken. Sharing these images online without cleaning them can inadvertently expose personal details.
 
 This post details how I built a privacy-focused web service to solve this problem: a **Secure Image Cleaner** hosted entirely on a Tor Onion Service. You can try it out here (requires Tor Browser): [http://wb7kwfl6bygqg4zh2fdk7jk6v2ab3bhmjo63xtdm2nltl33vuwoqlkqd.onion/cleaner.html](http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html). This project was a great way to dive deep into Tor, server administration, and secure web development.
 
@@ -41,7 +41,7 @@ Building an image cleaner on this foundation felt like a natural extension of th
 
 Creating this service involved a stack chosen specifically for functionality and privacy.
 
-Here’s a breakdown of the core components:
+Here's a breakdown of the core components:
 
 * **Tor Onion Service:** The entry point for users, providing anonymity and encryption.
 * **Google Cloud Platform (GCP) e2-micro VM:** The hosting environment, leveraging the "Always Free" tier for cost-effectiveness.
@@ -64,6 +64,7 @@ The process for a user is simple, but the backend is a finely tuned orchestratio
 3.  **Nginx Proxies to Gunicorn:** Based on its configuration, Nginx recognizes the /upload path and proxies the request to the Gunicorn server, which is listening on a local Unix socket (image_cleaner.sock).
 
 This is the exact Nginx location block that handles the magic. It forwards the request to the Gunicorn socket and adds several important headers so our Flask application knows about the original user.
+
 ```Nginx
 
 location /upload {
@@ -117,5 +118,5 @@ This Secure Image Cleaner is a proof-of-concept, but it could easily be expanded
 * A cleaner user interface.
 * An option to simply view metadata before removal.
 
-This was an journey into building a privacy-conscious online tool. It's a testament to the power of open-source technologies like Tor, Nginx, and Flask to create secure and useful applications. Give the **[Image Cleaner](http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html)** (Note: Open in a Tor Browser) a try and let me know what you think!
+This was a journey into building a privacy-conscious online tool. It's a testament to the power of open-source technologies, such as Tor, Nginx, and Flask, in creating secure and useful applications. Give the **[Image Cleaner](http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html)** (Note: Open in a Tor Browser) a try and let me know what you think!
 

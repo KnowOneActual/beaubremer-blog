@@ -89,8 +89,7 @@
 <p>If you want to find the line with &quot;Milk&quot; on it, you would run:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">grep</span> <span class="token string">"Milk"</span> shopping_list.txt</code></pre>
 <p>And the terminal would instantly show you the matching line:</p>
-<pre><code>Milk
-</code></pre>
+<pre class="language-text"><code class="language-text">Milk</code></pre>
 <p>Simple, right? But its real power comes from a handful of options and its ability to work with other tools.</p>
 <hr>
 <h3>Making <code>grep</code> More Powerful</h3>
@@ -103,11 +102,10 @@
 <p>Sometimes it's more useful to find what <em>doesn't</em> match. The <code>-v</code> flag inverts the search, showing you every line that <strong>does not</strong> contain the pattern. For example, to see everything on your shopping list that <em>isn't</em> milk:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">grep</span> <span class="token parameter variable">-v</span> <span class="token string">"Milk"</span> shopping_list.txt</code></pre>
 <p>The output would be:</p>
-<pre><code>- Apples
+<pre class="language-text"><code class="language-text">- Apples
 - Bread
 - Orange Juice
-- butter
-</code></pre>
+- butter</code></pre>
 <p>This is incredibly useful for filtering out noise, like commented-out lines in a configuration file.</p>
 <h4>Search in Every File (<code>-r</code>)</h4>
 <p>Imagine you know you have an API key stored in a configuration file somewhere in a project folder, but you don't remember which one. The <code>-r</code> flag performs a <strong>recursive</strong> search, meaning it will look inside the current directory and all subdirectories for your term.</p>

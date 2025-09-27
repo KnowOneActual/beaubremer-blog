@@ -98,8 +98,7 @@
 &lt;p&gt;If you want to find the line with &amp;quot;Milk&amp;quot; on it, you would run:&lt;/p&gt;
 &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Milk&quot;&lt;/span&gt; shopping_list.txt&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And the terminal would instantly show you the matching line:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Milk
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Milk&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Simple, right? But its real power comes from a handful of options and its ability to work with other tools.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;Making &lt;code&gt;grep&lt;/code&gt; More Powerful&lt;/h3&gt;
@@ -112,11 +111,10 @@
 &lt;p&gt;Sometimes it&#39;s more useful to find what &lt;em&gt;doesn&#39;t&lt;/em&gt; match. The &lt;code&gt;-v&lt;/code&gt; flag inverts the search, showing you every line that &lt;strong&gt;does not&lt;/strong&gt; contain the pattern. For example, to see everything on your shopping list that &lt;em&gt;isn&#39;t&lt;/em&gt; milk:&lt;/p&gt;
 &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Milk&quot;&lt;/span&gt; shopping_list.txt&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The output would be:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- Apples
+&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- Apples
 - Bread
 - Orange Juice
-- butter
-&lt;/code&gt;&lt;/pre&gt;
+- butter&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This is incredibly useful for filtering out noise, like commented-out lines in a configuration file.&lt;/p&gt;
 &lt;h4&gt;Search in Every File (&lt;code&gt;-r&lt;/code&gt;)&lt;/h4&gt;
 &lt;p&gt;Imagine you know you have an API key stored in a configuration file somewhere in a project folder, but you don&#39;t remember which one. The &lt;code&gt;-r&lt;/code&gt; flag performs a &lt;strong&gt;recursive&lt;/strong&gt; search, meaning it will look inside the current directory and all subdirectories for your term.&lt;/p&gt;
@@ -186,11 +184,10 @@
 &lt;pre class=&quot;language-Bash&quot;&gt;&lt;code class=&quot;language-Bash&quot;&gt;# Show the location of each string in hexadecimal format 
 strings -t x /bin/ls&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now the output will look something like this, with the file location on the left:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt; 2d98 /lib64/ld-linux-x86-64.so.2 
+&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt; 2d98 /lib64/ld-linux-x86-64.so.2 
  301b GLIBC_2.2.5 
  30c8 __cxa_finalize 
- ... 
-&lt;/code&gt;&lt;/pre&gt;
+ ... &lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;Combine with Other Tools&lt;/h4&gt;
 &lt;p&gt;The real power of terminal commands comes from combining them. The output of strings can be long, so you can &amp;quot;pipe&amp;quot; it to another command like grep to search for precisely what you need. The pipe symbol (|) sends the output of one command to the input of the next.&lt;/p&gt;
 &lt;p&gt;For example, to search for any mention of &amp;quot;GLIBC&amp;quot; inside the ls binary, you could run:&lt;/p&gt;
@@ -369,7 +366,7 @@ nmap -A scanme.nmap.org &lt;/code&gt;&lt;/pre&gt;
     <updated>2025-08-28T00:00:00Z</updated>
     <id>https://blog.beaubremer.com/posts/iimage_cleaner_on_a_tor_onion_service/</id>
     <content xml:lang="en" type="html">&lt;h2&gt;Building a Privacy-First Image Cleaner&lt;/h2&gt;
-&lt;p&gt;In today&#39;s digital world, privacy is paramount. Every photo we take with our smartphones or digital cameras often contains hidden data—known as EXIF metadata—that can reveal sensitive information like our location, the device model, and even the exact time a picture was taken. Sharing these images online without cleaning them can inadvertently expose personal details.&lt;/p&gt;
+&lt;p&gt;In today&#39;s digital world, privacy is paramount. Every photo we take with our smartphones or digital cameras often contains hidden data—known as EXIF metadata—that can reveal sensitive information, such as our location, the device model, and even the exact time a picture was taken. Sharing these images online without cleaning them can inadvertently expose personal details.&lt;/p&gt;
 &lt;p&gt;This post details how I built a privacy-focused web service to solve this problem: a &lt;strong&gt;Secure Image Cleaner&lt;/strong&gt; hosted entirely on a Tor Onion Service. You can try it out here (requires Tor Browser): &lt;a href=&quot;http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html&quot;&gt;http://wb7kwfl6bygqg4zh2fdk7jk6v2ab3bhmjo63xtdm2nltl33vuwoqlkqd.onion/cleaner.html&lt;/a&gt;. This project was a great way to dive deep into Tor, server administration, and secure web development.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;Why a Secure Image Cleaner on Tor?&lt;/h3&gt;
@@ -392,7 +389,7 @@ nmap -A scanme.nmap.org &lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
 &lt;h3&gt;The Architecture: A Full Stack Journey&lt;/h3&gt;
 &lt;p&gt;Creating this service involved a stack chosen specifically for functionality and privacy.&lt;/p&gt;
-&lt;p&gt;Here’s a breakdown of the core components:&lt;/p&gt;
+&lt;p&gt;Here&#39;s a breakdown of the core components:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Tor Onion Service:&lt;/strong&gt; The entry point for users, providing anonymity and encryption.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Google Cloud Platform (GCP) e2-micro VM:&lt;/strong&gt; The hosting environment, leveraging the &amp;quot;Always Free&amp;quot; tier for cost-effectiveness.&lt;/li&gt;
@@ -462,7 +459,7 @@ location /upload {
 &lt;li&gt;A cleaner user interface.&lt;/li&gt;
 &lt;li&gt;An option to simply view metadata before removal.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;This was an journey into building a privacy-conscious online tool. It&#39;s a testament to the power of open-source technologies like Tor, Nginx, and Flask to create secure and useful applications. Give the &lt;strong&gt;&lt;a href=&quot;http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html&quot;&gt;Image Cleaner&lt;/a&gt;&lt;/strong&gt; (Note: Open in a Tor Browser) a try and let me know what you think!&lt;/p&gt;
+&lt;p&gt;This was a journey into building a privacy-conscious online tool. It&#39;s a testament to the power of open-source technologies, such as Tor, Nginx, and Flask, in creating secure and useful applications. Give the &lt;strong&gt;&lt;a href=&quot;http://32fd3d4gq3u4qqpofstaiq3sf3h6tnyrdpqdcgdszbrhovv25yfxzhqd.onion/cleaner.html&quot;&gt;Image Cleaner&lt;/a&gt;&lt;/strong&gt; (Note: Open in a Tor Browser) a try and let me know what you think!&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -502,9 +499,15 @@ location /upload {
 &lt;h4&gt;Step 2: Connect to Your Server&lt;/h4&gt;
 &lt;p&gt;Once the VM is running, connect to it using a command-line terminal. The easiest way is with Google&#39;s own command-line tool.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://cloud.google.com/sdk/docs/install&quot;&gt;Install the gcloud CLI&lt;/a&gt; on your local computer.&lt;/li&gt;
-&lt;li&gt;Open your terminal and run &lt;code&gt;gcloud init&lt;/code&gt; to log in and select your project.&lt;/li&gt;
-&lt;li&gt;Connect to your VM with this command (replace with your VM&#39;s name and zone):&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;gcloud compute &lt;span class=&quot;token function&quot;&gt;ssh&lt;/span&gt; your-vm-name &lt;span class=&quot;token parameter variable&quot;&gt;--zone&lt;/span&gt; its-zone&lt;/code&gt;&lt;/pre&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://cloud.google.com/sdk/docs/install&quot;&gt;Install the gcloud CLI&lt;/a&gt; on your local computer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Open your terminal and run &lt;code&gt;gcloud init&lt;/code&gt; to log in and select your project.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Connect to your VM with this command (replace with your VM&#39;s name and zone):&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;gcloud compute &lt;span class=&quot;token function&quot;&gt;ssh&lt;/span&gt; your-vm-name &lt;span class=&quot;token parameter variable&quot;&gt;--zone&lt;/span&gt; its-zone&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4&gt;Step 3: Install the Software&lt;/h4&gt;
@@ -533,7 +536,7 @@ location /upload {
 &lt;h3&gt;The Pitfalls: A Warning for the Weary&lt;/h3&gt;
 &lt;p&gt;Now, let&#39;s be honest. The process above looks simple, but getting there was a journey. Here&#39;s what I learned the hard way:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;The Onboarding is Confusing.&lt;/strong&gt; Getting started with a Google cloud as an individual can be a bit of a maze. The menus are built for giant corporations, not for someone doing a weekend project. Be prepared to feel like you&#39;re doing everything wrong. You&#39;re not—the design is the problem.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Onboarding is Confusing.&lt;/strong&gt; Getting started with the Google Cloud can be a bit of a maze. The menus are built for corporations, not for someone doing a weekend project. Be prepared to feel like you&#39;re doing everything wrong. You&#39;re not—the design is the problem.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&amp;quot;Free&amp;quot; Requires a Billing Account.&lt;/strong&gt; You will have to link a credit card to a billing account, even for the &amp;quot;Always Free&amp;quot; tier. This is for verification, and you won&#39;t be charged as long as you stay within the free limits.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;The Cost Estimate is Misleading.&lt;/strong&gt; When you create your free &lt;code&gt;e2-micro&lt;/code&gt; VM, the console will show you a monthly cost estimate (around $7). &lt;strong&gt;Ignore it.&lt;/strong&gt; This is the list price. The &amp;quot;Always Free&amp;quot; discount is applied at the end of the month, making your bill zero. It&#39;s confusing, but you just have to trust the process.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;The In-Browser SSH is Terrible.&lt;/strong&gt; Don&#39;t even bother with it. It&#39;s laggy and unresponsive. Take the five minutes to install the &lt;code&gt;gcloud&lt;/code&gt; CLI and connect with your local terminal. It will save you a world of frustration.&lt;/li&gt;

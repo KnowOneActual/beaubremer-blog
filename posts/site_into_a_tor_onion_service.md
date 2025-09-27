@@ -60,6 +60,7 @@ Once the VM is running, connect to it using a command-line terminal. The easiest
 1.  [Install the gcloud CLI](https://cloud.google.com/sdk/docs/install) on your local computer.
 2.  Open your terminal and run `gcloud init` to log in and select your project.
 3.  Connect to your VM with this command (replace with your VM's name and zone):
+    
     ```bash
     gcloud compute ssh your-vm-name --zone its-zone
     ```
@@ -73,7 +74,7 @@ Once you're connected, run these commands to install everything you need.
 # Update the server and install Nginx (web server), Tor, and Git
 sudo apt update && sudo apt upgrade -y
 sudo apt install git nginx tor -y
-````
+```
 
 #### Step 4: Add Your Website Files
 
@@ -112,7 +113,7 @@ Copy that long `.onion` address, paste it into the [Tor Browser](https://www.tor
 
 Now, let's be honest. The process above looks simple, but getting there was a journey. Here's what I learned the hard way:
 
-  * **The Onboarding is Confusing.** Getting started with a Google cloud as an individual can be a bit of a maze. The menus are built for giant corporations, not for someone doing a weekend project. Be prepared to feel like you're doing everything wrong. You're not—the design is the problem.
+  * **The Onboarding is Confusing.** Getting started with the Google Cloud can be a bit of a maze. The menus are built for corporations, not for someone doing a weekend project. Be prepared to feel like you're doing everything wrong. You're not—the design is the problem.
   * **"Free" Requires a Billing Account.** You will have to link a credit card to a billing account, even for the "Always Free" tier. This is for verification, and you won't be charged as long as you stay within the free limits.
   * **The Cost Estimate is Misleading.** When you create your free `e2-micro` VM, the console will show you a monthly cost estimate (around $7). **Ignore it.** This is the list price. The "Always Free" discount is applied at the end of the month, making your bill zero. It's confusing, but you just have to trust the process.
   * **The In-Browser SSH is Terrible.** Don't even bother with it. It's laggy and unresponsive. Take the five minutes to install the `gcloud` CLI and connect with your local terminal. It will save you a world of frustration.

@@ -108,9 +108,15 @@
 <h4>Step 2: Connect to Your Server</h4>
 <p>Once the VM is running, connect to it using a command-line terminal. The easiest way is with Google's own command-line tool.</p>
 <ol>
-<li><a href="https://cloud.google.com/sdk/docs/install">Install the gcloud CLI</a> on your local computer.</li>
-<li>Open your terminal and run <code>gcloud init</code> to log in and select your project.</li>
-<li>Connect to your VM with this command (replace with your VM's name and zone):<pre class="language-bash"><code class="language-bash">gcloud compute <span class="token function">ssh</span> your-vm-name <span class="token parameter variable">--zone</span> its-zone</code></pre>
+<li>
+<p><a href="https://cloud.google.com/sdk/docs/install">Install the gcloud CLI</a> on your local computer.</p>
+</li>
+<li>
+<p>Open your terminal and run <code>gcloud init</code> to log in and select your project.</p>
+</li>
+<li>
+<p>Connect to your VM with this command (replace with your VM's name and zone):</p>
+<pre class="language-bash"><code class="language-bash">gcloud compute <span class="token function">ssh</span> your-vm-name <span class="token parameter variable">--zone</span> its-zone</code></pre>
 </li>
 </ol>
 <h4>Step 3: Install the Software</h4>
@@ -139,7 +145,7 @@
 <h3>The Pitfalls: A Warning for the Weary</h3>
 <p>Now, let's be honest. The process above looks simple, but getting there was a journey. Here's what I learned the hard way:</p>
 <ul>
-<li><strong>The Onboarding is Confusing.</strong> Getting started with a Google cloud as an individual can be a bit of a maze. The menus are built for giant corporations, not for someone doing a weekend project. Be prepared to feel like you're doing everything wrong. You're not—the design is the problem.</li>
+<li><strong>The Onboarding is Confusing.</strong> Getting started with the Google Cloud can be a bit of a maze. The menus are built for corporations, not for someone doing a weekend project. Be prepared to feel like you're doing everything wrong. You're not—the design is the problem.</li>
 <li><strong>&quot;Free&quot; Requires a Billing Account.</strong> You will have to link a credit card to a billing account, even for the &quot;Always Free&quot; tier. This is for verification, and you won't be charged as long as you stay within the free limits.</li>
 <li><strong>The Cost Estimate is Misleading.</strong> When you create your free <code>e2-micro</code> VM, the console will show you a monthly cost estimate (around $7). <strong>Ignore it.</strong> This is the list price. The &quot;Always Free&quot; discount is applied at the end of the month, making your bill zero. It's confusing, but you just have to trust the process.</li>
 <li><strong>The In-Browser SSH is Terrible.</strong> Don't even bother with it. It's laggy and unresponsive. Take the five minutes to install the <code>gcloud</code> CLI and connect with your local terminal. It will save you a world of frustration.</li>

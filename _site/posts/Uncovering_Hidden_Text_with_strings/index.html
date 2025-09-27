@@ -101,11 +101,10 @@
 <pre class="language-Bash"><code class="language-Bash"># Show the location of each string in hexadecimal format 
 strings -t x /bin/ls</code></pre>
 <p>Now the output will look something like this, with the file location on the left:</p>
-<pre><code> 2d98 /lib64/ld-linux-x86-64.so.2 
+<pre class="language-text"><code class="language-text"> 2d98 /lib64/ld-linux-x86-64.so.2 
  301b GLIBC_2.2.5 
  30c8 __cxa_finalize 
- ... 
-</code></pre>
+ ... </code></pre>
 <h4>Combine with Other Tools</h4>
 <p>The real power of terminal commands comes from combining them. The output of strings can be long, so you can &quot;pipe&quot; it to another command like grep to search for precisely what you need. The pipe symbol (|) sends the output of one command to the input of the next.</p>
 <p>For example, to search for any mention of &quot;GLIBC&quot; inside the ls binary, you could run:</p>

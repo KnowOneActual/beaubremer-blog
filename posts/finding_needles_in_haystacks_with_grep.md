@@ -45,7 +45,7 @@ grep "Milk" shopping_list.txt
 
 And the terminal would instantly show you the matching line:
 
-```
+```text
 Milk
 ```
 
@@ -77,7 +77,7 @@ grep -v "Milk" shopping_list.txt
 
 The output would be:
 
-```
+```text
 - Apples
 - Bread
 - Orange Juice

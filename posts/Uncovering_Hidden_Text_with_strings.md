@@ -81,7 +81,7 @@ strings -t x /bin/ls
 
 Now the output will look something like this, with the file location on the left:
 
-```
+```text
  2d98 /lib64/ld-linux-x86-64.so.2 
  301b GLIBC_2.2.5 
  30c8 __cxa_finalize 
