@@ -16,7 +16,7 @@ If you're using Bash, the default shell on many systems, you can use **aliases**
 
 An alias is just a custom nickname you give to a longer command. This is a way to save time and make complex commands much easier to remember. It's one of the fastest ways to make your command-line experience more efficient.
 
-*(Psst... using Zsh instead? Check out our [Guide to Zsh Aliases](./post/a-guide-to-zsh-aliases/)*
+*(Psst... using Zsh instead? Check out our [Guide to Zsh Aliases](/post/a-guide-to-zsh-aliases/))*
 
 ***
 

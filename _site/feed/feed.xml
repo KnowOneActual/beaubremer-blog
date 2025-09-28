@@ -18,7 +18,7 @@
     <content xml:lang="en" type="html">&lt;h2&gt;Terminal Tips: A Guide to Bash Aliases ✍️&lt;/h2&gt;
 &lt;p&gt;If you&#39;re using Bash, the default shell on many systems, you can use &lt;strong&gt;aliases&lt;/strong&gt; to create simple shortcuts for your most-used commands.&lt;/p&gt;
 &lt;p&gt;An alias is just a custom nickname you give to a longer command. This is a way to save time and make complex commands much easier to remember. It&#39;s one of the fastest ways to make your command-line experience more efficient.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;(Psst... using Zsh instead? Check out our &lt;a href=&quot;https://blog.beaubremer.com/posts/a_guide_to_bash_aliases/post/a-guide-to-zsh-aliases/&quot;&gt;Guide to Zsh Aliases&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(Psst... using Zsh instead? Check out our &lt;a href=&quot;https://blog.beaubremer.com/post/a-guide-to-zsh-aliases/&quot;&gt;Guide to Zsh Aliases&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;How to Create an Alias&lt;/h3&gt;
 &lt;p&gt;You can create an alias by adding it to your Bash configuration file. This is usually where people get a little stuck, because Bash can have two different files: &lt;code&gt;~/.bash_profile&lt;/code&gt; and &lt;code&gt;~/.bashrc&lt;/code&gt;.&lt;/p&gt;
