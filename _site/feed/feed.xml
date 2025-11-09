@@ -4,16 +4,63 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-10-15T00:00:00Z</updated>
+  <updated>2025-11-09T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
   <entry>
+    <title>Your Best Skill Isn&#39;t Knowing Everything</title>
+    <link href="https://blog.beaubremer.com/posts/your_best_skill_isnt_knowing_everything/"/>
+    <updated>2025-11-09T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/your_best_skill_isnt_knowing_everything/</id>
+    <content xml:lang="en" type="html">&lt;picture&gt;
+        &lt;source type=&quot;image/webp&quot; srcset=&quot;https://blog.beaubremer.com/img/knowing_everything-600w.webp 600w, https://blog.beaubremer.com/img/knowing_everything-900w.webp 900w&quot; sizes=&quot;100vw&quot; /&gt;
+  &lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://blog.beaubremer.com/img/knowing_everything-600w.jpeg 600w, https://blog.beaubremer.com/img/knowing_everything-900w.jpeg 900w&quot; sizes=&quot;100vw&quot; /&gt;
+      &lt;img src=&quot;https://blog.beaubremer.com/img/knowing_everything-600w.jpeg&quot; alt=&quot;your best skill isnt knowing everything&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+    &lt;/picture&gt;
+&lt;p&gt;Ever felt that pang of inadequacy when you hit a roadblock, whether it&#39;s a baffling error message in your code or a glitchy piece of software? That little voice saying, &amp;quot;I should already know this!&amp;quot;&lt;/p&gt;
+&lt;p&gt;Here’s a revolutionary thought: &lt;strong&gt;it’s perfectly okay not to know.&lt;/strong&gt; In fact, &lt;em&gt;learning as you go&lt;/em&gt; isn&#39;t a shortcut; a effective, powerful, and &lt;em&gt;professional&lt;/em&gt; skill you can cultivate.&lt;/p&gt;
+&lt;h3&gt;The &amp;quot;Expert&amp;quot; Myth: A Relic of Another Era&lt;/h3&gt;
+&lt;p&gt;We often carry this idea that experts—especially in fields like programming or IT troubleshooting—are walking encyclopedias. We imagine them conjuring solutions from thin air, never needing to look anything up.&lt;/p&gt;
+&lt;p&gt;The reality? Most &amp;quot;experts&amp;quot; are just incredibly skilled at figuring things out. They&#39;ve perfected the art of the intelligent search, the educated guess, and the patient process of elimination.&lt;/p&gt;
+&lt;h3&gt;Meet Your Co-Pilot: Search Engines (and Stack Overflow, and YouTube...)&lt;/h3&gt;
+&lt;p&gt;Let&#39;s talk about programming for a moment. If you asked a room full of developers how often they use Google in a day, you&#39;d likely see almost every hand shoot up. In fact, studies (and even just anecdotal evidence) suggest that &lt;strong&gt;the vast majority of programmers rely on search engines multiple times a day.&lt;/strong&gt; We&#39;re talking 80-90% or more!&lt;/p&gt;
+&lt;p&gt;Why? Because the landscape of technology changes so rapidly. New languages, frameworks, and tools emerge constantly. No one can possibly know every syntax, every obscure error code, or every best practice by heart.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This isn&#39;t a sign of weakness; it&#39;s the definitive sign of a modern learner.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Troubleshooting: A Masterclass in &amp;quot;Learning on the Fly&amp;quot;&lt;/h3&gt;
+&lt;p&gt;This &amp;quot;learn as you go&amp;quot; mindset is perfectly illustrated in troubleshooting. When your internet goes down, or your favorite app misbehaves, you don&#39;t typically have a pre-written manual for &lt;em&gt;that exact problem&lt;/em&gt;. What do you do?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You try a simple restart (the classic &amp;quot;turn it off and on again&amp;quot;).&lt;/li&gt;
+&lt;li&gt;You look up the error message.&lt;/li&gt;
+&lt;li&gt;You search forums for similar experiences.&lt;/li&gt;
+&lt;li&gt;You test one variable at a time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Each step is a micro-lesson. You&#39;re not expected to know the solution upfront. You&#39;re expected to engage in the process of discovery.&lt;/p&gt;
+&lt;h3&gt;How to Build Your &#39;Figure-It-Out&#39; Muscle&lt;/h3&gt;
+&lt;p&gt;This skill isn&#39;t magic; it&#39;s a habit you can build. Next time you&#39;re stuck, try:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Really Read the Error:&lt;/strong&gt; Don&#39;t just glance at it. Read the &lt;em&gt;entire&lt;/em&gt; error message, line by line. More often than not, the answer is hiding in plain sight (e.g., &amp;quot;Permission Denied&amp;quot; or &amp;quot;File Not Found&amp;quot;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ask &amp;quot;Smart&amp;quot; Questions:&lt;/strong&gt; Instead of just saying &amp;quot;it&#39;s broken,&amp;quot; practice framing the problem. &amp;quot;I&#39;m trying to do &lt;strong&gt;X&lt;/strong&gt;. I expected &lt;strong&gt;Y&lt;/strong&gt; to happen, but instead, &lt;strong&gt;Z&lt;/strong&gt; happened. Here&#39;s what I&#39;ve already tried.&amp;quot; This simple formula organizes your thoughts and makes it much easier to find help. This technique also works great for getting tech support on your side if you need to contact them.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Talk It Out (Rubber Ducking):&lt;/strong&gt; This sounds silly, but it&#39;s a famous programming technique for a reason. Try explaining your problem, step-by-step, to someone else (or even just an inanimate object, like a rubber duck or your dog). The act of verbalizing the problem often makes the solution click into place.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Ditching the Imposter Syndrome, Embracing the Journey&lt;/h3&gt;
+&lt;p&gt;When you realize that &amp;quot;learning as you go&amp;quot; is the norm, not the exception, it does wonders for that nagging voice of imposter syndrome. It transforms &amp;quot;I don&#39;t know&amp;quot; from a moment of shame into a moment of opportunity.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;It’s okay to look things up.&lt;/strong&gt; It&#39;s efficient.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It’s okay to try something and have it not work.&lt;/strong&gt; That&#39;s how you narrow down possibilities.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It’s okay to ask questions.&lt;/strong&gt; Even seasoned pros do.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The true skill isn&#39;t having all the answers. It&#39;s having the confidence and curiosity to seek them out, to experiment, and to build your knowledge piece by piece. You&#39;re not an imposter for not knowing; you&#39;re a professional for being willing to find out.&lt;/p&gt;
+&lt;p&gt;So next time you face a challenge, remember: you don&#39;t need a PhD to keep going. You just need to be willing to learn the next thing.&lt;/p&gt;
+&lt;p&gt;What&#39;s the next thing you&#39;re going to &amp;quot;figure out&amp;quot;?&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>How to Bulk Delete Thousands of Old Emails in Gmail</title>
     <link href="https://blog.beaubremer.com/posts/how_to_bulk_delete_thousands_of_old_emails_in_gmail/"/>
-    <updated>2025-10-15T00:00:00Z</updated>
+    <updated>2025-10-30T00:00:00Z</updated>
     <id>https://blog.beaubremer.com/posts/how_to_bulk_delete_thousands_of_old_emails_in_gmail/</id>
     <content xml:lang="en" type="html">&lt;h2&gt;Taming the Inbox Beast: How to Bulk Delete Thousands of Old Emails in Gmail&lt;/h2&gt;
 &lt;p&gt;Got a Gmail inbox that feels less like a mailbox and more like a digital hoarder&#39;s paradise? You&#39;re not alone. Years of newsletters, notifications, and forgotten conversations can quickly balloon your storage, making it hard to find what you need and potentially slowing down your Gmail experience.&lt;/p&gt;
