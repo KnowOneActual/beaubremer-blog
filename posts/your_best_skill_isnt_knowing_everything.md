@@ -15,7 +15,7 @@ tags:
 
 Ever felt that pang of inadequacy when you hit a roadblock, whether it's a baffling error message in your code or a glitchy piece of software? That little voice saying, "I should already know this!"
 
-Here’s a revolutionary thought: **it’s perfectly okay not to know.** In fact, *learning as you go* isn't a shortcut; a effective, powerful, and *professional* skill you can cultivate.
+Here’s a revolutionary thought: **it’s perfectly okay not to know.** In fact, *learning as you go* isn't a shortcut; an effective and powerful skill you can cultivate.
 
 ### The "Expert" Myth: A Relic of Another Era
 
