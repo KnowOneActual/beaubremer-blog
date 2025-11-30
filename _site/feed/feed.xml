@@ -4,12 +4,57 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-11-09T00:00:00Z</updated>
+  <updated>2025-11-30T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>My Server Died and I like It :) : A Guide to Backups After a Crisis</title>
+    <link href="https://blog.beaubremer.com/posts/my_server_died_and_i_like_it/"/>
+    <updated>2025-11-30T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/my_server_died_and_i_like_it/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;There&#39;s a unique feeling of dread that washes over you when something you&#39;ve spent hours building suddenly breaks. That moment when you can&#39;t SSH into your server and you realize you might have to start all over. I just went through that entire cycle while setting up my personal website as a Tor Onion Service, and it taught me a valuable lesson: &lt;strong&gt;a project isn&#39;t finished until you&#39;ve figured out how to back it up&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Having a solid backup strategy isn&#39;t the most glamorous part of development, but it&#39;s the only thing that stands between a minor inconvenience and a total catastrophe. The good news? A professional-level backup plan is easier and cheaper than you think.&lt;/p&gt;
+&lt;h2&gt;The Gold Standard: The 3-2-1 Backup Rule&lt;/h2&gt;
+&lt;p&gt;The guiding principle for any backup strategy is the &lt;strong&gt;3-2-1 Rule&lt;/strong&gt;. It&#39;s simple, battle-tested, and robust:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;3 Copies:&lt;/strong&gt; Keep &lt;strong&gt;three&lt;/strong&gt; copies of your important data. One is your live, production version, and two are backups.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2 Media:&lt;/strong&gt; Store your copies on at least &lt;strong&gt;two&lt;/strong&gt; different types of media (e.g., your server&#39;s hard drive and an external hard drive, or cloud storage).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;1 Off-Site:&lt;/strong&gt; Keep at least &lt;strong&gt;one&lt;/strong&gt; of those copies in a different physical location.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This rule protects you from almost any scenario—from a simple accidental file deletion to your house burning down. It sounds paranoid until the day it saves you.&lt;/p&gt;
+&lt;h2&gt;Building Your Layers: On-Premises vs. Off-Premises&lt;/h2&gt;
+&lt;p&gt;To follow the 3-2-1 rule, you&#39;ll use a mix of on-premises and off-premises backups. Each serves a different purpose.&lt;/p&gt;
+&lt;h3&gt;On-Premises (The Quick Restore)&lt;/h3&gt;
+&lt;p&gt;These are backups you physically control, like an external hard drive or a home server (NAS).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pros:&lt;/strong&gt; Fast restore speeds, no internet required, and full control over your data.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cons:&lt;/strong&gt; Vulnerable to local disasters like fire, flood, or theft.&lt;/p&gt;
+&lt;p&gt;For developers, your primary on-premises backup is often the copy of your code on your &lt;strong&gt;local computer&lt;/strong&gt;. It&#39;s right there, ready to go when you need it.&lt;/p&gt;
+&lt;h3&gt;Off-Premises (The Disaster Recovery)&lt;/h3&gt;
+&lt;p&gt;These are backups stored in a different physical location. For most of us, this means the cloud.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pros:&lt;/strong&gt; Protects against local disasters and accessible from anywhere with an internet connection.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cons:&lt;/strong&gt; Slower restore speeds, requires internet, and relies on a third-party company.&lt;/p&gt;
+&lt;p&gt;Cloud services like Google Drive, Dropbox, or dedicated backup services like Backblaze are excellent for files. For servers, this is where &lt;strong&gt;automated snapshots&lt;/strong&gt; from your cloud provider (like Google Cloud, AWS, or DigitalOcean) become invaluable.&lt;/p&gt;
+&lt;h2&gt;A Practical Example: Backing Up a Tor Server&lt;/h2&gt;
+&lt;p&gt;Let&#39;s apply this to a real project: the Tor site I mentioned earlier. Turns out, I&#39;d actually built a multi-layered backup strategy without even realizing it.&lt;/p&gt;
+&lt;h3&gt;Layer 1: The Code (Off-Premise &amp;amp; On-Premise)&lt;/h3&gt;
+&lt;p&gt;The first and most important backup is &lt;strong&gt;GitHub&lt;/strong&gt;. Every time I run &lt;code&gt;git push&lt;/code&gt;, I&#39;m sending a complete, versioned copy of my code to an off-site location. The copy on my local machine serves as my on-premise backup. This covers the application itself—the logic, the configurations, the content.&lt;/p&gt;
+&lt;h3&gt;Layer 2: The Server Image (Off-Premise)&lt;/h3&gt;
+&lt;p&gt;The &lt;strong&gt;automated Google Cloud snapshot&lt;/strong&gt; I set up is the ultimate safety net. It backs up the &lt;em&gt;entire server&lt;/em&gt;: the operating system, Nginx, Tor, all the configurations, the Python virtual environment—everything. If the server is ever completely destroyed, I can launch a new, perfectly configured copy from a snapshot in minutes. This covers the &lt;em&gt;state&lt;/em&gt; of the server.&lt;/p&gt;
+&lt;h3&gt;Layer 3: The Process (Documentation)&lt;/h3&gt;
+&lt;p&gt;The &lt;strong&gt;Emergency Runbook&lt;/strong&gt; I wrote is a different kind of backup—it&#39;s a backup of the &lt;em&gt;process&lt;/em&gt;. If I had to switch cloud providers or start on a completely new machine, that document tells me exactly how to rebuild everything from scratch. Documentation might not feel like a backup, but it&#39;s the one that saves you when all your automated systems fail.&lt;/p&gt;
+&lt;h2&gt;Quality of Life Improvements&lt;/h2&gt;
+&lt;p&gt;Once you have the basics in place, here are a few pro tips to make your backup strategy bulletproof:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Automate Everything:&lt;/strong&gt; The single best thing you can do is automate. Humans forget to run backups. Scripts don&#39;t. The Google Cloud snapshot schedule I created is a perfect &amp;quot;set it and forget it&amp;quot; solution. Pick a tool, set a schedule, and let it run.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Test Your Backups:&lt;/strong&gt; A backup is only good if you can restore from it. Once every few months, try to restore a file or—if you&#39;re feeling brave—an entire server from your backup to a test environment. It&#39;s the only way to be sure it works when you actually need it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Version Control is Non-Negotiable:&lt;/strong&gt; For any project involving code, &lt;code&gt;git&lt;/code&gt; is the most important backup tool you have. Commit often, push regularly, and never work directly in production without a safety net.&lt;/p&gt;
+&lt;h2&gt;The Takeaway&lt;/h2&gt;
+&lt;p&gt;What started as a frustrating weekend of troubleshooting ended up being a masterclass in building a resilient system. You don&#39;t need a complex or expensive plan—you just need layers. One backup is good. Two is better. A mix of on-premise and off-premise backups is what will let you sleep at night.&lt;/p&gt;
+&lt;p&gt;The next time something breaks (and it will), you&#39;ll be glad you took the time to plan for it. Trust me on this one.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Your Best Skill Isn&#39;t Knowing Everything</title>
     <link href="https://blog.beaubremer.com/posts/your_best_skill_isnt_knowing_everything/"/>
