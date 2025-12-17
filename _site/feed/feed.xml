@@ -4,12 +4,74 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-11-30T00:00:00Z</updated>
+  <updated>2025-12-16T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>Security is a Process, Not a Product</title>
+    <link href="https://blog.beaubremer.com/posts/security_is_a_process_not_a_product/"/>
+    <updated>2025-12-16T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/security_is_a_process_not_a_product/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Most people treat security like a task to check off a list. You buy a lock, set a password, and move on. But real security isn&#39;t a destination, it&#39;s an ongoing process! It&#39;s about maintaining constant readiness, not reaching some mythical state of &amp;quot;complete security.&amp;quot;&lt;/p&gt;
+&lt;h2&gt;The Layered Approach (Defense in Depth)&lt;/h2&gt;
+&lt;p&gt;Security isn&#39;t about finding one perfect solution. It&#39;s about building multiple hurdles so that if one fails, others are still standing.&lt;/p&gt;
+&lt;p&gt;Think of a house: a fence, a locked door, and a safe inside. Someone climbs the fence? They still have to deal with the door. A single point of failure becomes a total compromise! Multiple points of failure become a headache that&#39;s often not worth the effort.&lt;/p&gt;
+&lt;h2&gt;The Shelf Life of Security&lt;/h2&gt;
+&lt;p&gt;Here&#39;s the uncomfortable truth: something secure today might not be secure tomorrow.&lt;/p&gt;
+&lt;p&gt;Imagine you research the best door lock, read the reviews, and install it. It feels great. Then, three years later, someone posts a bypass technique on YouTube. Suddenly, that &amp;quot;top-tier&amp;quot; lock is common knowledge for anyone with an internet connection and five minutes to spare.&lt;/p&gt;
+&lt;p&gt;Digital security moves even faster.&lt;/p&gt;
+&lt;p&gt;And popularity doesn&#39;t automatically guarantee security. In fact, &lt;strong&gt;popularity is a double-edged sword.&lt;/strong&gt; Hackers prioritize attacking the tools everyone uses. The payoff is higher! A vulnerability in something used by millions matters way more than one affecting a niche tool.&lt;/p&gt;
+&lt;h2&gt;Tools Change, and So Do Their Owners&lt;/h2&gt;
+&lt;p&gt;Even if the technology holds up, the business behind it might not. Take password managers—they&#39;re essential tools right now. But companies get bought out. Leadership changes. The tool you trusted five years ago might be run by people with very different priorities about user privacy.&lt;/p&gt;
+&lt;p&gt;You&#39;re not being paranoid to think about this. It&#39;s just good threat modeling.&lt;/p&gt;
+&lt;h2&gt;Know Your Threat Profile&lt;/h2&gt;
+&lt;p&gt;There&#39;s no universal security playbook. You have to act according to your own &lt;strong&gt;threat profile&lt;/strong&gt;—the intersection of your data&#39;s value and the effort someone is willing to spend to get it.&lt;/p&gt;
+&lt;h3&gt;1. The Low-Stakes User&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Stop automated bots and obvious attacks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Priority:&lt;/strong&gt; Ease of use.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Strategy:&lt;/strong&gt; Unique passwords and app-based 2FA.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. The Professional&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Protect client data and professional reputation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Priority:&lt;/strong&gt; Reliability and compartmentalization.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Strategy:&lt;/strong&gt; Hardware security keys (YubiKeys, Titan) and encrypted backups.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. The High-Risk Individual&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Avoid targeted surveillance.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Priority:&lt;/strong&gt; Maximum anonymity and operational security.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Strategy:&lt;/strong&gt; Specialized operating systems (Tails, Qubes) and air-gapped machines.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;The Security Reality Check&lt;/h2&gt;
+&lt;p&gt;Honest self-assessment is where most people slip up. Review this checklist for your category. Can&#39;t check a box? That&#39;s your starting point.&lt;/p&gt;
+&lt;h3&gt;Level 1: The Essentials&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;[ ] &lt;strong&gt;Password Manager:&lt;/strong&gt; Unique, strong password for every site.&lt;/li&gt;
+&lt;li&gt;[ ] &lt;strong&gt;Basic 2FA:&lt;/strong&gt; Enabled on email and financial accounts.&lt;/li&gt;
+&lt;li&gt;[ ] &lt;strong&gt;Automatic Updates:&lt;/strong&gt; OS and apps configured to update on their own.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Level 2: The Professional&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;[ ] &lt;strong&gt;Hardware Keys:&lt;/strong&gt; Ditched SMS 2FA for something you physically own.&lt;/li&gt;
+&lt;li&gt;[ ] &lt;strong&gt;Encrypted Backups:&lt;/strong&gt; Data stored in a zero-knowledge service or encrypted locally.&lt;/li&gt;
+&lt;li&gt;[ ] &lt;strong&gt;Network Privacy:&lt;/strong&gt; Using a trusted VPN on public Wi-Fi.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Level 3: The Hardened User&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;[ ] &lt;strong&gt;Device Compartmentalization:&lt;/strong&gt; Separate &amp;quot;clean&amp;quot; devices for sensitive work.&lt;/li&gt;
+&lt;li&gt;[ ] &lt;strong&gt;Security-Focused OS:&lt;/strong&gt; Running GrapheneOS, QubesOS, or similar.&lt;/li&gt;
+&lt;li&gt;[ ] &lt;strong&gt;Metadata Stripping:&lt;/strong&gt; Removing identifiable info from files before sharing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Finding Your Balance&lt;/h2&gt;
+&lt;p&gt;The biggest mistake? Adopting a security level that doesn&#39;t match your reality. If you pick the &amp;quot;High-Risk&amp;quot; playbook as a casual user, you&#39;ll find it so annoying that you&#39;ll eventually turn everything off. And half-measures that you actually use beat perfect measures you abandon.&lt;/p&gt;
+&lt;p&gt;Choose the level of security you can genuinely maintain every single day. Consistency beats perfection.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>My Server Died and I like It :) : A Guide to Backups After a Crisis</title>
     <link href="https://blog.beaubremer.com/posts/my_server_died_and_i_like_it/"/>
