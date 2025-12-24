@@ -4,12 +4,181 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-12-16T00:00:00Z</updated>
+  <updated>2025-12-24T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>The AV Pro&#39;s Guide to Bulletproof Video Playback</title>
+    <link href="https://blog.beaubremer.com/posts/the_av_pro_guide_to_bulletproof_video_playback/"/>
+    <updated>2025-12-24T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/the_av_pro_guide_to_bulletproof_video_playback/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Picture this: It is 30 minutes before showtime. You are handed a video file that needs to be added to the show immediately. When testing, it plays for eight seconds, then stutters and freezes. You panic.&lt;/p&gt;
+&lt;p&gt;You are left standing there wondering if it is the codec, the container, or just bad luck.&lt;/p&gt;
+&lt;p&gt;That was me. Multiple times. In front of the client.&lt;/p&gt;
+&lt;p&gt;The annoying thing is that the answer exists. It is just scattered across QLab forum threads from 2015, Reddit posts, and blogs that assume you already know what a bitrate is.&lt;/p&gt;
+&lt;p&gt;I spent too much time learning this the hard way. Here is how you can save yourself from making my mistakes.&lt;/p&gt;
+&lt;h2&gt;The Part Where I Was Clueless&lt;/h2&gt;
+&lt;p&gt;Here is what I thought I knew about video:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;MP4 is a video file.&lt;/strong&gt; (Nope, it is actually a &lt;em&gt;container&lt;/em&gt;.)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ProRes is always best.&lt;/strong&gt; (Nope, it is CPU-hungry and sometimes overkill.)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;H.264 works everywhere.&lt;/strong&gt; (Nope, it plays fine until it absolutely doesn&#39;t.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What I was missing was how three separate things actually work together:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Codec:&lt;/strong&gt; How the video gets compressed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Container:&lt;/strong&gt; The box that holds the codec.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Playback Stability:&lt;/strong&gt; Whether it will actually work on your machine.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I used to export videos from Adobe Media Encoder as &amp;quot;MP4 with H.264,&amp;quot; and it would work well most of the time. However, occasionally, I would experience frame drops scattered throughout, which could be quite frustrating.&lt;/p&gt;
+&lt;p&gt;The problem was that I thought about this as if it were binary. But it is an ecosystem. When you are doing live playback, stability is everything.&lt;/p&gt;
+&lt;h2&gt;What You Are Actually Looking At&lt;/h2&gt;
+&lt;p&gt;Here is a way to think about a video file that finally made sense to me. Imagine shipping a package. You have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Container:&lt;/strong&gt; The shipping box itself (&lt;code&gt;.mp4&lt;/code&gt;, &lt;code&gt;.mov&lt;/code&gt;, &lt;code&gt;.mkv&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Codec:&lt;/strong&gt; What is packed inside (H.264, ProRes, H.265).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metadata:&lt;/strong&gt; The label on the box (resolution, frame rate, colors).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The trick is that you can put H.264 inside an &lt;code&gt;.mp4&lt;/code&gt; box &lt;em&gt;or&lt;/em&gt; a &lt;code&gt;.mov&lt;/code&gt; box. It is the same video in a different box. But here is where it gets weird.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;QLab basically expects &lt;code&gt;.mov&lt;/code&gt; files with ProRes.&lt;/li&gt;
+&lt;li&gt;PlaybackPro is cooler now and takes &lt;code&gt;.mp4&lt;/code&gt; with H.265.&lt;/li&gt;
+&lt;li&gt;Old systems might only understand &lt;code&gt;.mov&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So your &amp;quot;universal&amp;quot; H.264 file fails, not because the video is bad, but because the box doesn&#39;t fit in that player&#39;s mail slot. The container matters just as much as the codec.&lt;/p&gt;
+&lt;h2&gt;Why QLab Loves ProRes 422 Proxy&lt;/h2&gt;
+&lt;p&gt;QLab documentation says to use &amp;quot;ProRes 422 Proxy.&amp;quot; When I first read that, I thought &amp;quot;Proxy&amp;quot; sounded like settling. I thought I should use the full quality ProRes.&lt;/p&gt;
+&lt;p&gt;I tested different options, and I was wrong.&lt;/p&gt;
+&lt;h3&gt;ProRes 422 Proxy (The QLab Favorite)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bitrate:&lt;/strong&gt; 145 Mb/s.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Performance:&lt;/strong&gt; Your Mac barely notices it is working.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Size:&lt;/strong&gt; About 26 GB per hour (1080p, 24fps).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Use Case:&lt;/strong&gt; Live theater, performance, or anything where smooth playback matters more than pixel perfection.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;ProRes 422 Standard&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bitrate:&lt;/strong&gt; 471 Mb/s.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Performance:&lt;/strong&gt; Your Mac knows it is doing work.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Size:&lt;/strong&gt; About 85 GB per hour.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Use Case:&lt;/strong&gt; Situations where you are not worried about other applications running.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ProRes Proxy is not a compromise. It is what QLab was built around. Apple engineered it so your GPU can decode it easily, leaving CPU room for audio cues and lighting changes. It is the smartest format for the job.&lt;/p&gt;
+&lt;h2&gt;My Current Mac Setup (That Actually Works)&lt;/h2&gt;
+&lt;p&gt;This is my step-by-step workflow for rock-solid playback.&lt;/p&gt;
+&lt;h3&gt;Step 1: The Golden Rule (Transcode Everything)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;If you did not encode the file yourself, transcode it.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is the most important rule. Clients will hand you files that look fine but have weird variable frame rates or strange audio encodings. Never trust a raw file from a client. Always run it through your process so you know exactly what is inside.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;From Apple Compressor:&lt;/strong&gt; Export ProRes 422 Proxy, &lt;code&gt;.mov&lt;/code&gt; container.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;From a GoPro or Phone:&lt;/strong&gt; Use Shutter Encoder or Apple Compressor.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Already H.264?&lt;/strong&gt; Convert it anyway. It is worth the time for the stability.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Step 2: The ffmpeg One-Liner&lt;/h3&gt;
+&lt;p&gt;When you want it done fast, use &lt;code&gt;ffmpeg&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ffmpeg &lt;span class=&quot;token parameter variable&quot;&gt;-i&lt;/span&gt; input.mp4 &lt;span class=&quot;token parameter variable&quot;&gt;-c:v&lt;/span&gt; prores_ks &lt;span class=&quot;token parameter variable&quot;&gt;-profile:v&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-c:a&lt;/span&gt; pcm_s16le output.mov
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-profile:v 0&lt;/code&gt; sets it to ProRes Proxy.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-c:a pcm_s16le&lt;/code&gt; creates uncompressed audio, which is safest for live events.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Step 3: Batch Processing&lt;/h3&gt;
+&lt;p&gt;This script saved me hours of work. Save this as &lt;code&gt;convert_to_qlab.sh&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token shebang important&quot;&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token for-or-select variable&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; *.mp4&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;token assign-left variable&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${file&lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt;.*}&lt;/span&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Converting &lt;span class=&quot;token variable&quot;&gt;$file&lt;/span&gt;...&quot;&lt;/span&gt;
+  ffmpeg &lt;span class=&quot;token parameter variable&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$file&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+    &lt;span class=&quot;token parameter variable&quot;&gt;-c:v&lt;/span&gt; prores_ks &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+    &lt;span class=&quot;token parameter variable&quot;&gt;-profile:v&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+    &lt;span class=&quot;token parameter variable&quot;&gt;-c:a&lt;/span&gt; pcm_s16le &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${filename}&lt;/span&gt;_proxy.mov&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;
+
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;All done. Your videos are ready to go.&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Where Linux Threw Me a Curveball&lt;/h2&gt;
+&lt;p&gt;I wanted to move to Linux, but ProRes on Linux is complicated. It is not officially supported due to licensing, GPU acceleration is rare, and encoding is slow.&lt;/p&gt;
+&lt;p&gt;If you are moving to Linux like I am, you are likely moving away from ProRes. After testing, here is what is actually reliable.&lt;/p&gt;
+&lt;h3&gt;Option 1: H.265/HEVC&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;File size:&lt;/strong&gt; Small (1/3 of H.264).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bitrate:&lt;/strong&gt; 15-30 Mbps (1080p).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Why:&lt;/strong&gt; VA-API GPU acceleration on Fedora works well if your drivers are set up.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ffmpeg &lt;span class=&quot;token parameter variable&quot;&gt;-i&lt;/span&gt; input.mp4 &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+  &lt;span class=&quot;token parameter variable&quot;&gt;-vaapi_device&lt;/span&gt; /dev/dri/renderD128 &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+  &lt;span class=&quot;token parameter variable&quot;&gt;-vf&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;format=nv12,hwupload&#39;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+  &lt;span class=&quot;token parameter variable&quot;&gt;-c:v&lt;/span&gt; hevc_vaapi &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+  &lt;span class=&quot;token parameter variable&quot;&gt;-rc_mode&lt;/span&gt; VBR &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+  &lt;span class=&quot;token parameter variable&quot;&gt;-b:v&lt;/span&gt; 20M &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+  &lt;span class=&quot;token parameter variable&quot;&gt;-c:a&lt;/span&gt; aac &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+  output.mp4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Option 2: H.264 (The &amp;quot;Just Works&amp;quot; Option)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bitrate:&lt;/strong&gt; 15-30 Mbps (1080p).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Why:&lt;/strong&gt; Maximum compatibility. Most systems support this out of the box.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ffmpeg &lt;span class=&quot;token parameter variable&quot;&gt;-i&lt;/span&gt; input.mp4 &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+  &lt;span class=&quot;token parameter variable&quot;&gt;-c:v&lt;/span&gt; libx264 &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+  &lt;span class=&quot;token parameter variable&quot;&gt;-preset&lt;/span&gt; fast &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+  &lt;span class=&quot;token parameter variable&quot;&gt;-crf&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;23&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+  &lt;span class=&quot;token parameter variable&quot;&gt;-c:a&lt;/span&gt; aac &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+  output.mp4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;The Stuff That Breaks Playback&lt;/h2&gt;
+&lt;p&gt;I spent forever worrying about bitrates, but these two factors are what usually break a show.&lt;/p&gt;
+&lt;h3&gt;1. Keyframes&lt;/h3&gt;
+&lt;p&gt;Every couple of seconds, you need a full frame (keyframe). This lets the playback software jump around without decoding the whole file.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ffmpeg &lt;span class=&quot;token parameter variable&quot;&gt;-i&lt;/span&gt; input.mp4 &lt;span class=&quot;token parameter variable&quot;&gt;-c:v&lt;/span&gt; libx264 &lt;span class=&quot;token parameter variable&quot;&gt;-g&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;48&lt;/span&gt; output.mp4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;-g 48&lt;/code&gt; places a keyframe every 48 frames (every 2 seconds at 24fps). This makes scrubbing through the video smooth rather than sluggish.&lt;/p&gt;
+&lt;h3&gt;2. Frame Rate Consistency&lt;/h3&gt;
+&lt;p&gt;Cameras often shoot at &lt;strong&gt;23.976 fps&lt;/strong&gt;. QLab projects are usually set to &lt;strong&gt;24 fps&lt;/strong&gt;. After 10 minutes, the audio will drift out of sync.&lt;/p&gt;
+&lt;p&gt;Check your file:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ffmpeg &lt;span class=&quot;token parameter variable&quot;&gt;-i&lt;/span&gt; video.mov
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If the input is 23.976, 25, or 29.97 fps, convert it to match your QLab project or change the project setting (usually 24 fps):&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ffmpeg &lt;span class=&quot;token parameter variable&quot;&gt;-i&lt;/span&gt; input.mp4 &lt;span class=&quot;token parameter variable&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;24&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-c:v&lt;/span&gt; libx264 &lt;span class=&quot;token parameter variable&quot;&gt;-c:a&lt;/span&gt; aac output.mp4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;The Decision Tree&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Staying on macOS?&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use ProRes 422 Proxy (&lt;code&gt;.mov&lt;/code&gt;). Done.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Moving to Linux?&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Need stability? Use H.264 @ 20-25 Mbps (&lt;code&gt;.mp4&lt;/code&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Want newer codecs? Use H.265/HEVC @ 15-20 Mbps (&lt;code&gt;.mp4&lt;/code&gt;) if your GPU allows.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Tools I Use&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ffmpeg:&lt;/strong&gt; The backbone of this workflow.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shutter Encoder:&lt;/strong&gt; A free GUI that is faster and less fussy than Adobe.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Apple Compressor:&lt;/strong&gt; If I&#39;m not leaving the Mac environment.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ffprobe:&lt;/strong&gt; Tells you exactly what is inside a video file.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;QLab / PlaybackPro:&lt;/strong&gt; The industry standards for Mac.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mpv:&lt;/strong&gt; Great for testing playback on Linux without overhead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;The Real Lesson&lt;/h2&gt;
+&lt;p&gt;I spent forever chasing the &amp;quot;perfect&amp;quot; codec. I thought if I found the right settings, everything would work everywhere. That is not how this works.&lt;/p&gt;
+&lt;p&gt;What actually matters is understanding why each codec exists and when to use it. ProRes is not objectively better, but it is better for QLab on Mac. H.265 is not a downgrade, it is just optimized for a different platform.&lt;/p&gt;
+&lt;p&gt;Once I stopped asking &amp;quot;what is the best codec&amp;quot; and started asking &amp;quot;what does this system need,&amp;quot; everything got less frustrating.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Security is a Process, Not a Product</title>
     <link href="https://blog.beaubremer.com/posts/security_is_a_process_not_a_product/"/>
