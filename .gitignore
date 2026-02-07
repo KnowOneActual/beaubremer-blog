@@ -156,3 +156,16 @@ _scratch.*
 start-work.sh
 WARP.md
 
+
+# Eleventy build output (already partially covered, but be explicit)
+_site/
+
+# npm/package artifact files (to prevent those weird empty files)
+beaubremer-blog-tailwind@*
+eleventy
+tailwindcss
+
+# Mega-Linter reports (if you want to keep them out of git)
+megalinter-reports/
+
+
