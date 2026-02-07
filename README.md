@@ -35,3 +35,44 @@ While static sites are secure by default, I took extra steps to harden the blog 
       * **Permissions-Policy:** Locks down browser features the blog doesn't need, like the microphone, camera, or USB devices.
 
 The result is a fast, modern blog with an A+ security rating that is completely decoupled from my main portfolio, allowing me to focus on creating content.
+
+## Development
+
+### Prerequisites
+- Node.js 18+
+- npm
+
+### Local Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/KnowOneActual/beaubremer-blog.git
+cd beaubremer-blog
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+```
+
+Visit `http://localhost:8080` to see your changes live.
+
+### Tech Stack
+
+- **Eleventy** (11ty) - Static site generator
+- **Tailwind CSS v3** - Utility-first CSS framework
+- **Luxon** - Date formatting
+- **eleventy-img** - Automatic image optimization
+- **PrismJS** - Syntax highlighting
+
+### Scripts
+
+- `npm start` - Start development server with live reload
+- `npm run build` - Build for production
+- `npm run format` - Format code with Prettier
+
+## Recent Updates
+
+See [CHANGELOG.md](CHANGELOG.md) for the full history.
+
