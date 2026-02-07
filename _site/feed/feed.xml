@@ -115,6 +115,177 @@
 </content>
   </entry>
   <entry>
+    <title>The Git Commands I Actually Use Every Day (And Why)</title>
+    <link href="https://blog.beaubremer.com/posts/the_git_commands_i_actually_use_every_day_(and_why)/"/>
+    <updated>2026-01-10T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/the_git_commands_i_actually_use_every_day_(and_why)/</id>
+    <content xml:lang="en" type="html">&lt;h3&gt;The Git Commands I Actually Use Every Day (And Why)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; In this post, I walk through the handful of Git commands I actually use daily, how they fit into my workflow, and how they help me keep commits small, reviewable, and recoverable.&lt;/p&gt;
+&lt;p&gt;There are a lot of Git commands out there, but on a normal day, I only reach for a small handful. These are the ones that keep my work moving: checking what changed, making focused commits, and recovering from the occasional mistake.&lt;/p&gt;
+&lt;p&gt;This isn&#39;t a complete Git guide. It&#39;s the set of commands that live in my muscle memory, and what I use them for in real projects.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;1. Seeing what changed&lt;/h2&gt;
+&lt;p&gt;Before I type any commit command, I want to know exactly what I&#39;m about to do.&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/h3&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; status&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is my &amp;quot;what&#39;s going on?&amp;quot; button. I run it:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;After pulling new changes, to see if I&#39;m clean or mid-merge.&lt;/li&gt;
+&lt;li&gt;Before committing, to double-check which files are staged vs unstaged.&lt;/li&gt;
+&lt;li&gt;When something feels off, I just want to get my bearings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If I only used one Git command all day, it would probably be this one.&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/h3&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;diff&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;diff&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--staged&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I use plain &lt;code&gt;git diff&lt;/code&gt; to see what I&#39;ve changed but haven&#39;t staged yet, and &lt;code&gt;git diff --staged&lt;/code&gt; to see what&#39;s actually going into the next commit.&lt;/p&gt;
+&lt;p&gt;Typical flow:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Edit code.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;git diff&lt;/code&gt; to scan through changes.&lt;/li&gt;
+&lt;li&gt;Stage only the parts that belong together.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;git diff --staged&lt;/code&gt; to sanity check the commit before hitting enter.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;A small example: I once refactored a component and changed some unrelated logging while I was &amp;quot;in there.&amp;quot; When I ran &lt;code&gt;git diff&lt;/code&gt;, it was obvious that the logging tweak didn&#39;t belong in the same commit as the refactor. I used &lt;code&gt;git add -p&lt;/code&gt; to stage only the refactor hunks and left the logging change for a separate &amp;quot;tidy up logs&amp;quot; commit. That two-minute decision made the review simpler and kept the history cleaner.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;2. Building clean commits&lt;/h2&gt;
+&lt;p&gt;Once I know what changed, I want my commits to be small and focused. That makes it easier to review, debug, and revert later.&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;git add&lt;/code&gt;&lt;/h3&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; file.py
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; path/to/dir
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-p&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I rarely run &lt;code&gt;git add .&lt;/code&gt; unless it&#39;s a very small change. Instead, I:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add specific files when changes are clearly grouped.&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;git add -p&lt;/code&gt; (patch mode) to split a file into meaningful chunks and only stage the hunks that belong in this commit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Patch mode is one of those &amp;quot;hidden superpowers&amp;quot; most people skip at first. Once you get used to it, it&#39;s hard to go back.&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;git commit&lt;/code&gt;&lt;/h3&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit &lt;span class=&quot;token parameter variable&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Short, clear message.&quot;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For simple changes, I&#39;ll use &lt;code&gt;-m&lt;/code&gt;. For anything bigger, I skip the message flag and let Git open my editor so I can:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Write a short subject line.&lt;/li&gt;
+&lt;li&gt;Add a bullet list or a couple of sentences with context if needed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I don&#39;t obsess over perfectly formatted commit messages, but I do try to answer: &amp;quot;If I saw this 6 months from now, would I know what changed and why?&amp;quot;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;3. Staying in sync with the remote&lt;/h2&gt;
+&lt;p&gt;Most of my work happens on branches, but the pattern is the same whether I&#39;m on &lt;code&gt;main&lt;/code&gt; or a feature branch.&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;git pull&lt;/code&gt; and &lt;code&gt;git fetch&lt;/code&gt;&lt;/h3&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; pull
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; fetch&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I use:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git pull&lt;/code&gt; when I just want &amp;quot;get me up to date,&amp;quot; and I know I haven&#39;t made local changes that will conflict.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git fetch&lt;/code&gt; when I want to see what changed on the remote without touching my working tree, especially before a rebase or when I&#39;m checking out someone else&#39;s branch.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;code&gt;git push&lt;/code&gt;&lt;/h3&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; push
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; push &lt;span class=&quot;token parameter variable&quot;&gt;-u&lt;/span&gt; origin feature/my-branch&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I push early and often, especially on feature branches. That gives me:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A backup if my machine dies.&lt;/li&gt;
+&lt;li&gt;A way to hop devices without copying files.&lt;/li&gt;
+&lt;li&gt;A clear history of work in progress.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On a new branch, I&#39;ll use &lt;code&gt;-u&lt;/code&gt; once so future pushes can just be &lt;code&gt;git push&lt;/code&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;4. Working with branches&lt;/h2&gt;
+&lt;p&gt;Branches are how I keep experiments and features from getting tangled.&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;git branch&lt;/code&gt; and &lt;code&gt;git switch&lt;/code&gt; / &lt;code&gt;git checkout&lt;/code&gt;&lt;/h3&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; branch
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; branch feature/my-idea
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; switch feature/my-idea
+&lt;span class=&quot;token comment&quot;&gt;# or&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout feature/my-idea&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;My everyday moves are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git branch&lt;/code&gt; to list what exists and see where I am.&lt;/li&gt;
+&lt;li&gt;Create a branch for anything more than a tiny fix.&lt;/li&gt;
+&lt;li&gt;Keep branch names descriptive enough that &amp;quot;future me&amp;quot; and coworkers instantly know what they&#39;re for.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I don&#39;t worry about clever names; clear and boring wins.&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;git merge&lt;/code&gt;&lt;/h3&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; switch main
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; pull
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; merge feature/my-idea&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I use merge when I&#39;m bringing a finished feature into &lt;code&gt;main&lt;/code&gt; or when I want to incorporate the latest &lt;code&gt;main&lt;/code&gt; changes into my branch without rewriting history.&lt;/p&gt;
+&lt;p&gt;If a merge conflict appears, I let my editor or diff tool help resolve it, then:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;fixed-files&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h2&gt;5. Fixing mistakes (without panicking)&lt;/h2&gt;
+&lt;p&gt;Even with the best intentions, I stage the wrong thing or type the wrong message. These are the recovery commands I actually trust myself to use.&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;git restore&lt;/code&gt; (resetting a file)&lt;/h3&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; restore path/to/file
+&lt;span class=&quot;token comment&quot;&gt;# older style:&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout -- path/to/file&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I use this when I realize &amp;quot;I don&#39;t actually want any of the changes in this file.&amp;quot;&lt;/p&gt;
+&lt;p&gt;It drops the local modifications and returns the file to the last committed state. I double-check with &lt;code&gt;git status&lt;/code&gt; before running it, just to make sure I won&#39;t lose something important.&lt;/p&gt;
+&lt;p&gt;I&#39;m careful with &lt;code&gt;git restore&lt;/code&gt; because it really does throw away local changes. I mostly use it on generated files or quick experiments where I know I don&#39;t care about the edits. When I&#39;m unsure, I&#39;ll copy the code somewhere else before restoring, or just leave the file alone and clean it up once I&#39;m certain.&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;git reset HEAD&lt;/code&gt; (unstaging)&lt;/h3&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; reset HEAD path/to/file&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This one&#39;s for: &amp;quot;I staged too much, but I still want to keep the changes.&amp;quot;&lt;/p&gt;
+&lt;p&gt;It moves the file from staged back to unstaged, so I can restage only what belongs in this commit, often paired with &lt;code&gt;git add -p&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;My most common mistake is staging a file that doesn&#39;t actually belong to the change I&#39;m working on, usually some config file or scratch notes I forgot about. I&#39;ll notice it in &lt;code&gt;git status&lt;/code&gt;, then run &lt;code&gt;git reset HEAD path/to/file&lt;/code&gt; to unstage it. The changes stay in my working tree, so I don&#39;t lose anything; I just keep them out of the commit until I&#39;m ready.&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;git commit-- amend&lt;/code&gt;&lt;/h3&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit &lt;span class=&quot;token parameter variable&quot;&gt;--amend&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit &lt;span class=&quot;token parameter variable&quot;&gt;--amend&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Better message.&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I use &lt;code&gt;--amend&lt;/code&gt; when:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I just committed and immediately spot a typo in the message.&lt;/li&gt;
+&lt;li&gt;I forgot to include one small file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I only amend commits that haven&#39;t been pushed yet, so I don&#39;t rewrite history that other people might already have.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;6. Looking back in time&lt;/h2&gt;
+&lt;p&gt;When something breaks or behaves strangely, I often need to see how we got here.&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/h3&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log &lt;span class=&quot;token parameter variable&quot;&gt;--oneline&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--graph&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--decorate&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--all&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I use plain &lt;code&gt;git log&lt;/code&gt; if I&#39;m just scanning recent commits. For a better overview, I have an alias (or just type the full command) with &lt;code&gt;--oneline --graph --decorate --all&lt;/code&gt; to see branches and merges as a visual graph.&lt;/p&gt;
+&lt;p&gt;This helps when:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I&#39;m trying to find where a bug might have been introduced.&lt;/li&gt;
+&lt;li&gt;I&#39;m picking a commit to revert or cherry-pick.&lt;/li&gt;
+&lt;li&gt;I want to understand the story of a feature branch.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h2&gt;7. How this looks in a real day&lt;/h2&gt;
+&lt;p&gt;On a typical small feature, my actual sequence looks something like this:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; switch &lt;span class=&quot;token parameter variable&quot;&gt;-c&lt;/span&gt; feature/new-link-page
+&lt;span class=&quot;token comment&quot;&gt;# do some work&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; status
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;diff&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-p&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;diff&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--staged&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit &lt;span class=&quot;token parameter variable&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Add basic link-in-bio layout.&quot;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; pull   &lt;span class=&quot;token comment&quot;&gt;# if needed&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; push &lt;span class=&quot;token parameter variable&quot;&gt;-u&lt;/span&gt; origin feature/new-link-page&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, after review and any fixes:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; switch main
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; pull
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; merge feature/new-link-page
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; push&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If I mess up along the way:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git reset HEAD file&lt;/code&gt; to unstage something.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git restore file&lt;/code&gt; to throw away a bad change.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git commit --amend&lt;/code&gt; to fix the last commit before pushing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is pretty close to how I work on real tasks: pick up a ticket or idea, branch off, make a small set of changes, review with &lt;code&gt;git diff&lt;/code&gt;, commit, then push. If I realize the change is bigger than I thought, I&#39;ll split it into a couple of focused commits instead of one giant &amp;quot;everything&amp;quot; commit. It keeps debugging and code review much calmer.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;If you want to go deeper&lt;/h2&gt;
+&lt;p&gt;If you&#39;re newer to Git or want a more structured walkthrough, you might like these related posts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.beaubremer.com/posts/essential_git%20part_1/&quot;&gt;Essential Git: Part 1&lt;/a&gt; – a more step-by-step look at the core concepts and commands.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.beaubremer.com/posts/mastering_gitignore_a_complete_guide_to_a_cleaner_git_repo/&quot;&gt;Getting a handle on.gitignore: A Guide to a Cleaner Git Repo&lt;/a&gt; – how I keep junk and secrets out of my repos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Together with this post, they cover the Git concepts and habits I rely on most days.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>The AV Pro&#39;s Guide to Bulletproof Video Playback</title>
     <link href="https://blog.beaubremer.com/posts/the_av_pro_guide_to_bulletproof_video_playback/"/>
     <updated>2025-12-24T00:00:00Z</updated>
