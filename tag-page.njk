@@ -10,24 +10,24 @@ permalink: /tags/{{ tag | slugify }}/
 layout: 'base.njk'
 eleventyExcludeFromCollections: true
 ---
+
 <h1 class="text-4xl font-bold">Posts tagged “{{ tag }}”</h1>
 
 <div class="mt-8 space-y-8">
-  {% set postsInTag = collections[tag] %}
-  {% for post in postsInTag | reverse %}
-  {# This 'if' statement is our safety check. It ensures we only process items that are actual blog posts. #}
-  {% if 'posts' in post.data.tags %}
-    <div class="p-6 bg-gray-900 rounded-lg">
-      <p class="text-sm text-gray-400">{{ post.date.toLocaleDateString('en-us', { year:"numeric", month:"long", day:"numeric"}) }}</p>
-      <h2 class="text-2xl font-bold mt-2">
-        <a href="{{ post.url }}" class="text-fuchsia-400 hover:underline">{{ post.data.title }}</a>
-      </h2>
-      <p class="mt-4 text-gray-300">{{ post.data.description }}</p>
-    </div>
-  {% endif %}
-{% endfor %}
+  {% set postsInTag = collections[tag] %} {% for post in postsInTag | reverse %} {# This 'if' statement is our safety
+  check. It ensures we only process items that are actual blog posts. #} {% if 'posts' in post.data.tags %}
+  <div class="p-6 bg-gray-900 rounded-lg">
+    <p class="text-sm text-gray-400">
+      {{ post.date.toLocaleDateString('en-us', { year:"numeric", month:"long", day:"numeric"}) }}
+    </p>
+    <h2 class="text-2xl font-bold mt-2">
+      <a href="{{ post.url }}" class="text-fuchsia-400 hover:underline">{{ post.data.title }}</a>
+    </h2>
+    <p class="mt-4 text-gray-300">{{ post.data.description }}</p>
+  </div>
+  {% endif %} {% endfor %}
 </div>
 
 <div class="mt-12">
-    <a href="/tags/" class="text-gray-400 hover:text-white">← View All Tags</a>
+  <a href="/tags/" class="text-gray-400 hover:text-white">← View All Tags</a>
 </div>

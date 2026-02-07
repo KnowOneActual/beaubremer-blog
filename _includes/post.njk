@@ -1,29 +1,29 @@
 ---
-layout: "base.njk"
+layout: 'base.njk'
 ---
-<article>
-    <header>
-        <h1 class="text-5xl font-extrabold text-fuchsia-400 mb-4">{{ title }}</h1>
-        {% if date %}
-            <p class="text-gray-400">
-                <time datetime="{{ page.date.toISOString() }}">{{ page.date | readableDate }}</time>
-            </p>
-        {% endif %}
-        
-        {# This is the section that displays the tags #}
-        {% if tags %}
-            <div class="mt-4">
-                <span class="text-gray-400">Tagged in:</span>
-                {% for tag in tags %}
-                    {% if tag != "posts" %}
-                        <a href="/tags/{{ tag | slugify }}/" class="inline-block bg-gray-800 text-fuchsia-300 rounded-full px-3 py-1 text-sm font-semibold ml-2 hover:bg-gray-700 transition-colors">#{{ tag }}</a>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        {% endif %}
-    </header>
-    
-    <hr class="border-gray-700 my-8">
 
-    {{ content | safe }}
+<article>
+  <header>
+    <h1 class="text-5xl font-extrabold text-fuchsia-400 mb-4">{{ title }}</h1>
+    {% if date %}
+    <p class="text-gray-400">
+      <time datetime="{{ page.date.toISOString() }}">{{ page.date | readableDate }}</time>
+    </p>
+    {% endif %} {# This is the section that displays the tags #} {% if tags %}
+    <div class="mt-4">
+      <span class="text-gray-400">Tagged in:</span>
+      {% for tag in tags %} {% if tag != "posts" %}
+      <a
+        href="/tags/{{ tag | slugify }}/"
+        class="inline-block bg-gray-800 text-fuchsia-300 rounded-full px-3 py-1 text-sm font-semibold ml-2 hover:bg-gray-700 transition-colors"
+        >#{{ tag }}</a
+      >
+      {% endif %} {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  <hr class="border-gray-700 my-8" />
+
+  {{ content | safe }}
 </article>

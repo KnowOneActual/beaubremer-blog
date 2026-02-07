@@ -7,7 +7,10 @@
     "watch:css": "tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css --watch",
     "watch:eleventy": "eleventy --serve",
     "start": "npm-run-all --parallel watch:*",
-    "build": "tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css && eleventy"
+    "build": "tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css && eleventy",
+    "format": "prettier --write \"**/*.{js,json,md,css}\" \"**/*.njk\"",
+    "format:check": "prettier --check \"**/*.{js,json,md,html,njk,css}\"",
+    "clean": "rm -rf _site"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +26,7 @@
     "luxon": "^3.7.2",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.5.6",
+    "prettier": "^3.8.1",
     "tailwindcss": "^3.4.19"
   },
   "dependencies": {

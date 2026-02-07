@@ -30,6 +30,7 @@ and this project adheres to Semantic Versioning.
 
 ### Fixed
 
+- **Prettier Configuration:** Configured Prettier to handle .njk (Nunjucks) template files as HTML (Feb 7, 2026)
 - **Security:** Resolved CVE-2026-25547 vulnerability in brace-expansion dependency by updating to version 5.0.1 (Feb 7, 2026)
 - **Build:** Fixed Tailwind CSS CLI compatibility issue by pinning to v3.x to resolve "command not found" error (Feb 7, 2026)
 - **Dependencies:** Updated glob and js-yaml packages (Dec 10, 2025)
@@ -40,6 +41,8 @@ and this project adheres to Semantic Versioning.
 ### Removed
 
 - **Dependency Cleanup:** Removed the unused eleventy-plugin-youtube-embed package to simplify dependencies.
+- **Repository Cleanup:** Removed empty artifact files (beaubremer-blog-tailwind@1.0.0, eleventy, tailwindcss) from repository (Feb 7, 2026)
+
 
 
 

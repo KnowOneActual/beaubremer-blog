@@ -1,11 +1,11 @@
 {
-    "title": "Beau Bremer's | Blog",
-    "url": "https://blog.beaubremer.com/",
-    "language": "en",
-    "description": "A collection of articles and thoughts on technology and project management.",
-    "author": {
-        "name": "Beau Bremer",
-        "email": "support&#64;beaubremer&#46;com",
-        "current_year": 2025
-    }
+  "title": "Beau Bremer's | Blog",
+  "url": "https://blog.beaubremer.com/",
+  "language": "en",
+  "description": "A collection of articles and thoughts on technology and project management.",
+  "author": {
+    "name": "Beau Bremer",
+    "email": "support&#64;beaubremer&#46;com",
+    "current_year": 2025
+  }
 }
