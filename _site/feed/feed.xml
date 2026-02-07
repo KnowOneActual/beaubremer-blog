@@ -4,12 +4,116 @@
   <subtitle>A collection of articles and thoughts on technology and project management.</subtitle>
   <link href="https://blog.beaubremer.com/feed/feed.xml" rel="self"/>
   <link href="https://blog.beaubremer.com/"/>
-  <updated>2025-12-24T00:00:00Z</updated>
+  <updated>2026-02-07T00:00:00Z</updated>
   <id>https://blog.beaubremer.com/</id>
   <author>
     <name>Beau Bremer</name>
     <email>support&amp;#64;beaubremer&amp;#46;com</email>
   </author>
+  <entry>
+    <title>Why I Built My Own &#39;Link in Bio&#39; Page (And You Can Too)</title>
+    <link href="https://blog.beaubremer.com/posts/build_a_link_in_bio_page/"/>
+    <updated>2026-02-07T00:00:00Z</updated>
+    <id>https://blog.beaubremer.com/posts/build_a_link_in_bio_page/</id>
+    <content xml:lang="en" type="html">&lt;h3&gt;Why I Built My Own “Link in Bio” Page (And You Can Too)&lt;/h3&gt;
+&lt;p&gt;If you’ve spent any time on social media, you’ve seen them everywhere: that one lonely link in a profile that opens a page full of other links. Services like Linktree are super popular because they solve a simple problem: “I have one link slot but too many things to share.” At some point, I started wondering: could I build my own version—and more importantly, should I bother?&lt;/p&gt;
+&lt;p&gt;Turns out the answer to both was yes. It became a fun weekend project, and I ended up with something that feels more personal, more private, and honestly more useful than the prefab options.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4&gt;Why bother rolling your own?&lt;/h4&gt;
+&lt;p&gt;My first motivation was curiosity. I like to tinker, and a link‑in‑bio page felt like the right-sized project: not a full app, but more interesting than another “Hello, World.” Once I got into it, a few real advantages popped up.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Privacy that feels honest.&lt;/strong&gt; With third‑party services, every click passes through someone else’s servers, and they can track behavior, build profiles, and run analytics you never see. When I host my own page, the only thing happening is a visitor clicking a button and going straight to where they wanted to go—no tracking pixels, no surprise cookies, no mystery dashboards.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Real control, not just themes.&lt;/strong&gt; I’m not locked into a template, a brand color, or whatever features fit into a free plan. The page looks like the rest of my site, using my typography, icons, and microcopy, so it feels like a natural extension of my online home rather than a rented corner of the internet.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;One place I fully own.&lt;/strong&gt; If a hosted service changes pricing, shuts down, or decides my links are “against policy,” I’m not scrambling to update every profile. My page is just static files; as long as I keep my domain and hosting, it’s not going anywhere.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4&gt;The simple stack behind it&lt;/h4&gt;
+&lt;p&gt;The best part is how little tech you actually need. You don’t need a fancy framework or a database, just a few familiar pieces.&lt;/p&gt;
+&lt;p&gt;Here’s what I used:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HTML:&lt;/strong&gt; A single &lt;code&gt;index.html&lt;/code&gt; file for the structure of the page.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CSS:&lt;/strong&gt; TailwindCSS for quick, modern styling plus a small custom stylesheet for the background gradient and button animations.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JavaScript:&lt;/strong&gt; A tiny script that fetches a &lt;code&gt;social-links.json&lt;/code&gt; file and turns each entry into a button.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hosting:&lt;/strong&gt; Deployed on a static host (I used Netlify), so pushing a new version is basically “git push and done.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The JSON file is where the magic happens. Instead of hard‑coding links into the HTML, I keep them in &lt;code&gt;social-links.json&lt;/code&gt;, which means:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adding a new link is just adding one object to the JSON.&lt;/li&gt;
+&lt;li&gt;Reordering links is as simple as moving items around in the file.&lt;/li&gt;
+&lt;li&gt;I never have to dig through HTML just to change a URL or label.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It feels less like “editing a page” and more like “updating a configuration,” which is the kind of small quality‑of‑life improvement that makes you actually keep your links up to date.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4&gt;A quick look at the data&lt;/h4&gt;
+&lt;p&gt;Here’s an example of what the &lt;code&gt;social-links.json&lt;/code&gt; file might look like:&lt;/p&gt;
+&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Website&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://example.com&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;icon&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;globe&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;GitHub&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://github.com/your-username&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;icon&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;github&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Bluesky&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://bsky.app/profile/your-handle&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;icon&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;bsky&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I use icons from &lt;a href=&quot;https://fontawesome.com/&quot;&gt;Font Awesome&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And a tiny JavaScript snippet to load those links and render buttons:&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/social-links.json&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;links&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; container &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;links&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    links&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; button &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      button&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;href &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; link&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;url&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      button&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;textContent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; link&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      button&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;className &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;link-button&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Tailwind / custom classes&lt;/span&gt;
+      container&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;appendChild&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;button&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Failed to load social links:&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;On the HTML side, you just need a container for those buttons:&lt;/p&gt;
+&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;links&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;flex flex-col gap-3&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h4&gt;Little gotchas (and why they’re worth it)&lt;/h4&gt;
+&lt;p&gt;No project is complete without some small annoyances. Integrating the new page into my existing site meant dealing with:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Matching global styles so the page didn’t look like it came from another planet.&lt;/li&gt;
+&lt;li&gt;Tweaking security settings and headers so everything behaved correctly on my host.&lt;/li&gt;
+&lt;li&gt;Getting icons to render crisply on different screen sizes and making sure text stayed readable on top of my custom background.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Each of those issues was a small puzzle instead of a major blocker. They were good reminders that even simple projects reward a bit of attention to detail in exchange, you end up with something that feels polished instead of “just fine.”&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4&gt;What the finished page gives me&lt;/h4&gt;
+&lt;p&gt;After all that, I’ve created a quick, lightweight, and totally customized link-in-bio page that really feels personal. Check it out here! &lt;a href=&quot;https://beaubremer.com/links&quot;&gt;Links&lt;/a&gt; It reflects the rest of my site, respects visitors’ privacy, and gives me one central place to point people from Instagram, Bluesky, or anywhere else I happen to be posting.&lt;/p&gt;
+&lt;p&gt;It’s also a small but satisfying reminder that you don’t always need another service account or subscription to solve a problem. Sometimes, a few static files and an afternoon of tinkering are enough.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4&gt;Want to build your own?&lt;/h4&gt;
+&lt;p&gt;If you&#39;ve been looking for a manageable project to sharpen your web dev skills, this is a great one: it touches HTML, CSS, JavaScript, JSON, and deployment, without turning into a month‑long side quest.&lt;/p&gt;
+&lt;p&gt;A simple path to get started:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a bare‑bones &lt;code&gt;index.html&lt;/code&gt; with a placeholder container for your buttons.&lt;/li&gt;
+&lt;li&gt;Add TailwindCSS (via CDN or your build pipeline) and style a single “link button” the way you like.&lt;/li&gt;
+&lt;li&gt;Move your links into a &lt;code&gt;social-links.json&lt;/code&gt; file and write a tiny script that loops through them and injects buttons into the page.&lt;/li&gt;
+&lt;li&gt;Deploy to whatever static host you like and swap it into your social profiles.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You end up with a useful tool for your own links, and the quiet satisfaction of knowing it’s something you built from the ground up.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The AV Pro&#39;s Guide to Bulletproof Video Playback</title>
     <link href="https://blog.beaubremer.com/posts/the_av_pro_guide_to_bulletproof_video_playback/"/>

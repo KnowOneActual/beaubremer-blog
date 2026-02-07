@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why I Built My Own &#39;Link in Bio&#39; Page (And You Can Too) | Beau Bremer&#39;s | Blog</title>
+    <meta name="description" content="How I built a simple, private, fully customizable link in bio page—and how you can, too." />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link rel="me" href="https://mastodon.social/@grimburly">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" as="style" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
+    
+<link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg" />
+<link rel="icon" type="image/webp" href="/img/favicon/favicon-32x32.webp" sizes="32x32">
+<link rel="icon" type="image/webp" href="/img/favicon/favicon-96x96.webp" sizes="96x96">
+<link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/img/favicon/site.webmanifest" />
+<link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+<link rel="stylesheet" href="/assets/css/lite-yt-embed.css" />
+</head>
+<body class="bg-gray-950 text-white scroll-smooth flex flex-col min-h-screen">
+
+    <header class="py-6 px-6 max-w-3xl mx-auto w-full">
+        <div class="flex justify-between items-center">
+            <div>
+                <a href="/" class="text-2xl font-bold text-white hover:text-fuchsia-400 transition-colors">Beau Bremer&#39;s | Blog</a>
+            </div>
+            <nav>
+              
+                <a href="/" class="text-gray-300 hover:text-white transition-colors">← Back to Blog Home</a>
+              
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto py-12 px-6 flex-grow w-full">
+        <div class="prose prose-invert lg:prose-xl max-w-none">
+            <article>
+    <header>
+        <h1 class="text-5xl font-extrabold text-fuchsia-400 mb-4">Why I Built My Own &#39;Link in Bio&#39; Page (And You Can Too)</h1>
+        
+            <p class="text-gray-400">
+                <time datetime="2026-02-07T00:00:00.000Z">February 07, 2026</time>
+            </p>
+        
+        
+        
+        
+            <div class="mt-4">
+                <span class="text-gray-400">Tagged in:</span>
+                
+                    
+                
+                    
+                        <a href="/tags/webdev/" class="inline-block bg-gray-800 text-fuchsia-300 rounded-full px-3 py-1 text-sm font-semibold ml-2 hover:bg-gray-700 transition-colors">#webdev</a>
+                    
+                
+                    
+                        <a href="/tags/projects/" class="inline-block bg-gray-800 text-fuchsia-300 rounded-full px-3 py-1 text-sm font-semibold ml-2 hover:bg-gray-700 transition-colors">#projects</a>
+                    
+                
+            </div>
+        
+    </header>
+    
+    <hr class="border-gray-700 my-8">
+
+    <h3>Why I Built My Own “Link in Bio” Page (And You Can Too)</h3>
+<p>If you’ve spent any time on social media, you’ve seen them everywhere: that one lonely link in a profile that opens a page full of other links. Services like Linktree are super popular because they solve a simple problem: “I have one link slot but too many things to share.” At some point, I started wondering: could I build my own version—and more importantly, should I bother?</p>
+<p>Turns out the answer to both was yes. It became a fun weekend project, and I ended up with something that feels more personal, more private, and honestly more useful than the prefab options.</p>
+<hr>
+<h4>Why bother rolling your own?</h4>
+<p>My first motivation was curiosity. I like to tinker, and a link‑in‑bio page felt like the right-sized project: not a full app, but more interesting than another “Hello, World.” Once I got into it, a few real advantages popped up.</p>
+<ul>
+<li>
+<p><strong>Privacy that feels honest.</strong> With third‑party services, every click passes through someone else’s servers, and they can track behavior, build profiles, and run analytics you never see. When I host my own page, the only thing happening is a visitor clicking a button and going straight to where they wanted to go—no tracking pixels, no surprise cookies, no mystery dashboards.</p>
+</li>
+<li>
+<p><strong>Real control, not just themes.</strong> I’m not locked into a template, a brand color, or whatever features fit into a free plan. The page looks like the rest of my site, using my typography, icons, and microcopy, so it feels like a natural extension of my online home rather than a rented corner of the internet.</p>
+</li>
+<li>
+<p><strong>One place I fully own.</strong> If a hosted service changes pricing, shuts down, or decides my links are “against policy,” I’m not scrambling to update every profile. My page is just static files; as long as I keep my domain and hosting, it’s not going anywhere.</p>
+</li>
+</ul>
+<hr>
+<h4>The simple stack behind it</h4>
+<p>The best part is how little tech you actually need. You don’t need a fancy framework or a database, just a few familiar pieces.</p>
+<p>Here’s what I used:</p>
+<ul>
+<li><strong>HTML:</strong> A single <code>index.html</code> file for the structure of the page.</li>
+<li><strong>CSS:</strong> TailwindCSS for quick, modern styling plus a small custom stylesheet for the background gradient and button animations.</li>
+<li><strong>JavaScript:</strong> A tiny script that fetches a <code>social-links.json</code> file and turns each entry into a button.</li>
+<li><strong>Hosting:</strong> Deployed on a static host (I used Netlify), so pushing a new version is basically “git push and done.”</li>
+</ul>
+<p>The JSON file is where the magic happens. Instead of hard‑coding links into the HTML, I keep them in <code>social-links.json</code>, which means:</p>
+<ul>
+<li>Adding a new link is just adding one object to the JSON.</li>
+<li>Reordering links is as simple as moving items around in the file.</li>
+<li>I never have to dig through HTML just to change a URL or label.</li>
+</ul>
+<p>It feels less like “editing a page” and more like “updating a configuration,” which is the kind of small quality‑of‑life improvement that makes you actually keep your links up to date.</p>
+<hr>
+<h4>A quick look at the data</h4>
+<p>Here’s an example of what the <code>social-links.json</code> file might look like:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Website"</span><span class="token punctuation">,</span>
+    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://example.com"</span><span class="token punctuation">,</span>
+    <span class="token property">"icon"</span><span class="token operator">:</span> <span class="token string">"globe"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"GitHub"</span><span class="token punctuation">,</span>
+    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://github.com/your-username"</span><span class="token punctuation">,</span>
+    <span class="token property">"icon"</span><span class="token operator">:</span> <span class="token string">"github"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Bluesky"</span><span class="token punctuation">,</span>
+    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://bsky.app/profile/your-handle"</span><span class="token punctuation">,</span>
+    <span class="token property">"icon"</span><span class="token operator">:</span> <span class="token string">"bsky"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span></code></pre>
+<p>I use icons from <a href="https://fontawesome.com/">Font Awesome</a>.</p>
+<p>And a tiny JavaScript snippet to load those links and render buttons:</p>
+<pre class="language-js"><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"/social-links.json"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=></span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">links</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> container <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"links"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    links<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">link</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> button <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      button<span class="token punctuation">.</span>href <span class="token operator">=</span> link<span class="token punctuation">.</span>url<span class="token punctuation">;</span>
+      button<span class="token punctuation">.</span>textContent <span class="token operator">=</span> link<span class="token punctuation">.</span>title<span class="token punctuation">;</span>
+      button<span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">"link-button"</span><span class="token punctuation">;</span> <span class="token comment">// Tailwind / custom classes</span>
+      container<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>button<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"Failed to load social links:"</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>On the HTML side, you just need a container for those buttons:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>links<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex flex-col gap-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<hr>
+<h4>Little gotchas (and why they’re worth it)</h4>
+<p>No project is complete without some small annoyances. Integrating the new page into my existing site meant dealing with:</p>
+<ul>
+<li>Matching global styles so the page didn’t look like it came from another planet.</li>
+<li>Tweaking security settings and headers so everything behaved correctly on my host.</li>
+<li>Getting icons to render crisply on different screen sizes and making sure text stayed readable on top of my custom background.</li>
+</ul>
+<p>Each of those issues was a small puzzle instead of a major blocker. They were good reminders that even simple projects reward a bit of attention to detail in exchange, you end up with something that feels polished instead of “just fine.”</p>
+<hr>
+<h4>What the finished page gives me</h4>
+<p>After all that, I’ve created a quick, lightweight, and totally customized link-in-bio page that really feels personal. Check it out here! <a href="https://beaubremer.com/links">Links</a> It reflects the rest of my site, respects visitors’ privacy, and gives me one central place to point people from Instagram, Bluesky, or anywhere else I happen to be posting.</p>
+<p>It’s also a small but satisfying reminder that you don’t always need another service account or subscription to solve a problem. Sometimes, a few static files and an afternoon of tinkering are enough.</p>
+<hr>
+<h4>Want to build your own?</h4>
+<p>If you've been looking for a manageable project to sharpen your web dev skills, this is a great one: it touches HTML, CSS, JavaScript, JSON, and deployment, without turning into a month‑long side quest.</p>
+<p>A simple path to get started:</p>
+<ol>
+<li>Create a bare‑bones <code>index.html</code> with a placeholder container for your buttons.</li>
+<li>Add TailwindCSS (via CDN or your build pipeline) and style a single “link button” the way you like.</li>
+<li>Move your links into a <code>social-links.json</code> file and write a tiny script that loops through them and injects buttons into the page.</li>
+<li>Deploy to whatever static host you like and swap it into your social profiles.</li>
+</ol>
+<p>You end up with a useful tool for your own links, and the quiet satisfaction of knowing it’s something you built from the ground up.</p>
+
+</article>
+        </div>
+    </main>
+
+    <footer class="text-center py-6 bg-gray-950 text-gray-500">
+    <div class="mb-2">
+      <a href="https://blog.beaubremer.com/" target="_blank" class="hover:text-fuchsia-400 mx-2">Blog Home</a>
+      <a href="https://github.com/KnowOneActual" target="_blank" class="hover:text-fuchsia-400 mx-2">GitHub</a>
+     </div>
+    <p>© 2026 Beau Bremer. Stay bold, keep creating, and rock on! All rights reserved.
+    </p>
+  </footer>
+    <script src="/assets/js/lite-yt-embed.js"></script>
+</body>
+</html>
