@@ -11,7 +11,7 @@ tags:
 
 ---
 
-In the last post, [Okay, I Have the Hacker Mindset. Now What?](/posts/hacker_mindset/), we looked at how the "hacker loop" works in a kitchen or a simple Python script. But the truth is, the most powerful piece of hardware you own isn't your MacBook or a WiFi Pineapple. It is your brain.
+In the post, [Okay, I Have the Hacker Mindset. Now What?](/posts/hacker_mindset/), we looked at how the "hacker loop" works in a kitchen or a simple Python script. But the truth is, the most powerful piece of hardware you own isn't your MacBook or a WiFi Pineapple. It is your brain.
 
 **Thinking is the tool.** Everything else, like the cables, the software, and the terminal, is just an accessory.
 
