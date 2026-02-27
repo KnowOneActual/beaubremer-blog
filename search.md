@@ -15,7 +15,6 @@ layout: base.njk
         new PagefindUI({ 
             element: "#search", 
             showSubResults: true,
-            baseUrl: "/",
             bundlePath: "/pagefind/"
         });
     });

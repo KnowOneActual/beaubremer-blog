@@ -2,7 +2,7 @@
   for = "/*"
   [headers.values]
     # This policy adds the 'upgrade-insecure-requests' directive
-    Content-Security-Policy = "default-src 'self'; object-src 'none'; base-uri 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://challenges.cloudflare.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://unpkg.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: https://i.ytimg.com; frame-src https://challenges.cloudflare.com https://www.youtube.com;"
+    Content-Security-Policy = "default-src 'self'; object-src 'none'; base-uri 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://challenges.cloudflare.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://unpkg.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: https://i.ytimg.com; frame-src https://challenges.cloudflare.com https://www.youtube.com;"
 
     # This policy is now set to the recommended 2-year max-age
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
