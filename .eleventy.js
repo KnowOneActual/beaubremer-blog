@@ -67,8 +67,16 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('LLLL dd, yyyy');
   });
 
+  eleventyConfig.addFilter('readingTime', (content) => {
+    const wordsPerMinute = 200;
+    const numberOfWords = content.split(/\s/g).length;
+    const minutes = numberOfWords / wordsPerMinute;
+    const readTime = Math.ceil(minutes);
+    return `${readTime} min read`;
+  });
+
   eleventyConfig.addCollection('posts', function (collectionApi) {
-    return collectionApi.getFilteredByGlob('posts/*.md');
+    return collectionApi.getFilteredByGlob('posts/**/*.md');
   });
 
   eleventyConfig.addCollection('tagList', function (collectionApi) {

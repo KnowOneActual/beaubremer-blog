@@ -22,13 +22,17 @@ A website is never truly "finished." I've implemented several powerful features 
 
   * **Custom Date Filters:** To ensure a clean and consistent look for post dates (e.g., "June 21, 2025"), I implemented a custom Eleventy filter using the **Luxon** library for reliable date formatting. This keeps my templates clean and ensures all dates are styled uniformly.
   * **Reusable Shortcodes:** To avoid pasting messy `<iframe>` code every time I want to embed a video, I created a custom `{% youtube %}` shortcode. Eleventy sees this tag in my Markdown files and automatically replaces it with the full, optimized embed code during the build process.
+  * **Fast, Static Search:** Integrated **Pagefind** to provide lightning-fast, full-text search across all blog posts without requiring a heavy client-side JavaScript bundle or a backend database.
+  * **Estimated Reading Time:** Automatically calculates and displays the reading time for each article, helping readers manage their time.
+  * **Organized Content Architecture:** Posts are organized into year-based subdirectories (`posts/2025/`, etc.) with a flat URL structure maintained via Eleventy permalinks. This keeps the project clean while preserving SEO and existing links.
   * **Automatic Image Optimization:** I'm using the official **`@11ty/eleventy-img`** plugin to automatically optimize images. When I add an image, the plugin creates multiple smaller sizes, converts them to modern formats like **WebP**, and generates the `<picture>` element. This ensures browsers only download the most efficient image size, dramatically improving page load speed and user experience.
 
 ## A Security-First Approach
 
 While static sites are secure by default, I took extra steps to harden the blog against modern web vulnerabilities using a `netlify.toml` file to define custom HTTP security headers.
 
-  * **Content Security Policy (CSP):** I implemented a strong CSP that acts like a bouncer, maintaining a strict guest list of allowed resources (scripts, styles, fonts). It explicitly whitelists trusted sources like the Tailwind CSS CDN and Google Fonts, while blocking insecure plugins like Flash entirely.
+  * **Content Security Policy (CSP):** I implemented a strong CSP that acts like a bouncer, maintaining a strict guest list of allowed resources (scripts, styles, fonts).
+  * **Privacy-Focused Assets:** Critical assets like PrismJS and Pagefind are hosted locally to reduce third-party tracking and improve performance.
   * **Other Essential Headers:** For a layered defense, I also added:
       * **Strict-Transport-Security (HSTS):** Ensures browsers only communicate with my site over a secure HTTPS connection.
       * **X-Frame-Options:** Set to `DENY` to prevent clickjacking attacks.
@@ -62,6 +66,7 @@ Visit `http://localhost:8080` to see your changes live.
 
 - **Eleventy** (11ty) - Static site generator
 - **Tailwind CSS v3** - Utility-first CSS framework
+- **Pagefind** - Static search engine
 - **Luxon** - Date formatting
 - **eleventy-img** - Automatic image optimization
 - **PrismJS** - Syntax highlighting

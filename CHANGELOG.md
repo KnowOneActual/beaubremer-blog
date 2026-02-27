@@ -7,6 +7,27 @@ The format is based on Keep a Changelog,
 and this project adheres to Semantic Versioning.
 
 
+## V10.1.0 (Feb 27, 2026)
+
+### Added
+- **Static Search:** Integrated Pagefind for lightning-fast, full-text search.
+- **Category Navigation:** Added high-level categories (Tech, Networking, Live Production, Mindset) for better content discoverability.
+- **Estimated Reading Time:** Added a reading time indicator to blog listings and posts.
+- **Post Navigation:** Added Next/Previous article links at the bottom of blog posts.
+- **SEO Enhancements:** Added Open Graph and Twitter Card metadata for better social sharing.
+- **Pagination:** Implemented pagination on the home page (10 posts per page).
+
+### Changed
+- **Architecture:** Organized posts into year-based subdirectories (`posts/YYYY/`).
+- **Metadata Management:** Moved directory-level configuration (layout, common tags) to `posts/posts.json` and cleaned up individual markdown front matter.
+- **Performance:** Localized PrismJS CSS to reduce external dependencies.
+- **Build Process:** Unified build script to include Tailwind, Eleventy, and Pagefind indexing.
+
+### Fixed
+- **Content URLs:** Used permalinks to ensure a flat URL structure is maintained despite new folder organization.
+- **Front Matter:** Repaired and standardized YAML metadata across all blog posts.
+
+
 ## V10.0.2
 
 ### Added

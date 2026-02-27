@@ -7,7 +7,7 @@
     "watch:css": "tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css --watch",
     "watch:eleventy": "eleventy --serve",
     "start": "npm-run-all --parallel watch:*",
-    "build": "tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css && eleventy",
+    "build": "tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css && eleventy && npx pagefind --site _site",
     "format": "prettier --write \"**/*.{js,json,md,css}\" \"**/*.njk\"",
     "format:check": "prettier --check \"**/*.{js,json,md,html,njk,css}\"",
     "clean": "rm -rf _site"
