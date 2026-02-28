@@ -1,3 +1,7 @@
+---
+title: Changelog
+layout: base.njk
+---
 # Changelog
 
 All notable changes to this project will be documented in this file.

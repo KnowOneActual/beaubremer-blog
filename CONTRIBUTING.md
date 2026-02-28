@@ -1,3 +1,7 @@
+---
+title: Contributing
+layout: base.njk
+---
 # Contributing to Beau Bremer's Blog
 
 Thanks for your interest! This is a personal blog, but I welcome contributions for:
