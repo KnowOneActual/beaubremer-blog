@@ -33,15 +33,13 @@ layout: 'base.njk'
 
   <nav class="flex justify-between items-center py-4">
     <div>
-      {% set prevPost = collections.posts | getPreviousCollectionItem(page) %}
-      {% if prevPost %}
-        <a href="{{ prevPost.url }}" class="text-fuchsia-400 hover:underline">← {{ prevPost.data.title }}</a>
+      {% set prevPost = collections.posts | getPreviousCollectionItem(page) %} {% if prevPost %}
+      <a href="{{ prevPost.url }}" class="text-fuchsia-400 hover:underline">← {{ prevPost.data.title }}</a>
       {% endif %}
     </div>
     <div>
-      {% set nextPost = collections.posts | getNextCollectionItem(page) %}
-      {% if nextPost %}
-        <a href="{{ nextPost.url }}" class="text-fuchsia-400 hover:underline">{{ nextPost.data.title }} →</a>
+      {% set nextPost = collections.posts | getNextCollectionItem(page) %} {% if nextPost %}
+      <a href="{{ nextPost.url }}" class="text-fuchsia-400 hover:underline">{{ nextPost.data.title }} →</a>
       {% endif %}
     </div>
   </nav>
