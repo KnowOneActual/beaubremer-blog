@@ -42,6 +42,15 @@ While static sites are secure by default, I took extra steps to harden the blog 
 
 The result is a fast, modern blog with an A+ security rating that is completely decoupled from my main portfolio, allowing me to focus on creating content.
 
+## Feedback & Iteration
+
+Software is a conversation. Following feedback that the initial design was "too plain," I performed a comprehensive visual refactor (V11.0.0) to move beyond a standard template look. This iteration focused on:
+- **Design Intent:** Moving from flat blocks to a layered, high-contrast aesthetic using fuchsia glow accents and glassmorphism.
+- **UX Polish:** Adding micro-interactions like the "card lift" effect and a reading progress bar to make the site feel responsive and premium.
+- **Brand Identity:** Establishing a unique typographic hierarchy using Space Grotesk to ensure the blog feels like a custom-built product rather than a generic starter kit.
+
+This process reflects my approach to development: ship a functional MVP, gather feedback, and iterate relentlessly to improve the user experience.
+
 ## Development
 
 ### Prerequisites
