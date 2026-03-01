@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/favicon/favicon.svg" alt="alt text" width="200">
+  <img src="img/favicon/favicon.svg" alt="alt text" width="125">
 </p>
 
 # Blog & Personal Writing Space
