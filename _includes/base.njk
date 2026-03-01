@@ -51,11 +51,18 @@
     <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
     <link rel="stylesheet" href="/assets/css/lite-yt-embed.css" />
   </head>
-  <body class="bg-gray-950 text-white scroll-smooth flex flex-col min-h-screen">
-    <header class="py-6 px-6 max-w-3xl mx-auto w-full">
-      <div class="flex justify-between items-center">
+  <body class="bg-gray-950 text-white scroll-smooth flex flex-col min-h-screen relative selection:bg-fuchsia-500/30 selection:text-fuchsia-200">
+    <!-- Fuchsia Glow Accents -->
+    <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-fuchsia-900/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-fuchsia-900/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+    <!-- Reading Progress Bar -->
+    <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-fuchsia-500 z-[100] transition-all duration-200" style="width: 0%"></div>
+
+    <header class="sticky top-0 z-50 py-4 px-6 w-full backdrop-blur-md bg-gray-950/80 border-b border-white/5">
+      <div class="max-w-3xl mx-auto flex justify-between items-center">
         <div>
-          <a href="/" class="text-2xl font-bold text-white hover:text-fuchsia-400 transition-colors"
+          <a href="/" class="text-2xl font-bold font-display text-white hover:text-fuchsia-400 transition-colors"
             >{{ metadata.title }}</a
           >
         </div>
@@ -85,41 +92,52 @@
           {% endif %}
         </nav>
       </div>
-      <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm border-t border-gray-800 pt-4">
+      <div class="mt-4 max-w-3xl mx-auto flex flex-wrap gap-x-6 gap-y-2 text-xs border-t border-white/5 pt-4">
         <a
           href="/tags/tech/"
-          class="text-gray-400 hover:text-fuchsia-400 transition-colors uppercase tracking-wider font-semibold"
+          class="px-2 py-1 rounded-full border border-gray-800 text-gray-400 hover:text-fuchsia-400 hover:border-fuchsia-500/30 transition-all uppercase tracking-wider font-semibold"
           >Tech</a
         >
         <a
           href="/tags/networking/"
-          class="text-gray-400 hover:text-fuchsia-400 transition-colors uppercase tracking-wider font-semibold"
+          class="px-2 py-1 rounded-full border border-gray-800 text-gray-400 hover:text-fuchsia-400 hover:border-fuchsia-500/30 transition-all uppercase tracking-wider font-semibold"
           >Networking</a
         >
         <a
           href="/tags/live-production/"
-          class="text-gray-400 hover:text-fuchsia-400 transition-colors uppercase tracking-wider font-semibold"
+          class="px-2 py-1 rounded-full border border-gray-800 text-gray-400 hover:text-fuchsia-400 hover:border-fuchsia-500/30 transition-all uppercase tracking-wider font-semibold"
           >Live Production</a
         >
         <a
           href="/tags/mindset/"
-          class="text-gray-400 hover:text-fuchsia-400 transition-colors uppercase tracking-wider font-semibold"
+          class="px-2 py-1 rounded-full border border-gray-800 text-gray-400 hover:text-fuchsia-400 hover:border-fuchsia-500/30 transition-all uppercase tracking-wider font-semibold"
           >Mindset</a
         >
       </div>
     </header>
 
     <main class="max-w-3xl mx-auto py-12 px-6 flex-grow w-full" data-pagefind-body>
-      <div class="prose prose-invert lg:prose-xl max-w-none">{{ content | safe }}</div>
+      <div class="prose prose-invert prose-fuchsia lg:prose-xl max-w-none prose-headings:font-display">
+        {{ content | safe }}
+      </div>
     </main>
 
-    <footer class="text-center py-6 bg-gray-950 text-gray-500">
-      <div class="mb-2">
-        <a href="https://blog.beaubremer.com/" target="_blank" class="hover:text-fuchsia-400 mx-2">Blog Home</a>
-        <a href="https://github.com/KnowOneActual" target="_blank" class="hover:text-fuchsia-400 mx-2">GitHub</a>
+    <footer class="text-center py-12 bg-gray-950/50 text-gray-500 border-t border-white/5">
+      <div class="mb-4">
+        <a href="https://blog.beaubremer.com/" target="_blank" class="hover:text-fuchsia-400 mx-3 transition-colors">Blog Home</a>
+        <a href="https://github.com/KnowOneActual" target="_blank" class="hover:text-fuchsia-400 mx-3 transition-colors">GitHub</a>
       </div>
-      <p>© {% year %} {{ metadata.author.name }}. Stay bold, keep creating, and rock on! All rights reserved.</p>
+      <p class="text-xs uppercase tracking-widest">© {% year %} {{ metadata.author.name }}. Stay bold, keep creating, and rock on!</p>
     </footer>
+
+    <script>
+      window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      };
+    </script>
     <script src="/assets/js/lite-yt-embed.js"></script>
   </body>
 </html>

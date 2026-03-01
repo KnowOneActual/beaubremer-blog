@@ -26,6 +26,8 @@ A website is never truly "finished." I've implemented several powerful features 
   * **Estimated Reading Time:** Automatically calculates and displays the reading time for each article, helping readers manage their time.
   * **Organized Content Architecture:** Posts are organized into year-based subdirectories (`posts/2025/`, etc.) with a flat URL structure maintained via Eleventy permalinks. This keeps the project clean while preserving SEO and existing links.
   * **Automatic Image Optimization:** I'm using the official **`@11ty/eleventy-img`** plugin to automatically optimize images. When I add an image, the plugin creates multiple smaller sizes, converts them to modern formats like **WebP**, and generates the `<picture>` element. This ensures browsers only download the most efficient image size, dramatically improving page load speed and user experience.
+  * **Modern Visual Identity & UX:** Implemented a high-contrast dark theme featuring a sticky "glass" header with `backdrop-blur`, interactive "lift" effects on post cards, and subtle background glow accents. Integrated **Space Grotesk** for display headings and **Inter** for body text to create a professional, readable hierarchy.
+  * **Reading Progress Indicator:** A dynamic progress bar at the top of the viewport provides visual feedback as readers scroll through long-form technical content.
 
 ## A Security-First Approach
 

@@ -7,8 +7,23 @@ layout: base.njk
 All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog,
-
 and this project adheres to Semantic Versioning.
+
+
+## V11.0.0 (March 1, 2026)
+
+### Added
+- **Visual Refresh:** Replaced the "Plain Jane" aesthetic with a modern, high-contrast design.
+- **Glass Header:** Implemented a sticky header with `backdrop-blur` and subtle borders.
+- **Background Accents:** Added fuchsia glow gradients in the background to create depth.
+- **Interactive Cards:** Added a hover "lift" effect and subtle glow to post cards on the index page.
+- **Reading Progress Bar:** Added a dynamic progress indicator at the top of the viewport.
+- **Typography Overhaul:** Integrated **Space Grotesk** for headings and **Inter** for body text for better visual hierarchy.
+- **Pill Tags:** Redesigned category tags as interactive pills with hover states.
+
+### Changed
+- **Tailwind Config:** Updated to include custom font families and brand color refinements.
+- **Layout:** Standardized selection colors and typography scales across all posts.
 
 
 ## V10.1.0 (Feb 27, 2026)
