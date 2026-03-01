@@ -18,6 +18,7 @@ module.exports = function (eleventyConfig) {
   });
 
   // Your other passthrough copies
+  eleventyConfig.addPassthroughCopy('assets');
   eleventyConfig.addPassthroughCopy('img');
   eleventyConfig.addPassthroughCopy('.well-known');
   eleventyConfig.addPassthroughCopy('robots.txt');
