@@ -1,6 +1,8 @@
 ---
-title: "Terminal Tips: A Guide to Bash Aliases"
-description: "A practical guide to creating and using Bash aliases to speed up your command-line workflow, save keystrokes, and customize your shell."
+title: 'Terminal Tips: A Guide to Bash Aliases'
+description:
+  'A practical guide to creating and using Bash aliases to speed up your command-line workflow, save keystrokes, and
+  customize your shell.'
 date: 2025-09-28
 
 tags:
@@ -9,22 +11,28 @@ tags:
 
 ## Terminal Tips: A Guide to Bash Aliases ✍️
 
-If you're using Bash, the default shell on many systems, you can use **aliases** to create simple shortcuts for your most-used commands.
+If you're using Bash, the default shell on many systems, you can use **aliases** to create simple shortcuts for your
+most-used commands.
 
-An alias is just a custom nickname you give to a longer command. This is a way to save time and make complex commands much easier to remember. It's one of the fastest ways to make your command-line experience more efficient.
+An alias is just a custom nickname you give to a longer command. This is a way to save time and make complex commands
+much easier to remember. It's one of the fastest ways to make your command-line experience more efficient.
 
-*(Psst... using Zsh instead? Check out our [Guide to Zsh Aliases](/posts/a_guide_to_zsh_aliases/))*
+_(Psst... using Zsh instead? Check out our [Guide to Zsh Aliases](/posts/a_guide_to_zsh_aliases/))_
 
-***
+---
 
 ### How to Create an Alias
 
-You can create an alias by adding it to your Bash configuration file. This is usually where people get a little stuck, because Bash can have two different files: `~/.bash_profile` and `~/.bashrc`.
+You can create an alias by adding it to your Bash configuration file. This is usually where people get a little stuck,
+because Bash can have two different files: `~/.bash_profile` and `~/.bashrc`.
 
-* `~/.bash_profile`: This file runs when you start a new **login shell** (e.g., when you first log into a remote server).
-* `~/.bashrc`: This file runs for **interactive shells** that are *not* login shells (e.g., when you open a new terminal window on most Linux systems).
+- `~/.bash_profile`: This file runs when you start a new **login shell** (e.g., when you first log into a remote
+  server).
+- `~/.bashrc`: This file runs for **interactive shells** that are _not_ login shells (e.g., when you open a new terminal
+  window on most Linux systems).
 
-To make sure your aliases are always available, the best practice is to **add them to `~/.bashrc`** and have your `~/.bash_profile` load it automatically.
+To make sure your aliases are always available, the best practice is to **add them to `~/.bashrc`** and have your
+`~/.bash_profile` load it automatically.
 
 #### 1. Set Up Your Config Files
 
@@ -32,7 +40,7 @@ First, open your `~/.bash_profile` with a text editor like `nano`:
 
 ```bash
 nano ~/.bash_profile
-````
+```
 
 Add the following lines to it. This code checks if `~/.bashrc` exists and, if so, loads it.
 
@@ -62,7 +70,8 @@ Remember to wrap the full command in double quotes (`"`) to handle spaces or spe
 
 #### 3\. Save and Reload
 
-Once you're done, save the file. For the changes to take effect, you can either restart your terminal or run this command:
+Once you're done, save the file. For the changes to take effect, you can either restart your terminal or run this
+command:
 
 ```bash
 source ~/.bashrc
@@ -70,16 +79,17 @@ source ~/.bashrc
 
 Your new alias is now ready to go\!
 
------
+---
 
 ### Managing Your Aliases
 
 As you add more aliases, you may need to review or remove them.
 
-  * **To list all your aliases**, just type `alias` and press Enter.
-  * **To remove an alias** for the current session, use the `unalias` command (e.g., `unalias ll`). To remove it permanently, just delete the line from your `~/.bashrc` file.
+- **To list all your aliases**, just type `alias` and press Enter.
+- **To remove an alias** for the current session, use the `unalias` command (e.g., `unalias ll`). To remove it
+  permanently, just delete the line from your `~/.bashrc` file.
 
------
+---
 
 ### Practical Examples
 
@@ -118,8 +128,9 @@ alias sb="source ~/.bashrc"       # Quickly reload your Bash config
 alias myip="curl ipinfo.io/ip"    # Get your external IP address
 ```
 
------
+---
 
 ### Make Your Terminal Your Own
 
-Aliases are a simple but powerful feature of Bash. By creating shortcuts for your personal workflow, you can make your time on the command line much more productive and enjoyable.
+Aliases are a simple but powerful feature of Bash. By creating shortcuts for your personal workflow, you can make your
+time on the command line much more productive and enjoyable.

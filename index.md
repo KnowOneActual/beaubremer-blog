@@ -1,13 +1,14 @@
 ---
-title: "Blog"
-description: "A collection of articles and thoughts."
-layout: "base.njk"
+title: 'Blog'
+description: 'A collection of articles and thoughts.'
+layout: 'base.njk'
 pagination:
   data: collections.posts
   size: 10
   reverse: true
   alias: posts
 ---
+
 <h1 class="text-6xl font-black font-display text-white mb-12 tracking-tighter italic">
   {{ title }}<span class="text-fuchsia-500">.</span>
 </h1>

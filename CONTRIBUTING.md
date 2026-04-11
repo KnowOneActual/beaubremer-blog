@@ -2,6 +2,7 @@
 title: Contributing
 layout: base.njk
 ---
+
 # Contributing to Beau Bremer's Blog
 
 Thanks for your interest! This is a personal blog, but I welcome contributions for:
@@ -21,17 +22,20 @@ Thanks for your interest! This is a personal blog, but I welcome contributions f
 ### Local Development
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/KnowOneActual/beaubremer-blog.git
    cd beaubremer-blog
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start development server**
+
    ```bash
    npm start
    ```
@@ -66,4 +70,5 @@ Please review our [Security Policy](security-policy.md) and report vulnerabiliti
 
 ## Questions?
 
-Feel free to open an issue for discussion or reach out via [beaubremer.com contact form](https://beaubremer.com#contact).
+Feel free to open an issue for discussion or reach out via
+[beaubremer.com contact form](https://beaubremer.com#contact).

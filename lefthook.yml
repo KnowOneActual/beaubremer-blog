@@ -1,0 +1,14 @@
+pre-commit:
+  parallel: true
+  commands:
+    biome:
+      glob: "*.{js,json,css}"
+      run: npx biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+    prettier:
+      glob: "*.{njk,md}"
+      run: npx prettier --write {staged_files}
+    markdownlint:
+      glob: "posts/**/*.md"
+      run: npx markdownlint --fix {staged_files}
+    secretlint:
+      run: npx secretlint {staged_files}

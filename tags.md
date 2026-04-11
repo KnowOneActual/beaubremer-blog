@@ -1,9 +1,10 @@
 ---
-title: "All Tags"
-layout: "base.njk"
+title: 'All Tags'
+layout: 'base.njk'
 permalink: /tags/
 eleventyExcludeFromCollections: true
 ---
+
 # {{ title }}
 
 <div class="flex flex-wrap gap-2 mt-8">

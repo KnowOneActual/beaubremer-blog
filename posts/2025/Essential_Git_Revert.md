@@ -1,32 +1,40 @@
 ---
-title: "Essential Git: Part 2: Safely Undoing Changes with git revert"
-description: "Learn how to use `git revert` to safely undo unwanted changes in your Git history, even after pushing to a remote repository, and how to resolve common conflicts."
+title: 'Essential Git: Part 2: Safely Undoing Changes with git revert'
+description:
+  'Learn how to use `git revert` to safely undo unwanted changes in your Git history, even after pushing to a remote
+  repository, and how to resolve common conflicts.'
 date: 2025-06-12
 ---
 
-### Working with Git is fantastic for managing your code, but sometimes, you push changes you later realize aren't quite right. 
+### Working with Git is fantastic for managing your code, but sometimes, you push changes you later realize aren't quite right
 
-Maybe a feature introduced a bug, or a configuration change is causing problems. When this happens, `git revert` comes to the rescue!
+Maybe a feature introduced a bug, or a configuration change is causing problems. When this happens, `git revert` comes
+to the rescue!
 
-It's a super important tool, especially when you've already shared your work (like pushing to a remote repository or deploying to a service like Vercel).
+It's a super important tool, especially when you've already shared your work (like pushing to a remote repository or
+deploying to a service like Vercel).
 
 ### What is `git revert`?
 
-Simply put, `git revert` creates new commits that undo the changes from previous commits. It's like writing an "undo" commit.
+Simply put, `git revert` creates new commits that undo the changes from previous commits. It's like writing an "undo"
+commit.
 
-The key difference from other Git commands like `git reset` is that `git revert` does not rewrite your project's history. Instead, it adds new history that cancels out the old. This makes it a much safer option when:
+The key difference from other Git commands like `git reset` is that `git revert` does not rewrite your project's
+history. Instead, it adds new history that cancels out the old. This makes it a much safer option when:
 
-* You've already pushed your commits to a shared remote repository.
-* You're working on a public branch (like `main` or `master`).
-* You need to maintain a clear, linear history of changes.
+- You've already pushed your commits to a shared remote repository.
+- You're working on a public branch (like `main` or `master`).
+- You need to maintain a clear, linear history of changes.
 
 ### When to Use `git revert`
 
 Think of `git revert` as your go-to for "undoing" when:
 
-* **You've pushed a bad commit:** This is exactly what we just experienced. If you have a commit causing issues on your live Vercel site, reverting it safely brings you back without erasing the fact that the commit ever existed.
-* **You want to undo specific commits in your history:** You can pick and choose which commits to undo, even if they're not the very last ones.
-* **You need to collaborate:** Since it doesn't rewrite history, `git revert` is polite to your teammates' repositories.
+- **You've pushed a bad commit:** This is exactly what we just experienced. If you have a commit causing issues on your
+  live Vercel site, reverting it safely brings you back without erasing the fact that the commit ever existed.
+- **You want to undo specific commits in your history:** You can pick and choose which commits to undo, even if they're
+  not the very last ones.
+- **You need to collaborate:** Since it doesn't rewrite history, `git revert` is polite to your teammates' repositories.
 
 ### Step-by-Step Tutorial: Reverting a Commit
 
@@ -34,11 +42,12 @@ Let's walk through how to use `git revert` to undo a specific commit.
 
 #### Step 1: Identify the Commit to Revert
 
-First, you need to find the commit hash (the unique ID) of the commit you want to undo. This should be the commit that introduced the changes you want to reverse.
+First, you need to find the commit hash (the unique ID) of the commit you want to undo. This should be the commit that
+introduced the changes you want to reverse.
 
 Open your terminal or Git Bash in your project's root directory and run:
 
-```bash
+````bash
 git log
 
 
@@ -168,3 +177,4 @@ Sometimes, you don't just want to undo specific commits, but instead completely 
         ```
 
 `git revert` is a powerful and safe way to manage your project's history. Understanding how to use it, especially for handling conflicts, will save you a lot of headaches in your development journey!
+````
