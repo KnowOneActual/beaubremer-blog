@@ -72,7 +72,7 @@ jobs:
       - name: Eleventy Build
         run: npm run build
       - name: Upload Build Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: _site
           path: _site/
