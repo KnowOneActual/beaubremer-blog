@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./_includes/**/*.njk', './posts/**/*.md', './*.md', './*.html', './index.md'],
+  content: ['./_includes/**/*.njk', './posts/**/*.md', './*.md', './*.html', './index.md', './_site/**/*.html'],
   theme: {
     extend: {
       fontFamily: {

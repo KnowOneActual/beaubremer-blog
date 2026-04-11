@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:css": "tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css --watch",
+    "watch:css": "tailwindcss -i ./src/css/tailwind.css -o ./_site/assets/css/style.css --watch",
     "watch:eleventy": "eleventy --serve",
-    "start": "npm-run-all --parallel watch:*",
-    "build": "tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css && eleventy && npx pagefind --site _site",
+    "start": "eleventy && npm-run-all --parallel watch:*",
+    "build": "eleventy && tailwindcss -i ./src/css/tailwind.css -o ./_site/assets/css/style.css && npx pagefind --site _site",
     "format": "prettier --write \"**/*.{js,json,md,css}\" \"**/*.njk\"",
     "format:check": "prettier --check \"**/*.{js,json,md,html,njk,css}\"",
     "clean": "rm -rf _site"

@@ -9,6 +9,14 @@ All notable changes to this project will be documented in this file.
 The format is based on Keep a Changelog,
 and this project adheres to Semantic Versioning.
 
+## V11.0.2 (April 10, 2026)
+
+### Fixed
+- **Styling:** Re-established full blog styling by updating Tailwind CSS to v4 syntax (`@import "tailwindcss";`) and ensuring proper build order where Eleventy runs before Tailwind.
+- **Content Security Policy:** Updated the CSP in `netlify.toml` to include `'unsafe-hashes'`, `'unsafe-inline'`, and `'unsafe-eval'` to resolve blocking errors for inline styles and scripts.
+- **Asset Paths:** Corrected CSS output and link paths to ensure the compiled `style.css` is correctly loaded from `/assets/css/style.css`.
+
+
 ## V11.0.1 (April 10, 2026)
 
 ### Fixed
