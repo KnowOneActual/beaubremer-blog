@@ -77,7 +77,7 @@ Now, pull your website's code from its repository and place it where Nginx can f
 
 ```bash
 # Clone your site (use your own repo URL)
-git clone [https://github.com/your-username/your-repo.git](https://github.com/your-username/your-repo.git)
+git clone https://github.com/your-username/your-repo.git
 
 # Move the files to the web server's public directory
 sudo cp -r ~/your-repo/* /var/www/html/
@@ -117,4 +117,4 @@ In the end, I got it working, and you can too. This project is a perfect example
 
 So go ahead, give it a try. It's a fun challenge, a great story to tell, and a fantastic way to prove that you can figure things out, no matter how poorly they're designed.
 
-You can access the live site using the [Tor Browser via this link](http://wb7kwfl6bygqg4zh2fdk7jk6v2ab3bhmjo63xtdm2nltl33vuwoqlkqd.onion). Please note that this link will only resolve if you are using the [Tor Browser](https://www.torproject.org/download/). (wb7kwfl6bygqg4zh2fdk7jk6v2ab3bhmjo63xtdm2nltl33vuwoqlkqd.onion)
+You can access the live site using the [Tor Browser via this link](http://vqov6yt6arpfipoo4thbqopysgrv6j6lduz7ropkhj3ulx76stunfkad.onion). Please note that this link will only resolve if you are using the [Tor Browser](https://www.torproject.org/download/). (vqov6yt6arpfipoo4thbqopysgrv6j6lduz7ropkhj3ulx76stunfkad.onion)
