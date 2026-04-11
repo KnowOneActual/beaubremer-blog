@@ -91,8 +91,6 @@ jobs:
       - name: Run Lighthouse
         uses: treosh/lighthouse-ci-action@v12
         with:
-          urls: |
-            http://localhost:8080/
-          staticDistDir: ./_site
+          configPath: './.lighthouserc.json'
           uploadArtifacts: true
           temporaryPublicStorage: true
