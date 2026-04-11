@@ -9,6 +9,15 @@ All notable changes to this project will be documented in this file.
 The format is based on Keep a Changelog,
 and this project adheres to Semantic Versioning.
 
+## V11.0.1 (April 10, 2026)
+
+### Fixed
+- **Eleventy Build:** Corrected an `Invalid EleventyConfig.addPlugin` error by updating the RSS feed plugin to use the recommended `feedPlugin` virtual template configuration.
+- **CI/CD Pipeline:** Resolved a security vulnerability (CVE-2026-33750) in the `brace-expansion` dependency by adding an override to `package.json`.
+- **Redundancy:** Removed the old `feed/feed.njk` template, as its functionality is now handled by the `feedPlugin`.
+
+
+
 
 ## V11.0.0 (March 1, 2026)
 

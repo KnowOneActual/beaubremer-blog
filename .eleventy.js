@@ -1,12 +1,31 @@
-const pluginRss = require('@11ty/eleventy-plugin-rss');
+const { feedPlugin } = require('@11ty/eleventy-plugin-rss');
 const { DateTime } = require('luxon');
 const Image = require('@11ty/eleventy-img');
 const path = require('path');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const fs = require('fs');
 
 module.exports = function (eleventyConfig) {
+  const metadata = JSON.parse(fs.readFileSync('_data/metadata.json'));
   // === PLUGINS ===
-  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(feedPlugin, {
+    type: 'atom', // or "rss", "json"
+    outputPath: '/feed.xml',
+    collection: {
+      name: 'posts', // iterate over `collections.posts`
+      limit: 10,     // 0 for no limit
+    },
+    metadata: {
+      language: metadata.language,
+      title: metadata.title,
+      subtitle: metadata.description,
+      base: metadata.url,
+      author: {
+        name: metadata.author.name,
+        email: metadata.author.email,
+      }
+    }
+  });
   eleventyConfig.addPlugin(syntaxHighlight);
   // === PASSTHROUGH COPIES ===
   // **THE FIX IS HERE:** The destination paths now correctly include the "assets" folder.
