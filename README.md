@@ -151,3 +151,8 @@ Visit `http://localhost:8080` to see your changes live.
 ## Recent Updates
 
 See [CHANGELOG.md](CHANGELOG.md) for the full history.
+
+## 📝 Recent Blog Posts
+
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->

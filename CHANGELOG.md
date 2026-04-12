@@ -9,6 +9,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
+## V11.1.1 (April 11, 2026)
+
+### Fixed
+
+- **Blog Post Workflow:** Fixed a 404 error in the `KnowOneActual/KnowOneActual` profile workflow by pointing directly to
+  the RSS feed at `blog.beaubremer.com/feed.xml`.
+- **Action Deprecations:** Upgraded all GitHub Actions (`checkout`, `setup-node`, `blog-post-workflow`) to use **Node.js
+  24** to resolve deprecation warnings and ensure future compatibility.
+
+### Added
+
+- **README Automation:** Added `<!-- BLOG-POST-LIST -->` markers to the project README and a new workflow to
+  automatically display latest posts within this repository.
+
 ## V11.1.0 (April 11, 2026)
 
 ### Added
