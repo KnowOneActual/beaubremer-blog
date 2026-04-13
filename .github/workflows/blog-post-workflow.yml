@@ -12,6 +12,8 @@ jobs:
   update-readme-with-blog:
     name: Update this repo's README with latest blog posts
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,6 +26,8 @@ jobs:
           
           # The secret handshake to get past Cloudflare
           user_agent: "Beau-Bremer-Website-Blog-Fetcher/1.0"
+          retry_count: 5
+          retry_wait_time: 10
           
           # Standard headers
           accept_header: "application/xml, text/xml, application/rss+xml"
