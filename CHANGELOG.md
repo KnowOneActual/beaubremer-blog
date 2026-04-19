@@ -13,7 +13,8 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ### Fixed
 
-- **GitHub Actions Workflows:** Added workflow-level permissions (`contents: read`) to `ci.yml` and `snyk.yml` to adhere to the principle of least privilege and resolve warnings.
+- **GitHub Actions Workflows:** Added workflow-level permissions (`contents: read`) to `ci.yml` and `snyk.yml` to adhere
+  to the principle of least privilege and resolve warnings.
 
 ## V11.1.1 (April 11, 2026)
 
