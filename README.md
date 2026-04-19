@@ -155,6 +155,7 @@ See [CHANGELOG.md](CHANGELOG.md) for the full history.
 ## 📝 Recent Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
+
 - [Live Streaming Video Software Isn&#39;t the Bottleneck Anymore, Your Workflow Is](https://blog.beaubremer.com/posts/live-streaming-software-isn-t-the-bottleneck-anymore/)
 - [Thinking is the Tool: Hacking the Physical World](https://blog.beaubremer.com/posts/thinking-is-the-tool-hacking-the-physical-world/)
 - [Why I Built My Own &#39;Link in Bio&#39; Page &lpar;And You Can Too&rpar;](https://blog.beaubremer.com/posts/build-a-link-in-bio-page/)
