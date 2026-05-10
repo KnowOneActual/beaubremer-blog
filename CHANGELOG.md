@@ -157,6 +157,10 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+### Fixed
+
+- **CI Workflow:** Resolved an intermittent Prettier formatting error in the CI pipeline by running 'prettier --write' to ensure consistent code style. Also added 'temp_files/' to .gitignore.
+
 ### Added
 
 - **Code Syntax Highlighting:** Implemented syntax highlighting for code blocks using the
