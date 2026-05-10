@@ -9,6 +9,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
+## V11.1.3 (May 10, 2026)
+
+### Fixed
+
+- **Eleventy Development Server Stalling:** Resolved persistent stalling issues with `npm start`, `eleventy --serve`, and `eleventy --watch` by identifying an environmental conflict preventing these commands from executing reliably. Implemented a workaround that involves running `http-server` separately to serve static content while `npx eleventy` is manually run to build the site.
+
 ## V11.1.2 (April 19, 2026)
 
 ### Fixed
