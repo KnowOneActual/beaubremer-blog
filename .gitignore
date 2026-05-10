@@ -169,3 +169,5 @@ tailwindcss
 megalinter-reports/
 
 
+# Temp Files and Logs
+temp_files/
