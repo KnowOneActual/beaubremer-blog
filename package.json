@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:css": "tailwindcss -i ./src/css/tailwind.css -o ./_site/assets/css/style.css --watch",
+    "watch:css": "npx @tailwindcss/cli -i ./src/css/tailwind.css -o ./_site/assets/css/style.css --watch",
     "watch:eleventy": "eleventy --serve",
     "start": "eleventy && npm-run-all --parallel watch:*",
-    "build": "eleventy && tailwindcss -i ./src/css/tailwind.css -o ./_site/assets/css/style.css && npx pagefind --site _site",
+    "build": "eleventy && npx @tailwindcss/cli -i ./src/css/tailwind.css -o ./_site/assets/css/style.css && npx pagefind --site _site",
     "format": "biome format --write . && npx prettier --write \"**/*.{njk,md}\"",
     "format:check": "biome check . && npx prettier --check \"**/*.{njk,md}\"",
     "lint": "biome lint . && npx markdownlint \"posts/**/*.md\" && npx secretlint \"**/*\"",
@@ -22,10 +22,7 @@
     "brace-expansion": ">=5.0.5"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.5",
     "@11ty/eleventy-img": "^6.0.4",
-    "@11ty/eleventy-plugin-rss": "^3.0.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "@biomejs/biome": "^2.4.14",
     "@secretlint/secretlint-rule-preset-recommend": "^13.0.0",
     "@tailwindcss/cli": "^4.3.0",
@@ -42,6 +39,9 @@
     "tailwindcss": "^4.2.2"
   },
   "dependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy-plugin-rss": "^3.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "glob": "^13.0.6",
     "http-server": "^14.1.1",
     "js-yaml": "^4.1.1"
