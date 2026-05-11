@@ -9,6 +9,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
+## V11.1.4 (May 10, 2026)
+
+### Fixed
+
+- **Tailwind CSS v4 Typography:** Fixed a critical bug where blog posts rendered without formatting. Removed the legacy
+  `tailwind.config.js` and updated `src/css/tailwind.css` to use native Tailwind v4 directives (`@plugin`, `@source`),
+  restoring the `@tailwindcss/typography` plugin functionality.
+- **Biome Configuration:** Migrated `biome.json` schema to version `2.4.15` and enabled `tailwindDirectives` in the CSS
+  parser to ensure Prettier and Biome correctly parse the new Tailwind syntax without throwing errors in CI.
+- **Documentation:** Added a `docs/troubleshooting/tailwind-v4.md` guide to help prevent similar issues during future
+  upgrades.
+
 ## V11.1.3 (May 10, 2026)
 
 ### Fixed
