@@ -155,10 +155,9 @@ See [CHANGELOG.md](CHANGELOG.md) for the full history.
 ## 📝 Recent Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
-
 - [Sharing Your Python Tools with the World](https://blog.beaubremer.com/posts/sharing-your-python-tools-with-the-world/)
 - [Staying Flexible Without Letting Your Process Get Bulldozed](https://blog.beaubremer.com/posts/staying-flexible-without-letting-your-process-get-bulldozed/)
+- [Moving to Local Hardware](https://blog.beaubremer.com/posts/moving-to-local-hardware/)
+- [Phrases for When You Don&#39;t Have the Answer](https://blog.beaubremer.com/posts/phrases-for-when-you-dont-have-the-answer-v2/)
 - [Live Streaming Video Software Isn&#39;t the Bottleneck Anymore, Your Workflow Is](https://blog.beaubremer.com/posts/live-streaming-software-isn-t-the-bottleneck-anymore/)
-- [Thinking is the Tool: Hacking the Physical World](https://blog.beaubremer.com/posts/thinking-is-the-tool-hacking-the-physical-world/)
-- [Why I Built My Own &#39;Link in Bio&#39; Page &lpar;And You Can Too&rpar;](https://blog.beaubremer.com/posts/build-a-link-in-bio-page/)
 <!-- BLOG-POST-LIST:END -->
