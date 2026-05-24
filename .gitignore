@@ -155,6 +155,7 @@ _scratch.*
 *.scratch
 start-work.sh
 WARP.md
+CLAUDE.md
 
 
 # Eleventy build output (already partially covered, but be explicit)
