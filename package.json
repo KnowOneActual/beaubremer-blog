@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy-img": "^6.0.4",
-    "@biomejs/biome": "^2.4.14",
+    "@biomejs/biome": "^2.4.16",
     "@secretlint/secretlint-rule-preset-recommend": "^13.0.2",
     "@tailwindcss/cli": "^4.3.0",
     "@tailwindcss/typography": "^0.5.19",
