@@ -36,7 +36,7 @@
     "postcss": "^8.5.15",
     "prettier": "^3.8.3",
     "secretlint": "^13.0.2",
-    "tailwindcss": "^4.2.2"
+    "tailwindcss": "^4.3.1"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",
