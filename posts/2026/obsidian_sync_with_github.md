@@ -94,7 +94,7 @@ git commit -m "Initial vault setup"
 git push -u origin main
 ```
 
-4. **Authenticate:**
+1. **Authenticate:**
    - For **Username**, enter your GitHub name.
    - For **Password**, paste your PAT. (No text will show as you paste.)
 
