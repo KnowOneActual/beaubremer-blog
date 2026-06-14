@@ -9,21 +9,29 @@ tags:
 
 ### Why I Built My Own "Link in Bio" Page (And You Can Too)
 
-If you use social media, you have seen them everywhere. A single profile link opens a page full of other links. Tools like Linktree are popular because they solve a simple problem. They help when you have one link slot but too many things to share. I wondered if I could build my own version - and if it was worth the effort.
+If you use social media, you have seen them everywhere. A single profile link opens a page full of other links. Tools
+like Linktree are popular because they solve a simple problem. They help when you have one link slot but too many things
+to share. I wondered if I could build my own version - and if it was worth the effort.
 
-The answer to both was yes. It became a fun weekend project. Now I have a page that feels personal, private, and more useful than ready-made options.
+The answer to both was yes. It became a fun weekend project. Now I have a page that feels personal, private, and more
+useful than ready-made options.
 
 ---
 
 #### Why build your own?
 
-I started because I was curious. I like to tinker, and a link page is a small, fun project. It is more interesting than a simple "Hello, World" page. Once I began, I found a few big benefits.
+I started because I was curious. I like to tinker, and a link page is a small, fun project. It is more interesting than
+a simple "Hello, World" page. Once I began, I found a few big benefits.
 
-- **True privacy.** With hosted services, every click goes through their servers. They track users and collect data you cannot see. When I host my own page, visitors go straight to their destination. There are no tracking pixels, cookies, or hidden dashboards.
+- **True privacy.** With hosted services, every click goes through their servers. They track users and collect data you
+  cannot see. When I host my own page, visitors go straight to their destination. There are no tracking pixels, cookies,
+  or hidden dashboards.
 
-- **Full control.** I am not locked into a template or a free plan limit. The page matches the rest of my site. It uses my own fonts, icons, and text. It feels like a natural part of my site rather than a rented page.
+- **Full control.** I am not locked into a template or a free plan limit. The page matches the rest of my site. It uses
+  my own fonts, icons, and text. It feels like a natural part of my site rather than a rented page.
 
-- **Total ownership.** If a service changes its prices or shuts down, I do not need to worry. I do not have to update all my social profiles. My page is just static files. As long as I keep my domain, it will not go anywhere.
+- **Total ownership.** If a service changes its prices or shuts down, I do not need to worry. I do not have to update
+  all my social profiles. My page is just static files. As long as I keep my domain, it will not go anywhere.
 
 ---
 
@@ -110,21 +118,25 @@ Every project has its challenges. Adding the page to my main site required a few
 - I adjusted security headers to make sure everything loaded safely.
 - I checked the icons and text contrast on mobile screens.
 
-None of these issues were major blockers. They were good reminders that small details matter. Taking time to fix them makes the page feel polished instead of just basic.
+None of these issues were major blockers. They were good reminders that small details matter. Taking time to fix them
+makes the page feel polished instead of just basic.
 
 ---
 
 #### What the page gives me
 
-Now I have a fast, lightweight link page. It matches my site design and respects user privacy. You can see it live on my [links page](https://beaubremer.com/links). It gives me one clean spot to direct people from social media.
+Now I have a fast, lightweight link page. It matches my site design and respects user privacy. You can see it live on my
+[links page](https://beaubremer.com/links). It gives me one clean spot to direct people from social media.
 
-This project shows that you do not always need a paid subscription to solve a problem. Sometimes, a few files and a free afternoon are all you need.
+This project shows that you do not always need a paid subscription to solve a problem. Sometimes, a few files and a free
+afternoon are all you need.
 
 ---
 
 #### How to build your own
 
-If you want to practice web development, this is a perfect project. It covers HTML, CSS, JavaScript, and hosting, but you can finish it in a weekend.
+If you want to practice web development, this is a perfect project. It covers HTML, CSS, JavaScript, and hosting, but
+you can finish it in a weekend.
 
 Here is how to start:
 

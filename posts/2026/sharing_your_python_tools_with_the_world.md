@@ -12,7 +12,8 @@ tags:
 
 ### Sharing Your Python Tools with the World
 
-It is fun to turn a Python script into a tool. Anyone can install it with one command. You can share it with friends, reuse it, or publish it.
+It is fun to turn a Python script into a tool. Anyone can install it with one command. You can share it with friends,
+reuse it, or publish it.
 
 PyPI makes this easy. People can run pip install instead of cloning a repository.
 
@@ -20,7 +21,8 @@ PyPI makes this easy. People can run pip install instead of cloning a repository
 
 #### Why publish?
 
-Many Python tools start small. You might build a CLI tool to save time. Or you might write a helper library or a side project. Publishing has several benefits:
+Many Python tools start small. You might build a CLI tool to save time. Or you might write a helper library or a side
+project. Publishing has several benefits:
 
 - **Easy sharing:** Users do not need to clone a repository or set paths manually.
 - **Good structure:** Packaging forces you to organize your code logically.
@@ -32,7 +34,8 @@ It is a great milestone. Your script becomes a tool that is ready to ship.
 
 #### Preparing your project
 
-Your project needs a clean structure before you upload it. The key file is `pyproject.toml`. This file tells the tools how to build the package.
+Your project needs a clean structure before you upload it. The key file is `pyproject.toml`. This file tells the tools
+how to build the package.
 
 Here is a simple example:
 
@@ -52,7 +55,8 @@ dependencies = [
 your-command = "your_package.main:app"
 ```
 
-You only need these basic settings to start. If your package has a command-line tool, the `[project.scripts]` section creates the terminal command during installation.
+You only need these basic settings to start. If your package has a command-line tool, the `[project.scripts]` section
+creates the terminal command during installation.
 
 ---
 
@@ -60,7 +64,8 @@ You only need these basic settings to start. If your package has a command-line 
 
 The first release requires a manual step. Since the project is new to PyPI, you must upload it once by hand.
 
-Use a PyPI API token for the first upload. Create a token in PyPI. Add it as a secret on GitHub. Do not put tokens in your code.
+Use a PyPI API token for the first upload. Create a token in PyPI. Add it as a secret on GitHub. Do not put tokens in
+your code.
 
 On GitHub, name the secret:
 
@@ -74,9 +79,11 @@ Your workflow can now publish securely using this secret.
 
 #### Using Trusted Publishing
 
-Next, set up Trusted Publishing. This is the best long-term method. GitHub and PyPI use OIDC to verify your workflow without saved tokens.
+Next, set up Trusted Publishing. This is the best long-term method. GitHub and PyPI use OIDC to verify your workflow
+without saved tokens.
 
-Link your PyPI project to your GitHub repository. Then give your workflow the right permissions. The setup looks like this:
+Link your PyPI project to your GitHub repository. Then give your workflow the right permissions. The setup looks like
+this:
 
 ```yaml
 permissions:
@@ -105,7 +112,8 @@ A small setup makes future releases effortless.
 
 #### Keeping your credentials secure
 
-Once Trusted Publishing is active, delete the old API token. Old tokens are security risks. Deleting them is an easy win.
+Once Trusted Publishing is active, delete the old API token. Old tokens are security risks. Deleting them is an easy
+win.
 
 Follow these rules:
 
@@ -119,6 +127,7 @@ These habits keep your project secure.
 
 #### Why packaging is worth learning
 
-Publishing can seem hard at first. You must handle code structures, workflows, and security. But the process is easy once you try it.
+Publishing can seem hard at first. You must handle code structures, workflows, and security. But the process is easy
+once you try it.
 
 It is a satisfying moment. Your local project is now a tool ready for the world.

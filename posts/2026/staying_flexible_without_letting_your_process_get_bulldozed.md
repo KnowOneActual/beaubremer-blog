@@ -11,9 +11,11 @@ tags:
 
 ### Staying Flexible Without Letting Your Process Get Bulldozed
 
-Being flexible is a good trait. It helps you adjust when plans change. It helps you solve problems. But do not let others rewrite your workflow on a whim.
+Being flexible is a good trait. It helps you adjust when plans change. It helps you solve problems. But do not let
+others rewrite your workflow on a whim.
 
-Keeping this boundary clear is essential. A good process comes from testing and past mistakes. A workflow works for a reason.
+Keeping this boundary clear is essential. A good process comes from testing and past mistakes. A workflow works for a
+reason.
 
 ---
 
@@ -34,11 +36,14 @@ Openness makes work better.
 
 #### But not every change is a good one
 
-Problems start when flexibility means changing your approach because someone else is uneasy. This hurts the workflow and does not help the team.
+Problems start when flexibility means changing your approach because someone else is uneasy. This hurts the workflow and
+does not help the team.
 
-A working process deserves a reason before it gets changed. A taste or a rushed opinion is not a good reason to throw it out.
+A working process deserves a reason before it gets changed. A taste or a rushed opinion is not a good reason to throw it
+out.
 
-Processes are vital when they protect focus, quality, or standards. If someone wants a change, they must explain why the new way is better.
+Processes are vital when they protect focus, quality, or standards. If someone wants a change, they must explain why the
+new way is better.
 
 ---
 
@@ -68,7 +73,8 @@ One invites improvement. The other just creates friction.
 
 A good process helps you avoid repeating past mistakes.
 
-If a workflow works, it has earned trust. That does not mean it can never change. It just means changes should be planned, not forced on a whim.
+If a workflow works, it has earned trust. That does not mean it can never change. It just means changes should be
+planned, not forced on a whim.
 
 That is the balance:
 
@@ -119,9 +125,11 @@ You can be helpful without being easy to push around.
 
 Do not change a working process just to make someone else comfortable.
 
-If the change improves the outcome, it is worth discussing. If it just makes other people feel in control, that is a different conversation.
+If the change improves the outcome, it is worth discussing. If it just makes other people feel in control, that is a
+different conversation.
 
-That mindset keeps you flexible without turning your workflow into a moving target. This approach helps everyone do better work.
+That mindset keeps you flexible without turning your workflow into a moving target. This approach helps everyone do
+better work.
 
 ---
 

@@ -11,9 +11,11 @@ tags:
 
 ### Phrases for When You Don't Have the Answer
 
-At some point in every meeting, every 1:1, or every high-stakes conversation, someone will ask you a question you do not know how to answer. How you respond in that moment matters more than most people realize.
+At some point in every meeting, every 1:1, or every high-stakes conversation, someone will ask you a question you do not
+know how to answer. How you respond in that moment matters more than most people realize.
 
-We often feel pressure to fill the silence. We want to say something confident and hope it lands. But guessing with certainty is a mistake. Saying the wrong thing damages your credibility. Admitting you do not know builds trust quickly.
+We often feel pressure to fill the silence. We want to say something confident and hope it lands. But guessing with
+certainty is a mistake. Saying the wrong thing damages your credibility. Admitting you do not know builds trust quickly.
 
 Here is a list of phrases that help you handle these moments.
 
@@ -23,9 +25,11 @@ Here is a list of phrases that help you handle these moments.
 
 This is the most uncomfortable scenario. The question is in your area, but you do not have the answer.
 
-Imagine you are in the middle of pre-production. Your event manager asks why a metric dropped last week. You have been focused on a different part of the project all week. You have a guess, but you are not sure.
+Imagine you are in the middle of pre-production. Your event manager asks why a metric dropped last week. You have been
+focused on a different part of the project all week. You have a guess, but you are not sure.
 
-The temptation is to guess to sound knowledgeable. Do not do it. A wrong guess is much worse than checking the data first. Be honest without sounding unprepared.
+The temptation is to guess to sound knowledgeable. Do not do it. A wrong guess is much worse than checking the data
+first. Be honest without sounding unprepared.
 
 - "I am not sure, but I will find out and let you know."
 - "That is a good question, and I do not know. Let me check and get back to you."
@@ -33,17 +37,21 @@ The temptation is to guess to sound knowledgeable. Do not do it. A wrong guess i
 - "I would rather check than give you incorrect information."
 - "That is important, and I want to give you a complete answer. Let me get back to you by the end of the day."
 
-The last phrase works well in high-stakes meetings. It shows you take the question seriously and gives you a clear time to follow up.
+The last phrase works well in high-stakes meetings. It shows you take the question seriously and gives you a clear time
+to follow up.
 
 ---
 
 #### When it is not your area of expertise
 
-Sometimes a question is not yours to answer. This is not because you made a mistake, but because someone else owns that area.
+Sometimes a question is not yours to answer. This is not because you made a mistake, but because someone else owns that
+area.
 
-Imagine a client asks you about server costs during a meeting about logistics. You could guess and risk being wrong. Or you could own the boundary and connect them with the right person.
+Imagine a client asks you about server costs during a meeting about logistics. You could guess and risk being wrong. Or
+you could own the boundary and connect them with the right person.
 
-The second option is always better. It shows self-awareness and saves everyone time. Redirecting the question is the most helpful path.
+The second option is always better. It shows self-awareness and saves everyone time. Redirecting the question is the
+most helpful path.
 
 - "Here is what I know, and here is what is outside my area."
 - "I do not have the exact details. My general understanding is..."
@@ -57,9 +65,11 @@ The second option is always better. It shows self-awareness and saves everyone t
 
 Some questions do not have answers yet. The team is still figuring things out.
 
-This happens when a team evaluates a new tool, a design decision, or a process change. Someone asks how to handle a new challenge, and nobody in the room knows yet.
+This happens when a team evaluates a new tool, a design decision, or a process change. Someone asks how to handle a new
+challenge, and nobody in the room knows yet.
 
-These moments can feel uncomfortable, but they are great opportunities. You can think out loud, build shared understanding, and make a decision together.
+These moments can feel uncomfortable, but they are great opportunities. You can think out loud, build shared
+understanding, and make a decision together.
 
 - "I will research that and find the answer."
 - "I do not have a clear answer yet. Let's work through it together."
@@ -74,7 +84,8 @@ Saying "let's figure it out" is very powerful. It is honest and collaborative.
 
 Sometimes a question lacks context.
 
-For example, someone asks "why does this keep breaking?" but they have not told you which system or what error they saw. Trying to answer right away leads to mistakes.
+For example, someone asks "why does this keep breaking?" but they have not told you which system or what error they saw.
+Trying to answer right away leads to mistakes.
 
 Asking for context helps you answer the right question.
 
@@ -107,6 +118,7 @@ Saying "I do not know" poorly sounds like avoidance. Done well, it shows integri
 
 Trust goes to those who are honest about what they know, clear about what they do not, and reliable about following up.
 
-It only takes a few extra words, a commitment to follow up, or a redirect to the right person. Slow down so you do not panic-fill the silence.
+It only takes a few extra words, a commitment to follow up, or a redirect to the right person. Slow down so you do not
+panic-fill the silence.
 
 Most people will respect that. The ones who do not probably would not trust a fast guess anyway.

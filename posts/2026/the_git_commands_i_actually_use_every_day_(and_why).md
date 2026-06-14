@@ -9,9 +9,11 @@ tags:
 
 ### The Git Commands I Use Every Day (And Why)
 
-**TL;DR:** In this post, I show the Git commands I use daily. I explain how they fit into my workflow to keep commits small and easy to review.
+**TL;DR:** In this post, I show the Git commands I use daily. I explain how they fit into my workflow to keep commits
+small and easy to review.
 
-There are many Git commands, but I only use a few. These commands keep my work moving. They help me check what changed, make focused commits, and fix mistakes.
+There are many Git commands, but I only use a few. These commands keep my work moving. They help me check what changed,
+make focused commits, and fix mistakes.
 
 This guide focuses on the commands I use in real projects.
 
@@ -51,7 +53,9 @@ Here is my typical flow:
 3. Stage only the parts that belong together.
 4. Run `git diff --staged` to check the commit.
 
-For example, I once refactored a component and also changed some logging. Running `git diff` made it clear that the logging change did not belong with the refactor. I used `git add -p` to stage only the refactor. I committed the logging change separately. This kept the commit history clean.
+For example, I once refactored a component and also changed some logging. Running `git diff` made it clear that the
+logging change did not belong with the refactor. I used `git add -p` to stage only the refactor. I committed the logging
+change separately. This kept the commit history clean.
 
 ---
 
@@ -149,7 +153,8 @@ git pull
 git merge feature/my-idea
 ```
 
-I use merge to bring finished features into `main`. I also use it to get the latest `main` changes into my feature branch.
+I use merge to bring finished features into `main`. I also use it to get the latest `main` changes into my feature
+branch.
 
 If there is a conflict, I resolve it in my editor and then:
 
@@ -170,7 +175,8 @@ When I stage the wrong file or write a bad message, I use these recovery command
 git restore path/to/file
 ```
 
-I use this when I want to discard all changes in a file. It returns the file to the last committed state. I check `git status` first to make sure I do not lose good work.
+I use this when I want to discard all changes in a file. It returns the file to the last committed state. I check
+`git status` first to make sure I do not lose good work.
 
 I am careful with `git restore` because it deletes local changes permanently. If I am unsure, I back up the file first.
 
@@ -182,7 +188,8 @@ git reset HEAD path/to/file
 
 Use this when you stage a file but want to keep the edits. It moves the file back to unstaged.
 
-I often stage files by mistake, like config files or scratch notes. I see them in `git status` and run `git reset HEAD` to unstage them. The edits remain in my working files.
+I often stage files by mistake, like config files or scratch notes. I see them in `git status` and run `git reset HEAD`
+to unstage them. The edits remain in my working files.
 
 ### `git commit --amend`
 
@@ -211,7 +218,8 @@ git log
 git log --oneline --graph --decorate --all
 ```
 
-I use `git log` to see recent commits. For a better view, I use `--oneline --graph --decorate --all` to show a visual history tree.
+I use `git log` to see recent commits. For a better view, I use `--oneline --graph --decorate --all` to show a visual
+history tree.
 
 This helps me:
 
@@ -261,6 +269,7 @@ This simple flow keeps my work organized and easy to review.
 To learn more about Git, you might like these posts:
 
 - [Essential Git: Part 1](/posts/essential_git%20part_1/) - A guide to core Git concepts.
-- [Getting a handle on .gitignore: A Guide to a Cleaner Git Repo](/posts/mastering_gitignore_a_complete_guide_to_a_cleaner_git_repo/) - How to keep junk files out of your repositories.
+- [Getting a handle on .gitignore: A Guide to a Cleaner Git Repo](/posts/mastering_gitignore_a_complete_guide_to_a_cleaner_git_repo/) -
+  How to keep junk files out of your repositories.
 
 These guides cover the core Git habits I rely on every day.
