@@ -9,123 +9,107 @@ tags:
   - tech
 ---
 
-## A Sysadmin's Tale: Debugging a Service That Won't Start
+## A sysadmin's tale: debugging a service that won't start
 
-Every so often in server administration, you run into a problem that defies the usual solutions. A service that should
-be running simply isn't, and the quick fixes don't work. A recent troubleshooting session with a self-hosted Tor Onion
-Service served as a great reminder of some valuable lessons in persistence and diagnostics.
+Sometimes server problems defy the usual solutions. A service fails to start, and quick fixes do not work. Debugging a
+self-hosted Tor onion service recently reminded me of useful debugging steps.
 
-While the context here is a Tor service, the step-by-step process of elimination is a universal guide to debugging
-almost any misbehaving service on a Linux server.
+Although this guide uses a Tor service as an example, these steps apply to almost any Linux service.
 
 ---
 
-### The Problem: A Service Playing Dead
+### The problem: a service playing dead
 
-The initial symptom was simple: the onion site was down. After connecting to the server, the first command in any
-admin's toolkit is `systemctl status`.
+The onion site was down. After connecting to the server, I ran `systemctl status`.
 
 ```bash
 sudo systemctl status tor
 ```
 
-The output holds the first major clue: **`Active: active (exited)`**. For a service that's supposed to run continuously,
-this is a red flag. It means the service started, did something, and then immediately shut down without an obvious
-error. This is far trickier to debug than a simple crash.
+The command output showed a clue: **`Active: active (exited)`**. For a continuous service, this means it started and
+then immediately shut down. Debugging this is harder than fixing a simple crash.
 
 ---
 
-### The Diagnostic Journey: Peeling the Onion
+### Finding the cause: peeling the onion
 
-When the main status is unhelpful, it's time to dig deeper. Here's a reliable path to follow, moving from the most
-general to the most specific tests.
+If the status is unhelpful, look for clues step by step. Check general logs first, then run specific tests.
 
-#### 1\. Check the System Logs (`journalctl`)
+#### 1\. Check the system logs (`journalctl`)
 
-The next logical step is to check the system's journal for the service. The `-e` flag jumps you to the end of the log,
-which is where the most recent events are.
+Check the system journal next. Use the `-e` flag to jump to the end of the log and see the latest events.
 
 ```bash
 sudo journalctl -u tor -e
 ```
 
-Unfortunately, the logs were as unhelpful as the status. They only confirmed that the service was starting and stopping,
-without providing any application-specific errors. This tells us the problem likely isn't with `systemd` itself, but
-with the Tor application.
+The logs only showed the service starting and stopping. They lacked error messages. This suggested the issue lay with
+Tor, not with `systemd`.
 
-#### 2\. Check the Application Logs
+#### 2\. Check the application logs
 
-Most applications write their own, more detailed logs. For Tor, this is usually `/var/log/tor/notices.log`.
+Many applications keep detailed logs. For Tor, check `/var/log/tor/notices.log`.
 
 ```bash
 sudo cat /var/log/tor/notices.log
 ```
 
-The output here provides another huge clue: **`No such file or directory`**. A service that can't create its own log
-file is a strong sign of a **file permissions problem**. Even after trying to fix ownership with `chown`, the issue
-persisted, suggesting the problem was somewhere else.
+The log file did not exist. If a service cannot write its own logs, permissions may be wrong. I ran `chown` to fix
+ownership, but the error remained. The cause was elsewhere.
 
-#### 3\. Inspect the Service File
+#### 3\. Inspect the service file
 
-Sometimes the investigation leads to a surprising discovery. After reinstalling the `tor` package didn't help, the next
-place to look was the `systemd` service file itself.
+Reinstalling the app did not help. I then checked the `systemd` service file.
 
 ```bash
 cat /lib/systemd/system/tor.service
 ```
 
-Somehow, the file had been replaced with a generic placeholder. A critical line, `ExecStart=/bin/true`, was telling the
-service to run a command that does nothing and immediately exits successfully. After replacing the file's contents with
-the correct, default configuration, a real error message finally appeared.
+The file was a basic placeholder. The startup command was set to `/bin/true`, which does nothing. I restored the default
+config. A real error then appeared.
 
-#### 4\. Verify the Configuration
+#### 4\. Verify the config
 
-With the service file fixed, `systemctl restart tor` now failed with a proper error. This allows us to move on to
-verifying Tor's own configuration.
+With the service file fixed, `systemctl restart tor` failed with a clear error. I could now verify the config.
 
 ```bash
 sudo -u debian-tor tor --verify-config
 ```
 
-This command passed, indicating that `/etc/tor/torrc` was syntactically correct. This is a classic troubleshooting
-moment: the config file is valid, but the service still won't run. The problem isn't the file's syntax, but _what the
-file is telling the service to do_.
+The check passed, meaning `/etc/tor/torrc` had no syntax errors. The config was valid, yet the service still failed. The
+issue was not the syntax, but what the file told the service to do.
 
-#### 5\. Run the Service Manually (The Breakthrough)
+#### 5\. Run the service manually (the breakthrough)
 
-This is often the final and most critical step. Bypassing `systemd` and running the Tor startup command directly, as the
-correct user, lets you see the live output.
+To see live output, bypass `systemd`. Run the startup command directly as the correct user.
 
 ```bash
 sudo -u debian-tor /usr/bin/tor --defaults-torrc /usr/share/tor/tor-service-defaults-torrc -f /etc/tor/torrc --RunAsDaemon 0
 ```
 
-And there it was, in plain text:
+The console printed this warning:
 
 > `[warn] Failed to parse/validate config: Problem with User value. See logs for details.`
 
-The `systemd` service was already starting the process as the `debian-tor` user, but a default Tor configuration file
-was _also_ trying to switch to the `debian-tor` user. This redundant user-switching conflict caused the service to crash
-instantly.
+`systemd` started the process as the `debian-tor` user. However, a config file also tried to switch to that user. This
+conflict caused the service to crash.
 
-The fix was to edit `/usr/share/tor/tor-service-defaults-torrc` and comment out the `User debian-tor` line. After that,
-the service started perfectly.
+I commented out the `User debian-tor` line in `/usr/share/tor/tor-service-defaults-torrc`. The service then started
+correctly.
 
 ---
 
-### Lessons Learned
+### Lessons learned
 
-This deep dive highlights a few core principles of system administration:
+This process highlights several tips for system admins:
 
-- **Trust the Process:** Start broad (`systemctl status`) and get progressively more specific. Don't jump to
-  conclusions.
-- **Permissions Are a Common Culprit:** When in doubt, check file and directory ownership and permissions (`chown`,
-  `chmod`).
-- **Find the Right Logs:** If the main system log is unhelpful, find the application's own log file. If it doesn't
-  exist, that itself is a clue.
-- **Run It Manually:** If a service fails via `systemd`, run its startup command directly in the terminal. The live
-  output is often the most valuable diagnostic information you can get.
+- **Troubleshoot step by step:** Start broad (`systemctl status`) and work toward specific details. Avoid assuming the
+  cause too quickly.
+- **Check permissions:** Verify file and directory ownership using `chown` and `chmod`.
+- **Locate specific logs:** Check the application logs if the system logs lack detail. A missing log file is also a
+  clue.
+- **Run the command manually:** If a service fails under `systemd`, run its startup command in the terminal. The live
+  output often reveals the cause.
 
-While the context was specific to a Tor service, this methodical approach of checking services, logs, permissions, and
-configurations—and finally running the process manually—is a playbook that can solve almost any "service that won't
-start" mystery.
+Although this example used Tor, this approach helps solve most service startup issues. Check the status, read the logs,
+verify permissions, and test the command manually.

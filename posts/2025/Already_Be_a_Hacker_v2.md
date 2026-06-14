@@ -9,75 +9,64 @@ tags:
   - tech
 ---
 
-### You Might Already Be a Hacker and Not Even Know It
+### You might already be a hacker and not even know it
 
-Last week, the handle on my favorite coffee mug snapped off. The original handle was always a bit thin and awkward, so
-instead of just trying to glue it back to normal, I saw a chance to improve it. After setting the broken pieces with
-strong epoxy, I tightly wrapped the entire handle with thick, sturdy silicone tape. It now has a thicker, more
-comfortable grip that fits my hand perfectly. The mug is no longer just a generic object; it’s been customized just for
-me. It’s unique, and it genuinely works better than before.
+Last week, the handle on my favorite coffee mug snapped off. The original handle was thin and awkward. Instead of simply
+gluing it back together, I saw a chance to improve it. After setting the broken pieces with strong epoxy, I tightly
+wrapped the handle with thick silicone tape.
 
-That small act of looking at a broken system and figuring out how to make it serve my own purpose? That’s closer to the
-heart of hacking than anything you’ll see in the movies.
+The mug now has a comfortable grip that fits my hand perfectly. The customized mug works better than before.
 
-Forget the hoodie. Forget the glowing green code scrolling down a dark screen. The image of the "hacker" that Hollywood
-sold us isn't just dramatic—it misses the entire point.
+Adapting a broken system to serve a new purpose represents the true heart of hacking.
 
-Being a hacker has very little to do with breaking into banks and everything to do with a certain kind of creative
-spark. At its core, it’s about one simple thing: looking at a system or a process and figuring out how to make it do
-what _you_ want it to do.
+Forget the hoodie and the scrolling green code. Hollywood's image of a hacker is dramatic but incorrect.
 
-#### The Joy of the Winding Path
+Hacking is less about breaking into banks and more about creative thinking. At its core, it means adapting a system or
+process to do what you want.
 
-Most of us are taught to follow instructions. We’re given a map and told that success means getting from Point A to
-Point B.
+#### The joy of the winding path
 
-A hacker enjoys the journey off the map. They start with a question, like "What if I tried this?" or "I wonder why this
-works this way?". From there, the process is a winding path of discovery. You rarely know where you're going to end up
-when you start. You might begin trying to fix one small problem and stumble upon a brilliant solution for a completely
-different one.
+Most of us learn to follow instructions. We follow a map where success means getting from Point A to Point B.
 
-It’s not about having all the answers. It’s about being curious enough to start asking the questions and patient enough
-to follow where they lead.
+A hacker enjoys exploring off the map. They start by asking "What if I tried this?" or "Why does this work this way?"
 
-#### Following the Recipe vs. Inventing a New Dish
+From there, the process becomes a path of discovery. You rarely know where you will end up. You might begin by fixing a
+small problem and find a solution for a different one.
 
-Now, let's be clear: following a "recipe" is a valuable and necessary skill. Whether it’s running a script to test a
-network, using a tutorial to learn a new program, or following a guide to fix a leaky faucet, using an established
-process is how things get done reliably. There is absolutely nothing wrong with that; it's how we build and maintain the
-world.
+Hacking values curiosity and patience over having all the answers. It is about asking questions and following where they
+lead.
 
-However, the hacker is the one who invents the recipe.
+#### Following the recipe vs. inventing a new dish
 
-They’re the chef who’s tired of the standard menu and starts combining new ingredients, tasting, and tweaking until they
-create a dish that’s uniquely theirs. They are driven by a specific goal—"I want a dish that tastes like a summer
-evening"—and they learn through trial and error how to make that happen.
+Following a recipe is a useful skill. Running a script, using a tutorial, or following a guide to fix a leak are all
+reliable processes. Established processes keep the world running.
 
-Running a script someone else wrote is executing a known process. Figuring out how to combine three different tools in a
-way no one has before to solve your unique problem? That’s the hacker mindset. This philosophy is so central to the
-world of technology that it was famously documented in essays like Eric S. Raymond's
-["How To Become A Hacker,"](http://www.catb.org/~esr/faqs/hacker-howto.html) which focuses more on this spirit of
-creative problem-solving than on any specific technical skill.
+However, hackers invent the recipes.
 
-#### Hacking is Everywhere
+They are like a chef who combines new ingredients to create a unique dish. Driven by a specific goal, they learn by
+experimenting to make it work.
 
-This is the most important part: this mindset isn’t limited to technology. It’s a way of approaching any challenge or
-craft.
+Running a script written by someone else executes a known process. In contrast, combining tools in a new way to solve a
+unique problem defines the hacker mindset.
 
-- The **mechanic** who listens to an engine and realizes the problem isn't what the diagnostic computer says it is, but
-  is instead a clever workaround to fix a recurring issue, is a hacker.
-- The **teacher** who realizes the standard lesson plan isn't connecting with their students and redesigns the entire
-  curriculum with new projects and activities is a hacker.
-- The **craft maker** who looks at a knitting pattern and says, "This is nice, but I'm going to modify it to create a
-  totally different design" is a hacker.
+Creative problem-solving is central to technology. It was documented in Eric S. Raymond's essay
+["How To Become A Hacker,"](http://www.catb.org/~esr/faqs/hacker-howto.html). Raymond's essay focuses on creative
+thinking rather than technical skills.
 
-They all see a system—an engine, a lesson plan, a pattern—and adapt it to better suit their needs. They are
-problem-solvers who aren't afraid to experiment to get the result they want.
+#### Hacking is everywhere
 
-So, look at how you approach your work, your hobbies, and your life. Do you ever go off-script? Do you find joy in
-figuring things out for yourself? Do you ever tinker with something just to see if you can make it better?
+Crucially, this mindset applies to any challenge or craft, far beyond technology.
 
-If so, you’ve already got the spark. You don't need to learn to code to be a hacker. You just need to stay curious.
-Welcome to the club.
+- The **mechanic** who bypasses a diagnostic computer's reading to fix a recurring engine issue is a hacker.
+- The **teacher** who redesigns a standard lesson plan to better engage students is a hacker.
+- The **craft maker** who modifies a pattern to create a unique design is a hacker.
 
-Now I'm curious—what's a system you've "hacked" in your own life?
+These problem-solvers see a system and adapt it to their needs. They experiment to get the results they want.
+
+So, look at how you approach your work, your hobbies, and your life. Have you ever gone off-script? Do you find joy in
+figuring things out for yourself? Perhaps you've tinkered with something just to see if you can make it better.
+
+If so, you already have the spark. You can be a hacker without learning to code; you just need to stay curious. Welcome
+to the club.
+
+Now I'm curious — what's a system you've "hacked" in your own life?

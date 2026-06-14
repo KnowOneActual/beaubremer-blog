@@ -9,58 +9,53 @@ tags:
   - tech
 ---
 
-Have you ever loaded a USB flash drive with music or movies, plugged it into your media player (like a Micca), TV, or
-car stereo, and been met with a complete mess? You can see your files, but they're surrounded by weird, unplayable
-"ghost" files, many starting with `._` or named `.DS_Store`.
+Have you ever loaded a USB drive with music or movies? You plug it into a TV or car stereo and see a total mess. You can
+see your files. However, they are mixed with strange, unplayable "ghost" files. Many files start with `._` or are named
+`.DS_Store`.
 
-It's a super common problem, and the good news is your drive isn't broken! It's just cluttered with hidden helper files
-that macOS leaves behind.
+This clutter is a common problem, but your drive is not broken. It is just full of hidden helper files that macOS leaves
+behind.
 
-### So, What Are These Mystery Files?
+### What are these mystery files?
 
-Whenever you use a Mac, it creates small files to remember things like custom icon positions, folder view settings
-(`.DS_Store`), and other metadata (`._` files). On a Mac, this is a helpful system that makes the user experience feel
-seamless.
+Macs create small files to store folder settings, custom icons, and other metadata. On macOS, this system helps things
+run smoothly.
 
-The problem starts when you take that drive to a device that doesn't speak "Mac"—like a Windows PC, a smart TV, a
-digital projector, or your car's media player. To these devices, the helper files are just digital junk. They show up as
-unplayable files, cluttering your folders and making it hard to find what you're actually looking for.
+Issues arise when you plug that drive into a Windows PC, smart TV, or car stereo. These devices do not recognize Mac
+files, so they treat them as digital junk. The files show up as unplayable items. They clutter your folders and hide
+your actual files.
 
-Luckily, cleaning them up is easy. Here are two simple, one-click solutions to tidy up your drives.
+Cleaning up these files is easy. Use one of these simple methods to tidy your drive.
 
-### The Fix for Windows Users
+### The fix for Windows users
 
-If you're on Windows and got a drive from a Mac user, this little script is your best friend.
+If you use Windows and received a drive from a Mac user, a script can clean it.
 
-1. **Download the Script:** Go to the GitHub repository here:
-   **[AppleCrumbs-Remover for Windows](https://github.com/KnowOneActual/AppleCrumbs-Remover-Windows)**. Click on the
-   `CleanDrive.bat` file and then click the "Download raw file" button.
-2. **Run It:** Find the `CleanDrive.bat` file you downloaded and double-click it.
-3. **Enter the Drive Letter:** A command window will pop up asking for the drive letter of your flash drive (like `E:`
-   or `F:`). Type the correct letter and hit Enter.
-4. **Confirm:** It will give you a final warning. Press any key to continue, and the script will quickly sweep through
-   the drive, deleting all the Mac-specific junk files.
+1. **Download the script:** Go to the
+   [AppleCrumbs-Remover for Windows](https://github.com/KnowOneActual/AppleCrumbs-Remover-Windows) repository. Click the
+   `CleanDrive.bat` file, then click the "Download raw file" button.
+2. **Run it:** Find the downloaded `CleanDrive.bat` file and double-click it.
+3. **Enter the drive letter:** A command window will ask for your drive letter (like `E:` or `F:`). Type the letter and
+   press Enter.
+4. **Confirm:** Press any key to run the script. It will delete the Mac helper files.
 
-That's it! Your drive is now clean and ready to use anywhere without the extra clutter.
+Your drive is now clean and ready to use without clutter.
 
-### How to Clean a Drive on Your Mac (Before Sharing)
+### How to clean a drive on your Mac (before sharing)
 
-If you're a Mac user sharing a drive, it's good practice to clean it first. The easiest method is to create a "Quick
-Action" that lets you clean any drive with a simple right-click. You only have to set this up once!
+If you use a Mac, clean your drive before sharing it. You can create a "Quick Action" to clean any drive with a
+right-click. You only need to set this up once.
 
-1. **Get the Script:** First, you need the script itself. You can find it here:
-   **[AppleCrumbs-Remover for Mac](https://github.com/KnowOneActual/-AppleCrumbs-Remover-MAC)**. Just copy the entire
-   block of code from the `clean_drive.sh` file.
-2. **Open Automator:** This handy app is already on your Mac. You can find it in your `Applications` folder or by
-   searching with Spotlight.
+1. **Get the script:** Go to the
+   [AppleCrumbs-Remover for Mac](https://github.com/KnowOneActual/-AppleCrumbs-Remover-MAC) repository. Copy the code
+   from the `clean_drive.sh` file.
+2. **Open Automator:** Open Automator from your Applications folder or search with Spotlight.
 3. **Create the Quick Action:**
-   - In Automator, choose "New Document" > "Quick Action".
-   - At the top, set the workflow to receive **"files or folders"** in **"Finder"**.
-   - In the actions library on the left, search for **"Run Shell Script"** and drag it into the main workflow area on
-     the right.
-   - In the "Run Shell Script" box, delete any text that's already there and paste the code you copied from GitHub.
-4. **Save Your Action:** Go to **File > Save** and name it something memorable, like "Clean Drive for Sharing".
+   - Choose "New Document", then select "Quick Action".
+   - Set the workflow to receive "files or folders" in "Finder".
+   - Search for "Run Shell Script" and drag it to the workspace.
+   - Paste the script code into the box.
+4. **Save your action:** Save the action as "Clean Drive for Sharing".
 
-Now, whenever you want to clean a USB drive, just right-click on its icon on your desktop, go to **Quick Actions** in
-the menu, and select your "Clean Drive for Sharing" action. In a moment, it'll be ready to hand off, completely free of
-any digital crumbs.
+To clean a drive, right-click its desktop icon. Select "Quick Actions", then choose "Clean Drive for Sharing". The drive
+is now clean and ready to share.

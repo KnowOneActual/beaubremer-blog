@@ -1,7 +1,7 @@
 ---
 title: 'Oh No, Vim! Your Emergency Kit for Getting Unstuck'
 description:
-  "Accidentally opened Vim from a git commit and can't get out? Here’s a simple, step-by-step guide to safely save and
+  "Accidentally opened Vim from a git commit and can't get out? Here's a simple, step-by-step guide to safely save and
   exit."
 date: 2025-06-21
 
@@ -9,7 +9,7 @@ tags:
   - tech
 ---
 
-### You’ve been there. You're in your terminal, you proudly type `git commit`
+### You've been there. You're in your terminal, you proudly type `git commit`
 
 hit Enter, and… what is this?
 

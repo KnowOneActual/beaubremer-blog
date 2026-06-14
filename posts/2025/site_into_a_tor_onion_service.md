@@ -1,144 +1,120 @@
 ---
-title: 'My Weekend Project: Turning My Personal Site into a Tor Onion Service'
-description:
-  "A step-by-step guide to making your website accessible on the Tor network using a free Google Cloud server. It's
-  easier than you think!"
+title: 'Host Your Website as a Tor Onion Service'
+description: 'Learn how to set up a free virtual server and share your site on the Tor network.'
 date: 2025-08-25
 
 tags:
   - networking
 ---
 
-Maybe you're looking for a weekend project that's a little different, something that teaches you about the hidden
-corners of the internet.
+Looking for a fun weekend project? You can learn about the web by exploring Tor.
 
-If so, I've got the perfect project for you: creating a Tor onion service for your existing website.
+You can host your site as an onion service.
 
-It may sound complex and mysterious, but it's actually surprisingly straightforward. At its core, it's a fantastic
-exercise in basic server administration and networking. We're not doing anything shady; we're just experimenting with
-technology to see how it works.
+The setup is simple. Hosting an onion service helps you learn about servers and networking. It is a safe way to test new
+technology.
 
-### First, What Is an Onion Service?
+### What is an onion service?
 
-An onion service (you've probably seen their long, nonsensical addresses ending in `.onion`) is a website that's only
-accessible through the Tor network. The "onion" name comes from the layers of encryption that protect both the person
-visiting the site and the server hosting it.
+An onion service is a website on the Tor network. These sites use addresses ending in `.onion`. The name comes from the
+layers of encryption that protect both users and hosts.
 
-When you visit a normal website, your computer connects directly to its server. With an onion service, your connection
-is bounced through several random computers (called relays) in the Tor network before it reaches the server. The
-server's location is also hidden. This provides a powerful layer of privacy and anonymity that you just don't get on the
-regular internet.
+Usually, your computer connects directly to a website. With Tor, your traffic hops through several other computers. This
+keeps your location and data private.
 
-### Why Bother?
+### Why bother?
 
-For me, this wasn't about hiding from anyone. It was about curiosity and learning. Here's why I think it's a great
-project:
+I built this project to learn. It is a great way to try new things:
 
-- **It's a fantastic learning experience.** You'll get hands-on with a Linux server, a web server like Nginx, and the
-  Tor software itself.
-- **It's a great story.** Let's be honest, it's a neat trick. Being able to say you have your site running as an onion
-  service just to see if you could is a fun talking point.
-- **It's basically free.** We can do this entire project using the "Always Free" tier from a cloud provider like Google
-  Cloud.
+- **Server skills:** You will use a Linux server, Nginx, and Tor.
+- **Fun project:** Hosting a site this way is a neat trick.
+- **No cost:** Google Cloud has a tier that costs nothing.
 
-### The How-To: A Step-by-Step Guide
+### Step-by-step guide
 
-My goal is simple: get a small, free virtual server online, put our website files on it, and then install and configure
-Tor to act as the gateway.
+Here is the plan: set up a free virtual server, upload your site, and turn on Tor.
 
-#### Step 1: Get a Free Server on Google Cloud
+#### Step 1: Set up a free server on Google Cloud
 
-We'll use Google Cloud's "Always Free" tier, which gives you one tiny `e2-micro` virtual machine (VM) forever, at no
-cost. This is more than enough for a simple static website.
+Google Cloud offers a free `e2-micro` virtual machine (VM). This small server can host a basic website.
 
-1. **Sign up for Google Cloud** and create a new project.
-2. Navigate to **Compute Engine** -> **VM instances**.
-3. Click **"Create Instance"** and use these exact settings to stay in the free tier:
-   - **Region:** `us-west1`, `us-central1`, or `us-east1`.
-   - **Machine type:** `e2-micro`.
-   - **Boot disk:** Ubuntu or Debian, 30 GB or less.
-   - **Firewall:** Check the box to "Allow HTTP traffic."
+1. **Sign up for Google Cloud** and start a project.
+2. Go to **Compute Engine** and select **VM instances**.
+3. Click **Create Instance** and select these free settings:
+   - **Region:** Choose `us-west1`, `us-central1`, or `us-east1`.
+   - **Machine type:** Select `e2-micro`.
+   - **Boot disk:** Choose Ubuntu or Debian (30 GB or less).
+   - **Firewall:** Allow HTTP traffic.
 
-#### Step 2: Connect to Your Server
+#### Step 2: Connect to the server
 
-Once the VM is running, connect to it using a command-line terminal. The easiest way is with Google's own command-line
-tool.
+When the VM starts, use a terminal to connect.
 
-1. [Install the gcloud CLI](https://cloud.google.com/sdk/docs/install) on your local computer.
-2. Open your terminal and run `gcloud init` to log in and select your project.
-3. Connect to your VM with this command (replace with your VM's name and zone):
+1. [Install the gcloud CLI](https://cloud.google.com/sdk/docs/install) on your machine.
+2. Open your terminal and run `gcloud init` to log in.
+3. Connect to the VM with this command (use your VM name and zone):
 
    ```bash
    gcloud compute ssh your-vm-name --zone its-zone
    ```
 
-#### Step 3: Install the Software
+#### Step 3: Install the software
 
-Once you're connected, run these commands to install everything you need.
+Install the web server and Tor:
 
 ```bash
-# Update the server and install Nginx (web server), Tor, and Git
+# Update the server packages
 sudo apt update && sudo apt upgrade -y
+
+# Install git, Nginx, and Tor
 sudo apt install git nginx tor -y
 ```
 
-#### Step 4: Add Your Website Files
+#### Step 4: Add your website files
 
-Now, pull your website's code from its repository and place it where Nginx can find it.
+Clone your code repository and copy the files to the web folder:
 
 ```bash
-# Clone your site (use your own repo URL)
+# Clone your repository
 git clone https://github.com/your-username/your-repo.git
 
-# Move the files to the web server's public directory
+# Copy files to the web directory
 sudo cp -r ~/your-repo/* /var/www/html/
 ```
 
-#### Step 5: Configure Tor and Get Your Address
+#### Step 5: Configure Tor
 
-This is the magic step. You just need to add two lines to Tor's configuration file.
+Add two lines to the Tor config file to direct traffic to Nginx.
 
 ```bash
-# This command adds the necessary lines to the end of the config file
+# Add the service configuration to the Tor config file
 echo -e "HiddenServiceDir /var/lib/tor/hidden_service/\nHiddenServicePort 80 127.0.0.1:80" | sudo tee -a /etc/tor/torrc
 
-# Restart the services to apply the changes
+# Restart Nginx and Tor to apply changes
 sudo systemctl restart nginx
 sudo systemctl restart tor
 ```
 
-Wait about a minute, then run this command to see your new address:
+Wait one minute, then check your new address:
 
 ```bash
 sudo cat /var/lib/tor/hidden_service/hostname
 ```
 
-Copy that long `.onion` address, paste it into the [Tor Browser](https://www.torproject.org/download/), and you should
-see your site!
+Use the Tor Browser to view your site at that address.
 
-### The Pitfalls: A Warning for the Weary
+### Common challenges
 
-Now, let's be honest. The process above looks simple, but getting there was a journey. Here's what I learned the hard
-way:
+Google Cloud can be tricky. Here is what to watch for:
 
-- **The Onboarding is Confusing.** Getting started with the Google Cloud can be a bit of a maze. The menus are built for
-  corporations, not for someone doing a weekend project. Be prepared to feel like you're doing everything wrong. You're
-  not—the design is the problem.
-- **"Free" Requires a Billing Account.** You will have to link a credit card to a billing account, even for the "Always
-  Free" tier. This is for verification, and you won't be charged as long as you stay within the free limits.
-- **The Cost Estimate is Misleading.** When you create your free `e2-micro` VM, the console will show you a monthly cost
-  estimate (around $7). **Ignore it.** This is the list price. The "Always Free" discount is applied at the end of the
-  month, making your bill zero. It's confusing, but you just have to trust the process.
-- **The In-Browser SSH is Terrible.** Don't even bother with it. It's laggy and unresponsive. Take the five minutes to
-  install the `gcloud` CLI and connect with your local terminal. It will save you a world of frustration.
+- **Complex menus:** The interface is built for big companies. It can feel confusing, but do not worry.
+- **Card required:** You must add a credit card to use the free tier. Google does this to verify your identity. You will
+  not pay anything if you stay within the free limits.
+- **Wrong cost estimates:** The setup page will show a charge of about $7 per month. Ignore this. The free discount
+  applies at the end of the month, making it cost nothing.
+- **Bad web terminal:** Google's web terminal is very slow. Use your local terminal instead.
 
-In the end, I got it working, and you can too. This project is a perfect example of something that is technically simple
-but is wrapped in layers of corporate administrative nonsense. Pushing through that is a victory in itself.
+Setting up an onion service is a fast way to learn about web hosting. It makes a great afternoon project.
 
-So go ahead, give it a try. It's a fun challenge, a great story to tell, and a fantastic way to prove that you can
-figure things out, no matter how poorly they're designed.
-
-You can access the live site using the
-[Tor Browser via this link](http://vqov6yt6arpfipoo4thbqopysgrv6j6lduz7ropkhj3ulx76stunfkad.onion). Please note that
-this link will only resolve if you are using the [Tor Browser](https://www.torproject.org/download/).
-(vqov6yt6arpfipoo4thbqopysgrv6j6lduz7ropkhj3ulx76stunfkad.onion)
+This link only works in the Tor Browser:
+[vqov6yt6arpfipoo4thbqopysgrv6j6lduz7ropkhj3ulx76stunfkad.onion](http://vqov6yt6arpfipoo4thbqopysgrv6j6lduz7ropkhj3ulx76stunfkad.onion)

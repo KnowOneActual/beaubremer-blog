@@ -9,7 +9,7 @@ tags:
   - tech
 ---
 
-## Terminal Tips: A Guide to Zsh Aliases
+## Terminal tips: a guide to Zsh aliases
 
 If you're tired of typing the same long commands in your terminal, aliases are the perfect solution. An alias is a
 custom shortcut you create for a longer command, and it's a simple way to make your Zsh workflow faster and more

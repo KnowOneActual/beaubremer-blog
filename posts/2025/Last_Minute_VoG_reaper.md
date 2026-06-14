@@ -9,10 +9,10 @@ tags:
   - live-production
 ---
 
-It’s a scenario every event audio tech knows well: the show is about to start, and a last-minute "Voice of God" (VOG)
+It's a scenario every event audio tech knows well: the show is about to start, and a last-minute "Voice of God" (VOG)
 announcement needs to be recorded. All eyes are on you. It's time to work some magic with the tools you have on hand.
 
-Here’s a straightforward guide to capturing a clean, professional-sounding VOG using a simple USB interface, a laptop
+Here's a straightforward guide to capturing a clean, professional-sounding VOG using a simple USB interface, a laptop
 with [REAPER](https://www.reaper.fm/), and the trusty Shure SM58.
 
 ### First, Find Your "Vocal Booth"
@@ -24,7 +24,7 @@ Your goal is to find a space that is as "dead" as possible, meaning it absorbs s
 around. Look for a small, quiet room away from the main action. A storage closet, an empty office, or even a quiet
 corner can work in a pinch.
 
-Once you’ve found your spot, build a makeshift vocal booth. Grab any soft materials you can find—coats, blankets, or
+Once you've found your spot, build a makeshift vocal booth. Grab any soft materials you can find — coats, blankets, or
 event draping are perfect. Drape them over mic stands or chairs to build a small enclosure. This will help absorb vocal
 reflections and block out some of that distracting ambient noise.
 
@@ -34,7 +34,7 @@ With your impromptu studio ready, it's time to get your gear set up for a great 
 
 #### Using the SM58
 
-The Shure SM58 is a legend for a reason. Its cardioid pickup pattern is a lifesaver in noisy environments because it’s
+The Shure SM58 is a legend for a reason. Its cardioid pickup pattern is a lifesaver in noisy environments because it's
 designed to pick up sound from the front and reject sound from the sides and rear.
 
 For a clear voiceover, have the speaker hold the microphone about 4-6 inches from their mouth. This gives you a full,
@@ -43,7 +43,7 @@ Make sure the speaker is talking directly into the top of the mic, not across it
 
 #### The All-Important Pop Filter
 
-A pop filter is crucial for stopping plosives—those harsh "p" and "b" sounds that can ruin a take. If you don’t have a
+A pop filter is crucial for stopping plosives — those harsh "p" and "b" sounds that can ruin a take. If you don't have a
 real one, no problem. You can make an effective one with items found at almost any event:
 
 - **The Sock Method:** A clean, thin dress sock pulled over the microphone's grille works surprisingly well.
@@ -66,7 +66,7 @@ real one, no problem. You can make an effective one with items found at almost a
 Once you have a good take, you can use a few of Reaper's excellent built-in plugins (ReaPlugs) to add a professional
 polish. Click the `FX` button on your track to open the effects window.
 
-Here’s a simple chain that works wonders for VOG recordings:
+Here's a simple chain that works wonders for VOG recordings:
 
 - **ReaEQ:** Start with an EQ to clean up the signal. Add a `High Pass` filter and set the `Frequency` to around
   **80-100Hz**. This removes low-end rumble from things like HVAC systems. You can also use ReaEQ to tame any harsh "s"
@@ -80,7 +80,7 @@ Here’s a simple chain that works wonders for VOG recordings:
   clipping. It raises the overall volume and sets a hard ceiling that the audio can't go past. Simply adjust the
   `Threshold` to get a strong final level.
 
-Once you’re happy with the sound, it's time to render the file. Go to `File > Render` and choose your output format (WAV
+Once you're happy with the sound, it's time to render the file. Go to `File > Render` and choose your output format (WAV
 is best for quality).
 
 And that's it! With a little resourcefulness and these quick tips, you can turn a last-minute request into a polished,

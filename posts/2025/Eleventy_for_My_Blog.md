@@ -7,63 +7,58 @@ tags:
   - tech
 ---
 
-#### After getting my main portfolio site into a stable, secure state, I decided it was time to add a blog
+#### How and why I built a secure blog
 
-My core requirements were simple but non-negotiable: it had to be modern, straightforward to maintain, and—most
-importantly—built in a way that couldn't possibly break my main portfolio site during development.
+My core requirements were simple. The blog had to be modern and easy to maintain. It must not break my main site during
+development.
 
-This led me down the path of creating a completely separate, standalone blog site. Here’s a look at the "why" behind the
-tools I chose and the security precautions we took along the way. Why Eleventy? The "Keep It Simple" Philosophy
+So I built a separate blog. This post explains my choice of tools and security.
 
-In today's landscape of complex JavaScript frameworks, I was looking for something simpler. After some research, I
-landed on Eleventy (11ty), a modern Static Site Generator (SSG).
+#### Why I chose Eleventy
 
-It was the perfect choice for a few key reasons:
+I wanted a simple blog. I did not want a complex JavaScript framework. I chose Eleventy (11ty), a static site generator
+(SSG).
 
-Simplicity and Flexibility: Eleventy doesn't lock you into a heavy framework like React or Vue. It's incredibly flexible
-and un-opinionated, letting you work with simple templates and data. This felt perfect for a straightforward,
-content-focused blog. JavaScript-Based: The entire configuration is done in plain JavaScript (.eleventy.js), which felt
-comfortable and accessible. There was no need to learn a new programming language just to build a blog. Peak Performance
-& Security: By default, Eleventy generates pre-built, static HTML files. This means there's no database to hack and no
-complex server-side code running on every page view. The result is a site that is incredibly fast and secure right out
-of the box.
+Three main reasons:
 
-#### A Security-First Approach
+- **Flexibility**: Eleventy does not lock you into React or Vue. You work with simple templates and data. This fits a
+  basic blog.
+- **JavaScript**: The setup uses plain JavaScript (`.eleventy.js`). You do not need to learn a new language.
+- **Speed and safety**: Eleventy builds static HTML files. There is no database to hack. The site is fast and secure.
 
-A static site is secure by default, but I wanted to take it a step further and ensure it was hardened against modern web
-vulnerabilities. The main tool for this was Netlify.toml file placed at the root of the project, which allowed me to
-define custom HTTP security headers.
+#### Safe by default
 
-Here are the key security layers we implemented:
+Static sites are safe by default. Still, I wanted to protect mine from web threats. I added a `netlify.toml` file at the
+root to set custom HTTP headers.
 
-#### 1. Content Security Policy (CSP): The Digital Bouncer
+I set up three main layers:
 
-The most important header we added was a strong Content Security Policy. Think of a CSP as a bouncer for your website—it
-maintains a strict guest list of all the resources (scripts, styles, fonts, etc.) that are allowed to load on the page.
-Anything not on the list gets blocked.
+#### 1. Content Security Policy (CSP)
 
-My policy explicitly whitelists trusted sources for each type of content:
+A Content Security Policy (CSP) was the most important header. A CSP acts like a bouncer. It lists allowed scripts,
+styles, and fonts. The browser blocks other files.
 
-script-src: Only allows scripts from my domain and the trusted Tailwind CSS CDN. style-src: Only allows stylesheets from
-my domain and Google Fonts. font-src: Only allows fonts to be downloaded from Google's font servers (fonts.gstatic.com).
-object-src 'none': Completely blocks older, insecure plugins like Flash from ever running.
+It lists trusted sources for each type:
 
-The 'unsafe-inline' Caveat: The one necessary compromise was allowing 'unsafe-inline' for styles. This was required for
-the Tailwind CSS CDN script to work, as it dynamically injects styles into the page. However, the risk is heavily
-mitigated because the rest of the policy still locks down the overall source of any scripts.
+- **`script-src`**: Allows scripts from my domain and the Tailwind CDN.
+- **`style-src`**: Allows styles from my domain and Google Fonts.
+- **`font-src`**: Allows fonts from Google Fonts.
+- **`object-src 'none'`**: Blocks older plugins like Flash.
 
-#### 2. Other Essential Headers
+**The inline styles caveat**: I allowed `unsafe-inline` for styles. The Tailwind script needs this to load styles. The
+risk remains low since other rules block untrusted scripts.
 
-Beyond the CSP, we added several other headers for a layered defense:
+#### 2. Other headers
 
-Strict-Transport-Security (HSTS): Ensures that browsers only ever communicate with my site over a secure HTTPS
-connection. X-Frame-Options: Set to DENY, this completely prevents my site from being embedded in an iframe on another
-website, which is the primary defense against "clickjacking" attacks. Permissions Policy: This is a modern header that
-allows me to lock down browser features that my blog has no reason to use, such as the microphone, camera, USB devices,
-and payment APIs.
+Other headers add more safety:
 
-#### The Result
+- **Strict-Transport-Security (HSTS)**: Forces the browser to use HTTPS.
+- **X-Frame-Options**: Set to `DENY` to block iframe embedding. This prevents clickjacking.
+- **Permissions Policy**: Turns off browser features the blog does not use. This includes the camera and microphone.
 
-The outcome is exactly what I was hoping for: a fast, modern blog with an A+ security rating that is completely
-decoupled from my main portfolio. The workflow is simple—I write a post in a Markdown file, push it to GitHub, and
-Netlify handles the rest. It’s a setup I can trust while I focus on writing content and my job search.
+#### The result
+
+The result is a fast, safe blog. It is separate from my main site.
+
+The workflow is simple. I write a post in Markdown. Then I push it to GitHub. Netlify builds and hosts the site. This
+clean setup lets me focus on writing.

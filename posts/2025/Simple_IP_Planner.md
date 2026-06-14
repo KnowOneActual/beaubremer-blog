@@ -1,59 +1,51 @@
 ---
 title: 'Building a Better Toolbox: A Simple IP Planner for Live Events'
-description:
-  'An AV-focused utility that not only calculates IP subnets but also includes a device planner. Assign specific gear to
-  IP addresses and generate an organized network list, perfect for complex show environments.'
+description: 'An AV tool to plan IP subnets and organize device networks for live events.'
 date: 2025-06-22
 
 tags:
   - networking
 ---
 
-Anyone who has set up a network for a show knows the routine. You start with a list—maybe on a notepad, maybe in a
-spreadsheet—of all the gear that needs an IP address. The audio console, the lighting desk, the stage rack, the video
-switcher, the RF scanner, the system processor... the list goes on. It’s not just about avoiding conflicts; it's about
-creating a logical, easy-to-troubleshoot system.
+Setting up a show network follows a common routine. You start with a list of gear needing IP addresses. People often
+write this list on paper or spreadsheets. The list includes audio consoles, lighting desks, video switchers, RF
+scanners, and system processors.
 
-While there are plenty of powerful subnet calculators online, I've always found they're either too complex for a quick
-on-site check or too generic. They'll give you the network range and broadcast address, but they won't help you map that
-ULX-D Rack to .101 and the DiGiCo SD12 to .50.
+Good planning prevents IP conflicts. It also makes troubleshooting easier.
 
-That gap is what led to my latest little project: the **AV IP Subnet Calculator**. It was a quick build, but it solves a
-specific problem: it’s a simple utility for live event technicians to plan out IP addresses for their gear quickly.
+Most online subnet calculators are too complex or generic for quick checks. They show the network range but do not
+assign addresses to specific equipment.
 
-#### More Than a Calculator, It's a Planner
+To solve this, I built the **AV IP Subnet Calculator**. This simple tool helps live event techs plan IP addresses
+quickly.
 
-The goal wasn't just to crunch the numbers on a CIDR range. The goal was to create a usable plan. The tool has two main
-parts:
+#### More than a calculator, it's a planner
 
-1. **The Calculator:** You plug in a starting IP address and a subnet size (using a slider or a number input), and it
-   immediately displays the key information: network address, broadcast address, usable host range, and the total number
-   of available hosts. No fluff, just the facts.
-2. **The Device Planner:** This is where it becomes an _AV_ tool. Below the calculator, you can list out your equipment.
-   Name a device (e.g., "Midas m32"), say how many IP addresses it needs, and click "Add." The tool instantly assigns it
-   the next available IP address from the range you defined.
+The tool helps you build a device plan. It has two main parts:
 
-You can continue this for all your gear, and in seconds, you have a clean, ordered list of your entire show network.
-It's the digital version of that piece of paper you were going to use anyway, but it's faster and less prone to typos.
-When you're done, a "Copy List" button formats the whole plan so you can paste it into your show documentation.
+1. **The Calculator:** Enter a starting IP and a subnet size. The tool displays the network, broadcast, host range, and
+   total host count.
+2. **The Device Planner:** Below the calculator, you can list your gear. Enter a name, specify how many IPs it needs,
+   and click "Add." The tool assigns the next available addresses.
 
-#### The Tech Behind It: Keeping It Simple
+Add your gear to quickly create an ordered list of the network. This digital list is faster and more accurate than
+paper. A "Copy List" button formats the plan for easy pasting into show files.
 
-For a tool like this, speed and simplicity are key. It needs to load instantly on a phone or a laptop with spotty
-backstage Wi-Fi. That's why I built it as a single, self-contained HTML file with no complex frameworks.
+#### The technology behind the planner
 
-- **HTML:** The foundation is a straightforward HTML structure.
-- **Tailwind CSS:** For styling, I pulled in Tailwind via its CDN. This allows you to build a clean, modern UI with
-  utility classes directly in the HTML, which is ideal for small projects where you don't want a separate stylesheet or
-  a build step.
-- **Vanilla JavaScript:** All the logic is handled by plain JavaScript, running right in the browser. No dependencies,
-  no frameworks. This keeps the app incredibly lightweight.
+Speed is key. The tool must load fast on poor backstage Wi-Fi. I built it as a single HTML file without complex
+frameworks.
 
-The core of the calculator involves a bit of bitwise manipulation to handle the IP addresses. JavaScript doesn't have
-native IP address functions so that you can convert the familiar 192.168.1.100 format into a 32-bit integer. This makes
-all the subnet math much easier.
+- **HTML:** The page uses a simple structure.
+- **Tailwind CSS:** Tailwind styled the page via CDN. This builds a clean UI directly in HTML, avoiding extra files or
+  build steps.
+- **Vanilla JavaScript:** Plain JavaScript handles the math in the browser. Using no extra frameworks keeps the tool
+  very small.
 
-Here’s a peek at the helper functions that do the conversion:
+The tool uses simple math to handle IP addresses. Since JavaScript has no native IP tools, the code converts formats
+like 192.168.1.100 into a number. This number makes subnet math much easier.
+
+Here are the functions that convert the formats:
 
 ```
 
@@ -67,13 +59,12 @@ const longToIp = (long) => { \
 
 ```
 
-Once the IPs are numbers, calculating the network and broadcast addresses is straightforward. The rest of the code
-listens for user input, runs the calculations, and updates the display in real-time.
+Once the IPs are numbers, the tool calculates the network and broadcast addresses. The rest of the code listens for
+input, runs calculations, and updates the screen.
 
-#### A Tool That Works
+#### A tool that works
 
-This wasn't a project that required weeks of development, and that's the point. It was about identifying a small,
-recurring friction point in a workflow and building a sharp, simple tool to solve it. It's a perfect example of how a
-little bit of code can go a long way in our industry.
+This project focused on quickly solving a small, recurring problem. A tiny amount of code can greatly improve daily
+work.
 
-You can check out <https://beaubremer.com/ip_subnet_calculator>. I hope you find it as helpful.
+Try the tool at <https://beaubremer.com/ip_subnet_calculator>.

@@ -1,102 +1,68 @@
 ---
-title:
-  'From Bright Idea to Browser: My Journey Building a Network Monitor (and What I Learned When Things Went Sideways)'
+title: 'Building a Network Monitor: What I Learned When My Initial Plans Failed'
 description:
-  'A candid look at building a web-based network monitor, the challenges I faced, and the invaluable lessons learned
-  through trial and error.'
+  'An account of building a web-based network monitor, the challenges I faced, and the lessons learned through iterative
+  troubleshooting.'
 date: 2025-07-02
-
 tags:
   - networking
 ---
 
-Ever wondered what goes on behind the scenes when you interact with a website? Let's dive into a common challenge in web
-development and my journey to build a useful tool, even when my initial plans hit a few snags.
+Have you ever wondered what happens when you visit a website? I built a network monitor to find out. This post covers
+the design and the changes I made to the code.
 
-Hey everyone! I'm sharing a glimpse behind the scenes of my latest web development project. If you've poked around my
-site lately, you might have noticed a shiny new "Network Latency Monitor" in my
-[My Projects](https://beaubremer.com/#my_projects). It’s not just a tool; it’s a story about a great idea, a few
-head-scratching problems, and the beautiful mess of trial and error that makes development so rewarding (and
-occasionally, frustrating!).
+I recently built a tool to track network latency. You can check it out under
+[My Projects](https://beaubremer.com/#my_projects). The project started with a simple idea. However, I had to fix many
+unexpected bugs. I learned a lot about networks and browser performance.
 
-### The Spark: A Speed Test with "Wow Factor"
+### The spark: a speed test
 
-Initially, I had this neat idea: a network speed test. I thought, "How cool would it be to have a built-in speed checker
-right on my site?" It felt like a fantastic way to showcase my developing web development skills, my understanding of
-network principles, and just add a little bit of that interactive "wow factor." I drafted up a client-side version using
-JavaScript, complete with progress bars and even parallel connections for downloads and uploads. If you'd like to check
-it out [Network Speed Test](https://beaubremer.com/speed_test)
+My first plan was to build a network speed test. I wanted to show how browser scripts interact with networks. The first
+version used progress bars and parallel connections. You can see the speed test here:
+[Network Speed Test](https://beaubremer.com/speed_test).
 
-The initial results? Well, they were... interesting. My script would report a download speed of around 4 Mbps, while a
-commercial service like Speedtest.net would confidently tell me I was cruising at 400 Mbps! Clearly, something was off.
+The test showed a download speed of 4 Mbps. A commercial site showed 400 Mbps. My script was not accurate.
 
-### Hitting the Wall: Why My Speed Test Wasn't Usable
+### Why the speed test was not usable
 
-After some troubleshooting, I realized the core limitation: building a truly accurate speed test with purely client-side
-JavaScript is incredibly difficult. Commercial speed tests utilize dedicated, high-performance servers distributed
-globally and employ complex techniques to thoroughly test your connection's capabilities. My simple script, hitting
-generic public endpoints like `httpbin.org`, just couldn't give me the results I was looking for.
+I soon found a major problem. Measuring speed from a browser is hard. Professional tests use many fast, global servers.
+They also use complex code. My script used public test sites like httpbin.org. It could not get correct speed data.
 
-It became clear: for all its "wow factor," if the numbers weren't accurate, the tool wasn't truly "usable." And if a
-tool isn't usable, it probably shouldn't be on the front page of your site!
+A speed test is useless if it is wrong. Useless tools do not belong on the home page.
 
-### A Pivot! From Speed to Stability: The Network Latency Monitor
+### A pivot from speed to stability: the Network Latency Monitor
 
-So, I had to make a decision. Scrap the idea entirely? Or pivot? I chose to pivot. Instead of chasing elusive bandwidth
-numbers, I decided to build a tool that _could_ be accurate and useful within my constraints: a **Network Latency
-Monitor**.
+I decided to build a latency monitor instead. This tool does not measure bandwidth. It only tracks response times and
+server status.
 
-The idea was simple: instead of measuring _how fast_ data flows, let’s measure _how quickly_ it responds and if it’s
-available. This highlights different, but equally important, networking skills – those related to troubleshooting,
-availability, and responsiveness. Latency, the time it takes for a signal to travel from one point to another, is a
-crucial indicator of network responsiveness and a great way to assess connectivity.
+Latency is the time data takes to travel. It shows how fast a network responds. Building this tool helped me learn about
+network health.
 
-### The Journey Continues: New Code, New Headaches (Totally Normal!)
+### Working through new code and deployment issues
 
-Building the latency monitor wasn’t a straight line from idea to completion, either. This is where the "trial and error"
-comes in – and why it's so vital in development!
+Building the monitor brought new challenges. Fixing bugs is a normal part of coding.
 
-1. **The Silent Startup:** My initial draft of the monitor wouldn't even start checking the default sites automatically.
-   A quick dive into the console revealed a simple JavaScript error: `this.startMonitoringAll is not a function`. A
-   quick rearrangement of code, and it was alive!
-   - _What I Learned:_ The browser console is your first and best friend for catching those tricky JavaScript errors
-     right when your page loads. Always check it!
-2. **The Invisible Wall (CSP):** Once it was running, the default `https://` sites were showing as "Down." The console,
-   my best friend during these times, screamed "Content Security Policy (CSP) blocking!" My `netlify.toml` file had a
-   `connect-src` directive that was too strict, preventing my own site from connecting to external domains like Google
-   or Cloudflare. This required a small but crucial tweak to my Netlify configuration, expanding the `connect-src` to
-   allow all `https:` connections.
-   - _What I Learned:_ Content Security Policy is a powerful browser security feature. While essential for protection,
-     it's also a common reason for external resource loading issues and requires careful configuration.
-3. **The Mixed-Up Protocols:** Next, I hit a snag with `http://` versus `https://` endpoints. My monitor, running on a
-   secure `https://` site, was correctly blocking insecure `http://` requests (thank you, browser security!). But I also
-   realized that if I tried to add `http://` URLs while testing locally (where my local server was `http://`), those
-   `http://` URLs worked, but `https://` ones sometimes failed. This was a confusing dance between local environment
-   behavior and deployed site behavior. The solution: stick firmly to `https://` for external monitoring and be very
-   clear with users about this limitation.
-   - _What I Learned:_ Always be mindful of protocol differences (`http` vs. `https`) and how they behave in both local
-     development and deployed environments. Browser security models are designed to keep users safe, even if they
-     occasionally make development a little trickier!
-4. **The Reappearing Act:** Even after successfully deleting endpoints, they'd pop back up on refresh. It turns out that
-   the monitor was loading a hardcoded list of defaults every time the page loaded, overriding my changes. Implementing
-   `localStorage` resolved this issue, allowing the monitor to remember user-added or removed endpoints.
-   - _What I Learned:_ For persistent user preferences or data that should survive a page refresh, `localStorage` is a
-     super handy browser API to remember things between sessions.
+1. **The Silent Startup:** The first draft did not load sites automatically. The console showed a script error.
+   Rearranging the code fixed it.
+   - _What I Learned:_ The browser console helps catch errors fast. Always check it first.
+2. **Content Security Policy (CSP) Restrictions:** The sites appeared offline at first. The browser blocked my requests.
+   My Netlify settings were too strict. Allowing all secure links fixed the issue.
+   - _What I Learned:_ Security rules can block external sites. You must configure them carefully.
+3. **Protocol Differences:** The monitor runs on secure HTTPS. It blocks insecure HTTP links. During local tests, HTTP
+   worked but HTTPS failed. To prevent this, the monitor now uses HTTPS only.
+   - _What I Learned:_ Local code can behave differently from live sites. Pay attention to URL protocols.
+4. **State Persistence:** Deleted sites came back after a refresh. The script kept reloading the default list. I added
+   localStorage to save changes.
+   - _What I Learned:_ You can use localStorage to save user choices in the browser.
 
-### My Big Takeaway: Embrace the Process
+### Embracing the process
 
-This entire experience, from the ambitious (and slightly flawed) speed test to the fully functional latency monitor,
-reinforced some core beliefs about development:
+This project taught me a few main lessons:
 
-- **You don't have to be perfect from the start.** Ideas evolve, and initial approaches might not be the final ones.
-  It's all part of the learning curve.
-- **Trial and error is not a sign of failure; it's the path to success.** Every error message, every unexpected
-  behavior, is a clue leading you closer to a robust solution.
-- **Debugging tools are your superpower.** The browser console, network tab, and HAR files were invaluable in
-  understanding exactly _why_ things weren't working.
-- **Understanding constraints is key.** Knowing the limitations of free hosting and browser security wasn't a blocker;
-  it shaped the project into something even better.
+- **Ideas change.** First plans are rarely final. Adjusting your goal is normal.
+- **Errors help.** Every bug gives you clues. They guide you to the right solution.
+- **Use tools.** The browser console and network tab show you why code fails.
+- **Accept limits.** Working with hosting limits helped me build a better tool.
 
-So, go ahead, check out the [Network Latency Monitor](https://beaubremer.com/network_latency_monitor) on my site! Add a
-few of your favorite sites, and see how it performs. And remember, every "bug" is just a puzzle waiting to be solved.
-I'm always keen to dive into new challenges and expand my understanding of web performance!
+Try the [Network Latency Monitor](https://beaubremer.com/network_latency_monitor) on my site. You can add your own URLs
+to test them. Every bug is a puzzle to solve. I plan to build more tools to test web speed.

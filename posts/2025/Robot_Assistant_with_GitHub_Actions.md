@@ -2,96 +2,82 @@
 title: 'I Gave My Blog a Robot Assistant with GitHub Actions'
 description:
   'A look at how I used GitHub Actions to automate code quality checks, and why I eventually moved away from MegaLinter
-  to a faster, modular setup.'
+  to a faster, custom setup.'
 date: 2025-07-30
 
 tags:
   - tech
 ---
 
-> **Update (April 2026):** While the advice below about GitHub Actions remains solid, I have since "fired" MegaLinter.
-> As my blog grew, MegaLinter became too slow and inefficient for a simple static site. I've now moved to a **modular,
-> parallelized stack** using **Biome**, **Lefthook**, and **Secretlint**. It's faster, runs locally on every commit, and
-> gives me feedback in seconds rather than minutes. You can read about the new setup in the [Changelog](/CHANGELOG.md).
+> **Update (April 2026):** I have since replaced MegaLinter. As my blog grew, MegaLinter became too slow and
+> inefficient. I now use a fast, parallelized stack of **Biome**, **Lefthook**, and **Secretlint**. It runs locally on
+> every commit, giving feedback in seconds. Details on the new setup are in the [Changelog](/CHANGELOG.md).
 
 ---
 
-My personal blog has been just that—personal. It's a project I work on when I have time, which means small mistakes can
-slip through. A typo in a CSS class, a broken link in an old post, or inconsistent code formatting. None of these are
-critical, but they add up. I always figured keeping things tidy required a lot of manual effort, but it turns out I just
-needed a robot assistant.
+I build this blog in my spare time, which means minor errors often slip through. These include broken links, CSS typos,
+or formatting issues. They are not critical, but they add up. I used to think keeping a site tidy required manual work.
 
-That robot is **GitHub Actions**. This post is about my first dive into this powerful tool: what it is, how I used it to
-automate quality control for my blog, and the lessons I learned along the way.
+I found a solution in GitHub Actions. This post covers how I configured the tool to check my blog files automatically.
 
 ---
 
-## What Exactly Are GitHub Actions?
+## What exactly are GitHub Actions?
 
-At its core, GitHub Actions is an automation tool built right into GitHub. Think of it as a set of programmable recipes
-that can run whenever something happens in your repository. You can tell it to run tests, deploy your website, or, in my
-case, check for errors every time I push new code.
+GitHub Actions is an automation tool built into GitHub. Think of it as a set of recipes that run when events happen in
+your repository. You can run tests, deploy your site, or check for errors on every push.
 
-The whole system is based on a few simple concepts:
+The workflow system uses a few basic concepts:
 
-- **Workflows**: These are the main recipes. You define them in a `.yml` file that lives in a specific folder in your
-  repository: `.github/workflows/`.
-- **Events**: These are the triggers that start a workflow. The most common one is `push`, which runs whenever you push
-  code to a branch.
-- **Actions**: These are the individual steps in your recipe. They are pre-built, shareable apps that perform a specific
-  task, like checking out your code or running a linter.
+- **Workflows**: Workflows are the main recipes, defined in a `.yml` file under `.github/workflows/`.
+- **Events**: Events trigger a workflow. For example, a `push` event triggers a run whenever you push code.
+- **Actions**: Actions are the individual steps in a recipe. They are pre-built, shareable tools that perform specific
+  tasks, like checking out code or running a linter.
 
-You can find actions for almost anything in the [GitHub Marketplace](https://github.com/marketplace?type=actions), most
-of them free to use.
+The [GitHub Marketplace](https://github.com/marketplace?type=actions) offers free, pre-built actions for almost any
+task.
 
 ---
 
-## My Mission: Getting a Handle on Code Quality
+## My mission: getting a handle on code quality
 
-My goal was straightforward: I wanted an automated way to check my blog's files for errors. This includes checking for
-broken links in my Markdown posts, validating my HTML, and ensuring my CSS is clean.
+I wanted to check my blog files for errors automatically. I needed to find broken links, validate HTML, and check CSS
+formatting.
 
-Doing this manually would be tedious. Instead, I used a single, powerful action called **MegaLinter**. It's an
-all-in-one tool that bundles over a hundred different linters for dozens of languages. It was the perfect tool for the
-job.
+Doing this work manually is tedious. Instead, I used **MegaLinter**, an all-in-one tool that bundles over a hundred
+linters. It fit the job perfectly.
 
-Here’s the process I followed:
+Here is the process I followed:
 
-1. **Created a Workflow**: I started by creating a file at `.github/workflows/mega-linter.yml`. This file tells GitHub
-   Actions to run MegaLinter every time I push code to my `main` branch.
-2. **The First Run (and the Wall of Errors)**: The first time the action ran, it came back with over 500 errors! It was
-   overwhelming but also helpful. It showed me all the little things, like spelling mistakes, that had accumulated over
-   time.
-3. **Refining the Process**: The default setup was too noisy. To fix this, I created a `.mega-linter.yml` file in the
-   root of my repository. This is a dedicated configuration file where I could fine-tune MegaLinter's behavior. I
-   configured it to:
-   - Ignore the generated `_site` folder.
-   - Temporarily disable the noisy spell-checkers.
-   - Only check files that have changed in a pull request to speed things up.
-   - Stop flagging warnings as build failures.
+1. **Create the workflow**: I created a file at `.github/workflows/mega-linter.yml` to run the tool on every push to
+   `main`.
+2. **Review the errors**: The first run reported over 500 errors. Although overwhelming, it helped me find spelling
+   mistakes and syntax issues.
+3. **Refine the configuration**: The default setup was too noisy. I created a `.mega-linter.yml` file in my repository
+   root to customize the checks. I configured it to:
+   - Ignore the `_site` folder.
+   - Disable noisy spelling checks.
+   - Limit checks to changed files to save time.
+   - Prevent warnings from failing the build.
 
-After a few adjustments, the output became much more manageable and, more importantly, useful.
+After a few adjustments, the output became much more manageable and useful.
 
 ---
 
-## What GitHub Actions _Aren't_ For
+## What GitHub Actions _aren't_ for
 
-While they are incredibly versatile, Actions aren't the solution for every problem. Here are a few things they don't do
-well or aren't designed for:
+GitHub Actions is versatile, but it is not the solution for every problem. The tool is not designed for:
 
-- **Running Your Live Application**: Actions are for automation _related_ to your code (testing, building, deploying).
-  They are not a server for hosting a live, 24/7 application.
-- **Long, Intensive Tasks**: The free runners are general-purpose virtual machines. They aren't ideal for tasks that
-  require hours of computation or specialized hardware like GPUs, although you can get runners with more power.
-- **Complex, Interdependent Pipelines**: For massive enterprise projects with complex build chains, a dedicated CI/CD
-  tool like Jenkins or CircleCI might offer more granular control. GitHub Actions is designed for ease of use and
-  integration, making it perfect for most individual and team projects.
+- **Running a live application**: Actions automate tasks like testing and deploying. They do not host a live, 24/7
+  server.
+- **Long, intensive tasks**: The free runner VMs are not built for hours of computing or GPU tasks.
+- **Complex build chains**: Large projects might require dedicated CI/CD tools like Jenkins. GitHub Actions focuses on
+  simplicity, making it ideal for individual sites.
 
 ---
 
-## Final Thoughts
+## Final thoughts
 
-Setting up GitHub Actions was surprisingly simple. In just a short time, I went from not knowing what it was to having
-an automated system that helps me maintain my blog's quality. It’s like having a meticulous teammate who reviews every
-change I make. If you have a personal project on GitHub, I highly recommend giving it a try. You might be surprised by
-what your new robot assistant can do for you.
+Setting up GitHub Actions was simple. I quickly went from knowing nothing about the tool to having automated quality
+checks. The system acts like a teammate who reviews every change. If you host a project on GitHub, try it out to see
+what it can do.

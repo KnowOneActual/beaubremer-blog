@@ -14,12 +14,12 @@ tags:
 Ever felt that pang of inadequacy when you hit a roadblock, whether it's a baffling error message in your code or a
 glitchy piece of software? That little voice saying, "I should already know this!"
 
-Here’s a revolutionary thought: **it’s perfectly okay not to know.** In fact, _learning as you go_ isn't a shortcut; an
+Here's a revolutionary thought: **it's perfectly okay not to know.** In fact, _learning as you go_ isn't a shortcut; an
 effective and powerful skill you can cultivate.
 
 ### The "Expert" Myth: A Relic of Another Era
 
-We often carry this idea that experts—especially in fields like programming or IT troubleshooting—are walking
+We often carry this idea that experts — especially in fields like programming or IT troubleshooting — are walking
 encyclopedias. We imagine them conjuring solutions from thin air, never needing to look anything up.
 
 The reality? Most "experts" are just incredibly skilled at figuring things out. They've perfected the art of the
@@ -68,9 +68,9 @@ This skill isn't magic; it's a habit you can build. Next time you're stuck, try:
 When you realize that "learning as you go" is the norm, not the exception, it does wonders for that nagging voice of
 imposter syndrome. It transforms "I don't know" from a moment of shame into a moment of opportunity.
 
-- **It’s okay to look things up.** It's efficient.
-- **It’s okay to try something and have it not work.** That's how you narrow down possibilities.
-- **It’s okay to ask questions.** Even seasoned pros do.
+- **It's okay to look things up.** It's efficient.
+- **It's okay to try something and have it not work.** That's how you narrow down possibilities.
+- **It's okay to ask questions.** Even seasoned pros do.
 
 The true skill isn't having all the answers. It's having the confidence and curiosity to seek them out, to experiment,
 and to build your knowledge piece by piece. You're not an imposter for not knowing; you're a professional for being
