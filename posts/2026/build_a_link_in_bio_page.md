@@ -1,72 +1,56 @@
 ---
 title: "Why I Built My Own 'Link in Bio' Page (And You Can Too)"
-description: 'How I built a simple, private, fully customizable link in bio page—and how you can, too.'
+description: 'How I built a simple, private, fully customizable link in bio page - and how you can, too.'
 date: 2026-02-07
 
 tags:
   - tech
 ---
 
-### Why I Built My Own “Link in Bio” Page (And You Can Too)
+### Why I Built My Own "Link in Bio" Page (And You Can Too)
 
-If you’ve spent any time on social media, you’ve seen them everywhere: that one lonely link in a profile that opens a
-page full of other links. Services like Linktree are super popular because they solve a simple problem: “I have one link
-slot but too many things to share.” At some point, I started wondering: could I build my own version—and more
-importantly, should I bother?
+If you use social media, you have seen them everywhere. A single profile link opens a page full of other links. Tools like Linktree are popular because they solve a simple problem. They help when you have one link slot but too many things to share. I wondered if I could build my own version - and if it was worth the effort.
 
-Turns out the answer to both was yes. It became a fun weekend project, and I ended up with something that feels more
-personal, more private, and honestly more useful than the prefab options.
+The answer to both was yes. It became a fun weekend project. Now I have a page that feels personal, private, and more useful than ready-made options.
 
 ---
 
-#### Why bother rolling your own?
+#### Why build your own?
 
-My first motivation was curiosity. I like to tinker, and a link‑in‑bio page felt like the right-sized project: not a
-full app, but more interesting than another “Hello, World.” Once I got into it, a few real advantages popped up.
+I started because I was curious. I like to tinker, and a link page is a small, fun project. It is more interesting than a simple "Hello, World" page. Once I began, I found a few big benefits.
 
-- **Privacy that feels honest.** With third‑party services, every click passes through someone else’s servers, and they
-  can track behavior, build profiles, and run analytics you never see. When I host my own page, the only thing happening
-  is a visitor clicking a button and going straight to where they wanted to go—no tracking pixels, no surprise cookies,
-  no mystery dashboards.
+- **True privacy.** With hosted services, every click goes through their servers. They track users and collect data you cannot see. When I host my own page, visitors go straight to their destination. There are no tracking pixels, cookies, or hidden dashboards.
 
-- **Real control, not just themes.** I’m not locked into a template, a brand color, or whatever features fit into a free
-  plan. The page looks like the rest of my site, using my typography, icons, and microcopy, so it feels like a natural
-  extension of my online home rather than a rented corner of the internet.
+- **Full control.** I am not locked into a template or a free plan limit. The page matches the rest of my site. It uses my own fonts, icons, and text. It feels like a natural part of my site rather than a rented page.
 
-- **One place I fully own.** If a hosted service changes pricing, shuts down, or decides my links are “against policy,”
-  I’m not scrambling to update every profile. My page is just static files; as long as I keep my domain and hosting,
-  it’s not going anywhere.
+- **Total ownership.** If a service changes its prices or shuts down, I do not need to worry. I do not have to update all my social profiles. My page is just static files. As long as I keep my domain, it will not go anywhere.
 
 ---
 
-#### The simple stack behind it
+#### The simple tech stack
 
-The best part is how little tech you actually need. You don’t need a fancy framework or a database, just a few familiar
-pieces.
+You do not need a complex framework or a database. A few simple tools are enough.
 
-Here’s what I used:
+Here is what I used:
 
-- **HTML:** A single `index.html` file for the structure of the page.
-- **CSS:** TailwindCSS for quick, modern styling plus a small custom stylesheet for the background gradient and button
-  animations.
-- **JavaScript:** A tiny script that fetches a `social-links.json` file and turns each entry into a button.
-- **Hosting:** Deployed on a static host (I used Netlify), so pushing a new version is basically “git push and done.”
+- **HTML:** A single `index.html` file for the structure.
+- **CSS:** Tailwind CSS for styling and a few custom rules for button effects.
+- **JavaScript:** A short script that loads a JSON file and builds the buttons.
+- **Hosting:** A static host like Netlify. Pushing an update is just a git command.
 
-The JSON file is where the magic happens. Instead of hard‑coding links into the HTML, I keep them in
-`social-links.json`, which means:
+The JSON file makes it easy. Instead of coding links into HTML, I put them in a `social-links.json` file:
 
-- Adding a new link is just adding one object to the JSON.
-- Reordering links is as simple as moving items around in the file.
-- I never have to dig through HTML just to change a URL or label.
+- To add a link, I just add one block to the JSON file.
+- To reorder links, I just move lines in the file.
+- I do not have to edit HTML to change a URL.
 
-It feels less like “editing a page” and more like “updating a configuration,” which is the kind of small quality‑of‑life
-improvement that makes you actually keep your links up to date.
+Updating the page is quick and simple. This makes it much easier to keep links current.
 
 ---
 
-#### A quick look at the data
+#### A look at the code
 
-Here’s an example of what the `social-links.json` file might look like:
+Here is an example of the `social-links.json` file:
 
 ```json
 [
@@ -90,7 +74,7 @@ Here’s an example of what the `social-links.json` file might look like:
 
 I use icons from [Font Awesome](https://fontawesome.com/).
 
-And a tiny JavaScript snippet to load those links and render buttons:
+Here is the JavaScript to load those links and build the buttons:
 
 ```js
 fetch('/social-links.json')
@@ -110,7 +94,7 @@ fetch('/social-links.json')
   });
 ```
 
-On the HTML side, you just need a container for those buttons:
+You just need a single HTML container for the buttons:
 
 ```html
 <div id="links" class="flex flex-col gap-3"></div>
@@ -118,43 +102,35 @@ On the HTML side, you just need a container for those buttons:
 
 ---
 
-#### Little gotchas (and why they’re worth it)
+#### Small issues to solve
 
-No project is complete without some small annoyances. Integrating the new page into my existing site meant dealing with:
+Every project has its challenges. Adding the page to my main site required a few steps:
 
-- Matching global styles so the page didn’t look like it came from another planet.
-- Tweaking security settings and headers so everything behaved correctly on my host.
-- Getting icons to render crisply on different screen sizes and making sure text stayed readable on top of my custom
-  background.
+- I matched the site styles so the page did not look out of place.
+- I adjusted security headers to make sure everything loaded safely.
+- I checked the icons and text contrast on mobile screens.
 
-Each of those issues was a small puzzle instead of a major blocker. They were good reminders that even simple projects
-reward a bit of attention to detail in exchange, you end up with something that feels polished instead of “just fine.”
+None of these issues were major blockers. They were good reminders that small details matter. Taking time to fix them makes the page feel polished instead of just basic.
 
 ---
 
-#### What the finished page gives me
+#### What the page gives me
 
-After all that, I’ve created a quick, lightweight, and totally customized link-in-bio page that really feels personal.
-Check it out here! [Links](https://beaubremer.com/links) It reflects the rest of my site, respects visitors’ privacy,
-and gives me one central place to point people from Instagram, Bluesky, or anywhere else I happen to be posting.
+Now I have a fast, lightweight link page. It matches my site design and respects user privacy. You can see it live on my [links page](https://beaubremer.com/links). It gives me one clean spot to direct people from social media.
 
-It’s also a small but satisfying reminder that you don’t always need another service account or subscription to solve a
-problem. Sometimes, a few static files and an afternoon of tinkering are enough.
+This project shows that you do not always need a paid subscription to solve a problem. Sometimes, a few files and a free afternoon are all you need.
 
 ---
 
-#### Want to build your own?
+#### How to build your own
 
-If you've been looking for a manageable project to sharpen your web dev skills, this is a great one: it touches HTML,
-CSS, JavaScript, JSON, and deployment, without turning into a month‑long side quest.
+If you want to practice web development, this is a perfect project. It covers HTML, CSS, JavaScript, and hosting, but you can finish it in a weekend.
 
-A simple path to get started:
+Here is how to start:
 
-1. Create a bare‑bones `index.html` with a placeholder container for your buttons.
-2. Add TailwindCSS (via CDN or your build pipeline) and style a single “link button” the way you like.
-3. Move your links into a `social-links.json` file and write a tiny script that loops through them and injects buttons
-   into the page.
-4. Deploy to whatever static host you like and swap it into your social profiles.
+1. Create a basic `index.html` file with a container for your buttons.
+2. Add Tailwind CSS and design a single link button.
+3. Save your links in a `social-links.json` file. Write a script to loop through them and generate the buttons.
+4. Upload your files to a static host and add the link to your profiles.
 
-You end up with a useful tool for your own links, and the quiet satisfaction of knowing it’s something you built from
-the ground up.
+You get a useful page for your links, and the satisfaction of building it yourself.

@@ -1,28 +1,25 @@
 ---
-title: 'The Git Commands I Actually Use Every Day (And Why)'
-description: 'A practical look at the small set of Git commands that actually matter in my day-to-day work.'
+title: 'The Git Commands I Use Every Day (And Why)'
+description: 'A practical look at the small set of Git commands that matter in my day-to-day work.'
 date: 2026-01-10
 
 tags:
   - tech
 ---
 
-### The Git Commands I Actually Use Every Day (And Why)
+### The Git Commands I Use Every Day (And Why)
 
-**TL;DR:** In this post, I walk through the handful of Git commands I actually use daily, how they fit into my workflow,
-and how they help me keep commits small, reviewable, and recoverable.
+**TL;DR:** In this post, I show the Git commands I use daily. I explain how they fit into my workflow to keep commits small and easy to review.
 
-There are a lot of Git commands out there, but on a normal day, I only reach for a small handful. These are the ones
-that keep my work moving: checking what changed, making focused commits, and recovering from the occasional mistake.
+There are many Git commands, but I only use a few. These commands keep my work moving. They help me check what changed, make focused commits, and fix mistakes.
 
-This isn't a complete Git guide. It's the set of commands that live in my muscle memory, and what I use them for in real
-projects.
+This guide focuses on the commands I use in real projects.
 
 ---
 
 ## 1. Seeing what changed
 
-Before I type any commit command, I want to know exactly what I'm about to do.
+Before I commit, I want to know exactly what I am about to do.
 
 ### `git status`
 
@@ -30,13 +27,13 @@ Before I type any commit command, I want to know exactly what I'm about to do.
 git status
 ```
 
-This is my "what's going on?" button. I run it:
+I use this command to check the state of the repository. I run it:
 
-- After pulling new changes, to see if I'm clean or mid-merge.
-- Before committing, to double-check which files are staged vs unstaged.
-- When something feels off, I just want to get my bearings.
+- After pulling changes, to check my branch status.
+- Before committing, to check which files are staged.
+- Whenever I need to verify my current state.
 
-If I only used one Git command all day, it would probably be this one.
+I run status more than any other command.
 
 ### `git diff`
 
@@ -45,27 +42,22 @@ git diff
 git diff --staged
 ```
 
-I use plain `git diff` to see what I've changed but haven't staged yet, and `git diff --staged` to see what's actually
-going into the next commit.
+I use `git diff` to see unstaged changes. I use `git diff --staged` to see what is ready for the next commit.
 
-Typical flow:
+Here is my typical flow:
 
-1. Edit code.
-2. Run `git diff` to scan through changes.
+1. Edit the code.
+2. Run `git diff` to review the changes.
 3. Stage only the parts that belong together.
-4. Run `git diff --staged` to sanity check the commit before hitting enter.
+4. Run `git diff --staged` to check the commit.
 
-A small example: I once refactored a component and changed some unrelated logging while I was "in there." When I ran
-`git diff`, it was obvious that the logging tweak didn't belong in the same commit as the refactor. I used `git add -p`
-to stage only the refactor hunks and left the logging change for a separate "tidy up logs" commit. That two-minute
-decision made the review simpler and kept the history cleaner.
+For example, I once refactored a component and also changed some logging. Running `git diff` made it clear that the logging change did not belong with the refactor. I used `git add -p` to stage only the refactor. I committed the logging change separately. This kept the commit history clean.
 
 ---
 
 ## 2. Building clean commits
 
-Once I know what changed, I want my commits to be small and focused. That makes it easier to review, debug, and revert
-later.
+Once I know what changed, I want my commits to be small. This makes it easier to review and revert them later.
 
 ### `git add`
 
@@ -75,14 +67,12 @@ git add path/to/dir
 git add -p
 ```
 
-I rarely run `git add .` unless it's a very small change. Instead, I:
+I rarely stage everything at once. Instead, I:
 
-- Add specific files when changes are clearly grouped.
-- Use `git add -p` (patch mode) to split a file into meaningful chunks and only stage the hunks that belong in this
-  commit.
+- Add specific files when changes are grouped.
+- Use `git add -p` to stage specific parts of a file.
 
-Patch mode is one of those "hidden superpowers" most people skip at first. Once you get used to it, it's hard to go
-back.
+Patch mode is a powerful tool that makes it easy to split up large changes.
 
 ### `git commit`
 
@@ -91,19 +81,18 @@ git commit -m "Short, clear message."
 git commit
 ```
 
-For simple changes, I'll use `-m`. For anything bigger, I skip the message flag and let Git open my editor so I can:
+For simple changes, I use the `-m` flag. For larger updates, I let Git open my editor so I can:
 
 - Write a short subject line.
-- Add a bullet list or a couple of sentences with context if needed.
+- Add a few bullet points with extra context.
 
-I don't obsess over perfectly formatted commit messages, but I do try to answer: "If I saw this 6 months from now, would
-I know what changed and why?"
+I try to write messages that will make sense to me six months from now.
 
 ---
 
-## 3. Staying in sync with the remote
+## 3. Staying in sync
 
-Most of my work happens on branches, but the pattern is the same whether I'm on `main` or a feature branch.
+Most of my work happens on branches. Branch syncing follows the same pattern everywhere.
 
 ### `git pull` and `git fetch`
 
@@ -112,11 +101,8 @@ git pull
 git fetch
 ```
 
-I use:
-
-- `git pull` when I just want "get me up to date," and I know I haven't made local changes that will conflict.
-- `git fetch` when I want to see what changed on the remote without touching my working tree, especially before a rebase
-  or when I'm checking out someone else's branch.
+- I use `git pull` to update my local branch when there are no conflicts.
+- I use `git fetch` to see remote changes without updating my files. This is useful before a rebase.
 
 ### `git push`
 
@@ -125,19 +111,19 @@ git push
 git push -u origin feature/my-branch
 ```
 
-I push early and often, especially on feature branches. That gives me:
+I push my work to the remote server often. This gives me:
 
-- A backup if my machine dies.
-- A way to hop devices without copying files.
-- A clear history of work in progress.
+- A backup of my code.
+- A way to work from different devices.
+- A clear history of my progress.
 
-On a new branch, I'll use `-u` once so future pushes can just be `git push`.
+On a new branch, I use the `-u` flag once. After that, I can just run `git push`.
 
 ---
 
 ## 4. Working with branches
 
-Branches are how I keep experiments and features from getting tangled.
+Branches keep my changes isolated.
 
 ### `git branch` and `git switch` / `git checkout`
 
@@ -145,17 +131,15 @@ Branches are how I keep experiments and features from getting tangled.
 git branch
 git branch feature/my-idea
 git switch feature/my-idea
-# or
-git checkout feature/my-idea
 ```
 
-My everyday moves are:
+My daily routine:
 
-- `git branch` to list what exists and see where I am.
-- Create a branch for anything more than a tiny fix.
-- Keep branch names descriptive enough that "future me" and coworkers instantly know what they're for.
+- Run `git branch` to see where I am.
+- Create a new branch for any new feature.
+- Use clear and simple branch names.
 
-I don't worry about clever names; clear and boring wins.
+Simple names are always best.
 
 ### `git merge`
 
@@ -165,10 +149,9 @@ git pull
 git merge feature/my-idea
 ```
 
-I use merge when I'm bringing a finished feature into `main` or when I want to incorporate the latest `main` changes
-into my branch without rewriting history.
+I use merge to bring finished features into `main`. I also use it to get the latest `main` changes into my feature branch.
 
-If a merge conflict appears, I let my editor or diff tool help resolve it, then:
+If there is a conflict, I resolve it in my editor and then:
 
 ```bash
 git add <fixed-files>
@@ -177,27 +160,19 @@ git commit
 
 ---
 
-## 5. Fixing mistakes (without panicking)
+## 5. Fixing mistakes
 
-Even with the best intentions, I stage the wrong thing or type the wrong message. These are the recovery commands I
-actually trust myself to use.
+When I stage the wrong file or write a bad message, I use these recovery commands.
 
 ### `git restore` (resetting a file)
 
 ```bash
 git restore path/to/file
-# older style:
-git checkout -- path/to/file
 ```
 
-I use this when I realize "I don't actually want any of the changes in this file."
+I use this when I want to discard all changes in a file. It returns the file to the last committed state. I check `git status` first to make sure I do not lose good work.
 
-It drops the local modifications and returns the file to the last committed state. I double-check with `git status`
-before running it, just to make sure I won't lose something important.
-
-I'm careful with `git restore` because it really does throw away local changes. I mostly use it on generated files or
-quick experiments where I know I don't care about the edits. When I'm unsure, I'll copy the code somewhere else before
-restoring, or just leave the file alone and clean it up once I'm certain.
+I am careful with `git restore` because it deletes local changes permanently. If I am unsure, I back up the file first.
 
 ### `git reset HEAD` (unstaging)
 
@@ -205,16 +180,11 @@ restoring, or just leave the file alone and clean it up once I'm certain.
 git reset HEAD path/to/file
 ```
 
-This one's for: "I staged too much, but I still want to keep the changes."
+Use this when you stage a file but want to keep the edits. It moves the file back to unstaged.
 
-It moves the file from staged back to unstaged, so I can restage only what belongs in this commit, often paired with
-`git add -p`.
+I often stage files by mistake, like config files or scratch notes. I see them in `git status` and run `git reset HEAD` to unstage them. The edits remain in my working files.
 
-My most common mistake is staging a file that doesn't actually belong to the change I'm working on, usually some config
-file or scratch notes I forgot about. I'll notice it in `git status`, then run `git reset HEAD path/to/file` to unstage
-it. The changes stay in my working tree, so I don't lose anything; I just keep them out of the commit until I'm ready.
-
-### `git commit-- amend`
+### `git commit --amend`
 
 ```bash
 git commit --amend
@@ -223,16 +193,16 @@ git commit --amend -m "Better message."
 
 I use `--amend` when:
 
-- I just committed and immediately spot a typo in the message.
-- I forgot to include one small file.
+- I spot a typo in my last commit message.
+- I forgot to include a file in the commit.
 
-I only amend commits that haven't been pushed yet, so I don't rewrite history that other people might already have.
+I only amend commits that I have not pushed yet.
 
 ---
 
-## 6. Looking back in time
+## 6. Looking back
 
-When something breaks or behaves strangely, I often need to see how we got here.
+When something breaks, I check the history.
 
 ### `git log`
 
@@ -241,34 +211,33 @@ git log
 git log --oneline --graph --decorate --all
 ```
 
-I use plain `git log` if I'm just scanning recent commits. For a better overview, I have an alias (or just type the full
-command) with `--oneline --graph --decorate --all` to see branches and merges as a visual graph.
+I use `git log` to see recent commits. For a better view, I use `--oneline --graph --decorate --all` to show a visual history tree.
 
-This helps when:
+This helps me:
 
-- I'm trying to find where a bug might have been introduced.
-- I'm picking a commit to revert or cherry-pick.
-- I want to understand the story of a feature branch.
+- Find where a bug started.
+- Choose a commit to revert.
+- Understand the branch history.
 
 ---
 
-## 7. How this looks in a real day
+## 7. A typical day
 
-On a typical small feature, my actual sequence looks something like this:
+Here is a common sequence for a new feature:
 
 ```bash
 git switch -c feature/new-link-page
-# do some work
+# edit some files
 git status
 git diff
 git add -p
 git diff --staged
 git commit -m "Add basic link-in-bio layout."
-git pull   # if needed
+git pull
 git push -u origin feature/new-link-page
 ```
 
-Then, after review and any fixes:
+After review, I merge the branch:
 
 ```bash
 git switch main
@@ -277,24 +246,21 @@ git merge feature/new-link-page
 git push
 ```
 
-If I mess up along the way:
+If I make a mistake:
 
-- `git reset HEAD file` to unstage something.
-- `git restore file` to throw away a bad change.
-- `git commit --amend` to fix the last commit before pushing.
+- Use `git reset HEAD file` to unstage.
+- Use `git restore file` to discard changes.
+- Use `git commit --amend` to fix the last commit.
 
-This is pretty close to how I work on real tasks: pick up a ticket or idea, branch off, make a small set of changes,
-review with `git diff`, commit, then push. If I realize the change is bigger than I thought, I'll split it into a couple
-of focused commits instead of one giant "everything" commit. It keeps debugging and code review much calmer.
+This simple flow keeps my work organized and easy to review.
 
 ---
 
 ## If you want to go deeper
 
-If you're newer to Git or want a more structured walkthrough, you might like these related posts:
+To learn more about Git, you might like these posts:
 
-- [Essential Git: Part 1](/posts/essential_git%20part_1/) – a more step-by-step look at the core concepts and commands.
-- [Getting a handle on.gitignore: A Guide to a Cleaner Git Repo](/posts/mastering_gitignore_a_complete_guide_to_a_cleaner_git_repo/)
-  – how I keep junk and secrets out of my repos.
+- [Essential Git: Part 1](/posts/essential_git%20part_1/) - A guide to core Git concepts.
+- [Getting a handle on .gitignore: A Guide to a Cleaner Git Repo](/posts/mastering_gitignore_a_complete_guide_to_a_cleaner_git_repo/) - How to keep junk files out of your repositories.
 
-Together with this post, they cover the Git concepts and habits I rely on most days.
+These guides cover the core Git habits I rely on every day.

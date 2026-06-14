@@ -1,6 +1,6 @@
 ---
 title: "Phrases for When You Don't Have the Answer"
-description: "Not knowing something isn't a weakness. How you handle it is what actually matters."
+description: "Not knowing something isn't a weakness. How you handle it is what matters."
 date: 2026-03-11
 
 tags:
@@ -11,126 +11,102 @@ tags:
 
 ### Phrases for When You Don't Have the Answer
 
-At some point in every meeting, every 1:1, every high-stakes conversation — someone asks something you don't know. How
-you respond in that moment matters more than most people realize.
+At some point in every meeting, every 1:1, or every high-stakes conversation, someone will ask you a question you do not know how to answer. How you respond in that moment matters more than most people realize.
 
-The instinct is usually to fill the silence. Say something. Sound confident. Hope it lands. That instinct is wrong.
-Saying the wrong thing with certainty damages your credibility in ways that take a long time to repair. Saying "I don't
-know" honestly — and handling it well — builds trust fast.
+We often feel pressure to fill the silence. We want to say something confident and hope it lands. But guessing with certainty is a mistake. Saying the wrong thing damages your credibility. Admitting you do not know builds trust quickly.
 
-Here's a working set of phrases that help you do exactly that.
+Here is a list of phrases that help you handle these moments.
 
 ---
 
 #### When you should know, but don't
 
-This is the uncomfortable one. You're in the room. The question is in your area. And you just don't have it.
+This is the most uncomfortable scenario. The question is in your area, but you do not have the answer.
 
-Imagine you're in the midst of pre-production, and your event manager wonders why a particular metric dropped last week.
-You've been fully engaged with a different aspect of the production all week long. You have a hunch, but you're not
-sure. The temptation is to guess out loud and hope it sounds right. Don't. A half-baked answer that turns out to be
-wrong is worse than admitting you need to check.
+Imagine you are in the middle of pre-production. Your event manager asks why a metric dropped last week. You have been focused on a different part of the project all week. You have a guess, but you are not sure.
 
-The goal here isn't to hide. It's to be honest without sounding unprepared or dismissive.
+The temptation is to guess to sound knowledgeable. Do not do it. A wrong guess is much worse than checking the data first. Be honest without sounding unprepared.
 
-- "I'm not sure, but I'll find out and let you know."
-- "That's a good question, and I don't actually know. Let me find out and get back to you."
-- "I want to make sure I give you the right answer, not just a fast one. Give me some time on that."
-- "I'd rather say 'I don't know' than give you bad information."
-- "That's important, and I don't want to give you a half answer. Let me get back to you on that by the end of the day."
+- "I am not sure, but I will find out and let you know."
+- "That is a good question, and I do not know. Let me check and get back to you."
+- "I want to verify the facts so I give you accurate information. Let me check and get back to you."
+- "I would rather check than give you incorrect information."
+- "That is important, and I want to give you a complete answer. Let me get back to you by the end of the day."
 
-That last one works especially well in high-stakes settings. It signals that you take the question seriously, and it
-gives you a concrete commitment to follow through on.
+The last phrase works well in high-stakes meetings. It shows you take the question seriously and gives you a clear time to follow up.
 
 ---
 
-#### When it's not your area of expertise
+#### When it is not your area of expertise
 
-Sometimes the question just isn't yours to answer — not because you dropped the ball, but because someone else owns it.
+Sometimes a question is not yours to answer. This is not because you made a mistake, but because someone else owns that area.
 
-Imagine a client asks you a detailed question about infrastructure costs during a meeting where you're there to talk
-about the logistics. You could attempt an answer and risk being wrong on specifics that matter to them, or you could own
-the boundary cleanly and connect them with the right person. The second option almost always lands better — it shows
-self-awareness and saves everyone from a follow-up correction later.
+Imagine a client asks you about server costs during a meeting about logistics. You could guess and risk being wrong. Or you could own the boundary and connect them with the right person.
 
-The trap is hedging so hard that you say nothing useful, or overclaiming expertise you don't have. Be clear about the
-boundary, then it would still be useful anyway.
+The second option is always better. It shows self-awareness and saves everyone time. Redirecting the question is the most helpful path.
 
-- "Here's what I know, and here's what I don't know."
-- "I can't tell you that with certainty. I do have an informed opinion, which is..."
-- "I know just enough to be dangerous on that one — let me point you to someone who really owns it."
-- "That's outside my lane, but I know who to ask."
-- "I can give you a surface-level take, but [Name] will give you the full picture."
-
-Redirecting to the right person is not a cop-out. It's actually the most useful thing you can do.
+- "Here is what I know, and here is what is outside my area."
+- "I do not have the exact details. My general understanding is..."
+- "I know a little about that, but let me connect you with the person who owns it."
+- "That is outside my lane, but I know who to ask."
+- "I can give you a basic summary, but [Name] will give you the full details."
 
 ---
 
-#### When it's a chance to learn together
+#### When it is a chance to learn together
 
-Some questions don't have answers yet. The work is still being figured out.
+Some questions do not have answers yet. The team is still figuring things out.
 
-This comes up a lot when a team is evaluating something new: a tool, an architecture decision, a process change. Someone
-asks, "So what's the right way to handle X?" and the honest answer is that nobody in the room fully knows yet. These
-moments can feel uncomfortable, but they are some of the best opportunities to think out loud, build shared
-understanding, and make a decision together instead of waiting for someone to come back with a verdict.
+This happens when a team evaluates a new tool, a design decision, or a process change. Someone asks how to handle a new challenge, and nobody in the room knows yet.
 
-- "I don't know the answer to that, but I'm anxious to find out."
-- "I don't have a strong answer yet — want to work through it together?"
-- "Honestly, this is new territory for me, too. Let's figure it out."
-- "I've been thinking about this myself. Here's where my head is so far…"
+These moments can feel uncomfortable, but they are great opportunities. You can think out loud, build shared understanding, and make a decision together.
 
-"Let's figure it out" is underrated. It's honest, collaborative, and it moves things forward instead of stalling them.
+- "I will research that and find the answer."
+- "I do not have a clear answer yet. Let's work through it together."
+- "This is new territory for me, too. Let's figure it out."
+- "I have been thinking about this. Here is my initial idea..."
+
+Saying "let's figure it out" is very powerful. It is honest and collaborative.
 
 ---
 
-#### When the question doesn't quite make sense yet
+#### When the question is unclear
 
-Sometimes a question is unclear — not because the person asking it is wrong, but because the framing or context is
-missing.
+Sometimes a question lacks context.
 
-A common version of this: someone asks "why does this keep breaking?" but they haven't told you which system, which
-environment, or what "breaking" even means to them. Trying to answer that cold usually sends you in the wrong direction.
-Asking for more context isn't stalling; it's the only way actually to answer the right question.
+For example, someone asks "why does this keep breaking?" but they have not told you which system or what error they saw. Trying to answer right away leads to mistakes.
+
+Asking for context helps you answer the right question.
 
 - "Can you share more context?"
-- "That's an interesting question — tell me more about what's driving it."
+- "That is an interesting question. What is driving it?"
 - "Help me understand the goal behind the question, and I can give you a better answer."
-- "Are we solving for X, or is there something deeper here?"
+- "Are we solving for X, or is there a different issue here?"
 
-Getting to the real question underneath the asked one is often where the useful conversation actually starts.
+Finding the underlying issue starts the useful conversation.
 
 ---
 
 #### A few framing openers
 
-Sometimes the delivery matters as much as the content. These openers set the right tone before you get into it — honest,
-grounded, and not defensive.
+Delivery matters. These openers set an honest, grounded tone:
 
-Think of them as a way to buy yourself half a second to think while also signaling good faith. Instead of launching
-straight into a shaky answer, you open with one of these, and suddenly the whole response feels more considered — even
-if the substance is the same.
-
-- "Here's what I can tell you..."
-- "Here's my honest take..."
-- "I'll be transparent with you..."
+- "Here is what I can tell you..."
+- "Here is my honest take..."
+- "I will be transparent with you..."
 - "Let me think out loud for a second..."
-- "That's exactly what I'm trying to figure out..."
+- "That is exactly what I am trying to figure out..."
 
-Short, direct, and they signal good faith before you say anything of substance.
+These are short and direct. They show good faith before you share the details.
 
 ---
 
 #### Why this matters
 
-"I don't know" done badly sounds like avoidance. Done well, it sounds like integrity.
+Saying "I do not know" poorly sounds like avoidance. Done well, it shows integrity.
 
-The people who tend to earn the most trust in a room aren't always the ones with the fastest answers. They're the ones
-who are honest about what they know, clear about what they don't, and reliable about following through. That combination
-is rarer than it should be.
+Trust goes to those who are honest about what they know, clear about what they do not, and reliable about following up.
 
-The difference is usually just a few extra words, a commitment to follow up, a redirect to the right person, an honest
-acknowledgment of what you're still working out. None of these is complicated. But they require you to slow down enough
-not to panic-fill the silence.
+It only takes a few extra words, a commitment to follow up, or a redirect to the right person. Slow down so you do not panic-fill the silence.
 
-Most people will respect that—the ones who don't probably weren't going to trust your fast answer either.
+Most people will respect that. The ones who do not probably would not trust a fast guess anyway.
