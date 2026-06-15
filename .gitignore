@@ -172,3 +172,6 @@ megalinter-reports/
 
 # Temp Files and Logs
 temp_files/
+
+# Slopless findings
+.slopless/
