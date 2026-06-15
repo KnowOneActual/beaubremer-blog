@@ -1,1 +1,18 @@
-[{"messages":[{"type":"lint","ruleId":"slopless/paragraph-length","message":"Paragraph has 7 sentences. Keep paragraphs to 6 sentences or fewer.","index":448,"line":14,"column":1,"range":[448,716],"loc":{"start":{"line":14,"column":1},"end":{"line":16,"column":73}},"severity":2}],"filePath":"/Users/userx/websites/bb_blog/beaubremer-blog/posts/2025/Building_a_Network_Monitor.md"}]
+[
+  {
+    "messages": [
+      {
+        "type": "lint",
+        "ruleId": "slopless/paragraph-length",
+        "message": "Paragraph has 7 sentences. Keep paragraphs to 6 sentences or fewer.",
+        "index": 448,
+        "line": 14,
+        "column": 1,
+        "range": [448, 716],
+        "loc": { "start": { "line": 14, "column": 1 }, "end": { "line": 16, "column": 73 } },
+        "severity": 2
+      }
+    ],
+    "filePath": "/Users/userx/websites/bb_blog/beaubremer-blog/posts/2025/Building_a_Network_Monitor.md"
+  }
+]

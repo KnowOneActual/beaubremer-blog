@@ -6,7 +6,7 @@ description:
 date: 2025-06-12
 ---
 
-### Working with Git is great for managing your code. But sometimes you push changes that you later want to undo.
+### Working with Git is great for managing your code. But sometimes you push changes that you later want to undo
 
 A feature might introduce a bug, or a setting can cause problems. In these cases, `git revert` helps.
 
