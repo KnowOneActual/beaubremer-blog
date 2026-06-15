@@ -41,7 +41,9 @@ It might seem like a few extra steps, but the benefits are enormous.
 
 ## My 5-Step Branching Workflow
 
-Let's look at a real-world example. I recently wanted to change the main header link on my blog so that the homepage header links to my main portfolio, while the header on posts links to the blog index. This was a perfect use case for a feature branch. Here is the exact workflow I followed:
+Let's look at a real-world example. I recently wanted to change the main header link on my blog so that the homepage
+header links to my main portfolio, while the header on posts links to the blog index. This was a perfect use case for a
+feature branch. Here is the exact workflow I followed:
 
 1. **Start from an Up-to-Date Codebase**
 

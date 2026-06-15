@@ -12,7 +12,9 @@ tags:
 We have all been there. You are minutes away from starting a corporate event. Someone hands you a flash drive full of
 photos. They ask, "Can we loop these on the big screen?"
 
-That quiet panic is common in the event world. Fortunately, you can avoid this stress. Automating the process saves you from inserting, resizing, and centering every image by hand. Let's look at two ways to turn a chaotic folder of photos into a polished PowerPoint slideshow.
+That quiet panic is common in the event world. Fortunately, you can avoid this stress. Automating the process saves you
+from inserting, resizing, and centering every image by hand. Let's look at two ways to turn a chaotic folder of photos
+into a polished PowerPoint slideshow.
 
 ### Method 1: The Ultimate Automation with Python
 

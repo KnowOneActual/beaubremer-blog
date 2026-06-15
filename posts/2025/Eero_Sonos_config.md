@@ -10,7 +10,8 @@ tags:
 If you own a Sonos system and Eero Wi-Fi, you expect good sound. Yet, speakers might drop out. They can disappear from
 the app. Music might not play in grouped rooms.
 
-You are not alone; your hardware is not broken. Sonos and Eero are compatible but require custom settings. The issues stem from a conflict between two mesh networks, which you can fix easily.
+You are not alone; your hardware is not broken. Sonos and Eero are compatible but require custom settings. The issues
+stem from a conflict between two mesh networks, which you can fix easily.
 
 This guide shows you how to fix these network issues. These steps will make your system stable.
 

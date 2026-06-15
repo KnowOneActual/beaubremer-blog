@@ -1,8 +1,8 @@
 ---
 title: 'You Might Already Be a Hacker and Not Even Know It'
 description:
-  'Hollywood gets hacking wrong. Hacking is actually about curiosity, creative thinking, and problem-solving in
-  everyday life.'
+  'Hollywood gets hacking wrong. Hacking is actually about curiosity, creative thinking, and problem-solving in everyday
+  life.'
 date: 2025-07-06
 
 tags:
@@ -50,8 +50,8 @@ Running a script written by someone else executes a known process. In contrast, 
 unique problem defines the hacker mindset.
 
 Creative problem-solving is key to technology. In his essay
-["How To Become A Hacker,"](http://www.catb.org/~esr/faqs/hacker-howto.html), Eric S. Raymond explains that
-hacking is about creative thinking rather than technical skills.
+["How To Become A Hacker,"](http://www.catb.org/~esr/faqs/hacker-howto.html), Eric S. Raymond explains that hacking is
+about creative thinking rather than technical skills.
 
 #### Hacking is everywhere
 

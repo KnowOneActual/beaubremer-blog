@@ -18,8 +18,8 @@ Staying cool under pressure is a skill you can learn. Let us look at how to hand
 Have you ever struggled to remember a simple command when your boss stands over your shoulder? This difficulty is a
 normal biological response. Under stress, your body enters a fight-or-flight state, flooding your system with hormones.
 
-This reaction helps in danger, but it is bad for debugging. Stress hurts your memory and thinking.
-The pressure meant to speed you up makes you less effective.
+This reaction helps in danger, but it is bad for debugging. Stress hurts your memory and thinking. The pressure meant to
+speed you up makes you less effective.
 
 #### Your Mental Emergency Brake: The STOP Skill
 
@@ -48,7 +48,9 @@ In a crisis, the pressure to act is great, and every minute of downtime feels li
 quick shortcut, but shortcuts are risky. A single panicked action, like restarting a service or changing a config file
 without a clear reason, can create new problems.
 
-Remember the troubleshooting paradox: the fastest way to a fix is often the most deliberate one. Sticking to your plan prevents hasty mistakes that extend downtime. Taking a moment to breathe and observe ensures you move toward a fix instead of creating more chaos.
+Remember the troubleshooting paradox: the fastest way to a fix is often the most deliberate one. Sticking to your plan
+prevents hasty mistakes that extend downtime. Taking a moment to breathe and observe ensures you move toward a fix
+instead of creating more chaos.
 
 #### Find the Root Cause with the "5 Whys" Method
 
