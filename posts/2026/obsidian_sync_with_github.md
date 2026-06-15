@@ -15,6 +15,8 @@ tags:
 
 ## Syncing Obsidian notes with GitHub: my cross-platform method
 
+{% image "./img/site_content/obsidian_sync_with_github/obsidian_sync_blueprint.jpg", "A technical blueprint drawing showing Blot pushing a small cart of raw crystals across a suspension bridge to a floating cloud representing GitHub sync." %}
+
 I recently started using Obsidian across Windows, Linux, and macOS. I am new to the app, so I needed a sync method.
 Obsidian has a paid sync service. But I did not want to pay until I was sure I would keep using it. I use Git every day.
 A private GitHub repository felt like a great option.

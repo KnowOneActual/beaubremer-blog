@@ -11,6 +11,8 @@ tags:
   - terminal
 ---
 
+{% image "./img/site_content/why_yazi_is_the_terminal_file_manager_you_need/yazi_blueprint_banner.jpg", "A technical blueprint drawing showing Blot standing on a gear, tightening a bolt on a pipeline to release file data nodes representing Yazi terminal file manager sync." %}
+
 You can browse files in the terminal with standard commands. Or you can use tools like Ranger or nnn.
 
 I used Ranger for years. But it felt slow when loading large folders or image previews. Then I tried Yazi. Its speed was
