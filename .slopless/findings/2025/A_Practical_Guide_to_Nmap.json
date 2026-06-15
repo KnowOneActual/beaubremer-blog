@@ -1,1 +1,1 @@
-[{"messages":[],"filePath":"/Users/userx/websites/bb_blog/beaubremer-blog/posts/2025/A_Practical_Guide_to_Nmap.md"}]
+[{"messages":[{"type":"lint","ruleId":"slopless/fragment-stacking","message":"Fragment stack found: The tool helps find security flaws. Network admins and developers use Nmap. Rewrite the clipped cadence as normal prose.","index":700,"line":18,"column":105,"range":[700,775],"loc":{"start":{"line":18,"column":105},"end":{"line":19,"column":61}},"severity":2}],"filePath":"/Users/userx/websites/bb_blog/beaubremer-blog/posts/2025/A_Practical_Guide_to_Nmap.md"}]

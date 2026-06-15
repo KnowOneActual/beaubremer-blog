@@ -12,21 +12,19 @@ tags:
 It's a scenario every event audio tech knows well: the show is about to start, and a last-minute "Voice of God" (VOG)
 announcement needs to be recorded. All eyes are on you. It's time to work some magic with the tools you have on hand.
 
-Here's a straightforward guide to capturing a clean, professional-sounding VOG using a simple USB interface, a laptop
-with [REAPER](https://www.reaper.fm/), and the trusty Shure SM58.
+Here is a guide to recording a clean VOG. You just need a USB interface, a laptop with REAPER, and a Shure SM58.
 
 ### First, Find Your "Vocal Booth"
 
-Before you plug anything in, your top priority is finding the best possible place to record. In a bustling event space,
-this can be tricky, but it's essential for avoiding background noise and ugly room echo in your recording.
+First, find the best place to record. In a busy event space, this can be hard. But it is vital to avoid background noise
+and echo.
 
 Your goal is to find a space that is as "dead" as possible, meaning it absorbs sound instead of letting it bounce
-around. Look for a small, quiet room away from the main action. A storage closet, an empty office, or even a quiet
-corner can work in a pinch.
+around. Look for a small, quiet room away from the main action. A storage closet, an empty office, or a quiet corner can
+work well.
 
-Once you've found your spot, build a makeshift vocal booth. Grab any soft materials you can find — coats, blankets, or
-event draping are perfect. Drape them over mic stands or chairs to build a small enclosure. This will help absorb vocal
-reflections and block out some of that distracting ambient noise.
+Next, build a temporary vocal booth. Grab soft materials like coats, blankets, or drapes. Drape them over mic stands or
+chairs to build a small enclosure. This absorbs sound reflections and blocks ambient noise.
 
 ### Gear and Mic Technique
 
@@ -34,19 +32,17 @@ With your impromptu studio ready, it's time to get your gear set up for a great 
 
 #### Using the SM58
 
-The Shure SM58 is a legend for a reason. Its cardioid pickup pattern is a lifesaver in noisy environments because it's
-designed to pick up sound from the front and reject sound from the sides and rear.
+The Shure SM58 is a classic microphone. Its pickup pattern is perfect for noisy spaces. It captures sound from the front
+and rejects noise from the sides and back.
 
-For a clear voiceover, have the speaker hold the microphone about 4-6 inches from their mouth. This gives you a full,
-present sound. If you get too close, the "proximity effect" will kick in and make the voice sound boomy and muffled.
-Make sure the speaker is talking directly into the top of the mic, not across it.
+For a clear voiceover, place the microphone four to six inches from the speaker's mouth. This gives a full, present
+sound. If you get too close, the voice will sound boomy. Make sure they talk directly into the top of the mic.
 
 #### The All-Important Pop Filter
 
-A pop filter is crucial for stopping plosives — those harsh "p" and "b" sounds that can ruin a take. If you don't have a
-real one, no problem. You can make an effective one with items found at almost any event:
+A pop filter stops harsh "p" and "b" sounds. If you do not have one, you can make it from common event items:
 
-- **The Sock Method:** A clean, thin dress sock pulled over the microphone's grille works surprisingly well.
+- **The Sock Method:** A clean, thin sock pulled over the microphone grille works well.
 - **The Coat Hanger & Pantyhose:** Bend a wire coat hanger into a circle. Stretch a pair of pantyhose over the frame and
   use gaffer tape to attach it to the mic stand.
 
@@ -63,8 +59,8 @@ real one, no problem. You can make an effective one with items found at almost a
 
 ### A Quick and Effective FX Chain
 
-Once you have a good take, you can use a few of Reaper's excellent built-in plugins (ReaPlugs) to add a professional
-polish. Click the `FX` button on your track to open the effects window.
+After recording, use Reaper's built-in plugins to polish the track. Click the FX button on your track to open the
+effects window.
 
 Here's a simple chain that works wonders for VOG recordings:
 

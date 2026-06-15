@@ -1,1 +1,1 @@
-[{"messages":[],"filePath":"/Users/userx/websites/bb_blog/beaubremer-blog/posts/2025/Eero_Sonos_config.md"}]
+[{"messages":[{"type":"lint","ruleId":"slopless/paragraph-length","message":"Paragraph has 7 sentences. Keep paragraphs to 6 sentences or fewer.","index":361,"line":13,"column":1,"range":[361,564],"loc":{"start":{"line":13,"column":1},"end":{"line":14,"column":89}},"severity":2}],"filePath":"/Users/userx/websites/bb_blog/beaubremer-blog/posts/2025/Eero_Sonos_config.md"}]

@@ -69,8 +69,7 @@ nslookup -query=mx google.com
 
 **Output:**
 
-The tool returns a list of mail servers with priority numbers. Lower numbers mean higher priority. Mail servers try the
-highest-priority server first.
+The tool returns a list of mail servers with priority numbers, where lower numbers mean higher priority.
 
 ```
 google.com mail exchanger = 10 smtp.google.com.

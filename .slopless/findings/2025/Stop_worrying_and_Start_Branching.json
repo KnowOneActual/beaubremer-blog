@@ -1,1 +1,1 @@
-[{"messages":[],"filePath":"/Users/userx/websites/bb_blog/beaubremer-blog/posts/2025/Stop_worrying_and_Start_Branching.md"}]
+[{"messages":[{"type":"lint","ruleId":"slopless/paragraph-length","message":"Paragraph has 7 sentences. Keep paragraphs to 6 sentences or fewer.","index":2081,"line":44,"column":1,"range":[2081,2333],"loc":{"start":{"line":44,"column":1},"end":{"line":46,"column":16}},"severity":2}],"filePath":"/Users/userx/websites/bb_blog/beaubremer-blog/posts/2025/Stop_worrying_and_Start_Branching.md"}]
