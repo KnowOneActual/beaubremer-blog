@@ -12,7 +12,9 @@ Have you ever wondered what happens when you visit a website? I built a network 
 the design and the changes I made to the code.
 
 I recently built a tool to track network latency. You can check it out under
-[My Projects](https://beaubremer.com/#my_projects). The project started with a simple idea. However, I had to fix many
+[My Projects](https://beaubremer.com/#my_projects).
+
+The project started with a simple idea. However, I had to fix many
 unexpected bugs. I learned a lot about networks and browser performance.
 
 ### The spark: a speed test

@@ -1,8 +1,8 @@
 ---
 title: 'You Might Already Be a Hacker and Not Even Know It'
 description:
-  'Debunking the Hollywood stereotype of a hacker and exploring how the true hacker mindset of curiosity and creative
-  problem-solving can be found in everyday life.'
+  'Hollywood gets hacking wrong. Hacking is actually about curiosity, creative thinking, and problem-solving in
+  everyday life.'
 date: 2025-07-06
 
 tags:
@@ -17,9 +17,9 @@ wrapped the handle with thick silicone tape.
 
 The mug now has a comfortable grip that fits my hand perfectly. The customized mug works better than before.
 
-Adapting a broken system to serve a new purpose represents the true heart of hacking.
+Adapting a broken system for a new purpose is the heart of hacking.
 
-Forget the hoodie and the scrolling green code. Hollywood's image of a hacker is dramatic but incorrect.
+Forget the hoodie and the scrolling green code. Hollywood's image of a hacker is wrong.
 
 Hacking is less about breaking into banks and more about creative thinking. At its core, it means adapting a system or
 process to do what you want.
@@ -38,8 +38,8 @@ lead.
 
 #### Following the recipe vs. inventing a new dish
 
-Following a recipe is a useful skill. Running a script, using a tutorial, or following a guide to fix a leak are all
-reliable processes. Established processes keep the world running.
+Following instructions is useful. Running a script, using a guide, or following a tutorial to fix a leak are all
+standard methods. These methods keep the world running.
 
 However, hackers invent the recipes.
 
@@ -49,9 +49,9 @@ experimenting to make it work.
 Running a script written by someone else executes a known process. In contrast, combining tools in a new way to solve a
 unique problem defines the hacker mindset.
 
-Creative problem-solving is central to technology. It was documented in Eric S. Raymond's essay
-["How To Become A Hacker,"](http://www.catb.org/~esr/faqs/hacker-howto.html). Raymond's essay focuses on creative
-thinking rather than technical skills.
+Creative problem-solving is key to technology. In his essay
+["How To Become A Hacker,"](http://www.catb.org/~esr/faqs/hacker-howto.html), Eric S. Raymond explains that
+hacking is about creative thinking rather than technical skills.
 
 #### Hacking is everywhere
 

@@ -98,8 +98,8 @@ This search is faster than reading through hundreds of lines by hand.
 
 ### A real-world scenario
 
-Imagine you have a damaged file, like a word doc or slide file. When you try to open it, the program fails. It is hard
-to think the content is lost.
+Imagine you have a damaged document or presentation. When you try to open it, the program fails, and you might worry
+that the content is lost forever.
 
 In these cases, `strings` can save your data. While it cannot fix the file, it often bypasses damaged parts to pull out
 plain text.

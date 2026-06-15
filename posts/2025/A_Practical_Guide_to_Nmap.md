@@ -15,8 +15,8 @@ they are open. This helps you find running services.
 
 ### What is Nmap and why use it?
 
-Nmap is a free tool. It finds hosts and services on a network. It sends packets and checks the replies. The tool helps
-find security flaws. Network admins and developers use Nmap.
+Nmap is a free tool that finds hosts and services on a network by sending packets and analyzing the replies. Network
+admins and developers use it to discover security flaws and verify system configurations.
 
 You can use Nmap to:
 

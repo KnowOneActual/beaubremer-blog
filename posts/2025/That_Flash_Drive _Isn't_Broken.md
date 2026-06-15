@@ -9,9 +9,7 @@ tags:
   - tech
 ---
 
-Have you ever loaded a USB drive with music or movies? You plug it into a TV or car stereo and see a total mess. You can
-see your files. However, they are mixed with strange, unplayable "ghost" files. Many files start with `._` or are named
-`.DS_Store`.
+Have you ever loaded a USB drive with music or movies, only to see a total mess when you plug it into a TV or car stereo? Your files are mixed with strange, unplayable ghost files starting with `._` or named `.DS_Store`.
 
 This clutter is a common problem, but your drive is not broken. It is just full of hidden helper files that macOS leaves
 behind.

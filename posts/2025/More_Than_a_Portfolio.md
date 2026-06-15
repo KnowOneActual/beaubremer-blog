@@ -28,7 +28,7 @@ change constantly.
 Your site can be simple. My own design goal is basic: the buttons work. This shows you get things done despite a skill
 gap.
 
-Waiting to become an expert holds us back. Perfectionism often looks like caution. Initiative means finding answers
+Waiting to become an expert holds us back. While perfectionism often looks like caution, true initiative means finding answers
 along the way.
 
 ### **You prove you can follow through**

@@ -9,9 +9,9 @@ tags:
   - tech
 ---
 
-> **Update (April 2026):** I have since replaced MegaLinter. As my blog grew, MegaLinter became too slow and
-> inefficient. I now use a fast, parallelized stack of **Biome**, **Lefthook**, and **Secretlint**. It runs locally on
-> every commit, giving feedback in seconds. Details on the new setup are in the [Changelog](/CHANGELOG.md).
+> **Update (April 2026):** I have since replaced MegaLinter because it became too slow as my blog grew. I now use a fast,
+> parallelized stack of **Biome**, **Lefthook**, and **Secretlint** that runs locally on every commit. This gives feedback
+> in seconds; you can find details in the [Changelog](/CHANGELOG.md).
 
 ---
 

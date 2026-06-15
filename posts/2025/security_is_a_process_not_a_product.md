@@ -7,8 +7,9 @@ tags:
   - networking
 ---
 
-Most people treat security as a checklist task. They buy a lock, set a password, and stop thinking about it. But real
-security has no final goal. It is an ongoing process. You must stay ready all the time. There is no such thing as
+Most people treat security as a checklist task. They buy a lock, set a password, and stop thinking about it.
+
+But real security has no final goal. It is an ongoing process. You must stay ready all the time. There is no such thing as
 complete safety.
 
 ## The layered approach (defense in depth)
@@ -31,13 +32,14 @@ a bypass trick online. Suddenly, anyone can open that lock with a few simple too
 
 Digital security moves even faster.
 
-Being popular does not guarantee safety. In fact, it can be a risk. Attackers target the software that everyone uses.
-The reward is much higher for them. A bug in a popular tool puts millions of users at risk.
+Popularity does not guarantee safety; in fact, it can be a risk because attackers target software that everyone uses.
+A bug in a popular tool puts millions of users at risk.
 
 ## Tools change, and so do their owners
 
-Even if the software stays strong, the company might change. Take password managers. They are vital tools today. But
-companies get sold. New owners take over. The tool you trusted five years ago might now have different privacy rules.
+Even if the software stays strong, the company might change. Take password managers, which are vital tools today.
+
+However, companies get sold and new owners take over. The tool you trusted five years ago might now have different privacy rules.
 
 Thinking about these risks is standard threat modeling.
 
