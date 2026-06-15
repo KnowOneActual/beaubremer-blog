@@ -155,10 +155,9 @@ See [CHANGELOG.md](CHANGELOG.md) for the full history.
 ## 📝 Recent Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
-
+- [Why Yazi is the Terminal File Manager You Need](https://blog.beaubremer.com/posts/why-yazi-is-the-terminal-file-manager-you-need/)
+- [A Cross-Platform Guide to Syncing Obsidian with GitHub](https://blog.beaubremer.com/posts/obsidian-sync-with-github/)
 - [Sharing Your Python Tools with the World](https://blog.beaubremer.com/posts/sharing-your-python-tools-with-the-world/)
 - [Staying Flexible Without Letting Your Process Get Bulldozed](https://blog.beaubremer.com/posts/staying-flexible-without-letting-your-process-get-bulldozed/)
 - [Moving to Local Hardware](https://blog.beaubremer.com/posts/moving-to-local-hardware/)
-- [Phrases for When You Don&#39;t Have the Answer](https://blog.beaubremer.com/posts/phrases-for-when-you-dont-have-the-answer-v2/)
-- [Live Streaming Video Software Isn&#39;t the Bottleneck Anymore, Your Workflow Is](https://blog.beaubremer.com/posts/live-streaming-software-isn-t-the-bottleneck-anymore/)
 <!-- BLOG-POST-LIST:END -->
