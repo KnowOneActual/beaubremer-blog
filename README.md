@@ -49,7 +49,7 @@ Following feedback, a visual refactor (V11.0.0) replaced the generic starter sty
 
 ## Security and linting stack
 
-We use a fast, parallelized quality stack:
+I use a fast, parallelized quality stack:
 
 - **[Biome](https://biomejs.dev/):** Rust-based linter and formatter.
 - **[Lefthook](https://github.com/evilmartians/lefthook):** Runs pre-commit hooks in parallel.
