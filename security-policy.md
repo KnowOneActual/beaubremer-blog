@@ -1,41 +1,36 @@
 ---
 title: 'Security Policy'
-description: 'Our policy for the responsible disclosure of security vulnerabilities.'
+description: 'Policy for reporting security issues.'
 layout: 'base.njk'
 permalink: /security-policy/index.html
 eleventyExcludeFromCollections: true
 ---
 
-# Security Policy
+# Security policy
 
-I take the security of my website and its users seriously. I welcome contributions from security researchers to help
-keep my services safe.
+Send security reports to help keep this site safe.
 
-## Reporting a Vulnerability
+## Reporting issues
 
-If you believe you have discovered a security vulnerability, please report it to me promptly. All security reports
-should be submitted through the secure contact form on my main portfolio site. (https://beaubremer.com/#contact) on my
-main site.
+Report bugs at https://beaubremer.com/#contact.
 
-Please include a detailed description of the vulnerability, including:
+Include:
 
-- The URL where the vulnerability was discovered.
-- A detailed description of the issue and the potential impact.
-- Steps to reproduce the vulnerability.
+- The URL.
+- The issue details.
+- How to repeat it.
 
-I will make every effort to respond to your report in a timely manner.
+I will check and reply fast.
 
 ## Scope
 
-This policy applies to the following domains:
+Scope:
 
 - `beaubremer.com`
 - `blog.beaubremer.com`
 
-## My Pledge
+## Pledge
 
-I pledge not to pursue legal action against you if you act in good faith and adhere to the guidelines of this policy. I
-will work with you to understand and resolve the issue quickly, and I am happy to provide public acknowledgement for
-your contribution once the vulnerability is resolved.
+I will not pursue legal action if you act in good faith. I will fix bugs fast and credit you.
 
-Thank you for helping to keep my website secure.
+Thanks for helping.

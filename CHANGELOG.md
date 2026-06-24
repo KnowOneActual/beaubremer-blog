@@ -9,6 +9,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
+## V11.1.5 (June 24, 2026)
+
+### Fixed
+
+- **Dependency security:** Resolved a quadratic-complexity DoS vulnerability in `js-yaml` by adding an override to
+  `package.json` pinning it to `^4.2.0`.
+
 ## V11.1.4 (May 10, 2026)
 
 ### Fixed

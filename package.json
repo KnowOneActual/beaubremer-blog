@@ -19,7 +19,8 @@
   "author": "",
   "license": "ISC",
   "overrides": {
-    "brace-expansion": ">=5.0.5"
+    "brace-expansion": ">=5.0.5",
+    "js-yaml": "^4.2.0"
   },
   "devDependencies": {
     "@11ty/eleventy-img": "^6.0.4",
