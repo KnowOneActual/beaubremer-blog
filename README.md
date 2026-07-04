@@ -109,10 +109,9 @@ See [CHANGELOG.md](CHANGELOG.md) for the history.
 ## 📝 Recent blog posts
 
 <!-- BLOG-POST-LIST:START -->
-
+- [15 Years of VMs Later: Going Bare Metal with Fedora KDE](https://blog.beaubremer.com/posts/15-years-of-vms-later-going-bare-metal-with-fedora-kde/)
+- [Linux Isn&#39;t One Thing: The Four Layers of Your OS](https://blog.beaubremer.com/posts/linux-isnt-one-thing-the-four-layers-of-your-os/)
 - [Why Yazi is the Terminal File Manager You Need](https://blog.beaubremer.com/posts/why-yazi-is-the-terminal-file-manager-you-need/)
 - [A Cross-Platform Guide to Syncing Obsidian with GitHub](https://blog.beaubremer.com/posts/obsidian-sync-with-github/)
 - [Sharing Your Python Tools with the World](https://blog.beaubremer.com/posts/sharing-your-python-tools-with-the-world/)
-- [Staying Flexible Without Letting Your Process Get Bulldozed](https://blog.beaubremer.com/posts/staying-flexible-without-letting-your-process-get-bulldozed/)
-- [Moving to Local Hardware](https://blog.beaubremer.com/posts/moving-to-local-hardware/)
 <!-- BLOG-POST-LIST:END -->
