@@ -13,8 +13,8 @@ tags:
 
 For 15 years, I ran desktop Linux inside virtual machines. Whether I was on a MacBook Pro or a Windows laptop, Linux
 only lived in VMware Fusion, VirtualBox, or WSL. It was a comfortable setup. I only ran bare-metal Linux on headless
-CentOS & Debian servers in production datacenters, mostly because my daily work required proprietary office tools that
-didn't play nice with open-source desktops.
+CentOS & Debian servers, mostly because my daily work required proprietary office tools that didn't play nice with
+open-source desktops.
 
 Recently, I decided to flip things around. I wiped the drive & installed Fedora 44 KDE Plasma Edition directly on the
 bare metal of my Dell Latitude. Now, Windows is the one relegated to a local virtual machine, running only when I need
@@ -38,7 +38,7 @@ breakage by editing configuration files I should have left alone, but that is th
 a second job.
 
 Fedora KDE hits the sweet spot. You get fresh packages & modern security defaults without the fragility of a rolling
-release. My Dell Latitude 5480 runs Linux kernel 7.0.12-201.fc44.x86_64, & the system hasn't suffered a single crash or
+release. My Dell Latitude runs Linux kernel 7.0.12-201.fc44.x86_64, & the system hasn't suffered a single crash or
 kernel panic in six months of daily use.
 
 I want a stable, security-minded platform with an active user community, because desktop issues are a matter of when,
@@ -93,15 +93,15 @@ virtualization, & macOS-aligned package management.
 - **App Sandboxing & Updates**: Flatpaks containerize my desktop apps. Permissions are the only regular issue, but I
   resolve them in under a minute using Flatseal. The KDE Discover software store works fine, but I prefer the terminal.
   I use a shell alias that runs `sudo dnf upgrade -y` & `flatpak update -y` in one go. Users online complain that the
-  DNF package manager is slow. I don't care. A 10-second delay on a daily update doesn't matter when you have other
-  tasks to complete.
+  DNF package manager is slow. I don't care. A 10-second delay on a update doesn't matter when you have other tasks to
+  complete.
 
 ---
 
 ### Hardware Experience on the Latitude 5480
 
-Hardware compatibility on my Dell Latitude 5480 was complete out of the box. Wi-Fi, Bluetooth, & audio routing worked
-immediately upon installation. To keep the laptop running cool & quiet on its Intel Core i5-7300U processor, I use
+Hardware compatibility on my Dell Latitude was complete out of the box. Wi-Fi, Bluetooth, & audio routing worked
+immediately upon installation. To keep the laptop running cool & quiet on its Intel processor, I use
 `power-profiles-daemon` to scale back performance when unplugged. This gives me roughly five hours of battery life. I
 didn't have to install any third-party drivers.
 
@@ -110,6 +110,6 @@ didn't have to install any third-party drivers.
 ### The Verdict
 
 Operating systems are tools, not religions. Wasting weekends troubleshooting a broken rolling release or waiting on a
-sluggish VM is a poor use of billable time. Fedora KDE gives me a stable developer environment out of the box, keeping
-Windows in a virtual sandbox until I actually need it. If you are tired of WSL quirks, format the drive. You won't look
-back.
+sluggish VM is a poor use of billable time (that for you, Tim!). Fedora KDE gives me a stable developer environment out
+of the box, keeping Windows in a virtual sandbox until I actually need it. If you are tired of WSL quirks, format the
+drive. You won't look back.
