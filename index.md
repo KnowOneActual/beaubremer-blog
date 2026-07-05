@@ -22,23 +22,24 @@ pagination:
       </time>
       <span class="text-xs text-gray-600 italic">{{ post.content | readingTime }}</span>
     </div>
-    
+
     <h2 class="text-3xl font-bold font-display leading-tight mb-4">
       <a href="{{ post.url }}" class="text-white group-hover:text-fuchsia-400 transition-colors">
         {{ post.data.title }}
       </a>
     </h2>
-    
+
     <p class="text-gray-400 leading-relaxed mb-6 line-clamp-2">
       {{ post.data.description }}
     </p>
-    
+
     <a href="{{ post.url }}" class="inline-flex items-center text-sm font-bold text-fuchsia-500 hover:text-fuchsia-400 transition-colors">
       Read Article
       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
       </svg>
     </a>
+
   </article>
 {%- endfor -%}
 </div>

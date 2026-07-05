@@ -115,4 +115,5 @@ See [CHANGELOG.md](CHANGELOG.md) for the history.
 - [Why Yazi is the Terminal File Manager You Need](https://blog.beaubremer.com/posts/why-yazi-is-the-terminal-file-manager-you-need/)
 - [A Cross-Platform Guide to Syncing Obsidian with GitHub](https://blog.beaubremer.com/posts/obsidian-sync-with-github/)
 - [Sharing Your Python Tools with the World](https://blog.beaubremer.com/posts/sharing-your-python-tools-with-the-world/)
+
 <!-- BLOG-POST-LIST:END -->
