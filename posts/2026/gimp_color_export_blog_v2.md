@@ -24,8 +24,8 @@ This issue is caused by the document's color mode constraints, GIMP's rendering 
 ### Diagnosing the Color Shift
 
 The original asset is the VSCodium community icon:
-[communityIcon_iwof77n66oi51.png](/img/site_content/gimp_color_export/communityIcon_iwof77n66oi51.png). Inspecting the file metadata with ExifTool
-shows a Color Type of "Palette" & a bit depth of 8 bits.
+[communityIcon_iwof77n66oi51.png](/img/site_content/gimp_color_export/communityIcon_iwof77n66oi51.png). Inspecting the
+file metadata with ExifTool shows a Color Type of "Palette" & a bit depth of 8 bits.
 
 ```text
 exiftool communityIcon_iwof77n66oi51.png
