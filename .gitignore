@@ -175,3 +175,6 @@ temp_files/
 
 # Slopless findings
 .slopless/
+
+# Kate swap
+*.kate-swp
