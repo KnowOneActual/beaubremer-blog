@@ -2,6 +2,8 @@ WARP.md
 README.md
 node_modules/
 .git/
+.venv/
+posts/2026/.venv/
 package.json
 package-lock.json
 netlify.toml
