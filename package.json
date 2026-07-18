@@ -28,7 +28,7 @@
     "@secretlint/secretlint-rule-preset-recommend": "^13.0.2",
     "@tailwindcss/cli": "^4.3.2",
     "@tailwindcss/typography": "^0.5.20",
-    "autoprefixer": "^10.5.2",
+    "autoprefixer": "^10.5.4",
     "lefthook": "^2.1.10",
     "lite-youtube-embed": "^0.3.4",
     "luxon": "^3.7.2",
