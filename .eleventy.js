@@ -1,6 +1,7 @@
 const { feedPlugin } = require('@11ty/eleventy-plugin-rss');
 const { DateTime } = require('luxon');
-const Image = require('@11ty/eleventy-img');
+const eleventyImg = require('@11ty/eleventy-img');
+const Image = typeof eleventyImg === 'function' ? eleventyImg : eleventyImg.default;
 const path = require('node:path');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const fs = require('node:fs');
